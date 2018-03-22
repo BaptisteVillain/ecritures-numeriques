@@ -119,6 +119,7 @@ function custom_menu_order() {
 		'edit.php?post_type=project',
 		'edit.php?post_type=member',
 		'edit.php?post_type=research_field',
+		'edit.php?post_type=key_concept',
 		'edit.php?post_type=axis',
 	);
 }
