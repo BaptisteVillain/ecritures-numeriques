@@ -106,3 +106,22 @@ function remove_posts_menu() {
 	remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'remove_posts_menu');
+
+/**
+ * Change admin menu order
+ */
+
+function custom_menu_order() {
+	return array( 
+		'index.php',
+		'edit.php?post_type=publication',
+		'edit.php?post_type=event',
+		'edit.php?post_type=project',
+		'edit.php?post_type=member',
+		'edit.php?post_type=research_field',
+		'edit.php?post_type=axis',
+	);
+}
+
+add_filter( 'custom_menu_order', '__return_true' );
+add_filter( 'menu_order', 'custom_menu_order' );
