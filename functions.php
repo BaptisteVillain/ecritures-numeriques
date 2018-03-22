@@ -103,5 +103,6 @@ add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
 function remove_posts_menu() {
 	remove_menu_page('edit.php');
+	remove_menu_page('edit-comments.php');
 }
 add_action('admin_menu', 'remove_posts_menu');
