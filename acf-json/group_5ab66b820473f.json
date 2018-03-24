@@ -1,11 +1,11 @@
 {
-    "key": "group_5aad2febca99e",
-    "title": "Publication Creators",
+    "key": "group_5ab66b820473f",
+    "title": "Project Creators",
     "fields": [
         {
-            "key": "field_5aad3a23863fc",
+            "key": "field_5ab66b8207d4a",
             "label": "Authors",
-            "name": "publication_authors",
+            "name": "project_authors",
             "type": "post_object",
             "instructions": "",
             "required": 0,
@@ -30,7 +30,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "publication"
+                "value": "project"
             }
         ]
     ],
@@ -42,5 +42,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1521904633
+    "modified": 1521904907
 }
