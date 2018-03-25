@@ -101,16 +101,35 @@ add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
 
 
-function remove_posts_menu() {
+function custom_posts_menu() {
 	remove_menu_page('edit.php');
 	remove_menu_page('edit-comments.php');
+	$post_type = array(
+		'publication',
+		'event',
+		'project'
+	);
+	
+	$taxonomies = array(
+		'axis',
+		'research_field',
+		'research_topic',
+		'key_concept'
+	);
+
+	foreach ($post_type as $key => $type) {
+		foreach ($taxonomies as $key => $taxo) {
+			remove_submenu_page( 'edit.php?post_type='.$type.'', 'edit-tags.php?taxonomy='.$taxo.'&amp;post_type='.$type.'' );
+		}
+	}
 }
-add_action('admin_menu', 'remove_posts_menu');
+add_action('admin_menu', 'custom_posts_menu');
+
+
 
 /**
  * Change admin menu order
  */
-
 function custom_menu_order() {
 	return array( 
 		'index.php',
@@ -127,4 +146,3 @@ function custom_menu_order() {
 
 add_filter( 'custom_menu_order', '__return_true' );
 add_filter( 'menu_order', 'custom_menu_order' );
-
