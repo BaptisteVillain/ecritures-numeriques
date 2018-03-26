@@ -14,4 +14,5 @@
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
   {{function('do_shortcode', '[custom-twitter-feeds]')}}
+  {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}}
 {% endblock %}
