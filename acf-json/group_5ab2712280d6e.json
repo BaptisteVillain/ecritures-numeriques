@@ -3,31 +3,6 @@
     "title": "Project",
     "fields": [
         {
-            "key": "field_5ab53cb66542c",
-            "label": "Categories",
-            "name": "project_categories",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "axis",
-                "research_topic",
-                "research_field",
-                "key_concept"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
             "key": "field_5ab27122845d9",
             "label": "Project Related",
             "name": "relation_project_project",
@@ -111,5 +86,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1521904206
+    "modified": 1522023985
 }

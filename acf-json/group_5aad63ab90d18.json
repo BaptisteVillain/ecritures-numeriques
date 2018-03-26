@@ -3,31 +3,6 @@
     "title": "Publication",
     "fields": [
         {
-            "key": "field_5ab3d6dc5066b",
-            "label": "Categories",
-            "name": "publication_categories",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "research_field",
-                "research_topic",
-                "key_concept",
-                "axis"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
             "key": "field_5aad63bd4827d",
             "label": "Key",
             "name": "key",
@@ -210,5 +185,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1521904215
+    "modified": 1522023975
 }
