@@ -26,7 +26,7 @@ $labels = array(
 );
 
 $args = array(
-  'hierarchical'      => true,
+  'hierarchical'      => false,
   'labels'            => $labels,
   'show_ui'           => true,
   'show_admin_column' => true,
@@ -54,7 +54,7 @@ $labels = array(
 );
 
 $args = array(
-  'hierarchical'      => true,
+  'hierarchical'      => false,
   'labels'            => $labels,
   'show_ui'           => true,
   'show_admin_column' => true,
@@ -81,7 +81,7 @@ $labels = array(
 );
 
 $args = array(
-  'hierarchical'      => true,
+  'hierarchical'      => false,
   'labels'            => $labels,
   'show_ui'           => true,
   'show_admin_column' => true,
@@ -108,7 +108,7 @@ $labels = array(
 );
 
 $args = array(
-  'hierarchical'      => true,
+  'hierarchical'      => false,
   'labels'            => $labels,
   'show_ui'           => true,
   'show_admin_column' => true,
