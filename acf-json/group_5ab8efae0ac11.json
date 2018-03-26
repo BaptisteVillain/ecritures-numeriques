@@ -1,0 +1,71 @@
+{
+    "key": "group_5ab8efae0ac11",
+    "title": "Homepage",
+    "fields": [
+        {
+            "key": "field_5ab8efbf7d3be",
+            "label": "Page title",
+            "name": "page_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Écritures Numériques",
+            "placeholder": "Page Title",
+            "prepend": "",
+            "append": "",
+            "maxlength": 100
+        },
+        {
+            "key": "field_5ab8eff37d3bf",
+            "label": "Page Subtitle",
+            "name": "page_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "La Chaire de Recherche du Canada sur les Écritures Numériques a pour but  d’offrir une nouvelle lecture de cette écriture qui racontre notre monde.",
+            "placeholder": "Page Subtitle",
+            "prepend": "",
+            "append": "",
+            "maxlength": 255
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "template-front-page.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "discussion",
+        "comments",
+        "author",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1522072562
+}

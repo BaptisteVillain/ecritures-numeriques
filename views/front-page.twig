@@ -1,4 +1,17 @@
+{% extends "base.twig" %}
 
-{# No specific markup for the home page, yet. Add it here inside a content block! #}
-
-{% extends "page.twig" %}
+{% block content %}
+  <h2>Publications</h2>
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+  <h2>Projets</h2>  
+	{% for post in projects %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+  <h2>Events</h2>    
+	{% for post in events %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+  {{function('do_shortcode', '[custom-twitter-feeds]')}}
+{% endblock %}
