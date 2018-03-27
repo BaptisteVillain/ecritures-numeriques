@@ -77,3 +77,18 @@ $MQs: true;
 	   clear: both;
     }
 }
+
+@mixin breakpoint ($bp){
+	@media screen and (min-width: $bp){
+		@content;
+	}
+}
+
+@mixin font($family, $size, $weight, $color, $uppercase, $text-align){
+	font-family: $family;
+	font-size: $size;
+	font-weight: $weight;
+	color: $color;
+	text-transform: $uppercase;
+	text-align: $text-align;
+}
