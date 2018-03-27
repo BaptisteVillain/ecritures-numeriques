@@ -7,12 +7,12 @@
 	<ul class="nav__wrapper">
 	{% for item in menu.get_items %}
 		<li class="nav__item {{item.classes | join(' ')}}">
-			<a class="item__link" href="{{item.link}}">{{item.title}}</a>
+			<a class="item__link {% if item.get_children %} drop__trigger {% endif %}" href="{{item.link}}">{{item.title}}</a>
 			{% if item.get_children %}
-				<ul class="nav__drop">
+				<ul class="item__drop">
 				{% for child in item.get_children %}
 					<li class="drop__item">
-						<a class="drop__link" href="{{child.get_link}}">{{child.title}}</a>
+						<a class="drop__link" target="_blank" href="{{child.get_link}}">{{child.title}}</a>
 					</li>
 				{% endfor %}
 				</ul>
