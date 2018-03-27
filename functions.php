@@ -57,7 +57,8 @@ class StarterSite extends TimberSite {
 	function add_to_context( $context ) {
 
 		// Our menu occurs on every page, so we add it to the global context.
-		$context['menu'] = new TimberMenu();
+		$context['menu'] = new TimberMenu('header-menu');
+		$context['language'] = new TimberMenu('language-switch');
 
 		// This 'site' context below allows you to access main site information like the site title or description.
 		$context['site'] = $this;
@@ -211,3 +212,15 @@ function check_save_event($post_id){
 	}
 }
 add_action('acf/save_post', 'check_save_event', 1);
+
+
+/**
+ * Hide admin bar
+ */
+add_action('after_setup_theme', 'remove_admin_bar');
+ 
+function remove_admin_bar() {
+// if (!current_user_can('administrator') && !is_admin()) {
+  show_admin_bar(false);
+// }
+}

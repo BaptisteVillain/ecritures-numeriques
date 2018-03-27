@@ -10,6 +10,7 @@
 register_nav_menus(
   array(
     'header-menu' => __( 'Header Menu' ),
-    'footer-menu' => __( 'Footer Menu' )
+    'footer-menu' => __( 'Footer Menu' ),
+    'language-switch' => __( 'Language Switch' )
   )
 );
