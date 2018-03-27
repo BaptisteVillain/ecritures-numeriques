@@ -7,14 +7,14 @@
 
 	<body class="{{body_class}}" data-template="base.twig">
 		<header class="site-header">
-			{% block header %}
-				<div class="wrapper">
-					<h1 class="site-logo" role="banner">
-						<a class="site-logo-link" href="{{site.link}}" rel="home">{{site.name}}</a>
-					</h1>
+			<div class="site-header__wrapper">
+				{% block header %}
+					<a class="site-header__logo" href="{{site.link}}" rel="home">
+						<img src="http://localhost:7777/hetic/H3/ecriture-numerique/wp-content/uploads/2018/03/logo.svg" alt="logo">
+					</a>
 					{% include 'partials/nav.twig' %}
-				</div>
-			{% endblock %}
+				{% endblock %}
+			</div>			
 		</header>
 
 		<main role="main" class="site-main">

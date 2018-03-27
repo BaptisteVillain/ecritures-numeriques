@@ -1,0 +1,115 @@
+.site-header{
+  position: fixed;
+  z-index: 100;
+  @include breakpoint(600px){
+    position: relative;
+  }
+}
+
+.site-header__wrapper{
+  width: 100vw;
+  height: 80px;
+  background: $dark-blue;
+  border-bottom: 1px solid rgba(#ffffff, .14);
+  @include breakpoint(600px){
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.site-header__logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 80px;
+  margin: 0 auto;
+  @include breakpoint(600px){
+    margin: 0;
+  }
+}
+
+.site-header__nav{
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - 80px);
+  @include breakpoint(600px){
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 80px;
+    width: auto;
+    margin-left: 50px;
+  }
+}
+
+.nav__trigger{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  span{
+    width: 16px;
+    height: 1px;
+    background: $white;
+    margin: 2px 0;
+  }
+  @include breakpoint(600px){
+    display: none;
+  }
+}
+
+.nav__wrapper{
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 100%;
+  @include breakpoint(600px){
+    flex-direction: row;
+  }
+  .nav__item{
+    position: relative;
+    width: auto;
+    height: 100%;
+    .item__link{
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      @include font($hind, 1.3rem, 500, $white, uppercase, center);
+      padding: 0 15px;
+      background: $dark-blue;
+      border-bottom: 1px solid rgba(#ffffff, .14);      
+    }
+    &:hover{
+      .nav__drop{
+        transform: translateY(0);
+      }
+    }
+    .nav__drop{
+      position: absolute;
+      z-index: -1;
+      width: auto;
+      height: auto;
+      background: $dark-blue;
+      transition: transform .35s $easing;
+      transform: translateY(-100%);
+      .drop__item{
+        height: 40px;
+        width: 100%;
+      }
+      .drop__link{
+        width: 100%;
+        padding: 0 15px;       
+        @include font($hind, 1.3rem, 500, $white, uppercase, left);
+        white-space: nowrap;
+      }
+    }
+  }
+}

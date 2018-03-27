@@ -1,18 +1,27 @@
-<a href="#" class="nav-trigger">Menu</a>
-<nav class="nav-main" role="navigation">
-	<ul class="nav-items">
+<button class="nav__trigger">
+	<span></span>
+	<span></span>
+	<span></span>
+</button>
+<nav class="site-header__nav" role="navigation">
+	<ul class="nav__wrapper">
 	{% for item in menu.get_items %}
-		<li class="nav-item {{item.classes | join(' ')}}">
-			<a class="nav-item-link" href="{{item.link}}">{{item.title}}</a>
+		<li class="nav__item {{item.classes | join(' ')}}">
+			<a class="item__link" href="{{item.link}}">{{item.title}}</a>
 			{% if item.get_children %}
-				<ul class="nav nav-drop">
+				<ul class="nav__drop">
 				{% for child in item.get_children %}
-					<li class="nav-drop-item">
-						<a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
+					<li class="drop__item">
+						<a class="drop__link" href="{{child.get_link}}">{{child.title}}</a>
 					</li>
 				{% endfor %}
 				</ul>
 			{% endif %}
+		</li>
+	{% endfor %}
+	{% for item in language.get_items %}
+		<li>
+		<a href="#">{{ item.title }}</a>
 		</li>
 	{% endfor %}
 	</ul>
