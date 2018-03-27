@@ -12,7 +12,7 @@
 
 // Border box all the things:
 
-* {
+*, *::before, *::after {
 	 box-sizing: border-box;
 }
 
@@ -25,25 +25,15 @@ img {
 }
 
 
-// ---
-// Header
-// ---
-
-// You might want to split this into your own partial!
-
-
-
 
 // ---
 // Main Site Content
 // ---
-
-.wrapper {
-	max-width: $screen-md; // I'm using a pretty narrow wrapper, you might want this to be $screen-lg depending on your layout.
-	width: 93%;
-	margin: 0 auto;
+html, body{
+	width: 100%;
+	height: 100%;
+	// background: $dark-blue;
 }
-
 
 // ---
 // Media
@@ -63,4 +53,8 @@ img {
 // Misc Utilities
 // ---
 
-
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
