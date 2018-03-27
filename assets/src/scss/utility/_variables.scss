@@ -27,41 +27,36 @@ $screen-lg: 		60em;
 // Colors
 // ---
 
-// These are names for actual colors. Below, you'll see how to name them for use.
 
-// Aw man, I love Kuler:
-// http://adobe.ly/1wwZ0Rk
+$dark-blue: 	#121149;
+$light-blue:  #364ad8;
+$pink:        #f8cecd;
+$dark-grey:   #b9b9b9;
+$light-grey:   #f9f9fb;
 
-$dark-blue: 	#334D5C;
 $teal: 				#45B29D;
 $yellow: 			#EFC94C;
 $orange: 			#E27A3F;
 $red: 				#DF4949;
 
 // In art school I was told never to make white pure white and black pure black - not sure if that holds up for the world wide web, but maybe!
-$white: #fefefe;
-$black: #1F232A;
+$white: #fcfcfe;
+$black: #2e2e2e;
 
 
-// STOP!!! READ THIS:
 // Semantic Color Names
 // http://thesassway.com/beginner/variable-naming
 
 // These are nice utility colors
-$color-accent-light: 	$yellow;
-$color-accent-med: 		$teal;
+$color-accent-light: 	$light-blue;
+$color-accent-med: 		$pink;
 $color-accent-dark:		$dark-blue;
 
 $color-text-light: 		$white;
 $color-text-dark: 		$black;
 
-$color-notice-success:	 $teal;
-$color-notice-info:		   lighten($dark-blue, 20%);
-$color-notice-danger:		 $red;
-$color-notice-warning:	 $orange;
-
 // Then element-based names are nice too
-$color-link: 		       $color-accent-med;
+$color-link: 		       $light-blue;
 $color-link-hover: 		 darken($color-link, 20%);
 $color-link-active: 	 darken($color-link, 60%);
 
@@ -82,15 +77,15 @@ $color-rotate-link:   $color-accent-light;
 // And a small pen I made that explains them: http://codepen.io/laras126/pen/YyWLgz
 
 
-$size-base:  		1.1rem;
+$size-base:  		1rem;
 $size-sml:  		$size-base*0.8;
 
-$size-h1:  			$size-base*2.6;
-$size-h2:  			$size-base*2.2;
-$size-h3:  			$size-base*1.8;
-$size-h4:  			$size-base*1.4;
-$size-h5:  			$size-base*1.2;
-$size-h6:  			$size-sml;
+$size-h1:  			$size-base*3;
+$size-h2:  			$size-base*2;
+$size-h3:  			$size-base*3;
+$size-h4:  			$size-base*2.4;
+$size-h5:  			$size-base*2.1;
+$size-h6:  			$size-base;
 
 
 
@@ -100,8 +95,9 @@ $size-h6:  			$size-sml;
 
 // Pretty standard.
 
-$sans-serif: 		Helvetica, sans-serif;
-$serif:         Georgia, serif;
+$cabin: 		'Cabin', sans-serif;
+$hind: 		  'Hind', sans-serif;
+$source: 		'Source Code Pro', sans-serif;
 
 // If you are using webfonts and are a good girl/boy, you will define some fallbacks (see the top of _typography.scss for where to use them):
 
@@ -116,9 +112,6 @@ $serif:         Georgia, serif;
 
 $line-height-base: 	1.5;
 
-$heading-font: 		$serif;
-$body-font: 		  $sans-serif;
-
 // $body-font-fallback:		$sans-serif-fallback;
 // $heading-font-fallback:	$serif-fallback
 
@@ -132,3 +125,8 @@ $body-font: 		  $sans-serif;
 
 $color-accent-border: 1px dotted $color-accent-med;
 
+// ----
+// Transitions
+// ----
+
+$easing: cubic-bezier(0.48, 0.04, 0.52, 0.96);
