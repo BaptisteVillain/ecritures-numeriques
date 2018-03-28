@@ -24,6 +24,7 @@
   margin: 0 auto;
   @include breakpoint(950px){
     margin: 0;
+    width: 250px;
   }
 }
 
@@ -122,6 +123,7 @@
       padding-top: 45px;
       padding-bottom: 0;
       @include font($hind, 1.5rem, 500, $blue-grey, uppercase, left);
+      user-select: none;
       &::before{
         content: "";
         position: absolute;
