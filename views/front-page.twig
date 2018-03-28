@@ -1,7 +1,29 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  <h2>Publications</h2>
+	<section class="home-section landing">
+		<div class="landing__container">
+			
+		</div>
+	</section>
+	<section class="home-section projects">
+		<header class="section-header projects__header">
+			<h2 class="header__title">Événements à venir</h2>
+			<a href="#" class="header__link"> voir tout </a>
+		</header>
+		<div class="section-container projects__container">
+			{% for post in highlighted_event %}
+				{% include 'partials/card-highlighted.twig' %}
+			{% endfor %}
+			{% for post in events %}	
+				{% include 'partials/card.twig' %}
+			{% endfor %}
+		</div>
+		<footer class="section-footer projects__footer">
+			<a href="#" class="footer__link"> voir tout </a>
+		</footer>
+	</section>
+  {# <h2>Publications</h2>
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
@@ -14,5 +36,5 @@
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
   {{function('do_shortcode', '[custom-twitter-feeds]')}}
-  {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}}
+  {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}} #}
 {% endblock %}

@@ -1,0 +1,94 @@
+section.landing{
+  width: 100%;
+  height: calc(100vh - 140px);
+  background: $dark-blue;
+  padding: 0 7.5vw;
+  .landing__container{
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,.1),
+      rgba(255,255,255,.1) 1px,
+      $dark-blue 1px,
+      $dark-blue 100px
+    );
+  }
+}
+
+
+section.projects{
+  .projects__header{
+    background: $pink;
+    height: 60px;
+    .header__title{
+      background: $dark-blue;
+      height: 100%;
+      line-height: 60px;
+      border: 1px solid $border-grey;
+		  @include font($hind, 2.0rem, 600, $white, uppercase, center)      
+    }
+    .header__link{
+      line-height: 60px;
+    }
+  }
+
+  .projects__container{
+    .project__card{
+      width: 100%;
+      min-height: 240px;
+      padding: 30px 20px;
+      border: 1px solid $dark-grey;
+      background: $light-grey;
+      margin-top: -1px;
+      display: flex;
+      flex-direction: column;
+      &::first-child{
+        margin-top: 0px;
+      }
+      .card__surtitle{
+        @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      }
+      .card__title{
+        margin: 20px 0;
+        @include font($hind, 1.8rem, 500, $black, inherit, left);
+        line-height: 1.61;                              
+      }
+      .card__footer{
+        margin-top: auto;
+        justify-self: flex-end;
+        @include font($source, 1.4rem, 400, $dark-grey, inherit, left);        
+      }
+    }
+    .card__highlighted{
+      .card__title{
+        @include font($hind, 2.2rem, 500, $black, inherit, left);
+        margin-bottom: 10px;
+      }
+      .card__subtitle{
+        margin: 10px 0;
+        @include font($hind, 1.6rem, 500, $dark-grey, inherit, left);
+        line-height: 1.61;    
+      }
+      .card__footer{
+        padding-top: 30px;
+      }
+    }
+  }
+
+  .projects__footer{
+    width: 100%;
+    height: 60px;
+    background: $pink;
+    a{
+      display: block;
+      width: 100%;
+      height: 100%;
+      line-height: 60px;
+      @include font($source, 1.4rem, 600, $dark-blue, uppercase, center);
+    }
+    @include breakpoint(700px){
+      display: none;
+    }
+  }
+}

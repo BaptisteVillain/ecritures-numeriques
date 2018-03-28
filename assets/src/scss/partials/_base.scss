@@ -35,6 +35,40 @@ html, body{
 	// background: $dark-blue;
 }
 
+main.site-main{
+	padding-top: 80px;
+}
+
+section.home-section{
+	width: 100%;
+}
+
+header.section-header{
+	width: 100%;
+	height: 78px;
+	display: flex;
+	justify-content: space-between;
+	h2.header__title{
+		width: 100%;
+		padding: 0 30px;
+		height: 100%;
+		@include font($hind, 2.0rem, 600, $dark-blue, uppercase, center);
+		@include breakpoint(700px){
+			min-width: 308px;
+			width: auto;
+		}		
+	}
+	a.header__link{
+		display: none;
+		@include breakpoint(700px){
+			display: block;
+			height: 100%;		
+			margin-right: 60px;
+			@include font($source, 1.6rem, 600, $dark-blue, uppercase, center);
+		}
+	}
+}
+
 // ---
 // Media
 // ---

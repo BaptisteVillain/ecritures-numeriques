@@ -38,18 +38,32 @@ $context['highlighted_event'] = Timber::get_posts(array(
 ));
 
 if(count($context['highlighted_event']) < 1){
-  $events_count = 3;
+  $args = array(
+    'post_type' => 'event',
+    'posts_per_page' => 5
+  );
 } else {
-  $events_count = 2; 
+  $args = array(
+    'post_type' => 'event',
+    'posts_per_page' => 4,
+    'meta_query' => array(
+      array(
+        'key' => 'highlight_event',
+        'value' => '1',
+        'compare' => '!='
+      )
+    )
+  );
 }
-
 /**
  * Get last events
  */
-$context['events'] = Timber::get_posts(array(
-  'post_type' => 'event',
-  'posts_per_page' => $events_count,
-));
+$context['events'] = Timber::get_posts($args);
 
+if(count($context['highlighted_event']) < 1){
+  $context['highlighted_event'] = array();
+  $context['highlighted_event'][] = $context['events'][0];
+  array_shift($context['events']);
+}
 
 Timber::render( 'front-page.twig', $context );
