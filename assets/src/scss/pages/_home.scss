@@ -205,19 +205,60 @@ section.projects{
 */
 section.publications{
   background: $dark-blue;
+  overflow: hidden;
   .publications__header{
     border: 1px solid $light-grey;
+    flex-shrink: 0;
+    @include breakpoint(800px){
+      border-left: none;
+      border-right: none;
+      border-top: none;
+    }    
     .header__title, .header__link{
-      color: $white;
+      color: $white;   
     }
+    .header__title{
+      @include breakpoint(800px){
+        color: $dark-blue;
+        background: $white;
+      }
+    }
+  }
+  .publications__container{
+    @include breakpoint(800px){
+      margin: 120px 60px;
+      border: 1px solid $white;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+  .publications__wrapper{
+    @include breakpoint(800px){
+      width: calc(100% * 0.6);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      .publication__card{
+        width: 100%;
+        border-bottom: none;
+        border-right: none;   
+        &:last-child{
+          border-top: 1px solid $white;
+        }     
+      }
+    }    
   }
   .publication__card{
     padding: 30px 20px;
     border-bottom: 1px solid $light-grey;
     display: flex;
     flex-direction: column;
-    &:nth-child(4){
-      border-bottom: none;
+    @include breakpoint(800px){
+      padding: 60px 60px 30px 60px;
+      flex-shrink: 0;
+      width: calc(100% * 0.4);
+      border-right: 1px solid $white;
     }
     .card__surtitle{
       @include font($source, 1.4rem, 600, $pink, uppercase, left);
@@ -230,6 +271,9 @@ section.publications{
       @include font($hind, 1.8rem, 400, rgba($white, .5), inherit, left);
       margin-top: 20px;
       line-height: 1.61;
+    }
+    .card__footer{
+      margin-top: auto;
     }
     .card__author{
       margin-top: auto;

@@ -43,9 +43,14 @@
 				<h2 class="header__title">Dernières publications</h2>
 				<a href="#" class="header__link">Consulter toutes les publications  ></a>
 			</header>
-			{% for key,post in publications %}
-				{% include 'partials/card-publication.twig' %}				
+			{% for key,post in publications[0:1] %}
+			{% include 'partials/card-publication.twig' with {'content': true} %}				
 			{% endfor %}
+			<div class="publications__wrapper">
+			{% for post in publications[1:] %}
+				{% include 'partials/card-publication.twig' with {'content': false} %}				
+			{% endfor %}
+			</div>
 			<footer class="section-footer publications__footer">
 				<a href="" class="footer__link">Consulter toutes les publications  ></a>
 			</footer>
