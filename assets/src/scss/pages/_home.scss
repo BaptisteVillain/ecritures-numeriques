@@ -34,6 +34,11 @@ section.projects{
   }
 
   .projects__container{
+    @include breakpoint(800px){
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
     .project__card{
       width: 100%;
       min-height: 240px;
@@ -43,6 +48,15 @@ section.projects{
       margin-top: -1px;
       display: flex;
       flex-direction: column;
+      @include breakpoint(800px){
+        width: calc(100% / 3);
+        min-height: 350px;
+        padding: 60px;
+        &:nth-child(4){
+          border-left: none;
+          border-right: none;
+        }
+      }
       &::first-child{
         margin-top: 0px;
       }
@@ -61,6 +75,27 @@ section.projects{
       }
     }
     .card__highlighted{
+      @include breakpoint(800px){
+        width: calc(100% / 3 * 2);
+        border-right: none;
+        display: flex;
+        flex-direction: row;
+      }
+      .card__content{
+        @include breakpoint(800px){
+          margin-left: 60px;
+        }
+      }
+      .card__image{
+        display: none;
+        @include breakpoint(800px){
+          display: block;     
+          width: 200px;
+          height: 230px;
+          background: red;
+          flex-shrink: 0;
+        }
+      }
       .card__title{
         @include font($hind, 2.2rem, 500, $black, inherit, left);
         margin-bottom: 10px;
