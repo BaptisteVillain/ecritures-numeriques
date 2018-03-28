@@ -6,22 +6,36 @@
 			
 		</div>
 	</section>
-	<section class="home-section projects">
-		<header class="section-header projects__header">
+	<section class="home-section events">
+		<header class="section-header events__header">
 			<h2 class="header__title">Événements à venir</h2>
-			<a href="#" class="header__link"> voir tout </a>
+			<a href="#" class="header__link"> voir tout > </a>
 		</header>
-		<div class="section-container projects__container">
+		<div class="section-container events__container">
 			{% for post in highlighted_event %}
-				{% include 'partials/card-highlighted.twig' %}
+				{% include 'partials/card-event-highlighted.twig' %}
 			{% endfor %}
 			{% for post in events %}	
-				{% include 'partials/card.twig' %}
+				{% include 'partials/card-event.twig' %}
 			{% endfor %}
 		</div>
-		<footer class="section-footer projects__footer">
-			<a href="#" class="footer__link"> voir tout </a>
+		<footer class="section-footer events__footer">
+			<a href="#" class="footer__link"> voir tout > </a>
 		</footer>
+	</section>
+	<section class="home-section projects">
+		<div class="projects__container">
+			<header class="section-header projects__header">
+				<h2 class="header__title">Derniers projets</h2>
+				<a href="#" class="header__link"> Découvrir tous les projets > </a>
+			</header>
+			{% for key, post in projects %}
+				{% include 'partials/card-project.twig' %}			
+			{% endfor %}
+			<footer class="section-footer projects__footer">
+				<a href="" class="footer__link">Découvrir tous les projets  ></a>
+			</footer>
+		</div>
 	</section>
   {# <h2>Publications</h2>
 	{% for post in posts %}
@@ -35,6 +49,6 @@
 	{% for post in events %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
-  {{function('do_shortcode', '[custom-twitter-feeds]')}}
-  {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}} #}
+  {# {{function('do_shortcode', '[custom-twitter-feeds]')}} #}
+  {# {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}} #}
 {% endblock %}
