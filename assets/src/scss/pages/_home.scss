@@ -1,3 +1,6 @@
+/**
+* LANDING
+*/
 section.landing{
   width: 100%;
   height: calc(100vh - 158px);
@@ -16,7 +19,9 @@ section.landing{
   }
 }
 
-
+/**
+* EVENTS
+*/
 section.events{
   .events__header{
     background: $pink;
@@ -112,6 +117,9 @@ section.events{
   }
 }
 
+/**
+* PROJECTS
+*/
 section.projects{
   width: 100%;
   height: auto;
@@ -189,5 +197,58 @@ section.projects{
   .projects__footer .footer__link{
     border: 1px solid $dark-blue;
     background: $white;
+  }
+}
+
+/**
+* PUBLICATIONS
+*/
+section.publications{
+  background: $dark-blue;
+  .publications__header{
+    border: 1px solid $light-grey;
+    .header__title, .header__link{
+      color: $white;
+    }
+  }
+  .publication__card{
+    padding: 30px 20px;
+    border-bottom: 1px solid $light-grey;
+    display: flex;
+    flex-direction: column;
+    &:nth-child(4){
+      border-bottom: none;
+    }
+    .card__surtitle{
+      @include font($source, 1.4rem, 600, $pink, uppercase, left);
+      margin-bottom: 20px;
+    }
+    .card__title{
+      @include font($hind, 2.2rem, 500, $light-grey, inherit, left);
+    }
+    .card__subtitle{
+      @include font($hind, 1.8rem, 400, rgba($white, .5), inherit, left);
+      margin-top: 20px;
+      line-height: 1.61;
+    }
+    .card__author{
+      margin-top: auto;
+      padding-top: 30px;
+      @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
+    }
+    .card__source{
+      margin-top: 10px;
+      @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
+    }
+    .card__italic{
+      @include font($cabin, 1.4rem, 400, $dark-grey, capitalize, left);
+      font-style: italic;
+    }
+  }
+  .publications__footer{
+    border: 1px solid $light-grey;
+    .footer__link{
+      color: $white;
+    }    
   }
 }

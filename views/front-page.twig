@@ -37,6 +37,20 @@
 			</footer>
 		</div>
 	</section>
+	<section class="home-section publications">
+		<div class="publications__container">
+			<header class="section-header publications__header">
+				<h2 class="header__title">Dernières publications</h2>
+				<a href="#" class="header__link">Consulter toutes les publications  ></a>
+			</header>
+			{% for key,post in publications %}
+				{% include 'partials/card-publication.twig' %}				
+			{% endfor %}
+			<footer class="section-footer publications__footer">
+				<a href="" class="footer__link">Consulter toutes les publications  ></a>
+			</footer>
+		</div>
+	</section>
   {# <h2>Publications</h2>
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}

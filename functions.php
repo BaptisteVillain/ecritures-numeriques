@@ -224,3 +224,14 @@ function remove_admin_bar() {
   show_admin_bar(false);
 // }
 }
+
+
+/**
+ * Remove auto p
+ */
+add_filter( 'the_content', 'remove_auto_tags', 0 );
+function remove_auto_tags( $content )
+{
+	remove_filter('the_content', 'wpautop');
+	return $content;
+}

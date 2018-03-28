@@ -9,9 +9,9 @@ $context = Timber::get_context();
 /**
  * Get last publications
  */
-$context['posts'] = Timber::get_posts(array(
+$context['publications'] = Timber::get_posts(array(
   'post_type' => 'publication',
-  'posts_per_page' => 5,
+  'posts_per_page' => 3
 ));
 
 /**
