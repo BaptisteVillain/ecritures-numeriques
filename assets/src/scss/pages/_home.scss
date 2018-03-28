@@ -1,6 +1,6 @@
 section.landing{
   width: 100%;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 158px);
   background: $dark-blue;
   padding: 0 $padding;
   .landing__container{
@@ -20,7 +20,6 @@ section.landing{
 section.events{
   .events__header{
     background: $pink;
-    height: 60px;
     .header__title{
       background: $dark-blue;
       border: 1px solid $border-grey;
@@ -118,14 +117,18 @@ section.projects{
   height: auto;
   margin-top: -1px;
   padding: 0;
-  @include breakpoint(700px){
+  @include breakpoint(800px){
     padding: 0 $padding;
   }  
   .projects__header{
-    height: 60px;
-    line-height: 60px;
-    background: $light-grey;
     border: 1px solid $dark-blue;
+    background: $white;
+    .header__title{
+      background: $light-grey;
+      @include breakpoint(800px){
+        border-right: 1px solid $dark-blue;
+      }
+    }
   }
   .projects__container{
     padding: 120px 20px;
@@ -134,8 +137,11 @@ section.projects{
     border-right: 1px solid #F3F3F6;
     background-size: calc(85vw / 10) calc(85vw / 10);
     background-image: linear-gradient(to right, #F3F3F6 1px, transparent 1px), linear-gradient(to bottom, #F3F3F6 1px, transparent 1px);
-    @include breakpoint(700px){
-      padding: 0;
+    @include breakpoint(800px){
+      padding: 250px 0;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
     .project__card{
       width: 100%;
@@ -148,9 +154,26 @@ section.projects{
       &:nth-child(4){
         border-bottom: none;
       }
+      @include breakpoint(800px){
+        width: calc(100% / 3);
+        min-height: 330px;
+        border: 1px solid $dark-grey;
+        border-top: none;
+        padding: 0 35px 35px 35px;
+        &:nth-child(2){
+          border-right: none;
+        }
+        &:nth-child(4){
+          border-bottom: 1px solid $dark-grey;
+          border-left: none; 
+        } 
+      }
       .card__label{
         margin: 30px auto 20px auto;
-        @include font($source, 1.6rem, 600, $pink, uppercase, center)
+        @include font($source, 1.6rem, 600, $pink, uppercase, center);
+        @include breakpoint(800px){
+          margin-top: 60px;
+        }
       }
       .card__title{
         @include font($hind, 1.8rem, 500, $dark-blue, inherit, center);
