@@ -427,6 +427,9 @@ section.rubriques{
         height: 100%;
         padding: 0 20px;
         @include font($hind, 1.2rem, 500, $black, uppercase, center);
+        @include breakpoint(700px){
+          @include font($hind, 1.4rem, 500, $black, uppercase, center);
+        }        
       }
     }
     .item__grid{
@@ -462,6 +465,87 @@ section.rubriques{
       background: $dark-grey;
       &:nth-child(3){
         margin-top: 250px;
+      }
+    }
+  }
+}
+
+section.social{
+  border-top: 1px solid $dark-grey;
+  background: $light-grey;
+  .social__section{
+    width: 100%;
+  }
+  .social__header{
+    width: 100%;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .header__label{
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+    }
+    .header__icone{
+      width: 24px;
+      height: 24px;
+      path{
+        fill: $light-blue;
+      }
+      // @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+    }
+  }
+  .social__youtube{
+    .__youtube_prefs__{
+      width: 100%;
+      height: calc((100vw - 40px) / 1.78);
+    }
+  }
+
+  .social__twitter{
+    #tweets{
+      .twitter-feed{
+        .ctf-item{
+          border-top: 1px solid $dark-grey;
+          padding: 30px 20px;
+          margin: 0;
+          .ctf-context{
+            @include font($source, 1.2rem, 400, $dark-grey, uppercase, left);
+            .ctf-retweet-text{
+              color: $dark-grey !important;              
+            }
+            .ctf-retweet-icon{
+              border-radius: 0;
+              background: none;
+              i{
+                color: $dark-grey;
+              }
+            }
+          }
+          .ctf-author-name, .ctf-author-screenname, .ctf-tweet-meta{
+            margin: 0;
+          }
+          .ctf-author-name{
+            text-transform: capitalize;
+          }
+          .ctf-author-screenname{
+            display: none;
+          }
+          .ctf-screename-sep{
+            margin: 0 5px;
+          }
+          .ctf-tweet-date{
+            @include font($source, 1.4rem, 600, $dark-grey, lowercase, left);            
+          }
+
+          .ctf-tweet-content{
+            padding: 0;
+            margin-top: 10px;
+            .ctf-tweet-text{
+              @include font($hind, 1.4rem, 400, $black, inherit, left);
+              line-height: 1.5;            
+            }
+          }
+        }
       }
     }
   }
