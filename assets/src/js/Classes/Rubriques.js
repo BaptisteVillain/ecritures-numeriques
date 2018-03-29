@@ -8,19 +8,34 @@ class Rubriques {
     this.buttons.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault()
-
         const index = Array.prototype.indexOf.call(this.buttons, button)
+        
+        if (window.innerWidth < 700) {
+          button.classList.add('mobile-active')
+          this.wrappers[index].style.height = `${this.wrappers[index].childElementCount * 60}px`
+          this.container.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
 
-        button.classList.add('active')
-        this.wrappers[index].style.height = `${this.wrappers[index].childElementCount * 60}px`
-        this.container.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+          this.wrappers.forEach((wrapper, i) => {
+            if (i !== index || index === this.last_index) {
+              wrapper.style.removeProperty('height')
+              this.buttons[i].classList.remove('mobile-active')
+            }
+          })
 
-        this.wrappers.forEach((wrapper, i) => {
-          if (i !== index || index === this.last_index) {
-            wrapper.style.height = 0
-            this.buttons[i].classList.remove('active')
-          }
-        })
+        } else {
+          button.classList.add('desktop-active')
+          this.wrappers[index].classList.add('desktop-active')
+
+          this.wrappers.forEach((wrapper, i) => {
+            this.wrappers[i].classList.remove('mobile-active')
+            this.buttons[i].classList.remove('mobile-active')
+            wrapper.style.removeProperty('height')
+            if (i !== index) {
+              this.wrappers[i].classList.remove('desktop-active')
+              this.buttons[i].classList.remove('desktop-active')
+            }
+          })
+        }
 
         this.last_index = this.last_index === index ? null : index
       })

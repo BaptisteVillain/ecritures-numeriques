@@ -58,16 +58,23 @@
 	</section>
 	<section class="home-section rubriques">
 		<div class="rubriques__container">
+			<div class="rubriques__lines">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
 			<header class="section-header rubriques__header">
 				<h2 class="header__title">Rubriques</h2>
 				<a href="#" class="header__link">Découvrir toutes les rubriques  ></a>			
 			</header>
 			<ul class="rubriques__wrapper">
-			{% for rubrique in rubriques %}
+			{% for key,rubrique in rubriques %}
 				<li class="rubriques__item">
-					<button class="item__button">{{rubrique[0].taxonomy}} <span>></span></button>
-					<ul class="item__wrapper">
-						{% for item in rubrique %}
+					<button class="item__button {% if key == 0 %}desktop-active{% endif %}">{{rubrique[0].taxonomy}} <span>></span></button>
+					<ul class="item__wrapper {% if key == 0 %}desktop-active{% endif %}">
+						{% for item in rubrique[0:19] %}
 						<li class="rubriques__subItem">
 							<a href="#">{{item.name}}</a>
 						</li>
@@ -75,13 +82,18 @@
 					</ul>
 				</li>
 			{% endfor %}
+				<li class="item__grid">
+					{% for index in 0..19 %}
+						<div></div>
+					{% endfor %}
+				</li>
 			</ul>
 			<footer class="section-footer rubriques__footer">
 				<a href="" class="footer__link">Découvrir toutes les rubriques  ></a>
 			</footer>
 		</div>
 	</section>
-  {{function('do_shortcode', '[custom-twitter-feeds]')}}	
+  {# {{function('do_shortcode', '[custom-twitter-feeds]')}}	 #}
   {# <h2>Publications</h2>
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
