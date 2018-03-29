@@ -66,4 +66,21 @@ if(count($context['highlighted_event']) < 1){
   array_shift($context['events']);
 }
 
+
+$context['rubriques'] =  array();
+$taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');
+
+foreach ($taxonomies as $key => $taxonomy) {
+  // $taxonomy = array();
+  // $taxonomy['meta'] = Timber::get_taxonomy($taxonomy);
+  // $taxonomy['terms'] = Timber::get_terms($taxonomy);
+  
+  $context['rubriques'][] = Timber::get_terms($taxonomy);
+}
+
+// echo '<pre>';
+// print_r($context['rubriques']);
+// echo '</pre>';
+
+
 Timber::render( 'front-page.twig', $context );

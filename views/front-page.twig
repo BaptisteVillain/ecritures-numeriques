@@ -56,6 +56,32 @@
 			</footer>
 		</div>
 	</section>
+	<section class="home-section rubriques">
+		<div class="rubriques__container">
+			<header class="section-header rubriques__header">
+				<h2 class="header__title">Rubriques</h2>
+				<a href="#" class="header__link">Découvrir toutes les rubriques  ></a>			
+			</header>
+			<ul class="rubriques__wrapper">
+			{% for rubrique in rubriques %}
+				<li class="rubriques__item">
+					<button class="item__button">{{rubrique[0].taxonomy}} <span>></span></button>
+					<ul class="item__wrapper">
+						{% for item in rubrique %}
+						<li class="rubriques__subItem">
+							<a href="#">{{item.name}}</a>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endfor %}
+			</ul>
+			<footer class="section-footer rubriques__footer">
+				<a href="" class="footer__link">Découvrir toutes les rubriques  ></a>
+			</footer>
+		</div>
+	</section>
+  {{function('do_shortcode', '[custom-twitter-feeds]')}}	
   {# <h2>Publications</h2>
 	{% for post in posts %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
@@ -68,6 +94,5 @@
 	{% for post in events %}
 		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
 	{% endfor %}
-  {# {{function('do_shortcode', '[custom-twitter-feeds]')}} #}
   {# {{function('do_shortcode', '[embedyt]https://www.youtube.com/embed?listType=playlist&list=UU5LIw0dopbSSgqI2zdIi84w&layout=gallery[/embedyt]')}} #}
 {% endblock %}
