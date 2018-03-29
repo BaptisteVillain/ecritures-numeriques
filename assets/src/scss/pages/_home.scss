@@ -495,8 +495,15 @@ section.social{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    @include breakpoint(700px){
+      padding: 60px;
+    }    
     .header__label{
       @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      @include breakpoint(700px){
+        font-size: 1.6rem;      
+      }
+      
     }
     .header__icone{
       width: 24px;
@@ -557,7 +564,11 @@ section.social{
             margin-top: 10px;
             .ctf-tweet-text{
               @include font($hind, 1.4rem, 400, $black, inherit, left);
-              line-height: 1.5;            
+              line-height: 1.5;      
+              @include breakpoint(700px){
+                font-size: 1.6rem;
+              }
+                    
             }
           }
         }
