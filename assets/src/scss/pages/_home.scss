@@ -505,7 +505,7 @@ section.social{
       }
       
     }
-    .header__icone{
+    .header__icon{
       width: 24px;
       height: 24px;
       path{
@@ -514,6 +514,10 @@ section.social{
     }
   }
   .social__youtube{
+    border-bottom: 1px solid $dark-grey;
+    @include breakpoint(950px){
+      border-bottom: none;
+    }
     .video__thumbnail{
       position: relative;
       &::after{
@@ -540,19 +544,13 @@ section.social{
       }
     }
     .youtube__video{
-      padding: 0 20px;
+      margin: 0 20px;
       display: flex;
       flex-direction: row;
-      padding-bottom: 30px;
-      &:last-child{
-        border-bottom: 1px solid $dark-grey;
-        @include breakpoint(700px){
-          border-bottom: none;
-        }        
-      }
-      @include breakpoint(700px){
-        padding: 0 60px;
-        padding-bottom: 30px;        
+      margin-bottom: 30px;
+      @include breakpoint(950px){
+        margin: 0 60px;
+        margin-bottom: 30px;        
       }
       .video__thumbnail{
         width: 128px;
@@ -562,26 +560,25 @@ section.social{
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        @include breakpoint(700px){
-          width: calc(128px * 1.78);
-        }     
-        img{
-          height: auto;
-          width: 100%;
-          transform: scale(1.8);
-          @include breakpoint(700px){
-            width: 100%;
-            transform: scale(1);
-          }          
+        background-color: $light-blue;
+        background-size: cover;
+        background-position: -45px;
+        @include breakpoint(950px){
+          max-width: calc(128px * 1.78);
+          min-width: 128px;
+          width: 40%;
         }
       }
       .video__content{
         padding-left: 20px;
+        @include breakpoint(950px){
+          padding-left: 30px;
+        }        
       }
       .video__title{
         @include font($hind, 1.6rem, 500, $black, inherit, left);
         line-height: 1.5;
-        @include breakpoint(700px){
+        @include breakpoint(950px){
           font-size: 2.1rem;
         }        
       }
@@ -589,16 +586,18 @@ section.social{
         @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
         margin: 0;
         margin-top: 10px;
-        @include breakpoint(700px){
+        @include breakpoint(950px){
           font-size: 1.4rem;
         }
       }
     }
     .video__highlight{
-      padding: 0 20px;
-      margin-bottom: 60px;
-      @include breakpoint(700px){
-        padding: 0 60px;
+      display: block;
+      margin: 0 20px;
+      margin-bottom: 60px;      
+      @include breakpoint(950px){
+        margin: 0 60px;
+        margin-bottom: 60px;
       }      
       .video__thumbnail{
         display: flex;
@@ -607,11 +606,11 @@ section.social{
         width: 100%;
         height: calc((100vw - 40px) / 1.78);
         overflow: hidden;
-        @include breakpoint(700px){
+        background-color: $light-blue;        
+        background-size: cover;
+        background-position: -45px;
+        @include breakpoint(950px){
           height: calc((50vw - 120px) / 1.78);
-          img{
-            width: 100%;
-          }     
         }
       }
       .video__title{
@@ -619,16 +618,16 @@ section.social{
         padding: 0 5px;
         margin: 20px 0 10px 0;
         line-height: 1.5;
-        @include breakpoint(700px){
+        @include breakpoint(950px){
           font-size: 2.4rem;
-          margin: 20px 0 0px 0;
+          margin: 20px 0 10px 0;
           padding: 0;
         }
       }
       .video__views{
         @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
         margin: 0;
-        @include breakpoint(700px){
+        @include breakpoint(950px){
           text-align: left;
         }        
       }
@@ -642,7 +641,7 @@ section.social{
           border-top: 1px solid $dark-grey;
           padding: 30px 20px;
           margin: 0;
-          @include breakpoint(700px){
+          @include breakpoint(950px){
             padding: 30px 60px;
           }
           .ctf-context{
@@ -680,7 +679,7 @@ section.social{
             .ctf-tweet-text{
               @include font($hind, 1.4rem, 400, $black, inherit, left);
               line-height: 1.5;      
-              @include breakpoint(700px){
+              @include breakpoint(950px){
                 font-size: 1.6rem;
               }
                     
