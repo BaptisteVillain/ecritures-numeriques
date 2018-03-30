@@ -514,6 +514,31 @@ section.social{
     }
   }
   .social__youtube{
+    .video__thumbnail{
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        z-index: 10;        
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: darken($light-blue, 10%);
+        mix-blend-mode: lighten;
+      }
+      &::before{
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: lighten($light-blue, 10%);
+        mix-blend-mode: darken;        
+      }
+    }
     .youtube__video{
       padding: 0 20px;
       display: flex;
