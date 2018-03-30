@@ -71,16 +71,33 @@ $context['rubriques'] =  array();
 $taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');
 
 foreach ($taxonomies as $key => $taxonomy) {
-  // $taxonomy = array();
-  // $taxonomy['meta'] = Timber::get_taxonomy($taxonomy);
-  // $taxonomy['terms'] = Timber::get_terms($taxonomy);
-  
   $context['rubriques'][] = Timber::get_terms($taxonomy);
 }
 
+/**
+ * Get Youtube Video
+ */
+
+$id = 'UC5LIw0dopbSSgqI2zdIi84w';
+$key = 'AIzaSyB2z9bqaFVRYupNp5tDv2NTpdh0dLYucy0';
+$url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=id&maxResults=3&channelId='.$id.'&key='.$key;
+$response = json_decode(file_get_contents($url), true);
+$videos = $response['items'];
+
+$ids = array();
+foreach ($videos as $id) {
+  $ids[] = $id['id']['videoId'];
+}
+
+$ids = implode($ids, ',');
+$url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$ids.'&key='.$key;
+
+$data[] = json_decode(file_get_contents($url), true);
+
+$context['videos'] = $data[0]['items'];
+
 // echo '<pre>';
-// print_r($context['rubriques']);
+// print_r($context['videos']);
 // echo '</pre>';
 
-
-Timber::render( 'front-page.twig', $context );
+Timber::render( 'front-page.twig', $context);

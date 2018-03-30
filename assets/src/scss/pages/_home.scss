@@ -514,9 +514,62 @@ section.social{
     }
   }
   .social__youtube{
-    .__youtube_prefs__{
-      width: 100%;
-      height: calc((100vw - 40px) / 1.78);
+    .youtube__video{
+      padding: 0 20px;
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 30px;
+      &:last-child{
+        border-bottom: 1px solid $dark-grey;
+      }
+      .video__thumbnail{
+        width: 128px;
+        height: 128px;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        img{
+          height: auto;
+          width: 100%;
+          transform: scale(1.8);
+        }
+      }
+      .video__content{
+        padding-left: 20px;
+      }
+      .video__title{
+        @include font($hind, 1.6rem, 500, $black, inherit, left);
+        line-height: 1.5;
+      }
+      .video__views{
+        @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
+        margin: 0;
+        margin-top: 10px;
+      }
+    }
+    .video__highlight{
+      padding: 0 20px;
+      margin-bottom: 60px;
+      .video__thumbnail{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: calc((100vw - 40px) / 1.78);
+        overflow: hidden;
+      }
+      .video__title{
+        @include font($hind, 1.8rem, 500, $black, inherit, left);
+        padding: 0 5px;
+        margin: 20px 0 10px 0;
+        line-height: 1.5;
+      }
+      .video__views{
+        @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
+        margin: 0;
+      }
     }
   }
 

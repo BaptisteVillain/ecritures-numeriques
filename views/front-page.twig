@@ -101,6 +101,24 @@
 					<svg aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></div>
 				</a>
 			<!-- Youtube content here -->
+				<div class="video__highlight">
+					<div class="video__thumbnail">
+						<img src="{{ videos[0].snippet.thumbnails.high.url }}" alt="">
+					</div>
+					<h4 class="video__title">{{ videos[0].snippet.title }}</h4>
+					<p class="video__views">{{ videos[0].statistics.viewCount }} vues</p>
+				</div>
+			{% for key,video in videos[1:2] %}
+				<div class="youtube__video">
+					<div class="video__thumbnail">
+						<img src="{{ video.snippet.thumbnails.high.url }}" alt="">
+					</div>
+					<div class="video__content">
+						<h4 class="video__title">{{ video.snippet.title }}</h4>
+						<p class="video__views">{{ video.statistics.viewCount }} vues</p>
+					</div>
+				</div>
+			{% endfor %}
 		</div>
 		<div class="social__section social__twitter">
 			<div class="social__header">
