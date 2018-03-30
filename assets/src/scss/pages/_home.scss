@@ -542,6 +542,23 @@ section.social{
         background: lighten($light-blue, 10%);
         mix-blend-mode: darken;        
       }
+      .thumbnail__hover{
+        width: 48px;
+        height: 48px;
+        position: relative;
+        z-index: 3;
+        border: 1px solid $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg{
+          width: 16px;
+          height: 16px;
+          path{
+            fill: $white;
+          }
+        }
+      }
     }
     .youtube__video{
       margin: 0 20px;

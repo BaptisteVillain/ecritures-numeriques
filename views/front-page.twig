@@ -101,13 +101,21 @@
 					<svg aria-labelledby="simpleicons-youtube-icon" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title id="simpleicons-youtube-icon">YouTube icon</title><path class="a" d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></div>
 				</a>
 				<a href="https://www.youtube.com/watch?v={{ videos[0].id }}" class="video__highlight" target="_blank">
-					<div class="video__thumbnail" style="background-image:url({{ videos[0].snippet.thumbnails.high.url }})"></div>
+					<div class="video__thumbnail" style="background-image:url({{ videos[0].snippet.thumbnails.high.url }})">
+						<div class="thumbnail__hover">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="373.008px" height="373.008px" viewBox="0 0 373.008 373.008" style="enable-background:new 0 0 373.008 373.008;" xml:space="preserve"><path d="M61.792,2.588C64.771,0.864,68.105,0,71.444,0c3.33,0,6.663,0.864,9.655,2.588l230.116,167.2 c5.963,3.445,9.656,9.823,9.656,16.719c0,6.895-3.683,13.272-9.656,16.713L81.099,370.427c-5.972,3.441-13.334,3.441-19.302,0 c-5.973-3.453-9.66-9.833-9.66-16.724V19.305C52.137,12.413,55.818,6.036,61.792,2.588z"/></svg>
+						</div>
+					</div>
 					<h3 class="video__title">{{ videos[0].snippet.title }}</h3>
 					<p class="video__views">{{ videos[0].statistics.viewCount }} vues</p>
 				</a>
 			{% for key,video in videos[1:2] %}
 				<a href="https://www.youtube.com/watch?v={{ video.id }}"class="youtube__video" target="_blank">
-					<div class="video__thumbnail" style="background-image:url({{ video.snippet.thumbnails.high.url }})"></div>
+					<div class="video__thumbnail" style="background-image:url({{ video.snippet.thumbnails.high.url }})">
+						<div class="thumbnail__hover">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="373.008px" height="373.008px" viewBox="0 0 373.008 373.008" style="enable-background:new 0 0 373.008 373.008;" xml:space="preserve"><path d="M61.792,2.588C64.771,0.864,68.105,0,71.444,0c3.33,0,6.663,0.864,9.655,2.588l230.116,167.2 c5.963,3.445,9.656,9.823,9.656,16.719c0,6.895-3.683,13.272-9.656,16.713L81.099,370.427c-5.972,3.441-13.334,3.441-19.302,0 c-5.973-3.453-9.66-9.833-9.66-16.724V19.305C52.137,12.413,55.818,6.036,61.792,2.588z"/></svg>
+						</div>
+					</div>
 					<div class="video__content">
 						<h4 class="video__title">{{ video.snippet.title }}</h4>
 						<p class="video__views">{{ video.statistics.viewCount }} vues</p>
