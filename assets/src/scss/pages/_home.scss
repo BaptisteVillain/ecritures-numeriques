@@ -546,6 +546,13 @@ section.social{
       padding-bottom: 30px;
       &:last-child{
         border-bottom: 1px solid $dark-grey;
+        @include breakpoint(700px){
+          border-bottom: none;
+        }        
+      }
+      @include breakpoint(700px){
+        padding: 0 60px;
+        padding-bottom: 30px;        
       }
       .video__thumbnail{
         width: 128px;
@@ -555,10 +562,17 @@ section.social{
         justify-content: center;
         align-items: center;
         overflow: hidden;
+        @include breakpoint(700px){
+          width: calc(128px * 1.78);
+        }     
         img{
           height: auto;
           width: 100%;
           transform: scale(1.8);
+          @include breakpoint(700px){
+            width: 100%;
+            transform: scale(1);
+          }          
         }
       }
       .video__content{
@@ -567,16 +581,25 @@ section.social{
       .video__title{
         @include font($hind, 1.6rem, 500, $black, inherit, left);
         line-height: 1.5;
+        @include breakpoint(700px){
+          font-size: 2.1rem;
+        }        
       }
       .video__views{
         @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
         margin: 0;
         margin-top: 10px;
+        @include breakpoint(700px){
+          font-size: 1.4rem;
+        }
       }
     }
     .video__highlight{
       padding: 0 20px;
       margin-bottom: 60px;
+      @include breakpoint(700px){
+        padding: 0 60px;
+      }      
       .video__thumbnail{
         display: flex;
         justify-content: center;
@@ -584,16 +607,30 @@ section.social{
         width: 100%;
         height: calc((100vw - 40px) / 1.78);
         overflow: hidden;
+        @include breakpoint(700px){
+          height: calc((50vw - 120px) / 1.78);
+          img{
+            width: 100%;
+          }     
+        }
       }
       .video__title{
         @include font($hind, 1.8rem, 500, $black, inherit, left);
         padding: 0 5px;
         margin: 20px 0 10px 0;
         line-height: 1.5;
+        @include breakpoint(700px){
+          font-size: 2.4rem;
+          margin: 20px 0 0px 0;
+          padding: 0;
+        }
       }
       .video__views{
         @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
         margin: 0;
+        @include breakpoint(700px){
+          text-align: left;
+        }        
       }
     }
   }
