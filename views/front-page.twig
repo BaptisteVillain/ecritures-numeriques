@@ -8,8 +8,8 @@
 	</section>
 	<section class="home-section events">
 		<header class="section-header events__header">
-			<h2 class="header__title">Événements à venir</h2>
-			<a href="#" class="header__link"> voir tout > </a>
+			<h2 class="header__title">{{page.events_title}}</h2>
+			<a href="#" class="header__link">{{page.events_see_more}} > </a>
 		</header>
 		<div class="section-container events__container">
 			{% for post in highlighted_event %}
@@ -20,28 +20,28 @@
 			{% endfor %}
 		</div>
 		<footer class="section-footer events__footer">
-			<a href="#" class="footer__link"> voir tout > </a>
+			<a href="#" class="footer__link">{{page.events_see_more}} > </a>
 		</footer>
 	</section>
 	<section class="home-section projects">
 		<div class="projects__container">
 			<header class="section-header projects__header">
-				<h2 class="header__title">Derniers projets</h2>
-				<a href="#" class="header__link"> Découvrir tous les projets > </a>
+				<h2 class="header__title">{{page.projects_title}}</h2>
+				<a href="#" class="header__link">{{page.projects_see_more}} ></a>
 			</header>
 			{% for key, post in projects %}
 				{% include 'partials/card-project.twig' %}			
 			{% endfor %}
 			<footer class="section-footer projects__footer">
-				<a href="" class="footer__link">Découvrir tous les projets  ></a>
+				<a href="" class="footer__link">{{page.projects_see_more}} ></a>
 			</footer>
 		</div>
 	</section>
 	<section class="home-section publications">
 		<div class="publications__container">
 			<header class="section-header publications__header">
-				<h2 class="header__title">Dernières publications</h2>
-				<a href="#" class="header__link">Consulter toutes les publications  ></a>
+				<h2 class="header__title">{{page.publications_title}}</h2>
+				<a href="#" class="header__link">{{page.publications_see_more}} ></a>
 			</header>
 			{% for key,post in publications[0:1] %}
 			{% include 'partials/card-publication.twig' with {'content': true} %}				
@@ -52,7 +52,7 @@
 			{% endfor %}
 			</div>
 			<footer class="section-footer publications__footer">
-				<a href="" class="footer__link">Consulter toutes les publications  ></a>
+				<a href="" class="footer__link">{{page.publications_see_more}} ></a>
 			</footer>
 		</div>
 	</section>
@@ -66,8 +66,8 @@
 				<div class="line"></div>
 			</div>
 			<header class="section-header rubriques__header">
-				<h2 class="header__title">Rubriques</h2>
-				<a href="#" class="header__link">Découvrir toutes les rubriques  ></a>			
+				<h2 class="header__title">{{page.rubriques_title}}</h2>
+				<a href="#" class="header__link">{{page.rubriques_see_more}} ></a>			
 			</header>
 			<ul class="rubriques__wrapper">
 			{% for key,rubrique in rubriques %}
@@ -89,7 +89,7 @@
 				</li>
 			</ul>
 			<footer class="section-footer rubriques__footer">
-				<a href="" class="footer__link">Découvrir toutes les rubriques  ></a>
+				<a href="" class="footer__link">{{page.rubriques_see_more}} ></a>
 			</footer>
 		</div>
 	</section>

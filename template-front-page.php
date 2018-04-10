@@ -6,6 +6,15 @@
 
 $context = Timber::get_context();
 
+// echo '<pre>';
+// print_r($context['language']);
+// echo '</pre>';
+
+/**
+ * Get Page Fields
+ */
+ $context['page'] = $post;
+
 /**
  * Get last publications
  */
@@ -96,8 +105,5 @@ $data[] = json_decode(file_get_contents($url), true);
 
 $context['videos'] = $data[0]['items'];
 
-// echo '<pre>';
-// print_r($context['videos']);
-// echo '</pre>';
 
 Timber::render( 'front-page.twig', $context);

@@ -1,6 +1,6 @@
 {
     "key": "group_5ab8efae0ac11",
-    "title": "Homepage",
+    "title": "FrontPage",
     "fields": [
         {
             "key": "field_5ab8efbf7d3be",
@@ -25,6 +25,25 @@
             "key": "field_5ab8eff37d3bf",
             "label": "Page Subtitle",
             "name": "page_subtitle",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "La Chaire de Recherche du Canada sur les Écritures Numériques a pour but d’offrir une nouvelle lecture de cette écriture qui racontre notre monde.",
+            "placeholder": "Page Subtitle Content",
+            "maxlength": 150,
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5acc82c1a0bbe",
+            "label": "Events Title",
+            "name": "events_title",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -34,11 +53,144 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "La Chaire de Recherche du Canada sur les Écritures Numériques a pour but  d’offrir une nouvelle lecture de cette écriture qui racontre notre monde.",
-            "placeholder": "Page Subtitle",
+            "default_value": "Événements à venir",
+            "placeholder": "Events section title",
             "prepend": "",
             "append": "",
-            "maxlength": 255
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc8312a0bbf",
+            "label": "Events See More",
+            "name": "events_see_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "voir tout",
+            "placeholder": "See More Text",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc8376a0bc0",
+            "label": "Projects Title",
+            "name": "projects_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Derniers projets",
+            "placeholder": "Projects section title",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc83d1a0bc1",
+            "label": "Projects See More",
+            "name": "projects_see_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Découvrir tout les projets",
+            "placeholder": "Project See More Text",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc840da0bc2",
+            "label": "Publications Title",
+            "name": "publications_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Dernières Publications",
+            "placeholder": "Publications Title",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc84e8a0bc3",
+            "label": "Publications See More",
+            "name": "publications_see_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Consulter toutes les publications",
+            "placeholder": "Publications See More Text",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc8525a0bc4",
+            "label": "Rubriques Title",
+            "name": "rubriques_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Rubriques",
+            "placeholder": "Rubriques Section Title",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5acc857fa0bc5",
+            "label": "Rubriques See More",
+            "name": "rubriques_see_more",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Découvrir toutes les rubriques",
+            "placeholder": "Rubriques See More Text",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -67,5 +219,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1522072562
+    "modified": 1523353930
 }
