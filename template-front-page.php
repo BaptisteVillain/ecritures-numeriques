@@ -6,10 +6,6 @@
 
 $context = Timber::get_context();
 
-// echo '<pre>';
-// print_r($context['language']);
-// echo '</pre>';
-
 /**
  * Get Page Fields
  */

@@ -21,7 +21,7 @@
 	{% endfor %}
 	{% for item in language.get_items %}
 		<li>
-		<a href="#">{{ item.title }}</a>
+			<a href="{{item.link}}">{{ item.title }}</a>
 		</li>
 	{% endfor %}
 	</ul>

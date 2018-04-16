@@ -29,9 +29,6 @@ class StarterSite extends TimberSite {
 
 	// Abstracting long chunks of code.
 
-	// The following included files only need to contain the arguments and register_whatever functions. They are applied to WordPress in these functions that are hooked to init above.
-
-	// The point of having separate files is solely to save space in this file. Think of them as a standard PHP include or require.
 
 	function register_post_types(){
 		require('lib/custom-types.php');
@@ -53,14 +50,16 @@ class StarterSite extends TimberSite {
 	// Access data site-wide.
 
 	// This function adds data to the global context of your site. In less-jargon-y terms, any values in this function are available on any view of your website. Anything that occurs on every page should be added here.
-
 	function add_to_context( $context ) {
 
 		// Our menu occurs on every page, so we add it to the global context.
 		$context['menu'] = new TimberMenu('header-menu');
 		$context['language'] = new TimberMenu('language-switch');
+		$context['socials'] = new TimberMenu('socials');
 
-		// This 'site' context below allows you to access main site information like the site title or description.
+		$context['header'] = get_fields(pll_current_language('slug'));
+		$context['footer'] = get_fields(pll_current_language('slug'));
+
 		$context['site'] = $this;
 		return $context;
 	}
@@ -69,7 +68,6 @@ class StarterSite extends TimberSite {
 	// See more here: http://twig.sensiolabs.org/doc/advanced.html
 	function add_to_twig( $twig ) {
 		$twig->addExtension( new Twig_Extension_StringLoader() );
-		$twig->addFilter( 'myfoo', new Twig_Filter_Function( 'myfoo' ) );
 		return $twig;
 	}
 
@@ -90,9 +88,6 @@ function my_scripts() {
 	// Use jQuery from a CDN
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
-
-	// Enqueue our stylesheet and JS file with a jQuery dependency.
-	// Note that we aren't using WordPress' default style.css, and instead enqueueing the file of compiled Sass.
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/public/css/main.min.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/public/js/main.min.js', array('jquery'), '1.0.0', true );
 }
@@ -220,9 +215,9 @@ add_action('acf/save_post', 'check_save_event', 1);
 add_action('after_setup_theme', 'remove_admin_bar');
  
 function remove_admin_bar() {
-// if (!current_user_can('administrator') && !is_admin()) {
+	// if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);
-// }
+	// }
 }
 
 
@@ -234,4 +229,45 @@ function remove_auto_tags( $content )
 {
 	remove_filter('the_content', 'wpautop');
 	return $content;
+}
+
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title'    => 'Footer',
+		'menu_title'    => 'Footer',
+		'menu_slug'     => 'footer-generales',
+		'capability'    => 'edit_posts',
+		'redirect'      => true
+	));
+
+  $languages = array( 'fr', 'en' );
+  foreach ( $languages as $lang ) {
+    acf_add_options_sub_page( array(
+      'page_title' => 'Footer (' . strtoupper( $lang ) . ')',
+      'menu_title' => __('Footer (' . strtoupper( $lang ) . ')', 'text-domain'),
+      'menu_slug'  => "footer-${lang}",
+			'post_id'    => $lang,
+			'parent_slug'   => 'footer-generales',			
+		));
+	}
+	acf_add_options_page(array(
+		'page_title'    => 'Header',
+		'menu_title'    => 'Header',
+		'menu_slug'     => 'header-generales',
+		'capability'    => 'edit_posts',
+		'redirect'      => true
+	));
+
+  $languages = array( 'fr', 'en' );
+  foreach ( $languages as $lang ) {
+    acf_add_options_sub_page( array(
+      'page_title' => 'Header (' . strtoupper( $lang ) . ')',
+      'menu_title' => __('Header (' . strtoupper( $lang ) . ')', 'text-domain'),
+      'menu_slug'  => "header-${lang}",
+			'post_id'    => $lang,
+			'parent_slug'   => 'header-generales',			
+		));
+	}
+	
 }

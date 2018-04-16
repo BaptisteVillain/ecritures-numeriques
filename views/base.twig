@@ -10,7 +10,7 @@
 			<div class="site-header__wrapper">
 				{% block header %}
 					<a class="site-header__logo" href="{{site.link}}" rel="home">
-						<img src="http://localhost:7777/hetic/H3/ecriture-numerique/wp-content/uploads/2018/03/logo.svg" alt="logo">
+						<img src="{{header.logo}}" alt="logo">
 					</a>
 					{% include 'partials/nav.twig' %}
 				{% endblock %}

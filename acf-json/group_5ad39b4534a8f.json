@@ -1,0 +1,50 @@
+{
+    "key": "group_5ad39b4534a8f",
+    "title": "Footer",
+    "fields": [
+        {
+            "key": "field_5ad39b4d5843a",
+            "label": "Description",
+            "name": "description",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "La Chaire de recherche sur les Écritures numériques est un domaine de recherche enseigné à l’université du Canada. L’ensemble des projets est mené par Marcello Vitali-Rosati et son équipe. Nous vivons dans un espace numérique, composé d'écriture. Les objets et nos actions sont faits d'écriture. La Chaire de recherche du Canada sur les Écritures numériques a pour objectif de proposer une nouvelle lecture et une nouvelle compréhension de cette écriture qui fait désormais notre monde.",
+            "placeholder": "Description",
+            "maxlength": 500,
+            "rows": "",
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "footer-fr"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "footer-en"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1523841577
+}
