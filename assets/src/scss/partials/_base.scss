@@ -71,7 +71,8 @@ header.section-header{
 			justify-content: center;
 			align-items: center;
 			height: 100%;		
-			margin-right: 60px;
+			margin-right: 50px;
+			padding: 0 10px;
 			@include font($source, 1.6rem, 600, $dark-blue, uppercase, center);
 		}
 	}

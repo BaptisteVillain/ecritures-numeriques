@@ -59,6 +59,11 @@ class StarterSite extends TimberSite {
 
 		$context['header'] = get_fields(pll_current_language('slug'));
 		$context['footer'] = get_fields(pll_current_language('slug'));
+		$context['footer']['icon_svg'] = file_get_contents($context['footer']['icon']);
+
+		foreach ($context['footer']['socials'] as $key => $social) {
+			$context['footer']['socials'][$key]['svg'] = file_get_contents($social['icon']);
+		}
 
 		$context['site'] = $this;
 		return $context;
