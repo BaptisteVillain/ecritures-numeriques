@@ -14,6 +14,16 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 
+$authors = [];
+
+foreach ($post->custom['authors'] as $key => $author) {
+	# code...
+}
+
+echo '<pre>';
+print_r($post->custom['authors']);
+echo '</pre>';
+
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
