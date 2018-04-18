@@ -1,0 +1,52 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include "partials/background-lines.twig" %}
+	<div class="publication-wrapper">
+		<div class="publication__discover-list">
+			<h3 class="discover-list__title">découvrir aussi</h3>
+			<div class="discover-list__item">
+				<h5 class="discover__research-field">Theorie des medias</h5>
+				<h5 class="discover__title">Hello You</h5>
+				<h5 class="discover__authors">Marcello Vitali-Rosati</h5>
+			</div>
+		</div>
+		<article class="publication">
+			<p class="publication__research-field">théorie des medias</p>
+			<h2 class="publication__title">{{post.title}}</h2>
+			<p class="publication__authors">Par {{post.publication_authors | join(',')}}</p>
+			<p class="publication__date">Pubié le [20 MAR 2017] sur Sens Public</p>
+			<a href="#" class="publication__link">lire sur sens public ></a>
+			<p class="publication__content">{{post.content}}</p>
+			<ul class="publication__tags">
+				<li class="tag">Production des contenus</li>
+				<li class="tag">Production des contenus</li>
+				<li class="tag">Production des contenus</li>
+			</ul>
+			<div class="publication__transition">
+
+			</div>
+		</article>
+	</div>
+	{# <div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+				<h1 class="article-title">{{post.title}}</h1>
+				<p class="blog-author">
+					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+				</p>
+			</section>
+			<section class="comments">
+				<div class="respond">
+					<h3 class="h2">Comments</h3>
+					{{ comment_form }}
+				</div>
+				<div class="responses">
+					{% for cmt in post.get_comments() %}
+						{% include "comment.twig" with { comment:cmt } %}
+					{% endfor %}
+				</div>
+			</section>
+		</article>
+	</div><!-- /content-wrapper --> #}
+{% endblock %}

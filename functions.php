@@ -124,7 +124,7 @@ function custom_posts_menu() {
 		}
 	}
 }
-add_action('admin_menu', 'custom_posts_menu');
+// add_action('admin_menu', 'custom_posts_menu');
 
 
 
@@ -218,7 +218,6 @@ add_action('acf/save_post', 'check_save_event', 1);
  * Hide admin bar
  */
 add_action('after_setup_theme', 'remove_admin_bar');
- 
 function remove_admin_bar() {
 	// if (!current_user_can('administrator') && !is_admin()) {
   show_admin_bar(false);
