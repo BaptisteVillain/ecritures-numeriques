@@ -4,7 +4,9 @@
 	{% include "partials/background-lines.twig" %}
 	<div class="publication-wrapper">
 		<div class="publication__discover-list">
-			<h3 class="discover-list__title">découvrir aussi</h3>
+			{% if discovers is not empty %}
+				<h3 class="discover-list__title">découvrir aussi</h3>
+			{% endif %}
 			{% for publication in discovers %}
 				<div class="discover-list__item">
 					<p class="discover__research-field">{{publication.research_field.name}}</p>
@@ -27,7 +29,7 @@
 				<a href="{{post.url}}" class="publication__link" target="_blank">lire sur {{domain}} ></a>
 			{% endif %}
 			<p class="publication__content">{{post.content}}</p>
-			{% if tags %}
+			{% if tags is not empty %}
 				<ul class="publication__tags">
 					{% for tag in tags%}
 						<li class="tag">{{tag.name}}</li>
