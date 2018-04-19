@@ -3,7 +3,7 @@
   @include breakpoint(700px){
     display: flex;
     flex-direction: row;
-    margin: 60px calc(10vw - 1px) 0 calc(10vw - 1px);
+    padding: 60px calc(10vw - 1px) 0 calc(10vw - 1px);
   }
   .publication__discover-list{
     display: none;
@@ -61,6 +61,9 @@
       @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
       a{
         color: darken($dark-grey, 20%);
+      }
+      .date__uppercase{
+        text-transform: uppercase;
       }
     }
     .publication__link{
