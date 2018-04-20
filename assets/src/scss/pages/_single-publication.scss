@@ -3,7 +3,7 @@
   @include breakpoint(700px){
     display: flex;
     flex-direction: row;
-    padding: 60px calc(10vw - 1px) 0 calc(10vw - 1px);
+    padding: 60px $padding-main 0 $padding-main;
   }
   .publication__discover-list{
     display: none;
@@ -38,7 +38,7 @@
   .publication{
     width: 100%;
     @include breakpoint(700px){
-      margin-left: calc(5vw - 3px);
+      margin-left: calc(100% / 4 - 15vw);
       width: 55vw;
     }    
     .publication__research-field{
