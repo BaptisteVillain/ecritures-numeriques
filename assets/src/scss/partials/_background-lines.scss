@@ -9,8 +9,7 @@
   justify-content: space-between;
   padding: 0 20px;
   @include breakpoint(700px){
-    justify-content: space-around;
-    padding: 0;
+    padding: 0 $padding-main;
   }
   .line{
     width: 1px;
