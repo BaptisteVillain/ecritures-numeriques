@@ -233,6 +233,7 @@
               .title__count{
                 display: none;
                 @include breakpoint(700px){
+                  display: block;
                   margin-bottom: 4px;
                   height: 18px;
                   line-height: 18px;
