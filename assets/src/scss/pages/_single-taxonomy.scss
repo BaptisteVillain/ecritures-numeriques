@@ -4,46 +4,96 @@
   height: auto;
   .taxonomy__header{
     width: 100%;
-    height: 175px;
-    background: $dark-blue;
-    padding-left: 10vw;
+    padding-left: 20px;
+    @include breakpoint(700px){
+      padding-left: $padding-main;
+      background: $dark-blue;
+      height: 175px;
+    }    
     .header__link{
       display: inline-block;
       margin-top: 25px;
-      @include font($source, 1.4rem, 600, $blue-grey, uppercase, left);      
+      @include font($source, 1.4rem, 600, $black, uppercase, left); 
+      @include breakpoint(700px){
+        color: $blue-grey;
+      }           
     }
     .header__parent{
-      margin-top: 30px;
-      @include font($source, 1.6rem, 600, $pink, uppercase, left);      
+      margin-top: 40px;
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);      
+      @include breakpoint(700px){
+        margin-top: 30px;
+        color: $pink;
+        font-size: 1.6rem;
+      }      
     }
     .header__title{
-      margin-top: 0px;
-      @include font($hind, 3rem, 500, $white, capitalize, left);      
+      margin-top: 10px;
+      @include font($hind, 2.7rem, 500, $black, capitalize, left);
+      @include breakpoint(700px){
+        margin-top: 0px;
+        color: $white;
+        font-size: 3rem;
+      }         
     }
   }
   .taxonomy__wrapper{
-    width: 100%;
-    min-height: calc(100vh - 175px - 80px);
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     position: relative;
-    .taxonomy__about{
-      width: calc(50vw - 2px);
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    @include breakpoint(700px){
+      flex-direction: row;
       min-height: calc(100vh - 175px - 80px);
-      padding: 60px 60px 60px $padding-main;
+    }    
+    .taxonomy__about{
+      width: 100%;
+      height: auto;
+      padding: 30px 20px 60px 20px;
       display: flex;
       flex-direction: column;
+      @include breakpoint(700px){
+        padding: 60px 60px 60px $padding-main;
+        width: calc(50vw - 2px);
+        min-height: calc(100vh - 175px - 80px);
+      }
       p{
         @include font($hind, 1.8rem, 400, $black, inherit, left);
         line-height: 1.56;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
+        @include breakpoint(700px){
+          margin-bottom: 60px;
+        }        
+      }
+      .taxonomy__count{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        @include breakpoint(700px){
+          display: none;
+        }        
+        li{
+          h5{
+            @include font($source, 1.4rem, 400, $dark-grey, uppercase, left);
+          }
+          p{
+            margin-top: 5px;
+            @include font($source, 1.4rem, 400, $light-blue, uppercase, left);
+          }
+        }
       }
       .taxonomy__discovers{
-        margin-top: auto;
+        margin-top: auto; 
         h4{
-          @include font($source, 1.4rem, 600, $black, uppercase, left);
+          @include font($source, 1.2rem, 600, $black, uppercase, left);
           margin-bottom: 10px;
+          @include breakpoint(700px){
+            font-size: 1.4rem
+          }          
         }
         ul{
           display: flex;
@@ -54,25 +104,37 @@
             margin-bottom: 10px;
             height: 40px;
             line-height: 40px;
-            padding: 0 20px;
+            padding: 0 10px;
             background: $light-grey;
             @include font($cabin, 1.4rem, 400, $dark-grey, inherit, center);
             font-size: 1.6rem; 
+            @include breakpoint(700px){
+              padding: 0 20px;
+            }            
           }
         }
       }
       .taxonomy__footer{
-        margin-top: 40px;
+        margin-top: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        @include breakpoint(700px){
+          margin-top: 40px;
+        }        
         .footer__link{
           p{
-            @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
+            @include font($source, 1.2rem, 400, $dark-grey, capitalize, left);
             margin-bottom: 10px;
+            @include breakpoint(700px){
+              font-size: 1.4rem;
+            }            
           }
           a{
-            @include font($source, 1.6rem, 600, $light-blue, uppercase, left);
+            @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+            @include breakpoint(700px){
+              font-size: 1.6rem;
+            }            
           }
           &:last-child{
             p{
@@ -83,14 +145,17 @@
       }
     }
     .taxonomy__related{
-      position: absolute;
-      top: -60px;
-      bottom: 0;
-      right: 0;
-      width: calc(50vw + 2px);
-      border-left: 1px solid $dark-grey;
-      border-top: 1px solid $dark-grey;
+      width: 100%;
       background: $white;
+      @include breakpoint(700px){
+        position: absolute;
+        top: -60px;
+        bottom: 0;
+        right: 0;
+        width: calc(50vw + 2px);
+        border-left: 1px solid $dark-grey;
+        border-top: 1px solid $dark-grey;
+      }      
       .related__header{
         height: 60px;
         background: $white;
