@@ -304,9 +304,9 @@ section.publications{
 }
 
 
-section.rubriques{
+section.home-section.rubrics{
   overflow: hidden;
-  .rubriques__header{
+  .rubrics__header{
     background: $pink;
     .header__title{
       background: $dark-blue;
@@ -316,17 +316,17 @@ section.rubriques{
       color: $dark-blue;
     }    
   }
-  .rubriques__footer{
+  .rubrics__footer{
     background: $pink;
   }
-  .rubriques__container{
+  .rubrics__container{
     position: relative;
     padding: 120px 20px;
     @include breakpoint(700px){
       padding: 250px $padding;
     }
   }
-  .rubriques__wrapper{
+  .rubrics__wrapper{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -334,7 +334,7 @@ section.rubriques{
     @include breakpoint(700px){
       position: relative;
     }    
-    .rubriques__item{
+    .rubrics__item{
       width: 100%;
       @include breakpoint(700px){
         width: calc(100% / 4);
@@ -394,6 +394,16 @@ section.rubriques{
       height: 0;
       overflow: hidden;
       transition: height .35s $easing;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background:$dark-grey;
+      }
       @include breakpoint(700px){
         position: absolute;
         top: 78px;
@@ -408,7 +418,7 @@ section.rubriques{
         }
       }
     }
-    .rubriques__subItem{
+    .rubrics__subItem{
       width: 100%;
       height: 60px;
       border: 1px solid $dark-grey;
@@ -448,7 +458,7 @@ section.rubriques{
       }
     }
   }
-  .rubriques__lines{
+  .rubrics__lines{
     width: 100%;
     height: 100%;
     position: absolute;

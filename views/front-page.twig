@@ -56,26 +56,26 @@
 			</footer>
 		</div>
 	</section>
-	<section class="home-section rubriques">
-		<div class="rubriques__container">
-			<div class="rubriques__lines">
+	<section class="home-section rubrics">
+		<div class="rubrics__container">
+			<div class="rubrics__lines">
 				<div class="line"></div>
 				<div class="line"></div>
 				<div class="line"></div>
 				<div class="line"></div>
 				<div class="line"></div>
 			</div>
-			<header class="section-header rubriques__header">
-				<h2 class="header__title">{{page.rubriques_title}}</h2>
-				<a href="#" class="header__link">{{page.rubriques_see_more}} ></a>			
+			<header class="section-header rubrics__header">
+				<h2 class="header__title">{{page.rubrics_title}}</h2>
+				<a href="#" class="header__link">{{page.rubrics_see_more}} ></a>			
 			</header>
-			<ul class="rubriques__wrapper">
-			{% for key,rubrique in rubriques %}
-				<li class="rubriques__item">
-					<button class="item__button {% if key == 0 %}desktop-active{% endif %}">{{rubrique[0].taxonomy}} <span>></span></button>
+			<ul class="rubrics__wrapper">
+			{% for key,rubric in rubrics %}
+				<li class="rubrics__item">
+					<button class="item__button {% if key == 0 %}desktop-active{% endif %}">{{rubric[0].taxonomy}} <span>></span></button>
 					<ul class="item__wrapper {% if key == 0 %}desktop-active{% endif %}">
-						{% for item in rubrique[0:19] %}
-						<li class="rubriques__subItem">
+						{% for item in rubric[0:19] %}
+						<li class="rubrics__subItem">
 							<a href="#">{{item.name}}</a>
 						</li>
 						{% endfor %}
@@ -88,7 +88,7 @@
 					{% endfor %}
 				</li>
 			</ul>
-			<footer class="section-footer rubriques__footer">
+			<footer class="section-footer rubrics__footer">
 				<a href="" class="footer__link">{{page.rubriques_see_more}} ></a>
 			</footer>
 		</div>

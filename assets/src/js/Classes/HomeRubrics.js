@@ -1,15 +1,16 @@
-class Rubriques {
-  constructor(container) {
+class Rubrics {
+  constructor(container, desktop = true) {
     this.container = container
     this.buttons = container.querySelectorAll('.item__button')
     this.wrappers = container.querySelectorAll('.item__wrapper')
-    this.last_index = null;
+    this.last_index = null
+    this.desktop = desktop
 
     this.buttons.forEach(button => {
       button.addEventListener('click', e => {
         e.preventDefault()
         const index = Array.prototype.indexOf.call(this.buttons, button)
-        
+
         if (window.innerWidth < 700) {
           button.classList.add('mobile-active')
           this.wrappers[index].style.height = `${this.wrappers[index].childElementCount * 60}px`
@@ -22,7 +23,7 @@ class Rubriques {
             }
           })
 
-        } else {
+        } else if (desktop) {
           button.classList.add('desktop-active')
           this.wrappers[index].classList.add('desktop-active')
 
@@ -43,4 +44,4 @@ class Rubriques {
   }
 }
 
-module.exports = Rubriques
+module.exports = Rubrics

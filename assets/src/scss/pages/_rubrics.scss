@@ -1,0 +1,151 @@
+.page-rubrics{
+  .rubrics__header{
+    background: $dark-blue;
+    @include breakpoint(700px){
+      padding: 0 $padding-main;
+      display: flex;
+      flex-direction: row;
+      min-height: 100px;
+      align-items: center;
+    }    
+    h2{
+      width: 100%;
+      @include font($hind, 1.6rem, 600, $white, uppercase, center);
+      border-bottom: 1px solid $white;
+      height: 60px;
+      line-height: 59px;
+      flex-shrink: 0;
+      @include breakpoint(700px){
+        width: calc(100% / 4);
+        border-bottom: none;
+        font-size: 2rem;
+      }      
+    }
+    p{
+      padding: 30px 20px;
+      @include font($hind, 1.6rem, 400, $white, inherit, left);
+      line-height: 1.56;
+      @include breakpoint(700px){
+        padding: 25px 0;
+      }      
+    }
+  }
+  position: relative;
+  .rubrics__wrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 20px;    
+    @include breakpoint(700px){
+      padding: 60px $padding-main;
+      position: relative;
+      flex-direction: column;
+    }    
+    .rubrics__item{
+      width: 100%;
+      margin-top: 30px;
+      &:first-child{
+        margin-top: 0;
+      }      
+      @include breakpoint(700px){
+        margin-top: 60px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+      }
+    }
+    .item__button{
+      width: 100%;
+      height: 60px;
+      padding: 0 20px;
+      @include font($hind, 1.4rem, 600, $dark-blue, uppercase, left);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border: 1px solid $dark-blue;
+      transition: color .25s $easing;
+      background: $light-grey;
+      span{
+        transform: rotate(90deg);
+        transition: transform .3s $easing;
+        @include breakpoint(700px){
+          display: none;
+        }    
+      }
+      &.mobile-active{
+        color: $dark-blue;
+        span{
+          transform: rotate(-90deg);
+        }
+      }
+      @include breakpoint(700px){
+        width: 15vw;
+        margin: 0;
+        height: 45px;
+        transition: none; 
+        justify-content: center;
+        &.mobile-active{
+          color: inherit;
+        }
+        &.desktop-active{
+          color: $dark-blue;
+        }
+      }
+    }
+    .item__wrapper{
+      height: 0;
+      overflow: hidden;
+      transition: height .35s $easing;
+      position: relative;
+      @include breakpoint(700px){
+        height: auto;
+        margin-left: calc(100% / 4 - 15vw - 1px);
+        width: calc(100% / 4 * 3);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow: visible;
+        margin-top: 1px;        
+      }      
+      &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 1px;
+        width: 100%;
+        background:$dark-grey;
+        @include breakpoint(700px){
+          display: none;
+        }        
+      }
+    }
+    .rubrics__subItem{
+      width: 100%;
+      height: 60px;
+      border: 1px solid $dark-grey;
+      border-top: none;
+      background: $white;
+      @include breakpoint(700px){
+        width: calc(100% / 4 + 1px);
+        height: 45px;
+        border: 1px solid $dark-grey;
+        background: #ffffff;
+        margin-top: -1px;
+        margin-right: -1px;
+      }      
+      a{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        @include font($hind, 1.2rem, 500, $black, uppercase, center);
+        @include breakpoint(700px){
+          font-size: 1.2rem;
+          justify-content: center;
+        }        
+      }
+    }
+  }
+}
