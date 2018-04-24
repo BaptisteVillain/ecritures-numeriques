@@ -6,6 +6,9 @@
   "repository": "https://github.com/Thaelene/static-template.git",
   "author": "thaelene <helene.ta@hetic.net>",
   "license": "MIT",
+  "scripts": {
+    "dev": "gulp default"
+  },
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
@@ -36,5 +39,10 @@
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-if": "^2.0.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-wp-pot": "^2.2.0",
+    "run-sequence": "^2.2.1"
+  }
 }

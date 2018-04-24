@@ -6,6 +6,7 @@ import scripts from './scripts'
 import copies  from './copies'
 import server  from './server'
 import watch   from './watch'
+import pot   from './pot'
 /* eslint-enable */
 
 gulp.task(
@@ -14,13 +15,13 @@ gulp.task(
     'clean',
     gulp.parallel('styles', 'images', 'scripts', 'copies'),
     done => {
-      console.log('Production environment built');
-      done();
+      console.log('Production environment built')
+      done()
     }
   )
-);
+)
 
 gulp.task(
   'default',
-  gulp.series('build', gulp.parallel('server', 'watch'), () => {})
-);
+  gulp.series('build', gulp.parallel('server', 'watch', 'pot'), () => {})
+)

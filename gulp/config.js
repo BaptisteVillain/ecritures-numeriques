@@ -1,6 +1,6 @@
-const APP_SRC    = 'src/';
-const APP_DEST   = 'public/';
-const APP_ASSETS = 'public/';
+const APP_SRC    = './assets/src/'
+const APP_DEST   = './assets/public/'
+const APP_ASSETS = './assets/public/'
 
 module.exports = {
   bsServer: {
@@ -51,5 +51,15 @@ module.exports = {
     autoprefixerOpts: {
       browsers: ['last 2 versions', 'ie >= 10']
     }
+  },
+
+  templates: {
+    watchSrc: './views/',
+    text_domain: 'ecritures-numeriques', // Replace with your domain
+    twig_files: 'views/**/*.twig', // Twig Files
+    php_files: '**/*.php', // PHP Files
+    cacheFolder: 'views/cache/**', // Cache Folder
+    destFolder: 'languages', // Folder where .pot file will be saved
+    keepCache: false // Delete cache files after script finishes
   }
-};
+}

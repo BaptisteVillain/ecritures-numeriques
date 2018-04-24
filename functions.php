@@ -99,6 +99,10 @@ function my_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
 
+function my_theme_add_editor_styles() {
+	add_editor_style( get_template_directory_uri() . '/assets/public/css/editor.css' );
+}
+add_action( 'init', 'my_theme_add_editor_styles' );
 
 
 
@@ -118,13 +122,13 @@ function custom_posts_menu() {
 		'key_concept'
 	);
 
-	foreach ($post_type as $key => $type) {
-		foreach ($taxonomies as $key => $taxo) {
-			remove_submenu_page( 'edit.php?post_type='.$type.'', 'edit-tags.php?taxonomy='.$taxo.'&amp;post_type='.$type.'' );
-		}
-	}
+	// foreach ($post_type as $key => $type) {
+	// 	foreach ($taxonomies as $key => $taxo) {
+	// 		remove_submenu_page( 'edit.php?post_type='.$type.'', 'edit-tags.php?taxonomy='.$taxo.'&amp;post_type='.$type.'' );
+	// 	}
+	// }
 }
-// add_action('admin_menu', 'custom_posts_menu');
+add_action('admin_menu', 'custom_posts_menu');
 
 
 
