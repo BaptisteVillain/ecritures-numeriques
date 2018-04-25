@@ -51,17 +51,17 @@
     .taxonomy__about{
       width: 100%;
       height: auto;
-      padding: 30px 20px 60px 20px;
+      padding: 30px 20px 30px 20px;
       display: flex;
       flex-direction: column;
       @include breakpoint(700px){
-        padding: 60px 60px 60px $padding-main;
+        padding: 30px 60px 30px $padding-main;
         width: calc(50vw - 2px);
         min-height: calc(100vh - 175px - 80px);
       }
       p{
-        @include font($hind, 1.8rem, 400, $black, inherit, left);
-        line-height: 1.56;
+        @include font($hind, 1.4rem, 400, $black, inherit, left);
+        line-height: 1.71;
         margin-bottom: 40px;
         @include breakpoint(700px){
           margin-bottom: 60px;
@@ -87,7 +87,7 @@
         }
       }
       .taxonomy__discovers{
-        margin-top: auto; 
+        margin-bottom: 20px;
         h4{
           @include font($source, 1.2rem, 600, $black, uppercase, left);
           margin-bottom: 10px;
@@ -105,8 +105,8 @@
             height: 40px;
             line-height: 40px;
             padding: 0 10px;
-            background: $light-grey;
-            @include font($cabin, 1.4rem, 400, $dark-grey, inherit, center);
+            background: $pink;
+            @include font($hind, 1.4rem, 400, $black, inherit, center);
             font-size: 1.6rem; 
             @include breakpoint(700px){
               padding: 0 20px;
@@ -115,13 +115,10 @@
         }
       }
       .taxonomy__footer{
-        margin-top: 20px;
+        margin-top: auto;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        @include breakpoint(700px){
-          margin-top: 40px;
-        }        
         .footer__link{
           display: flex;
           flex-direction: column;
@@ -171,7 +168,7 @@
           height: 60px;
           padding: 0;
           border-top: none;
-          background: $white;
+          background: $dark-blue;
         }        
         ul{
           display: flex;
@@ -222,12 +219,15 @@
                   .header__label{
                     color: $dark-blue;
                   }
+                  .title__count{
+                    color: $dark-blue;
+                  }                  
                 }                
               }
               .header__label{
                 @include font($hind, 1.4rem, 600, $black, uppercase, center);
                 @include breakpoint(700px){
-                  color: $dark-grey;
+                  color: $white;
                 }                
               }
               .title__count{
@@ -240,7 +240,7 @@
                   min-width: 18px;
                   background: rgba($dark-grey, .15);
                   margin-left: 10px;
-                  @include font($source, 1.2rem, 400, $dark-grey, uppercase, center);
+                  @include font($source, 1.2rem, 400, $pink, uppercase, center);
                 }                
               }
             }
@@ -272,6 +272,7 @@
           background: $white;
           display: flex;
           flex-direction: column;
+          border: 1px solid $dark-grey;
           @include breakpoint(700px){
             flex-direction: row;
           }

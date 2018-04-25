@@ -65,6 +65,13 @@
       border: 1px solid $dark-blue;
       transition: color .25s $easing;
       background: $light-grey;
+      @include breakpoint(700px){
+        pointer-events: none;
+        text-align: center;
+        padding: 10px 20px;
+        height: auto;
+        min-height: 60px;
+      }      
       span{
         transform: rotate(90deg);
         transition: transform .3s $easing;
@@ -106,7 +113,7 @@
         flex-wrap: wrap;
         overflow: visible;
         margin-top: 1px;        
-      }      
+      }   
       &::after{
         content: "";
         position: absolute;
@@ -127,13 +134,25 @@
       border-top: none;
       background: $white;
       @include breakpoint(700px){
-        width: calc(100% / 4 + 1px);
+        width: calc(100% / 2 + 1px);
         height: 45px;
         border: 1px solid $dark-grey;
         background: #ffffff;
         margin-top: -1px;
         margin-right: -1px;
-      }      
+      }
+      @include breakpoint(900px){
+        width: calc(100% / 3 + 1px);
+      }
+      @include breakpoint(1100px){
+        width: calc(100% / 4 + 1px);
+      }
+      @include breakpoint(1600px){
+        width: calc(100% / 5 + 1px);
+      }
+      @include breakpoint(2100px){
+        width: calc(100% / 6 + 1px);
+      }
       a{
         display: flex;
         align-items: center;

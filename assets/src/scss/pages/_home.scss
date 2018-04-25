@@ -50,6 +50,9 @@ section.events{
       margin-top: -1px;
       display: flex;
       flex-direction: column;
+      :first-child(), :nth-child(2){
+        margin-top: 0;
+      }
       @include breakpoint(800px){
         width: calc(100% / 3);
         min-height: 350px;
@@ -58,9 +61,6 @@ section.events{
           border-left: none;
           border-right: none;
         }
-      }
-      &:first-child{
-        margin-top: 0px;
       }
       .card__surtitle{
         @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
