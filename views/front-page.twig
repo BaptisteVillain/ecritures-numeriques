@@ -8,8 +8,8 @@
 	</section>
 	<section class="home-section events">
 		<header class="section-header events__header">
-			<h2 class="header__title">{{page.events_title}}</h2>
-			<a href="#" class="header__link">{{page.events_see_more}} > </a>
+			<h2 class="header__title">{{__('Événements à venir', 'ecritures-numeriques')}}</h2>
+			<a href="#" class="header__link">{{__('Voir tout', 'ecritures-numeriques')}} > </a>
 		</header>
 		<div class="section-container events__container">
 			{% for post in highlighted_event %}
@@ -20,28 +20,28 @@
 			{% endfor %}
 		</div>
 		<footer class="section-footer events__footer">
-			<a href="#" class="footer__link">{{page.events_see_more}} > </a>
+			<a href="#" class="footer__link">{{__('Voir tout', 'ecritures-numeriques')}}> </a>
 		</footer>
 	</section>
 	<section class="home-section projects">
 		<div class="projects__container">
 			<header class="section-header projects__header">
-				<h2 class="header__title">{{page.projects_title}}</h2>
-				<a href="#" class="header__link">{{page.projects_see_more}} ></a>
+				<h2 class="header__title">{{__('Derniers projets', 'ecritures-numeriques')}}</h2>
+				<a href="#" class="header__link">{{__('Découvrir tout les projets', 'ecritures-numeriques')}} ></a>
 			</header>
 			{% for key, post in projects %}
 				{% include 'partials/card-project.twig' %}			
 			{% endfor %}
 			<footer class="section-footer projects__footer">
-				<a href="" class="footer__link">{{page.projects_see_more}} ></a>
+				<a href="" class="footer__link">{{__('Découvrir tout les projets', 'ecritures-numeriques')}} ></a>
 			</footer>
 		</div>
 	</section>
 	<section class="home-section publications">
 		<div class="publications__container">
 			<header class="section-header publications__header">
-				<h2 class="header__title">{{page.publications_title}}</h2>
-				<a href="#" class="header__link">{{page.publications_see_more}} ></a>
+				<h2 class="header__title">{{__('Derniéres publications', 'ecritures-numeriques')}}</h2>
+				<a href="#" class="header__link">{{__('Consulter toutes les publications', 'ecritures-numeriques')}} ></a>
 			</header>
 			{% for key,post in publications[0:1] %}
 			{% include 'partials/card-publication.twig' with {'content': true} %}				
@@ -52,7 +52,7 @@
 			{% endfor %}
 			</div>
 			<footer class="section-footer publications__footer">
-				<a href="" class="footer__link">{{page.publications_see_more}} ></a>
+				<a href="" class="footer__link">{{__('Consulter toutes les publications', 'ecritures-numeriques')}} ></a>
 			</footer>
 		</div>
 	</section>
@@ -66,20 +66,20 @@
 				<div class="line"></div>
 			</div>
 			<header class="section-header rubrics__header">
-				<h2 class="header__title">{{page.rubrics_title}}</h2>
-				<a href="#" class="header__link">{{page.rubrics_see_more}} ></a>			
+				<h2 class="header__title">{{__('Rubriques', 'ecritures-numeriques')}}</h2>
+				<a href="#" class="header__link">{{__('Découvrir toutes les rubriques', 'ecritures-numeriques')}} ></a>			
 			</header>
 			<ul class="rubrics__wrapper">
 			{% for key,rubric in rubrics %}
 				<li class="rubrics__item">
 					{% if key == 0 %}
-						<button class="item__button desktop-active">théories<span>></span></button>
+						<button class="item__button desktop-active">{{__('Théorie', 'ecritures-numeriques')}}<span>></span></button>
 					{% elseif key == 1 %}
-						<button class="item__button">axes<span>></span></button>
+						<button class="item__button">{{__('Axes', 'ecritures-numeriques')}}<span>></span></button>
 					{% elseif key == 2 %}
-						<button class="item__button">objets de recherche<span>></span></button>
+						<button class="item__button">{{__('Objets de recherche', 'ecritures-numeriques')}}<span>></span></button>
 					{% elseif key == 3 %}
-						<button class="item__button">concepts clés<span>></span></button>
+						<button class="item__button">{{__('Concepts clés', 'ecritures-numeriques')}}<span>></span></button>
 					{% endif %}
 					<ul class="item__wrapper {% if key == 0 %}desktop-active{% endif %}">
 						{% for item in rubric[0:19] %}
@@ -97,7 +97,7 @@
 				</li>
 			</ul>
 			<footer class="section-footer rubrics__footer">
-				<a href="" class="footer__link">{{page.rubriques_see_more}} ></a>
+				<a href="" class="footer__link">{{__('Découvrir toutes les rubriques', 'ecritures-numeriques')}} ></a>
 			</footer>
 		</div>
 	</section>

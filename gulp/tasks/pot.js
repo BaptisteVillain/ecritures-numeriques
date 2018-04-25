@@ -122,7 +122,6 @@ gulp.task('compile-twigs', () => {
 /**
  * Main Task
  */
-gulp.task('pot', done => {
-  gulp.series('compile-twigs', 'generate-pot')
-  done();
+gulp.task('pot', gulp.series('compile-twigs', 'generate-pot'), done => {
+  done()
 })

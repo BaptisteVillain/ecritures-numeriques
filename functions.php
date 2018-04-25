@@ -60,6 +60,7 @@ class StarterSite extends TimberSite {
 		$context['header'] = get_fields(pll_current_language('slug'));
 		$context['footer'] = get_fields(pll_current_language('slug'));
 		$context['footer']['icon_svg'] = file_get_contents($context['footer']['icon']);
+		$context['footer']['year'] = date('Y');
 
 		foreach ($context['footer']['socials'] as $key => $social) {
 			$context['footer']['socials'][$key]['svg'] = file_get_contents($social['icon']);
@@ -104,7 +105,11 @@ function my_theme_add_editor_styles() {
 }
 add_action( 'init', 'my_theme_add_editor_styles' );
 
-
+function textdomain_init() {
+	$plugin_rel_path = basename( dirname( __FILE__ ) ) . '/languages';
+	load_plugin_textdomain( 'ecritures-numeriques', false, $plugin_rel_path );
+}
+add_action('plugins_loaded', 'textdomain_init');
 
 function custom_posts_menu() {
 	remove_menu_page('edit.php');
