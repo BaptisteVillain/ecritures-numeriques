@@ -341,11 +341,81 @@ section.home-section.rubrics{
         &:first-child{
           .item__button{
             border-left: 1px solid $dark-blue;
+            &.desktop-active{
+              &::before{
+                content: "";
+                position: absolute;
+                right: -1px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+            }
+          }
+        }
+        &:nth-child(2){
+          .item__button{
+            &.desktop-active{
+              &::after{
+                content: "";
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+              &::before{
+                content: "";
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+            }
+          }
+        }
+        &:nth-child(3){
+          .item__button{
+            &.desktop-active{
+              &::after{
+                content: "";
+                position: absolute;
+                left: -1px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+              &::before{
+                content: "";
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+            }
           }
         }
         &:nth-child(4){      
           .item__button{
             border-right: 1px solid $dark-blue;
+            &.desktop-active{
+              &::after{
+                content: "";
+                position: absolute;
+                left: -1px;
+                top: 0px;
+                height: 100%;
+                width: 1px;
+                background: $dark-blue;
+              }
+            }            
           }
         }
       }
@@ -381,7 +451,8 @@ section.home-section.rubrics{
         border-left: none;
         border-right: none;
         transition: none;
-        background: none;        
+        background: none;   
+        position: relative;     
         &.mobile-active{
           color: inherit;
         }
@@ -438,7 +509,7 @@ section.home-section.rubrics{
         padding: 0 20px;
         @include font($hind, 1.2rem, 500, $black, uppercase, center);
         @include breakpoint(700px){
-          @include font($hind, 1.4rem, 500, $black, uppercase, center);
+          font-size: 1.4rem;
         }        
       }
     }
