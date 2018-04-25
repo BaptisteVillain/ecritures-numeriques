@@ -1,6 +1,6 @@
 {
     "key": "group_5ab8efae0ac11",
-    "title": "FrontPage",
+    "title": "Front Page",
     "fields": [
         {
             "key": "field_5ab8efbf7d3be",
@@ -46,7 +46,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-templates\/template-front-page.php"
             }
         ]
     ],
@@ -67,5 +67,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524699516
+    "modified": 1524699875
 }
