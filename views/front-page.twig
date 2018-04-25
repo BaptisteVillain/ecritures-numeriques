@@ -72,11 +72,19 @@
 			<ul class="rubrics__wrapper">
 			{% for key,rubric in rubrics %}
 				<li class="rubrics__item">
-					<button class="item__button {% if key == 0 %}desktop-active{% endif %}">{{rubric[0].taxonomy}} <span>></span></button>
+					{% if key == 0 %}
+						<button class="item__button desktop-active">théories<span>></span></button>
+					{% elseif key == 1 %}
+						<button class="item__button">axes<span>></span></button>
+					{% elseif key == 2 %}
+						<button class="item__button">objets de recherche<span>></span></button>
+					{% elseif key == 3 %}
+						<button class="item__button">concepts clés<span>></span></button>
+					{% endif %}
 					<ul class="item__wrapper {% if key == 0 %}desktop-active{% endif %}">
 						{% for item in rubric[0:19] %}
 						<li class="rubrics__subItem">
-							<a href="#">{{item.name}}</a>
+							<a href="{{item.path}}">{{item.name}}</a>
 						</li>
 						{% endfor %}
 					</ul>
