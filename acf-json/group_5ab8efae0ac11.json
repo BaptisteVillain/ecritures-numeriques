@@ -46,7 +46,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/template-front-page.php"
+                "value": "templates-pages\/template-front-page.php"
             }
         ]
     ],
@@ -67,5 +67,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524699875
+    "modified": 1524702320
 }
