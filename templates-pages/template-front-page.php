@@ -70,11 +70,10 @@ if(count($context['highlighted_event']) < 1){
   $context['highlighted_event'] = array();
   if(!empty($context['events'][0])){
     $context['highlighted_event'][] = $context['events'][0];
+    $context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
   }
   array_shift($context['events']);
 }
-
-$context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
 
 foreach ($context['events'] as $key => $event) {
   $context['events'][$key]->cover = get_field('cover_image', $event->ID);
