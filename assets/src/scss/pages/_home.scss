@@ -56,19 +56,35 @@ section.events{
       @include breakpoint(800px){
         width: calc(100% / 3);
         min-height: 350px;
-        padding: 60px;
+        padding: 30px 60px;
         &:nth-child(4){
           border-left: none;
           border-right: none;
         }
       }
+      .card__image{
+        display: none;
+        @include breakpoint(800px){
+          display: block;     
+          width: 100%;
+          height: 120px;
+          background-color: $light-blue;
+          background-size: cover;
+          background-repeat: no-repeat;
+          flex-shrink: 0;
+        }
+      }
       .card__surtitle{
+        margin-top: 10px;
         @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
       }
       .card__title{
-        margin: 20px 0;
+        margin: 10px 0 20px 0;
         @include font($hind, 1.8rem, 500, $black, inherit, left);
-        line-height: 1.61;                              
+        line-height: 1.4;
+        @include breakpoint(800px){
+          font-size: 2.4rem;
+        }                      
       }
       .card__footer{
         margin-top: auto;
@@ -78,6 +94,7 @@ section.events{
     }
     .card__highlighted{
       @include breakpoint(800px){
+        padding: 60px;
         width: calc(100% / 3 * 2);
         border-right: none;
         display: flex;
@@ -94,18 +111,27 @@ section.events{
           display: block;     
           width: 200px;
           height: 230px;
-          background: $light-blue;
+          background-color: $light-blue;
+          background-size: cover;
+          background-repeat: no-repeat;
           flex-shrink: 0;
         }
       }
       .card__title{
         @include font($hind, 2.2rem, 500, $black, inherit, left);
         margin-bottom: 10px;
+        line-height: 1.4;
+        @include breakpoint(800px){
+          font-size: 3rem;
+        }
       }
       .card__subtitle{
         margin: 10px 0;
-        @include font($hind, 1.6rem, 500, $dark-grey, inherit, left);
-        line-height: 1.61;    
+        @include font($hind, 1.4rem, 500, $dark-grey, inherit, left);
+        line-height: 1.61;
+        @include breakpoint(800px){
+          font-size: 1.6rem;
+        }        
       }
       .card__footer{
         padding-top: 30px;
@@ -178,9 +204,10 @@ section.projects{
       }
       .card__label{
         margin: 30px auto 20px auto;
-        @include font($source, 1.6rem, 600, $pink, uppercase, center);
+        @include font($source, 1.4rem, 600, $pink, uppercase, center);
         @include breakpoint(800px){
           margin-top: 60px;
+          font-size: 1.6rem;
         }
       }
       .card__title{
@@ -188,12 +215,16 @@ section.projects{
         line-height: 1.5;
         @include breakpoint(800px){
           height: 90px;
+          font-size: 2.4rem;
         }      
       }
       .card__subtitle{
         margin-top: 30px;
         @include font($source, 1.4rem, 400, $dark-grey, inherit, center);
         line-height: 1.6;
+        @include breakpoint(800px){
+          font-size: 1.6rem;
+        }        
       }
     }
   }

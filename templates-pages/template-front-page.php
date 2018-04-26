@@ -74,6 +74,16 @@ if(count($context['highlighted_event']) < 1){
   array_shift($context['events']);
 }
 
+$context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
+
+foreach ($context['events'] as $key => $event) {
+  $context['events'][$key]->cover = get_field('cover_image', $event->ID);
+}
+
+
+/**
+ * Get All Taxonomies terms
+ */
 $context['rubrics'] =  array();
 $taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
@@ -84,6 +94,7 @@ foreach ($taxonomies as $key => $taxonomy) {
   }
   $context['rubrics'][] = $terms;
 }
+
 
 /**
  * Get Youtube Video
