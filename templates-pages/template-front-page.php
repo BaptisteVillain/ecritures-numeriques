@@ -75,7 +75,7 @@ if(count($context['highlighted_event']) < 1){
 }
 
 $context['rubrics'] =  array();
-$taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');
+$taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
 foreach ($taxonomies as $key => $taxonomy) {
   $terms = Timber::get_terms($taxonomy);
