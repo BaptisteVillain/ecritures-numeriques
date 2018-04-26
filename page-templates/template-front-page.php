@@ -60,6 +60,7 @@ if(count($context['highlighted_event']) < 1){
     )
   );
 }
+
 /**
  * Get last events
  */
@@ -67,10 +68,11 @@ $context['events'] = Timber::get_posts($args);
 
 if(count($context['highlighted_event']) < 1){
   $context['highlighted_event'] = array();
-  $context['highlighted_event'][] = $context['events'][0];
+  if(!empty($context['events'][0])){
+    $context['highlighted_event'][] = $context['events'][0];
+  }
   array_shift($context['events']);
 }
-
 
 $context['rubrics'] =  array();
 $taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');

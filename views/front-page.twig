@@ -12,10 +12,10 @@
 			<a href="#" class="header__link">{{__('Voir tout', 'ecritures-numeriques')}} > </a>
 		</header>
 		<div class="section-container events__container">
-			{% for post in highlighted_event %}
+			{% for event in highlighted_event %}
 				{% include 'partials/card-event-highlighted.twig' %}
 			{% endfor %}
-			{% for post in events %}	
+			{% for event in events %}	
 				{% include 'partials/card-event.twig' %}
 			{% endfor %}
 		</div>
