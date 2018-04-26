@@ -48,7 +48,7 @@ header.section-header{
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
-	@include breakpoint(700px){
+	@include breakpoint(800px){
 		height: 78px;
 	}	
 	h2.header__title{
@@ -59,14 +59,14 @@ header.section-header{
 		justify-content: center;
 		align-items: center;
 		@include font($hind, 2.0rem, 600, $dark-blue, uppercase, center);
-		@include breakpoint(700px){
+		@include breakpoint(800px){
 			min-width: 300px;
 			width: calc(100% / 4);
 		}
 	}
 	a.header__link{
 		display: none;
-		@include breakpoint(700px){
+		@include breakpoint(800px){
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -88,7 +88,7 @@ footer.section-footer{
 		line-height: 60px;
 		@include font($source, 1.4rem, 600, $dark-blue, uppercase, center);
 	}
-	@include breakpoint(700px){
+	@include breakpoint(800px){
 		display: none;
 	}
 }
