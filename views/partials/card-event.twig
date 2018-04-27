@@ -1,11 +1,21 @@
-<a href="#" class="event__card">
+<a href="{{event.path}}" title="{{__('voir plus')}}" class="event__card">
   <div class="card__image" style="background-image:url({{ event.cover.sizes.event_banner }})">
   </div>
-  <div class="card__surtitle">13 nov - 5 juin</div>
-  <h4 class="card__title">
-    {{event.title}}
-  </h4>
-  <div class="card__footer">
-    [ 11h30 - 13h30 ] Université de Montréal
-  </div>
+  {% if event.date_start|date('d M') == event.date_end|date('d M') %}
+    <div class="card__surtitle">{{ event.date_start|date('d M') }}</div>
+  {% else %}
+    <div class="card__surtitle">{{ event.date_start|date('d M') }} - {{ event.date_end|date('d M') }}</div>
+  {% endif %}
+  <h3 class="card__title">
+    {{ event.title }}
+  </h3>
+  {% if event.date_start|date('G\\hi') == event.date_end|date('G\\hi') %}
+    <div class="card__footer">
+      [ {{ event.date_start|date('G\\hi') }} ] {{ event.event_venue }}
+    </div>
+  {% else %}
+    <div class="card__footer">
+      [ {{ event.date_start|date('G\\hi') }} - {{ event.date_end|date('G\\hi') }} ] {{ event.event_venue }}
+    </div>
+  {% endif %}
 </a>

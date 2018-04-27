@@ -89,7 +89,10 @@ section.events{
       .card__footer{
         margin-top: auto;
         justify-self: flex-end;
-        @include font($source, 1.4rem, 400, $dark-grey, inherit, left);        
+        @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
+        @include breakpoint(800px){
+          font-size: 1.6rem;
+        }            
       }
     }
     .card__highlighted{
@@ -178,6 +181,7 @@ section.projects{
       flex-wrap: wrap;
     }
     .project__card{
+      display: block;
       width: 100%;
       min-height: 245px;
       background: $white;

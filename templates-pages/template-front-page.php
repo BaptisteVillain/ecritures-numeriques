@@ -22,10 +22,23 @@ $context['publications'] = Timber::get_posts(array(
 /**
  * Get last projects
  */
-$context['projects'] = Timber::get_posts(array(
+$sens_public = Timber::get_posts(array(
+  'name' => 'sens_public',
   'post_type' => 'project',
-  'posts_per_page' => 3,
+  'posts_per_page' => 1,
 ));
+
+$projects = Timber::get_posts(array(
+  'post_type' => 'project',
+  'posts_per_page' => empty($sens_public) ? 3 : 2,
+  'meta_query' => array(
+    'key' => 'slug',
+    'value' => 'sens_public',
+    'compare' => '!='
+  )
+));
+$context['projects'] = array_merge($sens_public, $projects);
+
 
 /**
  * Get highlighted event
@@ -70,16 +83,18 @@ if(count($context['highlighted_event']) < 1){
   $context['highlighted_event'] = array();
   if(!empty($context['events'][0])){
     $context['highlighted_event'][] = $context['events'][0];
-    $context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
   }
   array_shift($context['events']);
+}
+
+if(!empty($context['events'][0])){
+  $context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
+  $context['highlighted_event'][0]->tags = wp_get_post_terms($context['highlighted_event'][0]->ID, array('research_field','axis','research_topic','key_concept'));
 }
 
 foreach ($context['events'] as $key => $event) {
   $context['events'][$key]->cover = get_field('cover_image', $event->ID);
 }
-
-
 /**
  * Get All Taxonomies terms
  */
@@ -88,9 +103,9 @@ $taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
 foreach ($taxonomies as $key => $taxonomy) {
   $terms = Timber::get_terms($taxonomy);
-  foreach ($terms as $key => $term) {
-    $terms[$key]->path = get_term_link((int)$term->id);
-  }
+  // foreach ($terms as $key => $term) {
+  //   // $terms[$key]->path = get_term_link((int)$term->id);
+  // }
   $context['rubrics'][] = $terms;
 }
 

@@ -29,7 +29,7 @@
 				<h2 class="header__title">{{__('Derniers projets', 'ecritures-numeriques')}}</h2>
 				<a href="#" class="header__link">{{__('Découvrir tout les projets', 'ecritures-numeriques')}} ></a>
 			</header>
-			{% for key, post in projects %}
+			{% for key, project in projects %}
 				{% include 'partials/card-project.twig' %}			
 			{% endfor %}
 			<footer class="section-footer projects__footer">
