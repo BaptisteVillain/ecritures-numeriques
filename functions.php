@@ -58,12 +58,18 @@ class StarterSite extends TimberSite {
 		$context['socials'] = new TimberMenu('socials');
 
 		$context['header'] = get_fields(pll_current_language('slug'));
-		$context['footer'] = get_fields(pll_current_language('slug'));
-		$context['footer']['icon_svg'] = file_get_contents($context['footer']['icon']);
-		$context['footer']['year'] = date('Y');
 
-		foreach ($context['footer']['socials'] as $key => $social) {
-			$context['footer']['socials'][$key]['svg'] = file_get_contents($social['icon']);
+		/* get footer content */
+		$context['footer'] = get_fields(pll_current_language('slug'));
+		if(!empty($context['footer']['icon_svg'])){
+			$context['footer']['icon_svg'] = file_get_contents($context['footer']['icon']);
+		}
+
+		$context['footer']['year'] = date('Y');
+		if(!empty($context['footer']['socials'])){
+			foreach ($context['footer']['socials'] as $key => $social) {
+				$context['footer']['socials'][$key]['svg'] = file_get_contents($social['icon']);
+			}
 		}
 
 		$context['site'] = $this;
