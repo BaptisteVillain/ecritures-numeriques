@@ -84,7 +84,7 @@ section.events{
         line-height: 1.4;
         @include breakpoint(800px){
           font-size: 2.4rem;
-        }                      
+        }
       }
       .card__footer{
         margin-top: auto;
@@ -92,7 +92,7 @@ section.events{
         @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
         @include breakpoint(800px){
           font-size: 1.6rem;
-        }            
+        }
       }
     }
     .card__highlighted{

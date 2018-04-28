@@ -1,14 +1,20 @@
-<a href="#" class="publication__card">
-  <div class="card__surtitle">théorie de l'édition</div>
+<a href="{{post.path}}" title="{{post.title}}" class="publication__card">
+  <div class="card__surtitle">
+      {% for key,term in post.terms %}{% if key > 0 %} - {% endif %}{{ term.name }}{% endfor %}    
+  </div>
   <h4 class="card__title">{{ post.title }}</h4>
   {% if content %}
     <div class="card__subtitle">{{post.content | excerpt(41)}}</div>
   {% endif %}
   <div class="card__footer">
-    <div class="card__author">Marcello Vitali-Rosati</div>
+    <div class="card__author">
+      {% for key,author in post.authors %}{% if key > 0 %}, {% endif %}{{ author.post_title }}{% endfor %}          
+    </div>
     <div class="card__source">
-      <span class="card__italic">Sens public</span>
-      <span> - 15 dec</span>
+      {% if post.domain is not empty %}
+        <span class="card__italic">{{post.domain}} -</span>
+      {% endif %}
+      <span>{{post.date|date('d M')}}</span>
     </div>
   </div>
 </a>

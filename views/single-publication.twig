@@ -24,9 +24,9 @@
 			<p class="publication__authors">Par
 			{% for key, author in authors %}{% if key > 0 %}, {% endif %}{{author.post_title}}{% endfor %}
 			</p>
-			<p class="publication__date">Pubié le <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span> {% if domain  %}sur {{domain}}{% endif %}</p>
-			{% if domain %}
-				<a href="{{post.url}}" class="publication__link" target="_blank">lire sur {{domain}} ></a>
+			<p class="publication__date">Pubié le <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span> {% if post.domain  %}sur {{post.domain}}{% endif %}</p>
+			{% if post.domain %}
+				<a href="{{post.url}}" class="publication__link" target="_blank">lire sur {{post.domain}} ></a>
 			{% endif %}
 			<p class="publication__content">{{post.content}}</p>
 			{% if tags is not empty %}

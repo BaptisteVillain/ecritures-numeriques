@@ -13,16 +13,6 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
 
-$args = array(
-	'post_type' => array( 'members' ),
-	'orderby' => 'ASC',
-	'post_in' => $post->custom['authors']
-);
-
-
-$parse = parse_url($post->url);
-$context['domain'] = $parse['host'];
-
 $context['authors'] = get_posts(array(
 	'post_type' => 'member',
 	'post__in' => $post->custom['authors']

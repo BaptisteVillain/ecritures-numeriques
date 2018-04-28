@@ -1,4 +1,4 @@
-<a href="{{event.path}}" title="{{__('voir plus')}}" class="event__card">
+<a href="{{event.path}}" title="{{event.title}}" class="event__card">
   <div class="card__image" style="background-image:url({{ event.cover.sizes.event_banner }})">
   </div>
   {% if event.date_start|date('d M') == event.date_end|date('d M') %}

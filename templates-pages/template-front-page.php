@@ -6,6 +6,14 @@
 
 $context = Timber::get_context();
 
+
+/**
+ * Links
+ */
+
+ $context['path_rubrics'] = get_permalink(7460);
+
+
 /**
  * Get Page Fields
  */
@@ -18,6 +26,20 @@ $context['publications'] = Timber::get_posts(array(
   'post_type' => 'publication',
   'posts_per_page' => 3
 ));
+
+foreach ($context['publications'] as $key => $publication) {
+  $terms = Timber::get_terms($taxonomy);
+  $context['publications'][$key]->terms = wp_get_post_terms($publication->ID, array('research_field'));
+
+  $context['publications'][$key]->authors = get_posts(array(
+    'post_type' => 'member',
+    'post__in' => $$publication->publication_authors
+  ));  
+}
+
+// echo '<pre>';
+// print_r($context['publications']);
+// echo '</pre>';
 
 /**
  * Get last projects
@@ -95,6 +117,7 @@ if(!empty($context['events'][0])){
 foreach ($context['events'] as $key => $event) {
   $context['events'][$key]->cover = get_field('cover_image', $event->ID);
 }
+
 /**
  * Get All Taxonomies terms
  */
@@ -103,9 +126,6 @@ $taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
 foreach ($taxonomies as $key => $taxonomy) {
   $terms = Timber::get_terms($taxonomy);
-  // foreach ($terms as $key => $term) {
-  //   // $terms[$key]->path = get_term_link((int)$term->id);
-  // }
   $context['rubrics'][] = $terms;
 }
 
@@ -113,7 +133,6 @@ foreach ($taxonomies as $key => $taxonomy) {
 /**
  * Get Youtube Video
  */
-
 $id = 'UC5LIw0dopbSSgqI2zdIi84w';
 $key = 'AIzaSyB2z9bqaFVRYupNp5tDv2NTpdh0dLYucy0';
 $url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=id&maxResults=3&channelId='.$id.'&key='.$key;

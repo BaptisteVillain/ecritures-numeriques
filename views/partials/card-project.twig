@@ -1,4 +1,4 @@
-<a href="{{ project.path }}" class="project__card">
+<a href="{{ project.path }}" title="{{project.post_title}}" class="project__card">
   <div class="card__label">0{{key+1}}</div>
   <h4 class="card__title">{{ project.post_title }}</h4>
   <h4 class="card__subtitle">{{ project.post_content|excerpt(12) }}</h4>
