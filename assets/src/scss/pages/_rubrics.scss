@@ -16,7 +16,7 @@
       line-height: 59px;
       flex-shrink: 0;
       @include breakpoint(700px){
-        width: calc(100% / 4);
+        width: 15vw;
         border-bottom: none;
         font-size: 2rem;
       }      
@@ -27,6 +27,7 @@
       line-height: 1.56;
       @include breakpoint(700px){
         padding: 25px 0;
+        margin-left: calc(100% / 4 - 15vw - 1px);        
       }      
     }
   }

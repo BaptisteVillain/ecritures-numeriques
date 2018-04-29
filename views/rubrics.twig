@@ -4,10 +4,9 @@
 	{% include "partials/background-lines.twig" %}
   <div class="page-rubrics rubrics__container">
     <div class="rubrics__header">
-      <h2>Rubriques</h2>
+      <h2>{{__('rubriques', 'ecritures-numeriques')}}</h2>
       <p>
-        La Chaire aborde 32 thèmes au travers de ses travaux. <br/>
-        Découvrez ces thématiques et parcourez les publications, projets et événements liés.
+        {{ page.get_field('description') }}
       </p>
     </div>
     <ul class="rubrics__wrapper">

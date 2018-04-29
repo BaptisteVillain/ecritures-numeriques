@@ -5,6 +5,7 @@
  */
 
 $context = Timber::get_context();
+$context['page'] = Timber::query_post();
 
 
 $context['rubrics'] =  array();
