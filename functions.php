@@ -61,7 +61,7 @@ class StarterSite extends TimberSite {
 
 		/* get footer content */
 		$context['footer'] = get_fields(pll_current_language('slug'));
-		if(!empty($context['footer']['icon_svg'])){
+		if(!empty($context['footer']['icon'])){
 			$context['footer']['icon_svg'] = file_get_contents($context['footer']['icon']);
 		}
 
