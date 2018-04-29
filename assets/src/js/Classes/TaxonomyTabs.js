@@ -3,6 +3,9 @@ class TaxonomyTabs {
     this.container = container
     this.tabs = container.querySelectorAll('section.related__section')
     this.buttons = container.querySelectorAll('button.header__button')
+    this.wrapper = container.querySelector('.related__container')
+    this.return = container.querySelector('.related__return')
+    this.tabsWrapper = container.querySelector('.related__wrapper')
     this.last_index = 0
 
     this.buttons.forEach(button => {
@@ -18,8 +21,20 @@ class TaxonomyTabs {
 
           this.last_index = index
         }
+
+        if (window.innerWidth <= 700) {
+          this.wrapper.classList.add('container--slide')
+          this.tabsWrapper.classList.remove('wrapper--hide')
+        }
       })
-    });
+    })
+
+    this.return.addEventListener('click', () => {
+      if (window.innerWidth <= 700) {
+        this.wrapper.classList.remove('container--slide')
+        this.tabsWrapper.classList.add('wrapper--hide')
+      }
+    })
   }
 }
 

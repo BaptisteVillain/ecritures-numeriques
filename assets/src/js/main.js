@@ -1,6 +1,5 @@
 import Header from './Classes/Header'
 import HomeRubrics from './Classes/HomeRubrics'
-import PageRubrics from './Classes/PageRubrics'
 import TaxonomyTabs from './Classes/TaxonomyTabs'
 
 
