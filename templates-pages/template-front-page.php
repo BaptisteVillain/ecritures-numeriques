@@ -37,10 +37,6 @@ foreach ($context['publications'] as $key => $publication) {
   ));  
 }
 
-// echo '<pre>';
-// print_r($context['publications']);
-// echo '</pre>';
-
 /**
  * Get last projects
  */
@@ -125,7 +121,10 @@ $context['rubrics'] =  array();
 $taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
 foreach ($taxonomies as $key => $taxonomy) {
-  $terms = Timber::get_terms($taxonomy);
+  $terms = Timber::get_terms(array(
+    "taxonomy" => $taxonomy,
+    "hide_empty" => false
+  ));
   $context['rubrics'][] = $terms;
 }
 
@@ -135,7 +134,7 @@ foreach ($taxonomies as $key => $taxonomy) {
  */
 $id = 'UC5LIw0dopbSSgqI2zdIi84w';
 $key = 'AIzaSyB2z9bqaFVRYupNp5tDv2NTpdh0dLYucy0';
-$url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=id&maxResults=3&channelId='.$id.'&key='.$key;
+$url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=id&maxResults=3&type=video&eventType=completed&channelId='.$id.'&key='.$key;
 $response = json_decode(file_get_contents($url), true);
 $videos = $response['items'];
 
@@ -151,5 +150,21 @@ $data[] = json_decode(file_get_contents($url), true);
 
 $context['videos'] = $data[0]['items'];
 
+
+/**
+ * Get current live
+ */
+$id = 'UC5LIw0dopbSSgqI2zdIi84w';
+$url = 'https://www.googleapis.com/youtube/v3/search?order=date&part=id&maxResults=1&type=video&eventType=live&channelId='.$id.'&key='.$key;
+$response = json_decode(file_get_contents($url), true);
+$live = $response['items'];
+
+if(!empty($live)){
+  $url = 'https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id='.$live[0]['id']['videoId'].'&key='.$key;
+  $context['live'] = json_decode(file_get_contents($url), true);
+}
+else{
+  $context['live'] = false;
+}
 
 Timber::render( 'front-page.twig', $context);
