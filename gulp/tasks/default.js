@@ -6,7 +6,6 @@ import scripts from './scripts'
 import copies  from './copies'
 import server  from './server'
 import watch   from './watch'
-import pot   from './pot'
 /* eslint-enable */
 
 gulp.task(
@@ -23,5 +22,5 @@ gulp.task(
 
 gulp.task(
   'default',
-  gulp.series('build', gulp.parallel('server', 'watch', 'pot'), () => {})
+  gulp.series('build', gulp.parallel('server', 'watch'), () => {})
 )

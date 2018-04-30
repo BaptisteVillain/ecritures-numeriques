@@ -59,7 +59,7 @@
         width: calc(50vw - 2px);
         min-height: calc(100vh - 175px - 80px);
       }
-      p{
+      .taxonomy__content{
         @include font($hind, 1.4rem, 400, $black, inherit, left);
         line-height: 1.71;
         margin-bottom: 40px;
@@ -180,7 +180,7 @@
             width: 100%;
             height: 60px;
             @include breakpoint(700px){
-              width: calc(100% / 3);
+              width: 100%;
               &:last-child button{
                 border-right: none;
               }
@@ -312,7 +312,7 @@
             }
             .item__date{
               margin-top: 5px;
-              @include font($hind, 1.2rem, 400, $dark-grey, inherit, left);
+              @include font($hind, 1.2rem, 400, $dark-grey, capitalize, left);
             }
           }
         }
