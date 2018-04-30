@@ -1,10 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<section class="home-section landing">
-		<div class="landing__container">
-			
-		</div>
+	<section class="home-section hero">
+		{% include 'partials/card-hero.twig' with {'content': true} %}
 	</section>
 	<section class="home-section events">
 		<header class="section-header events__header">

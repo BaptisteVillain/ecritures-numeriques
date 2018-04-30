@@ -1,13 +1,13 @@
-const APP_SRC    = './assets/src/'
-const APP_DEST   = './assets/public/'
-const APP_ASSETS = './assets/public/'
+const APP_SRC = './assets/src/';
+const APP_DEST = './assets/public/';
+const APP_ASSETS = './assets/public/';
 
 module.exports = {
   bsServer: {
     server: {
       baseDir: './../..'
     },
-    port: '7777',
+    port: '8888',
     open: 'local'
   },
 
@@ -62,4 +62,4 @@ module.exports = {
     destFolder: 'languages', // Folder where .pot file will be saved
     keepCache: false // Delete cache files after script finishes
   }
-}
+};
