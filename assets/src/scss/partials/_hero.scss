@@ -41,11 +41,18 @@
       width: calc(90vw * 2 / 24);
     }
 
+    &--title {
+    }
+
     // Youtube notification
     &--notification {
       color: $pink;
     }
+    &--last__notification {
+      border-bottom: 1px $border-grey solid;
+    }
     &--popUp {
+      background-color: $border-grey;
       border: 1px $pink solid;
       flex-direction: row;
       justify-content: space-around;
@@ -55,15 +62,19 @@
       background-image: url('../images/insert-img.jpg');
       background-position: center;
       background-size: cover;
-      border: 1px $pink solid;
+      border: none;
     }
     &--popUp__content {
+      border: none;
+      border-left: 1px solid $pink;
       flex-direction: row;
       justify-content: space-around;
       width: calc(90vw * 6 / 24);
     }
     &--lastPopUp {
+      border: none;
       border-left: 1px $pink solid;
+      border-right: 1px $border-grey solid;
     }
   }
   &__row {
