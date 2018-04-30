@@ -25,20 +25,20 @@
 		<div class="projects__container">
 			<header class="section-header projects__header">
 				<h2 class="header__title">{{__('Derniers projets', 'ecritures-numeriques')}}</h2>
-				<a href="#" class="header__link">{{__('Découvrir tout les projets', 'ecritures-numeriques')}} ></a>
+				<a href="#" class="header__link">{{__('Découvrir tous les projets', 'ecritures-numeriques')}} ></a>
 			</header>
 			{% for key, project in projects %}
 				{% include 'partials/card-project.twig' %}			
 			{% endfor %}
 			<footer class="section-footer projects__footer">
-				<a href="" class="footer__link">{{__('Découvrir tout les projets', 'ecritures-numeriques')}} ></a>
+				<a href="" class="footer__link">{{__('Découvrir tous les projets', 'ecritures-numeriques')}} ></a>
 			</footer>
 		</div>
 	</section>
 	<section class="home-section publications">
 		<div class="publications__container">
 			<header class="section-header publications__header">
-				<h2 class="header__title">{{__('Derniéres publications', 'ecritures-numeriques')}}</h2>
+				<h2 class="header__title">{{__('Dernières publications', 'ecritures-numeriques')}}</h2>
 				<a href="#" class="header__link">{{__('Consulter toutes les publications', 'ecritures-numeriques')}} ></a>
 			</header>
 			{% for key,post in publications[0:1] %}
