@@ -241,14 +241,11 @@ function remove_admin_bar() {
 
 
 /**
- * Remove auto p
+ * Remove auto <p> tags
  */
-add_filter( 'the_content', 'remove_auto_tags', 0 );
-function remove_auto_tags( $content )
-{
-	remove_filter('the_content', 'wpautop');
-	return $content;
-}
+remove_filter('the_content', 'wpautop');
+remove_filter( 'the_excerpt', 'wpautop');
+remove_filter('term_description','wpautop');
 
 if( function_exists('acf_add_options_page') ) {
 
@@ -315,3 +312,10 @@ function add_default_value_to_image_field($field) {
 
 add_image_size('event_portrait', 200, 250, true);
 add_image_size('event_banner', 360, 120, true);
+
+
+
+// remove unwanted <p> tags
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
+

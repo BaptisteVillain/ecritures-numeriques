@@ -8,11 +8,11 @@
 			<h3 class="header__parent">
 				{% if term.taxonomy == 'research_field' %}
 					{{__('théorie')}}
-				{% elseif term.taxonomy == 'research_topics' %}
-					{{__('théorie')}}
+				{% elseif term.taxonomy == 'research_topic' %}
+					{{__('objets de recherche')}}
 				{% elseif term.taxonomy == 'key_concept' %}
 					{{__('concepts clés')}}
-				{% elseif term.taxonomy == 'axes' %}
+				{% elseif term.taxonomy == 'axis' %}
 					{{__('axes')}}
 				{% endif %}
 			</h3>
@@ -20,25 +20,25 @@
 		</header>
 		<div class="taxonomy__wrapper">
 			<div class="taxonomy__about">
-				<p>
+				<p class="taxonomy__content">
 					{{term.description}}
 				</p>
-				<div class="taxonomy__discovers">
+				{# <div class="taxonomy__discovers">
 					<h4>{{__('découvrir aussi')}}</h4>
 					<ul>
 						<li>Espace numérique</li>
 						<li>Espace numérique</li>
 						<li>Espace numérique</li>
 					</ul>
-				</div>
+				</div> #}
 				<footer class="taxonomy__footer">
 					<div class="footer__link">
-						<p>previous</p>
-						<a href="#">Imaginaire / Réel</a>
+						<p>{{__('précédent', 'ecritures-numeriques')}}</p>
+						<a href="{{previous.path}}">{{previous.name}}</a>
 					</div>
 					<div class="footer__link">
-						<p>next</p>
-						<a href="#">Imaginaire / Réel</a>
+						<p>{{__('suivant', 'ecritures-numeriques')}}</p>
+						<a href="{{next.path}}">{{next.name}}</a>
 					</div>
 				</footer>
 			</div>
@@ -77,7 +77,7 @@
 									</h5>
 									<div class="item__about">
 										<p class="item__author">Marcello Vitali-Rosati</p>
-										<p class="item__date">[06-03-18] - Sens Public</p>
+										<p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]  {% if post.domain %}- {{post.domain}} {% endif %}</p>
 									</div>
 								</a>
 								{% endfor %}

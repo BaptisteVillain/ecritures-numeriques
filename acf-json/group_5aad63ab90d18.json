@@ -188,7 +188,7 @@
         },
         {
             "key": "field_5ae0fd9aa4bba",
-            "label": "type",
+            "label": "Type",
             "name": "type",
             "type": "select",
             "instructions": "",
@@ -196,8 +196,9 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "",
-                        "operator": "=="
+                        "field": "field_5ae49280e9f47",
+                        "operator": "==",
+                        "value": "1"
                     }
                 ]
             ],
@@ -234,7 +235,7 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
+            "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         }
@@ -256,5 +257,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1524929549
+    "modified": 1525048409
 }

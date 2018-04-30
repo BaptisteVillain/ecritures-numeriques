@@ -12,7 +12,10 @@ $context['rubrics'] =  array();
 $taxonomies = array('research_field',  'axis', 'research_topic', 'key_concept');
 
 foreach ($taxonomies as $key => $taxonomy) {
-  $terms = Timber::get_terms($taxonomy);
+  $terms = Timber::get_terms(array(
+    "taxonomy" => $taxonomy,
+    "hide_empty" => false
+  ));
   foreach ($terms as $key => $term) {
     $terms[$key]->path = get_term_link((int)$term->id);
   }
