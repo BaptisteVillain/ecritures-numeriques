@@ -168,12 +168,23 @@ section.projects{
     }
   }
   .projects__container{
+    position: relative;
+    z-index: -1;
     padding: 120px 20px;
     width: 100%;
     height: auto;
-    border-right: 1px solid #F3F3F6;
     background-size: calc((100vw - 20px) / 20) calc((100vw - 20px) / 20);
     background-image: linear-gradient(to right, #F3F3F6 1px, transparent 1px), linear-gradient(to bottom, #F3F3F6 1px, transparent 1px);
+    &::after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      top: 0;
+      background: #F3F3F6;
+      height: 100%;
+      width: 1px;
+    }
     @include breakpoint(800px){
       background-size: calc((100vw - 15vw) / 33) calc((100vw - 15vw) / 33);      
       padding: 250px 0;
