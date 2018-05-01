@@ -1,147 +1,161 @@
 /**
 * LANDING
 */
-section.landing{
-  width: 100%;
-  height: calc(100vh - 158px);
+section.landing {
   background: $dark-blue;
+  height: calc(100vh - 158px);
   padding: 0 $padding;
-  .landing__container{
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  .landing__container {
     background: repeating-linear-gradient(
       to right,
-      rgba(255,255,255,.1),
-      rgba(255,255,255,.1) 1px,
+      rgba(255, 255, 255, 0.1),
+      rgba(255, 255, 255, 0.1) 1px,
       $dark-blue 1px,
       $dark-blue 100px
     );
+    height: 100%;
+    width: 100%;
   }
 }
 
 /**
 * EVENTS
 */
-section.events{
-  .events__header{
+section.events {
+  .events__header {
     background: $pink;
-    .header__title{
+
+    .header__title {
       background: $dark-blue;
       border: 1px solid $border-grey;
-		  @include font($hind, 2.0rem, 600, $white, uppercase, center)      
+
+      @include font($hind, 2rem, 600, $white, uppercase, center);
     }
-    .header__link{
+    .header__link {
       line-height: 60px;
     }
   }
 
-  .events__container{
-    @include breakpoint(800px){
+  .events__container {
+    @include breakpoint(800px) {
       display: flex;
       flex-direction: row;
+
       flex-wrap: wrap;
     }
-    .event__card{
-      width: 100%;
-      min-height: 240px;
-      padding: 30px 20px;
-      border: 1px solid $dark-grey;
+    .event__card {
       background: $light-grey;
-      margin-top: -1px;
+      border: 1px solid $dark-grey;
       display: flex;
       flex-direction: column;
-      :first-child(), :nth-child(2){
-        margin-top: 0;
-      }
-      @include breakpoint(800px){
-        width: calc(100% / 3);
+      margin-top: -1px;
+      min-height: 240px;
+      padding: 30px 20px;
+      width: 100%;
+
+      @include breakpoint(800px) {
         min-height: 350px;
         padding: 30px 60px;
-        &:nth-child(4){
+        width: calc(100% / 3);
+        &:nth-child(4) {
           border-left: none;
           border-right: none;
         }
       }
-      .card__image{
+      :first-child,
+      :nth-child(2) {
+        margin-top: 0;
+      }
+      .card__image {
         display: none;
-        @include breakpoint(800px){
-          display: block;     
-          width: 100%;
-          height: 120px;
+
+        @include breakpoint(800px) {
           background-color: $light-blue;
-          background-size: cover;
           background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 120px;
+          width: 100%;
+
           flex-shrink: 0;
         }
       }
-      .card__surtitle{
+      .card__surtitle {
         margin-top: 10px;
+
         @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
       }
-      .card__title{
-        margin: 10px 0 20px 0;
-        @include font($hind, 1.8rem, 500, $black, inherit, left);
+      .card__title {
         line-height: 1.4;
-        @include breakpoint(800px){
+        margin: 10px 0 20px 0;
+
+        @include font($hind, 1.8rem, 500, $black, inherit, left);
+        @include breakpoint(800px) {
           font-size: 2.4rem;
         }
       }
-      .card__footer{
+      .card__footer {
         margin-top: auto;
+
         justify-self: flex-end;
         @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
-        @include breakpoint(800px){
+        @include breakpoint(800px) {
           font-size: 1.6rem;
         }
       }
     }
-    .card__highlighted{
-      @include breakpoint(800px){
-        padding: 60px;
-        width: calc(100% / 3 * 2);
+    .card__highlighted {
+      @include breakpoint(800px) {
         border-right: none;
         display: flex;
         flex-direction: row;
+        padding: 60px;
+        width: calc(100% / 3 * 2);
       }
-      .card__content{
-        @include breakpoint(800px){
+      .card__content {
+        @include breakpoint(800px) {
           margin-left: 60px;
         }
       }
-      .card__image{
+      .card__image {
         display: none;
-        @include breakpoint(800px){
-          display: block;     
-          width: 200px;
-          height: 230px;
+
+        @include breakpoint(800px) {
           background-color: $light-blue;
-          background-size: cover;
           background-repeat: no-repeat;
+          background-size: cover;
+          display: block;
+          height: 230px;
+          width: 200px;
+
           flex-shrink: 0;
         }
       }
-      .card__title{
-        @include font($hind, 2.2rem, 500, $black, inherit, left);
-        margin-bottom: 10px;
+      .card__title {
         line-height: 1.4;
-        @include breakpoint(800px){
+        margin-bottom: 10px;
+
+        @include font($hind, 2.2rem, 500, $black, inherit, left);
+        @include breakpoint(800px) {
           font-size: 3rem;
         }
       }
-      .card__subtitle{
-        margin: 10px 0;
-        @include font($hind, 1.4rem, 500, $dark-grey, inherit, left);
+      .card__subtitle {
         line-height: 1.61;
-        @include breakpoint(800px){
+        margin: 10px 0;
+
+        @include font($hind, 1.4rem, 500, $dark-grey, inherit, left);
+        @include breakpoint(800px) {
           font-size: 1.6rem;
-        }        
+        }
       }
-      .card__footer{
+      .card__footer {
         padding-top: 30px;
       }
     }
   }
-  .events__footer{
+  .events__footer {
     background: $pink;
   }
 }
@@ -149,688 +163,734 @@ section.events{
 /**
 * PROJECTS
 */
-section.projects{
-  width: 100%;
+section.projects {
   height: auto;
   margin-top: -1px;
   padding: 0;
-  @include breakpoint(800px){
+  width: 100%;
+
+  @include breakpoint(800px) {
     padding: 0 $padding;
-  }  
-  .projects__header{
-    border: 1px solid $dark-blue;
+  }
+  .projects__header {
     background: $white;
-    .header__title{
+    border: 1px solid $dark-blue;
+    .header__title {
       background: $light-grey;
-      @include breakpoint(800px){
+
+      @include breakpoint(800px) {
         border-right: 1px solid $dark-blue;
       }
     }
   }
-  .projects__container{
-    position: relative;
-    z-index: -1;
-    padding: 120px 20px;
-    width: 100%;
-    height: auto;
+  .projects__container {
+    background-image: linear-gradient(to right, #f3f3f6 1px, transparent 1px),
+      linear-gradient(to bottom, #f3f3f6 1px, transparent 1px);
     background-size: calc((100vw - 20px) / 20) calc((100vw - 20px) / 20);
-    background-image: linear-gradient(to right, #F3F3F6 1px, transparent 1px), linear-gradient(to bottom, #F3F3F6 1px, transparent 1px);
-    &::after{
-      content: "";
-      position: absolute;
-      z-index: -1;
-      right: 0;
-      top: 0;
-      background: #F3F3F6;
-      height: 100%;
-      width: 1px;
-    }
-    @include breakpoint(800px){
-      background-size: calc((100vw - 15vw) / 33) calc((100vw - 15vw) / 33);      
-      padding: 250px 0;
+    height: auto;
+    padding: 120px 20px;
+    position: relative;
+    width: 100%;
+    z-index: -1;
+
+    @include breakpoint(800px) {
+      background-size: calc((100vw - 15vw) / 33) calc((100vw - 15vw) / 33);
       display: flex;
       flex-direction: row;
+      padding: 250px 0;
+
       flex-wrap: wrap;
     }
-    .project__card{
-      display: block;
-      width: 100%;
-      min-height: 245px;
+    &::after {
+      background: #f3f3f6;
+      content: '';
+      height: 100%;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1px;
+      z-index: -1;
+    }
+    .project__card {
       background: $white;
       border: 1px solid $dark-grey;
       border-top: none;
+      display: block;
+      min-height: 245px;
       overflow: hidden;
       padding: 0 25px 30px 25px;
-      &:nth-child(4){
-        border-bottom: none;
-      }
-      @include breakpoint(800px){
-        width: calc(100% / 3);
-        min-height: 330px;
+      width: 100%;
+
+      @include breakpoint(800px) {
         border: 1px solid $dark-grey;
         border-top: none;
+        min-height: 330px;
         padding: 0 35px 35px 35px;
-        &:nth-child(2){
+        width: calc(100% / 3);
+        &:nth-child(2) {
           border-right: none;
         }
-        &:nth-child(4){
+        &:nth-child(4) {
           border-bottom: 1px solid $dark-grey;
-          border-left: none; 
-        } 
-      }
-      .card__label{
-        margin: 30px auto 20px auto;
-        @include font($source, 1.4rem, 600, $pink, uppercase, center);
-        @include breakpoint(800px){
-          margin-top: 60px;
-          font-size: 1.6rem;
+          border-left: none;
         }
       }
-      .card__title{
-        @include font($hind, 1.8rem, 500, $dark-blue, inherit, center);
-        line-height: 1.5;
-        @include breakpoint(800px){
-          height: 90px;
-          font-size: 2.4rem;
-        }      
+      &:nth-child(4) {
+        border-bottom: none;
       }
-      .card__subtitle{
-        margin-top: 30px;
-        @include font($source, 1.4rem, 400, $dark-grey, inherit, center);
-        line-height: 1.6;
-        @include breakpoint(800px){
+      .card__label {
+        margin: 30px auto 20px auto;
+
+        @include font($source, 1.4rem, 600, $pink, uppercase, center);
+        @include breakpoint(800px) {
           font-size: 1.6rem;
-        }        
+          margin-top: 60px;
+        }
+      }
+      .card__title {
+        line-height: 1.5;
+
+        @include font($hind, 1.8rem, 500, $dark-blue, inherit, center);
+        @include breakpoint(800px) {
+          font-size: 2.4rem;
+          height: 90px;
+        }
+      }
+      .card__subtitle {
+        line-height: 1.6;
+        margin-top: 30px;
+
+        @include font($source, 1.4rem, 400, $dark-grey, inherit, center);
+        @include breakpoint(800px) {
+          font-size: 1.6rem;
+        }
       }
     }
   }
-  .projects__footer .footer__link{
-    border: 1px solid $dark-blue;
+  .projects__footer .footer__link {
     background: $white;
+    border: 1px solid $dark-blue;
   }
 }
 
 /**
 * PUBLICATIONS
 */
-section.publications{
+section.publications {
   background: $dark-blue;
   overflow: hidden;
-  .publications__header{
+  .publications__header {
     border: 1px solid $light-grey;
+
     flex-shrink: 0;
-    @include breakpoint(800px){
+    @include breakpoint(800px) {
       border-left: none;
       border-right: none;
       border-top: none;
-    }    
-    .header__title, .header__link{
-      color: $white;   
     }
-    .header__title{
-      @include breakpoint(800px){
-        color: $dark-blue;
+    .header__title,
+    .header__link {
+      color: $white;
+    }
+    .header__title {
+      @include breakpoint(800px) {
         background: $white;
+        color: $dark-blue;
       }
     }
   }
-  .publications__container{
-    @include breakpoint(800px){
-      margin: 120px 60px;
+  .publications__container {
+    @include breakpoint(800px) {
       border: 1px solid $white;
       display: flex;
       flex-direction: row;
+      margin: 120px 60px;
+
       flex-wrap: wrap;
     }
   }
-  .publications__wrapper{
-    .publication__card{
-      &:last-child{
-        border-bottom: none;
-      }
-    }
-    @include breakpoint(800px){
-      width: calc(100% * 0.6);
+  .publications__wrapper {
+    @include breakpoint(800px) {
       display: flex;
       flex-direction: column;
+      width: calc(100% * 0.6);
+
       flex-wrap: nowrap;
-      .publication__card{
-        width: 100%;
+      .publication__card {
         border-bottom: none;
-        border-right: none;   
-        &:last-child{
+        border-right: none;
+        width: 100%;
+        &:last-child {
           border-top: 1px solid $white;
         }
       }
-    }    
+    }
+    .publication__card {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
   }
-  .publication__card{
-    padding: 30px 20px;
+  .publication__card {
     border-bottom: 1px solid $light-grey;
     display: flex;
     flex-direction: column;
-    @include breakpoint(800px){
-      padding: 60px 60px 30px 60px;
-      flex-shrink: 0;
-      width: calc(100% * 0.4);
+    padding: 30px 20px;
+
+    @include breakpoint(800px) {
+      border-bottom: none;
       border-right: 1px solid $white;
-      border-bottom: none;      
+      padding: 60px 60px 30px 60px;
+      width: calc(100% * 0.4);
+
+      flex-shrink: 0;
     }
-    .card__surtitle{
-      @include font($source, 1.4rem, 600, $pink, uppercase, left);
+    .card__surtitle {
       margin-bottom: 20px;
+
+      @include font($source, 1.4rem, 600, $pink, uppercase, left);
     }
-    .card__title{
+    .card__title {
       @include font($hind, 2.2rem, 500, $light-grey, inherit, left);
     }
-    .card__subtitle{
-      @include font($hind, 1.8rem, 400, rgba($white, .5), inherit, left);
-      margin-top: 20px;
+    .card__subtitle {
       line-height: 1.61;
+      margin-top: 20px;
+
+      @include font($hind, 1.8rem, 400, rgba($white, 0.5), inherit, left);
     }
-    .card__footer{
+    .card__footer {
       margin-top: auto;
     }
-    .card__author{
+    .card__author {
       margin-top: auto;
       padding-top: 30px;
+
       @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
     }
-    .card__source{
+    .card__source {
       margin-top: 10px;
+
       @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
     }
-    .card__italic{
-      @include font($cabin, 1.4rem, 400, $dark-grey, capitalize, left);
+    .card__italic {
       font-style: italic;
+
+      @include font($cabin, 1.4rem, 400, $dark-grey, capitalize, left);
     }
   }
-  .publications__footer{
+  .publications__footer {
     border: 1px solid $light-grey;
-    .footer__link{
+    .footer__link {
       color: $white;
-    }    
+    }
   }
 }
 
-
-section.home-section.rubrics{
+section.home-section.rubrics {
   overflow: hidden;
-  .rubrics__header{
+  .rubrics__header {
     background: $pink;
-    .header__title{
+    .header__title {
       background: $dark-blue;
       color: $light-grey;
     }
-    .header__link{
+    .header__link {
       color: $dark-blue;
-    }    
+    }
   }
-  .rubrics__footer{
+  .rubrics__footer {
     background: $pink;
   }
-  .rubrics__container{
-    position: relative;
+  .rubrics__container {
     padding: 120px 20px;
-    @include breakpoint(700px){
+    position: relative;
+
+    @include breakpoint(700px) {
       padding: 250px $padding;
     }
   }
-  .rubrics__wrapper{
-    width: 100%;
+  .rubrics__wrapper {
     display: flex;
     flex-direction: row;
+    width: 100%;
+
     flex-wrap: wrap;
-    @include breakpoint(700px){
+    @include breakpoint(700px) {
       position: relative;
-    }    
-    .rubrics__item{
+    }
+    .rubrics__item {
       width: 100%;
-      @include breakpoint(700px){
+
+      @include breakpoint(700px) {
         width: calc(100% / 4);
-        &:first-child{
-          .item__button{
+        &:first-child {
+          .item__button {
             border-left: 1px solid $dark-blue;
-            &.desktop-active{
-              &::before{
-                content: "";
+            &.desktop-active {
+              &::before {
+                background: $dark-blue;
+                content: '';
+                height: 100%;
                 position: absolute;
                 right: -1px;
                 top: 0px;
-                height: 100%;
                 width: 1px;
-                background: $dark-blue;
               }
             }
           }
         }
-        &:nth-child(2){
-          .item__button{
-            &.desktop-active{
-              &::after{
-                content: "";
-                position: absolute;
+        &:nth-child(2) {
+          .item__button {
+            &.desktop-active {
+              &::after {
+                background: $dark-blue;
+                content: '';
+                height: 100%;
                 left: 0px;
+                position: absolute;
                 top: 0px;
-                height: 100%;
                 width: 1px;
-                background: $dark-blue;
               }
-              &::before{
-                content: "";
+              &::before {
+                background: $dark-blue;
+                content: '';
+                height: 100%;
                 position: absolute;
                 right: 0px;
                 top: 0px;
-                height: 100%;
                 width: 1px;
-                background: $dark-blue;
               }
             }
           }
         }
-        &:nth-child(3){
-          .item__button{
-            &.desktop-active{
-              &::after{
-                content: "";
-                position: absolute;
+        &:nth-child(3) {
+          .item__button {
+            &.desktop-active {
+              &::after {
+                background: $dark-blue;
+                content: '';
+                height: 100%;
                 left: -1px;
+                position: absolute;
                 top: 0px;
-                height: 100%;
                 width: 1px;
-                background: $dark-blue;
               }
-              &::before{
-                content: "";
+              &::before {
+                background: $dark-blue;
+                content: '';
+                height: 100%;
                 position: absolute;
                 right: 0px;
                 top: 0px;
-                height: 100%;
                 width: 1px;
-                background: $dark-blue;
               }
             }
           }
         }
-        &:nth-child(4){      
-          .item__button{
+        &:nth-child(4) {
+          .item__button {
             border-right: 1px solid $dark-blue;
-            &.desktop-active{
-              &::after{
-                content: "";
-                position: absolute;
-                left: -1px;
-                top: 0px;
-                height: 100%;
-                width: 1px;
+            &.desktop-active {
+              &::after {
                 background: $dark-blue;
+                content: '';
+                height: 100%;
+                left: -1px;
+                position: absolute;
+                top: 0px;
+                width: 1px;
               }
-            }            
+            }
           }
         }
       }
     }
-    .item__button{
-      width: 100%;
-      height: 60px;
-      padding: 0 20px;
-      @include font($hind, 1.4rem, 600, $dark-grey, uppercase, left);
+    .item__button {
+      background: $white;
+      border: 1px solid $dark-blue;
       display: flex;
       flex-direction: row;
+      height: 60px;
       justify-content: space-between;
-      border: 1px solid $dark-blue;
       margin-top: -1px;
-      transition: color .25s $easing;
-      background: $white;
-      span{
-        transform: rotate(90deg);
-        transition: transform .3s $easing;
-        @include breakpoint(700px){
-          display: none;
-        }    
+      padding: 0 20px;
+      transition: color 0.25s $easing;
+      width: 100%;
+
+      @include font($hind, 1.4rem, 600, $dark-grey, uppercase, left);
+      @include breakpoint(700px) {
+        background: none;
+        border-left: none;
+        border-right: none;
+        height: 78px;
+        margin: 0;
+        position: relative;
+        transition: none;
+        &.mobile-active {
+          color: inherit;
+        }
+        &.desktop-active {
+          color: $dark-blue;
+        }
       }
-      &.mobile-active{
+      span {
+        transform: rotate(90deg);
+        transition: transform 0.3s $easing;
+
+        @include breakpoint(700px) {
+          display: none;
+        }
+      }
+      &.mobile-active {
         color: $dark-blue;
-        span{
+        span {
           transform: rotate(-90deg);
         }
       }
-      @include breakpoint(700px){
-        margin: 0;
-        height: 78px;
-        border-left: none;
-        border-right: none;
-        transition: none;
-        background: none;   
-        position: relative;     
-        &.mobile-active{
-          color: inherit;
-        }
-        &.desktop-active{
-          color: $dark-blue;
-        }
-      }      
     }
-    .item__wrapper{
+    .item__wrapper {
       height: 0;
       overflow: hidden;
-      transition: height .35s $easing;
       position: relative;
-      &::after{
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 1px;
-        width: 100%;
-        background:$dark-grey;
-      }
-      @include breakpoint(700px){
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        height: auto;
+      transition: height 0.35s $easing;
+
+      @include breakpoint(700px) {
         display: none;
         flex-direction: row;
+        height: auto;
+        left: 0;
+        position: absolute;
+        top: 78px;
+        width: 100%;
+
         flex-wrap: wrap;
-        &.desktop-active{
+        &.desktop-active {
           display: flex;
         }
       }
+      &::after {
+        background: $dark-grey;
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
-    .rubrics__subItem{
-      width: 100%;
-      height: 60px;
+    .rubrics__subItem {
+      background: $white;
       border: 1px solid $dark-grey;
       border-top: none;
-      background: $white;      
-      @include breakpoint(700px){
-        height: 78px;
+      height: 60px;
+      width: 100%;
+
+      @include breakpoint(700px) {
+        background: none;
         border: none;
-        width: calc(100% / 4); 
-        background: none;       
+        height: 78px;
+        width: calc(100% / 4);
       }
-      a{
-        display: flex;
+      a {
         align-items: center;
-        width: 100%;
+        display: flex;
         height: 100%;
         padding: 0 20px;
+        width: 100%;
+
         @include font($hind, 1.2rem, 500, $black, uppercase, center);
-        @include breakpoint(700px){
+        @include breakpoint(700px) {
           font-size: 1.4rem;
-        }        
+        }
       }
     }
-    .item__grid{
+    .item__grid {
       display: none;
-      @include breakpoint(700px){
-        display: flex;
-      }      
-      width: 100%;
       // background: red;
       flex-direction: row;
+      width: 100%;
+
+      @include breakpoint(700px) {
+        display: flex;
+      }
       flex-wrap: wrap;
-      div{
-        border-bottom:  1px solid $dark-grey;
-        width: calc(100% / 4);
+      div {
+        border-bottom: 1px solid $dark-grey;
         height: 78px;
+        width: calc(100% / 4);
       }
     }
   }
-  .rubrics__lines{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    padding: 0 $padding;
+  .rubrics__lines {
     display: flex;
     flex-direction: row;
+    height: 100%;
     justify-content: space-between;
-    .line{
+    left: 0;
+    padding: 0 $padding;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+    .line {
+      background: $dark-grey;
       height: 100%;
       width: 1px;
-      background: $dark-grey;
-      &:nth-child(3){
+      &:nth-child(3) {
         margin-top: 250px;
       }
     }
   }
 }
 
-section.social{
-  border-top: 1px solid $dark-grey;
+section.social {
   background: $light-grey;
-  width: 100%;
+  border-top: 1px solid $dark-grey;
   height: 100%;
-  @include breakpoint(700px){
+  width: 100%;
+
+  @include breakpoint(700px) {
     display: flex;
     flex-direction: row;
   }
-  .social__section{
+  .social__section {
     width: 100%;
-    @include breakpoint(700px){
-      width: calc(100% /2 - 1px);
-      &:last-child{
-        width: calc(100% /2 + 1px);
+
+    @include breakpoint(700px) {
+      width: calc(100% / 2 - 1px);
+      &:last-child {
         border-left: 1px solid $dark-grey;
+        width: calc(100% / 2 + 1px);
       }
-    }    
+    }
   }
-  .social__header{
-    width: 100%;
-    padding: 30px 20px;
+  .social__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @include breakpoint(700px){
+    padding: 30px 20px;
+    width: 100%;
+
+    @include breakpoint(700px) {
       padding: 60px;
-    }    
-    .header__label{
-      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
-      @include breakpoint(700px){
-        font-size: 1.6rem;      
-      }
-      
     }
-    .header__icon{
-      width: 24px;
+    .header__label {
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      @include breakpoint(700px) {
+        font-size: 1.6rem;
+      }
+    }
+    .header__icon {
       height: 24px;
-      path{
+      width: 24px;
+      path {
         fill: $light-blue;
       }
     }
   }
-  .social__youtube{
+  .social__youtube {
     border-bottom: 1px solid $dark-grey;
-    @include breakpoint(950px){
+
+    @include breakpoint(950px) {
       border-bottom: none;
     }
-    .video__thumbnail{
+    .video__thumbnail {
       position: relative;
-      &::after{
-        content: "";
-        position: absolute;
-        z-index: 10;        
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+      &::after {
         background: darken($light-blue, 5%);
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+
         mix-blend-mode: lighten;
       }
-      &::before{
-        content: "";
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+      &::before {
         background: lighten($light-blue, 10%);
-        mix-blend-mode: darken;        
+        content: '';
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        mix-blend-mode: darken;
       }
-      .thumbnail__hover{
-        width: 48px;
-        height: 48px;
-        position: relative;
-        z-index: 3;
+      .thumbnail__hover {
+        align-items: center;
         border: 1px solid $white;
         display: flex;
+        height: 48px;
         justify-content: center;
-        align-items: center;
-        svg{
-          width: 16px;
+        position: relative;
+        width: 48px;
+        z-index: 3;
+        svg {
           height: 16px;
-          path{
+          width: 16px;
+          path {
             fill: $white;
           }
         }
       }
     }
-    .youtube__video{
-      margin: 0 20px;
+    .youtube__video {
       display: flex;
       flex-direction: row;
+      margin: 0 20px;
       margin-bottom: 30px;
-      @include breakpoint(950px){
+
+      @include breakpoint(950px) {
         margin: 0 60px;
-        margin-bottom: 30px;        
+        margin-bottom: 30px;
       }
-      .video__thumbnail{
-        width: 128px;
-        height: 128px;
-        flex-shrink: 0;
-        display: flex;
-        justify-content: center;
+      .video__thumbnail {
         align-items: center;
-        overflow: hidden;
         background-color: $light-blue;
-        background-size: cover;
         background-position: -45px;
-        @include breakpoint(950px){
+        background-size: cover;
+        display: flex;
+        height: 128px;
+        justify-content: center;
+        overflow: hidden;
+        width: 128px;
+
+        flex-shrink: 0;
+        @include breakpoint(950px) {
           max-width: calc(128px * 1.78);
           min-width: 128px;
           width: 40%;
         }
       }
-      .video__content{
+      .video__content {
         padding-left: 20px;
-        @include breakpoint(950px){
+
+        @include breakpoint(950px) {
           padding-left: 30px;
-        }        
+        }
       }
-      .video__title{
-        @include font($hind, 1.6rem, 500, $black, inherit, left);
+      .video__title {
         line-height: 1.5;
-        @include breakpoint(950px){
+
+        @include font($hind, 1.6rem, 500, $black, inherit, left);
+        @include breakpoint(950px) {
           font-size: 2.1rem;
-        }        
+        }
       }
-      .video__views{
-        @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
+      .video__views {
         margin: 0;
         margin-top: 10px;
-        @include breakpoint(950px){
+
+        @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
+        @include breakpoint(950px) {
           font-size: 1.4rem;
         }
       }
     }
-    .video__highlight{
+    .video__highlight {
       display: block;
       margin: 0 20px;
-      margin-bottom: 60px;      
-      @include breakpoint(950px){
+      margin-bottom: 60px;
+
+      @include breakpoint(950px) {
         margin: 0 60px;
         margin-bottom: 60px;
-      }      
-      .video__thumbnail{
-        display: flex;
-        justify-content: center;
+      }
+      .video__thumbnail {
         align-items: center;
-        width: 100%;
-        height: calc((100vw - 40px) / 1.78);
-        overflow: hidden;
-        background-color: $light-blue;        
-        background-size: cover;
+        background-color: $light-blue;
         background-position: -45px;
-        @include breakpoint(950px){
+        background-size: cover;
+        display: flex;
+        height: calc((100vw - 40px) / 1.78);
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+
+        @include breakpoint(950px) {
           height: calc((50vw - 120px) / 1.78);
         }
       }
-      .video__title{
-        @include font($hind, 1.8rem, 500, $black, inherit, left);
-        padding: 0 5px;
-        margin: 20px 0 10px 0;
+      .video__title {
         line-height: 1.5;
-        @include breakpoint(950px){
+        margin: 20px 0 10px 0;
+        padding: 0 5px;
+
+        @include font($hind, 1.8rem, 500, $black, inherit, left);
+        @include breakpoint(950px) {
           font-size: 2.4rem;
           margin: 20px 0 10px 0;
           padding: 0;
         }
       }
-      .video__views{
-        @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
+      .video__views {
         margin: 0;
-        @include breakpoint(950px){
+
+        @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
+        @include breakpoint(950px) {
           text-align: left;
-        }        
+        }
       }
     }
   }
 
-  .social__twitter{
-    #tweets{
-      .twitter-feed{
-        .ctf-item{
+  .social__twitter {
+    #tweets {
+      .twitter-feed {
+        .ctf-item {
           border-top: 1px solid $dark-grey;
-          padding: 30px 20px;
           margin: 0;
-          @include breakpoint(950px){
+          padding: 30px 20px;
+
+          @include breakpoint(950px) {
             padding: 30px 60px;
           }
-          .ctf-context{
+          .ctf-context {
             @include font($source, 1.2rem, 400, $dark-grey, uppercase, left);
-            .ctf-retweet-text{
-              color: $dark-grey !important;              
+            .ctf-retweet-text {
+              color: $dark-grey !important;
             }
-            .ctf-retweet-icon{
-              border-radius: 0;
+            .ctf-retweet-icon {
               background: none;
-              i{
+              border-radius: 0;
+              i {
                 color: $dark-grey;
               }
             }
           }
-          .ctf-author-name, .ctf-author-screenname, .ctf-tweet-meta{
+          .ctf-author-name,
+          .ctf-author-screenname,
+          .ctf-tweet-meta {
             margin: 0;
           }
-          .ctf-author-name{
+          .ctf-author-name {
             text-transform: capitalize;
           }
-          .ctf-author-screenname{
+          .ctf-author-screenname {
             display: none;
           }
-          .ctf-screename-sep{
+          .ctf-screename-sep {
             margin: 0 5px;
           }
-          .ctf-tweet-date{
-            @include font($source, 1.4rem, 600, $dark-grey, lowercase, left);            
+          .ctf-tweet-date {
+            @include font($source, 1.4rem, 600, $dark-grey, lowercase, left);
           }
 
-          .ctf-tweet-content{
-            padding: 0;
+          .ctf-tweet-content {
             margin-top: 10px;
-            .ctf-tweet-text{
+            padding: 0;
+            .ctf-tweet-text {
+              line-height: 1.5;
+
               @include font($hind, 1.4rem, 400, $black, inherit, left);
-              line-height: 1.5;      
-              @include breakpoint(950px){
+              @include breakpoint(950px) {
                 font-size: 1.6rem;
               }
-                    
             }
           }
         }
