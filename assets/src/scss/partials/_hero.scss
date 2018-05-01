@@ -1,6 +1,7 @@
 .hero {
   background-color: $dark-blue;
   height: calc(100vh - 8rem - 8rem);
+  max-height: 70rem;
 }
 
 .hero__container {
@@ -41,16 +42,46 @@
       width: calc(90vw * 2 / 24);
     }
 
+    &--triple {
+      width: calc(90vw / 24 * 3);
+    }
+
+    &--description {
+      width: calc(90vw / 24 * 11);
+    }
+
     &--title {
+      border-left: 1px solid $light-grey;
+
+      @include font($source, 3rem, 700, $light-grey, uppercase, center);
+    }
+
+    &--tab {
+      border: 1px solid $pink;
+      width: calc(90vw / 24 * 4);
+
+      h2 {
+        @include font($hind, 1.6rem, 500, $light-grey, none, left);
+      }
+    }
+
+    &--noBorderTop {
+      border-top: 0;
+    }
+
+    // Handling border
+    &--leftAdjacentBorder {
+      border: none;
+      border-left: 1px $pink solid;
+      border-right: 1px $border-grey solid;
+      border-top: 1px solid $border-grey;
     }
 
     // Youtube notification
     &--notification {
       color: $pink;
     }
-    &--last__notification {
-      border-bottom: 1px $border-grey solid;
-    }
+
     &--popUp {
       background-color: $border-grey;
       border: 1px $pink solid;
@@ -70,11 +101,6 @@
       flex-direction: row;
       justify-content: space-around;
       width: calc(90vw * 6 / 24);
-    }
-    &--lastPopUp {
-      border: none;
-      border-left: 1px $pink solid;
-      border-right: 1px $border-grey solid;
     }
   }
   &__row {
@@ -132,4 +158,27 @@
 
 .popUp__title {
   @include font($hind, 1.2rem, 500, $light-grey, none, center);
+}
+
+// H1 title
+.title__first {
+  border-left: 1px solid $border-grey;
+}
+.title__sub {
+  color: $pink;
+}
+
+// Description
+.subcase__description {
+  width: 95%;
+
+  p {
+    @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
+  }
+}
+
+// Tab links
+.tab__arrow {
+  margin-left: auto;
+  padding-right: 2rem;
 }
