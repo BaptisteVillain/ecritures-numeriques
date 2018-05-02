@@ -40,9 +40,11 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "gulp-if": "^2.0.2",
     "gulp-replace": "^0.6.1",
     "gulp-wp-pot": "^2.2.0",
+    "qs": "^6.5.1",
     "run-sequence": "^2.2.1"
   }
 }

@@ -17,6 +17,10 @@ class StarterSite extends TimberSite {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'menus' );
+		add_theme_support( 'infinite-scroll', array(
+			'container' => 'publication-container',
+			'footer' => false,
+		));
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
@@ -102,6 +106,7 @@ function my_scripts() {
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/public/css/main.min.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/public/js/main.min.js', array('jquery'), '1.0.0', true );
+	wp_localize_script('my-js', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
@@ -319,3 +324,32 @@ add_image_size('event_banner', 360, 120, true);
 remove_filter( 'the_content', 'wpautop' );
 remove_filter( 'the_excerpt', 'wpautop' );
 
+
+add_action( 'after_setup_theme', 'infinite_scroll_init' );
+function infinite_scroll_init(){
+	add_theme_support( 'infinite-scroll', array(
+		'container' => 'publication-container',
+		'footer' => false,
+	) );
+}
+
+
+	/**
+ * AJAX Load More 
+ */
+function publication_load_more() {
+	// $args = isset( $_POST['query'] ) ? array_map( 'esc_attr', $_POST['query'] ) : array();
+	// $args['post_type'] = isset( $args['post_type'] ) ? esc_attr( $args['post_type'] ) : 'post';
+	// $args['paged'] = esc_attr( $_POST['page'] );
+	// $args['post_status'] = 'publish';
+	// ob_start();
+	// $loop = new WP_Query( $args );
+	// if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
+	// 	be_post_summary();
+	// endwhile; endif; wp_reset_postdata();
+	// $data = ob_get_clean();
+	wp_send_json_success( 'this is a sucess' );
+	wp_die();
+}
+add_action( 'wp_ajax_publication_load_more', 'publication_load_more' );
+add_action( 'wp_ajax_nopriv_publication_load_more', 'publication_load_more' );

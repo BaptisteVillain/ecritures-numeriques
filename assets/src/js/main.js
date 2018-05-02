@@ -1,6 +1,7 @@
 import Header from './Classes/Header'
 import HomeRubrics from './Classes/HomeRubrics'
 import TaxonomyTabs from './Classes/TaxonomyTabs'
+import LoadMore from './Classes/LoadMore'
 
 
 const header = new Header(document.querySelector('.site-header'))
@@ -16,3 +17,5 @@ if (document.querySelector('.taxonomy__related')) {
 if (document.querySelector('.page-rubrics')) {
   const pageRubrics = new HomeRubrics(document.querySelector('.page-rubrics'), false)
 }
+
+const PublicationLoad = new LoadMore()

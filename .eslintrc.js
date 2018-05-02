@@ -8,6 +8,7 @@ module.exports = {
     'function-paren-newline': 0,
     'arrow-parens': 0,
     'no-param-reassign': 0,
-    "semi": [2, "never"]
+    "semi": [2, "never"],
+    "no-undef": 0
   }
 };

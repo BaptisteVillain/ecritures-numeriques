@@ -7,7 +7,7 @@ const server = browserSync.create();
 const serverTask = done => {
   server.init(
     {
-      proxy: 'localhost:8888'
+      proxy: 'localhost:7777'
     },
     done()
   );
