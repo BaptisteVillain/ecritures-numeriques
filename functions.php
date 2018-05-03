@@ -101,12 +101,18 @@ new StarterSite();
 // Enqueue scripts
 function my_scripts() {
 
+	global $post;
+
 	// Use jQuery from a CDN
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js', array(), null, true);
 	wp_enqueue_style( 'my-styles', get_template_directory_uri() . '/assets/public/css/main.min.css', 1.0);
 	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/public/js/main.min.js', array('jquery'), '1.0.0', true );
 	wp_localize_script('my-js', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+	wp_localize_script('my-js', 'vars', array(
+		'postID' => $post->ID,
+		'postDate' => $post->date_create,
+	));
 }
 
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
@@ -338,18 +344,100 @@ function infinite_scroll_init(){
  * AJAX Load More 
  */
 function publication_load_more() {
-	// $args = isset( $_POST['query'] ) ? array_map( 'esc_attr', $_POST['query'] ) : array();
-	// $args['post_type'] = isset( $args['post_type'] ) ? esc_attr( $args['post_type'] ) : 'post';
-	// $args['paged'] = esc_attr( $_POST['page'] );
-	// $args['post_status'] = 'publish';
-	// ob_start();
-	// $loop = new WP_Query( $args );
-	// if( $loop->have_posts() ): while( $loop->have_posts() ): $loop->the_post();
-	// 	be_post_summary();
-	// endwhile; endif; wp_reset_postdata();
-	// $data = ob_get_clean();
-	wp_send_json_success( 'this is a sucess' );
+
+	$return = [];
+
+	$return['post_id'] = $_POST['post_id'];
+	$return['date']    = $_POST['post_date'];
+	$return['page']    = $_POST['page'];
+
+
+	$return['posts'] = [];	
+	$posts = Timber::get_posts(array(
+		'post_type' => 'publication',
+		'post_status' => 'publish',
+		'date_query'    => array(
+			'column'  => 'post_date',
+			'before'   => $_POST['post_date']
+		),
+		'posts_per_page' => 8,
+		'paged' => $_POST['page'],
+		'post__not_in' => array($_POST['post_id'])
+	));
+
+	// $return['posts'] = $posts;	
+	
+	if($posts){
+		foreach($posts as $post){
+
+			$context['post'] = $post;
+
+			$context['authors'] = get_posts(array(
+				'post_type' => 'member',
+				'post__in' => $post->custom['authors'],
+			));
+			
+			$research_field = wp_get_post_terms($post->id, 'research_field');
+			$context['research_field'] = $research_field[0];
+			$context['tags'] = wp_get_post_terms($post->id, array('research_topic', 'axis', 'key_concept'));
+			
+			$context['discovers'] = [];			
+			if($post->custom['relation_publication_publication']){
+				$discovers =  get_posts(array(
+					'post_type' => 'publication',
+					'post__in' => $post->custom['relation_publication_publication'],
+					'posts_per_page' => 3	
+				));
+				
+				foreach ($discovers as $key => $publication) {
+					$list_authors = get_post_meta($publication->ID, 'publication_authors', false);
+					$authors = get_posts(array(
+						'post_type' => 'member',
+						'post__in' => $list_authors[0]
+					));
+					$discovers[$key]->authors = $authors;
+				
+					$research_field = wp_get_post_terms($publication->ID, 'research_field');
+					$discovers[$key]->research_field = $research_field[0];
+				
+					$parse = parse_url($publication->url);
+					$discovers[$key]->domain = $parse['host'];
+				}
+				
+				$context['discovers'] = $discovers;
+			}
+			$return['posts'][] = array(
+				'content' => Timber::compile('partials/content-publication.twig', $context)
+		);
+		}
+	} else {
+		$return = "nomore";
+	}
+	
+	wp_send_json_success($return);
 	wp_die();
-}
+} 
 add_action( 'wp_ajax_publication_load_more', 'publication_load_more' );
 add_action( 'wp_ajax_nopriv_publication_load_more', 'publication_load_more' );
+
+/**
+ * Add id fitler in WP_Query
+ */
+add_filter( 'posts_where', 'id_filter', 10, 2 );
+function id_filter($where, $q){
+	global $wpdb;
+
+	if( $pid = $q->get( 'wpse_pid' )){
+			$cmp = $q->get( 'wpse_compare' );
+
+			$cmp = in_array( 
+					$cmp, 
+					[ '<', '>', '!=', '<>', '<=', '>=' ] 
+			)
+				 ? $cmpF
+				 : '=';  // default
+
+			$where .= $wpdb->prepare( " AND {$wpdb->posts}.ID {$cmp} %d ", $pid ) ;
+	}
+	return $where;
+}

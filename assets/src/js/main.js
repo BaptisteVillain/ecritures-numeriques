@@ -18,4 +18,4 @@ if (document.querySelector('.page-rubrics')) {
   const pageRubrics = new HomeRubrics(document.querySelector('.page-rubrics'), false)
 }
 
-const PublicationLoad = new LoadMore()
+const PublicationLoad = new LoadMore(document.querySelector('.publication__container'))

@@ -9,7 +9,7 @@
 
 $context = Timber::get_context();
 $post = Timber::query_post();
-$context['post'] = $post;
+$context['post'] = get_post();
 
 $context['authors'] = get_posts(array(
 	'post_type' => 'member',

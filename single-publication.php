@@ -21,11 +21,12 @@ $context['research_field'] = $research_field[0];
 $context['tags'] = wp_get_post_terms($post->id, array('research_topic', 'axis', 'key_concept'));
 
 
-
+$context['discovers'] = [];
 if($post->custom['relation_publication_publication']){
 	$discovers =  get_posts(array(
 		'post_type' => 'publication',
-		'post__in' => $post->custom['relation_publication_publication']
+		'post__in' => $post->custom['relation_publication_publication'],
+		'post_per_page' => 3
 	));
 	
 	foreach ($discovers as $key => $publication) {
