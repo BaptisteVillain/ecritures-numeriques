@@ -1,15 +1,20 @@
 .hero {
   background-color: $dark-blue;
   height: calc(100vh - 8rem - 8rem);
-  max-height: 70rem;
+  // max-height: 67rem;
   overflow-y: hidden;
 }
 
 .hero__container {
   height: 100%;
   margin: 0 auto;
+  max-width: 123rem;
   position: relative;
   width: 90vw;
+
+  @include breakpoint(1244px) {
+    width: 85vw;
+  }
 }
 
 .grid {
@@ -20,9 +25,15 @@
     display: flex;
     height: calc(90vw / 24);
     justify-content: center;
+    max-height: calc(123rem / 24);
+    max-width: calc(123rem / 24);
     text-transform: uppercase;
     width: calc(90vw / 24);
 
+    @include breakpoint(1244px) {
+      height: calc(85vw / 24);
+      width: calc(85vw / 24);
+    }
     @include font(
       $hind,
       1.3rem,
@@ -40,15 +51,30 @@
     }
 
     &--double {
-      width: calc(90vw * 2 / 24);
+      max-width: calc(123rem / 24 * 2);
+      width: calc(90vw / 24 * 2);
+
+      @include breakpoint(1244px) {
+        width: calc(85vw / 24 * 2);
+      }
     }
 
     &--triple {
+      max-width: calc(123rem / 24 * 3);
       width: calc(90vw / 24 * 3);
+
+      @include breakpoint(1244px) {
+        width: calc(85vw / 24 * 3);
+      }
     }
 
     &--description {
+      max-width: calc(123rem / 24 * 11);
       width: calc(90vw / 24 * 11);
+
+      @include breakpoint(1244px) {
+        width: calc(85vw / 24 * 11);
+      }
     }
 
     &--title {
@@ -59,7 +85,12 @@
 
     &--tab {
       border: 1px solid $pink;
+      max-width: calc(123rem / 24 * 4);
       width: calc(90vw / 24 * 4);
+
+      @include breakpoint(1244px) {
+        width: calc(85vw / 24 * 4);
+      }
 
       h2 {
         margin-right: auto;
@@ -91,7 +122,12 @@
       border: 1px $pink solid;
       flex-direction: row;
       justify-content: space-around;
+      max-width: calc(123rem / 24 * 7);
       width: calc(90vw / 24 * 7);
+
+      @include breakpoint(1244px) {
+        width: calc(85vw / 24 * 7);
+      }
     }
     &--thumbnail {
       background-image: url('../images/insert-img.jpg');
@@ -104,7 +140,8 @@
       border-left: 1px solid $pink;
       flex-direction: row;
       justify-content: space-around;
-      width: calc(90vw * 6 / 24);
+      max-width: calc(123rem / 24 * 6);
+      width: calc(90vw / 24 * 6);
     }
   }
   &__row {

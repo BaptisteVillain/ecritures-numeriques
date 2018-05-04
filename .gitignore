@@ -1,5 +1,6 @@
 .DS_Store
 .sass-cache
+gulp/
 
 
 # Created by https://www.gitignore.io/api/node,macos,visualstudio

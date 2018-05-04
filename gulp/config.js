@@ -7,7 +7,7 @@ module.exports = {
     server: {
       baseDir: './../..'
     },
-    port: '7777',
+    port: '8888',
     open: 'local'
   },
 
