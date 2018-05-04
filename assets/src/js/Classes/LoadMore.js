@@ -7,15 +7,18 @@ export default class LoadMore {
     this.container = container
     this.footer = document.querySelector('footer.site-footer')
     this.wait = false
-    this.id = vars.postID
     this.page = 1
     this.date = vars.postDate
+    this.id = vars.postID
     this.posts = this.container.querySelectorAll('.publication-wrapper')
-    this.title = ''
-    this.select = {
-      title: '',
-      path: ''
-    }
+
+    this.select = {}
+
+    window.addEventListener('popstate', e => {
+      // if (e.originalEvent.state !== null) {
+      location.reload()
+      // }
+    })
 
     window.addEventListener('scroll', e => {
       const scrollBottom = document.body.scrollHeight - document.documentElement.scrollTop
@@ -73,6 +76,7 @@ export default class LoadMore {
 
   updatePage() {
     document.title = `${this.select.title} - Ecritures Numeriques`
-    history.pushState(null, null, this.select.path)
+    window.history.pushState({}, '', this.select.path)
+    window.history.scrollRestoration = 'manual'
   }
 }
