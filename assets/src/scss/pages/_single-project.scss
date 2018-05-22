@@ -1,0 +1,50 @@
+.project-wrapper {
+    // project-wrapper style is available on _sidebar-discover
+}
+
+// Header project
+.project__header {
+    background-color: $dark-blue;
+    padding: 3rem 0;
+}
+
+.header__project__container {
+    padding: 0 7.5vw;
+}
+
+a.header__project__back {
+    @include font($source, 1.4rem, 400, $blue-grey, uppercase, left);
+}
+
+.header__project__wrapper {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.header__project__title {
+    @include font($hind, 2.9rem, 400, $light-grey, inherit, left);
+}
+
+.header__project__collection {
+    align-items: center;
+    background-color: $pink;
+    display: flex;
+    height: 6rem;
+    justify-content: center;
+    width: 26rem;
+
+    @include font($source, 1.4rem, 600, $dark-blue, uppercase, left);
+    span {
+        padding-left: 1rem;
+    }
+}
+
+.project {
+    max-width: 79rem;
+}
+
+.project__content {
+    @include font($hind, 1.4rem, 400, $black, inherit, left);
+}

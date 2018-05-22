@@ -215,6 +215,9 @@
 
   p {
     @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
+    @include breakpoint(1244px) {
+      @include font($source, 1rem, 500, $light-grey, uppercase, left);
+    }
   }
 }
 

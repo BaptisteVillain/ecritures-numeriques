@@ -1,0 +1,43 @@
+.publication-wrapper,
+.project-wrapper {
+  padding: 30px 20px 0 20px;
+
+  @include breakpoint(700px) {
+    display: flex;
+    flex-direction: row;
+    padding: 60px $padding-main 0 $padding-main;
+  }
+  .publication__discover-list {
+    display: none;
+
+    @include breakpoint(700px) {
+      display: block;
+      width: 15vw;
+
+      flex-shrink: 0;
+    }
+    .discover-list__title {
+      @include font($source, 1.4rem, 600, $black, uppercase, left);
+    }
+    .discover-list__item {
+      background: $light-grey;
+      margin-top: 20px;
+      padding: 20px;
+      width: 100%;
+      .discover__title {
+        line-height: 1.56;
+        margin: 10px 0;
+
+        @include font($cabin, 1.4rem, 500, $black, inherit, left);
+      }
+      .discover__research-field {
+        @include font($source, 1.2rem, 600, $light-blue, uppercase, left);
+      }
+      .discover__authors {
+        line-height: 1.56;
+
+        @include font($source, 1.2rem, 400, $dark-grey, inherit, left);
+      }
+    }
+  }
+}

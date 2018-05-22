@@ -1,138 +1,112 @@
-.publication-wrapper{
-  padding: 30px 20px 0 20px;
-  @include breakpoint(700px){
-    display: flex;
-    flex-direction: row;
-    padding: 60px $padding-main 0 $padding-main;
-  }
-  .publication__discover-list{
-    display: none;
-    @include breakpoint(700px){
-      display: block;
-      flex-shrink: 0;
-      width: 15vw;
-    }
-    .discover-list__title{
-      @include font($source, 1.4rem, 600, $black, uppercase, left);
-    }
-    .discover-list__item{
-      width: 100%;
-      padding: 20px;
-      margin-top: 20px;
-      background: $light-grey;
-      .discover__title{
-        @include font($cabin, 1.4rem, 500, $black, inherit, left);
-        line-height: 1.56;
-        margin: 10px 0;
-      }
-      .discover__research-field{
-        @include font($source, 1.2rem, 600, $light-blue, uppercase, left);
-      }
-      .discover__authors{
-        @include font($source, 1.2rem, 400, $dark-grey, inherit, left);
-        line-height: 1.56;
-      }
-    }
-  }
-  
-  .publication{
+.publication-wrapper {
+  // publication-wrapper style is available on _sidebar-discover
+  .publication {
     width: 100%;
-    @include breakpoint(700px){
+
+    @include breakpoint(700px) {
       margin-left: calc(100% / 4 - 15vw);
       width: 55vw;
-    }    
-    .publication__research-field{
-      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
-      @include breakpoint(700px){
-        font-size: 1.6rem;
-      }      
     }
-    .publication__title{
-      margin: 20px 0;
+    .publication__research-field {
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      @include breakpoint(700px) {
+        font-size: 1.6rem;
+      }
+    }
+    .publication__title {
       line-height: 1.37;
+      margin: 20px 0;
+
       @include font($cabin, 2.7rem, 500, $black, inherit, left);
-      @include breakpoint(700px){
+      @include breakpoint(700px) {
         font-size: 3rem;
         line-height: 1.56;
       }
     }
-    .publication__authors, .publication__date{
+    .publication__authors,
+    .publication__date {
       margin-top: 10px;
+
       @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
-      a{
+      a {
         color: darken($dark-grey, 20%);
       }
-      .date__uppercase{
+      .date__uppercase {
         text-transform: uppercase;
       }
     }
-    .publication__link{
-      margin-top: 40px;
-      padding: 0 40px;
-      height: 60px;
-      width: 100%;
+    .publication__link {
+      align-items: center;
       border: 1px solid $light-blue;
       display: inline-block;
+      height: 60px;
       line-height: 58px;
-      align-items: center;
+      margin-top: 40px;
+      padding: 0 40px;
+      width: 100%;
+
       @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
-      @include breakpoint(700px){
-        width: auto;
+      @include breakpoint(700px) {
         font-size: 1.6rem;
+        width: auto;
       }
     }
-    .publication__content{
-      margin-top: 60px;
+    .publication__content {
       line-height: 1.56;
+      margin-top: 60px;
+
       @include font($cabin, 1.8rem, 400, $black, inherit, left);
     }
-    .publication__tags{
-      margin-top: 30px;
+    .publication__tags {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       margin-bottom: 10px;
-      @include breakpoint(700px){
+      margin-top: 30px;
+
+      flex-wrap: wrap;
+      @include breakpoint(700px) {
         margin-top: 60px;
-      }      
-      .tag{
-        margin-right: 10px;
-        margin-bottom: 10px;
+      }
+      .tag {
+        background: $light-grey;
         height: 40px;
         line-height: 40px;
+        margin-bottom: 10px;
+        margin-right: 10px;
         padding: 0 20px;
-        background: $light-grey;
+
         @include font($cabin, 1.4rem, 400, $dark-grey, inherit, center);
-        @include breakpoint(700px){
-          font-size: 1.6rem; 
-        }    
+        @include breakpoint(700px) {
+          font-size: 1.6rem;
+        }
       }
     }
-    .publication__transition{
-      margin-top: 20px;
-      width: 100%;
+    .publication__transition {
       height: 10px;
+      margin-top: 20px;
       position: relative;
-      @include breakpoint(700px){
+      width: 100%;
+
+      @include breakpoint(700px) {
         margin-top: 50px;
-      }      
-      &::before{
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 10px;
-        top: 0;
-        left: 0;
-        background: $dark-blue;
       }
-      &::after{
+      &::before {
+        background: $dark-blue;
         content: "";
-        position: absolute;
-        width: calc(100% - 130px);
         height: 10px;
+        left: 0;
+        position: absolute;
         top: 0;
+        width: 120px;
+      }
+      &::after {
+        background: rgba(24, 26, 28, 0.06);
+        content: "";
+        height: 10px;
+        position: absolute;
         right: 0;
-        background: rgba(24,26,28, 0.06);
+        top: 0;
+        width: calc(100% - 130px);
       }
     }
   }

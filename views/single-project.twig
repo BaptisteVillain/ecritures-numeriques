@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <!-- Header project -->
+  <section class="project__header">
+    {% include "partials/header-project.twig" %}
+  </section>
+
+  <!-- Project content -->
+  <section class="project__container">
+    <div class="project-wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
+      {% include "components/sidebar-discover-project.twig" %}
+      <article class="project">
+
+        <p class="project__content">{{post.content}}</p>
+        {% if tags is not empty %}
+          <ul class="publication__tags">
+            {% for tag in tags%}
+              <li class="tag">{{tag.name}}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% include "components/footer-discover.twig" %}
+      </article>
+
+    </div>
+
+  </section>
+
+{% endblock %}
