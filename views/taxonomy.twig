@@ -1,29 +1,29 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	{% include "partials/background-lines.twig" %}
-	<div class="taxonomy__container">
-		<header class="taxonomy__header">
-			<a href="#" class="header__link">< {{__('retour')}}</a>
-			<h3 class="header__parent">
-				{% if term.taxonomy == 'research_field' %}
-					{{__('théorie')}}
-				{% elseif term.taxonomy == 'research_topic' %}
-					{{__('objets de recherche')}}
-				{% elseif term.taxonomy == 'key_concept' %}
-					{{__('concepts clés')}}
-				{% elseif term.taxonomy == 'axis' %}
-					{{__('axes')}}
-				{% endif %}
-			</h3>
-			<h2 class="header__title">{{term.name}}</h2>
-		</header>
-		<div class="taxonomy__wrapper">
-			<div class="taxonomy__about">
-				<p class="taxonomy__content">
-					{{term.description}}
-				</p>
-				{# <div class="taxonomy__discovers">
+  {% include "partials/background-lines.twig" %}
+  <div class="taxonomy__container">
+    <header class="taxonomy__header">
+      <a href="#" class="header__link">< {{__('retour')}}</a>
+      <h3 class="header__parent">
+        {% if term.taxonomy == 'research_field' %}
+          {{__('théorie')}}
+        {% elseif term.taxonomy == 'research_topic' %}
+          {{__('objets de recherche')}}
+        {% elseif term.taxonomy == 'key_concept' %}
+          {{__('concepts clés')}}
+        {% elseif term.taxonomy == 'axis' %}
+          {{__('axes')}}
+        {% endif %}
+      </h3>
+      <h2 class="header__title">{{term.name}}</h2>
+    </header>
+    <div class="taxonomy__wrapper">
+      <div class="taxonomy__about">
+        <p class="taxonomy__content">
+          {{term.description}}
+        </p>
+        {# <div class="taxonomy__discovers">
 					<h4>{{__('découvrir aussi')}}</h4>
 					<ul>
 						<li>Espace numérique</li>
@@ -31,61 +31,58 @@
 						<li>Espace numérique</li>
 					</ul>
 				</div> #}
-				<footer class="taxonomy__footer">
-					<div class="footer__link">
-						<p>{{__('précédent', 'ecritures-numeriques')}}</p>
-						<a href="{{previous.path}}">{{previous.name}}</a>
-					</div>
-					<div class="footer__link">
-						<p>{{__('suivant', 'ecritures-numeriques')}}</p>
-						<a href="{{next.path}}">{{next.name}}</a>
-					</div>
-				</footer>
-			</div>
-			<div class="taxonomy__related">
-				<div class="related__container">
-					<header class="related__header">
-						<nav>
-							<ul>
-								{% for key,rel in term.related %}
-									<li class="header__item">
-										<button class="header__button {% if key == 0 %}active{% endif %}" data-index="{{key}}">
-											{% if rel[0].post_type == 'publication' %}
-												<p class="header__label">{{__('publications', 'ecritures-numeriques')}}</p>
-											{% elseif rel[0].post_type == 'project' %}
-												<p class="header__label">{{__('projets', 'ecritures-numeriques')}}</p>
-											{% elseif rel[0].post_type == 'event' %}
-												<p class="header__label">{{__('événements', 'ecritures-numeriques')}}</p>
-											{% endif %}
-											<p class="title__count">{{rel|length}}</p>
-										</button>
-									</li>
-								{% endfor %}
-							</ul>
-						</nav>
-					</header>
-					<div class="related__wrapper wrapper--hide">
-						<button class="related__return">
-						< {{__('retour', 'ecritures-numeriques')}}
-						</button>
-						{% for section in term.related %}
-							<section class="related__section {% if key == 0 %}active{% endif %}">
-								{% for post in section %}
-								<a href="{{post.path}}" title="{{post.post_title}}" class="related__item">
-									<h5 class="item__title">
-										{{post.post_title}}
-									</h5>
-									<div class="item__about">
-										<p class="item__author">Marcello Vitali-Rosati</p>
-										<p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]  {% if post.domain %}- {{post.domain}} {% endif %}</p>
-									</div>
-								</a>
-								{% endfor %}
-							</section>
-						{% endfor %}
-					</div>
-				</div>
-			</div>			
-		</div>
-	</div>
+        {% include "components/footer-discover.twig" %}
+      </div>
+      <div class="taxonomy__related">
+        <div class="related__container">
+          <header class="related__header">
+            <nav>
+              <ul>
+                {% for key, rel in term.related %}
+                  <li class="header__item">
+                    <button class="header__button {% if key == 0 %}active{% endif %}" data-index="{{key}}">
+                      {% if rel[0].post_type == 'publication' %}
+                        <p class="header__label">{{__('publications', 'ecritures-numeriques')}}</p>
+                      {% elseif rel[0].post_type == 'project' %}
+                        <p class="header__label">{{__('projets', 'ecritures-numeriques')}}</p>
+                      {% elseif rel[0].post_type == 'event' %}
+                        <p class="header__label">{{__('événements', 'ecritures-numeriques')}}</p>
+                      {% endif %}
+                      <p class="title__count">{{rel|length}}</p>
+                    </button>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          </header>
+          <div class="related__wrapper wrapper--hide">
+            <button class="related__return">
+              {{__('retour', 'ecritures-numeriques')}}
+            </button>
+            {% for section in term.related %}
+              <section class="related__section {% if key == 0 %}active{% endif %}">
+                {% for post in section %}
+                  <a href="{{post.path}}" title="{{post.post_title}}" class="related__item">
+                    <h5 class="item__title">
+                      {{post.post_title}}
+                    </h5>
+                    <div class="item__about">
+                      <p class="item__author">
+                        Marcello Vitali-Rosati
+                      </p>
+                      <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                        {% if post.domain %}-
+                          {{post.domain}}
+                        {% endif %}
+                      </p>
+                    </div>
+                  </a>
+                {% endfor %}
+              </section>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}

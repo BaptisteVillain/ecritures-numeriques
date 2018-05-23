@@ -8,7 +8,8 @@
         <p class="discover__research-field">{{publication.research_field.name}}</p>
         <h5 class="discover__title">{{publication.post_title}}</h5>
         <p class="discover__authors">
-          {{publication.domain}},
+          <span class="card__italic">{{post.domain}}</span>
+          -
           {% for key, author in publication.authors %}
             {% if key > 0 %},
             {% endif %}{{author.post_title}}
