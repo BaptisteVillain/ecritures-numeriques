@@ -9,7 +9,10 @@
         <h5 class="discover__title">{{publication.post_title}}</h5>
         <p class="discover__authors">
           {{publication.domain}},
-          {% for key, author in publication.authors %}{% if key > 0 %}, {% endif %}{{author.post_title}}{% endfor %}
+          {% for key, author in publication.authors %}
+            {% if key > 0 %},
+            {% endif %}{{author.post_title}}
+          {% endfor %}
         </p>
       </div>
     {% endfor %}
@@ -18,11 +21,21 @@
     <p class="publication__research-field">{{research_field.name}}</p>
     <h2 class="publication__title">{{post.title}}</h2>
     <p class="publication__authors">Par
-    {% for key, author in authors %}{% if key > 0 %}, {% endif %}{{author.post_title}}{% endfor %}
+      {% for key, author in authors %}
+        {% if key > 0 %},
+        {% endif %}{{author.post_title}}
+      {% endfor %}
     </p>
-    <p class="publication__date">Pubié le <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span> {% if post.domain  %}sur {{post.domain}}{% endif %}</p>
+    <p class="publication__date">Publié le
+      <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
+      {% if post.domain %}sur
+        <span class="card__italic">{{post.domain}}</span>
+      {% endif %}
+    </p>
     {% if post.domain %}
-      <a href="{{post.url}}" class="publication__link" target="_blank">lire sur {{post.domain}} ></a>
+      <a href="{{post.url}}" class="publication__link" target="_blank">lire sur
+        {{post.domain}}
+        ></a>
     {% endif %}
     <p class="publication__content">{{post.content}}</p>
     {% if tags is not empty %}

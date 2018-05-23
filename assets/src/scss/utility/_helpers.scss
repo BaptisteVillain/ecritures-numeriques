@@ -1,10 +1,7 @@
-
 // ----
 // Helper classes
 // ----
-
 // These are non-semantic classes for quick formatting. In theory, it's best to remove these for production, but you know, in theory.
-
 .text-center {
 	text-align: center;
 }
@@ -17,10 +14,14 @@
 	text-align: right;
 }
 
+.card__italic {
+	font-style: italic;
+
+	@include font($cabin, 1.4rem, 400, $dark-grey, capitalize, left);
+}
 
 // I also like to have some spacer classes. Again, scoff at their non-semantic-ness if you feel like it, but I find them immensely useful, particularly when working within a CMS.
 // Note that I use the $size-base unit from the sizing scale set in _variables.scss.
-
 .spacer-top {
 	margin-top: $size-base;
 }

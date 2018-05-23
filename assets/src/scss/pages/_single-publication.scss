@@ -1,6 +1,7 @@
 .publication-wrapper {
   // publication-wrapper style is available on _sidebar-discover
   .publication {
+    max-width: 79rem;
     width: 100%;
 
     @include breakpoint(700px) {
@@ -37,7 +38,7 @@
     }
     .publication__link {
       align-items: center;
-      border: 1px solid $light-blue;
+      background-color: $pink;
       display: inline-block;
       height: 60px;
       line-height: 58px;
@@ -45,7 +46,7 @@
       padding: 0 40px;
       width: 100%;
 
-      @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
+      @include font($source, 1.6rem, 600, $dark-blue, uppercase, center);
       @include breakpoint(700px) {
         font-size: 1.6rem;
         width: auto;
@@ -68,14 +69,14 @@
         margin-top: 60px;
       }
       .tag {
-        background: $light-grey;
+        background: $pink;
         height: 40px;
         line-height: 40px;
         margin-bottom: 10px;
         margin-right: 10px;
         padding: 0 20px;
 
-        @include font($cabin, 1.4rem, 400, $dark-grey, inherit, center);
+        @include font($hind, 1.2rem, 400, $black, inherit, center);
         @include breakpoint(700px) {
           font-size: 1.6rem;
         }
