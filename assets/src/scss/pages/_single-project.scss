@@ -1,22 +1,14 @@
-.project-wrapper {
-    // project-wrapper style is available on _sidebar-discover
-}
-
-.header__project__wrapper {
-    align-items: center;
+.project__wrapper {
+  min-height: calc(100vh - (80px + 175px));
+  
+  .project{
     display: flex;
-    justify-content: space-between;
-    margin-top: 2rem;
-}
+    flex-direction: column;
+    margin-bottom: 120px;
 
-.header__project__title {
-    @include font($hind, 2.9rem, 400, $light-grey, inherit, left);
-}
-
-.project {
-    max-width: 79rem;
-}
-
-.project__content {
-    @include font($hind, 1.4rem, 400, $black, inherit, left);
+    .project__content {
+      @include font($hind, 1.4rem, 400, $black, inherit, left);
+      margin-bottom: 120px;
+    }
+  }
 }
