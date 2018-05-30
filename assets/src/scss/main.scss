@@ -27,8 +27,9 @@
 //    See the files for descriptions of their contents. You can add any other partials you see fit - for example, WordPress might have a _posts.scss partial.
 //--
 //
-@import 'components/_sidebar-discover';
-@import 'components/_footer-discover';
+@import 'components/_single-header';
+@import 'components/_single-footer';
+@import 'components/_single-discover';
 //
 @import 'partials/typography';
 @import 'partials/buttons';
@@ -39,6 +40,7 @@
 @import 'partials/footer';
 @import 'partials/background-lines';
 @import 'partials/hero';
+@import 'partials/single';
 //
 @import 'pages/home';
 @import 'pages/single-publication';

@@ -1,0 +1,18 @@
+<div class="discover__container">
+  {% if discovers is not empty %}
+    <h3 class="discover__title">découvrir aussi</h3>
+  {% endif %}
+  {% for publication in discovers %}
+    <div class="discover__item">
+      <p class="item__research-field">{{publication.research_field.name}}</p>
+      <h5 class="item__title">{{publication.post_title}}</h5>
+      <p class="item__authors">
+        {{publication.domain}},
+        {% for key, author in publication.authors %}
+          {% if key > 0 %},
+          {% endif %}{{author.post_title}}
+        {% endfor %}
+      </p>
+    </div>
+  {% endfor %}
+</div>

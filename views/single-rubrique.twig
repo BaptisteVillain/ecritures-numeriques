@@ -1,23 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% include "partials/background-lines.twig" %}
   <div class="taxonomy__container">
-    <header class="taxonomy__header">
-      <a href="#" class="header__link">< {{__('retour')}}</a>
-      <h3 class="header__parent">
-        {% if term.taxonomy == 'research_field' %}
-          {{__('théorie')}}
-        {% elseif term.taxonomy == 'research_topic' %}
-          {{__('objets de recherche')}}
-        {% elseif term.taxonomy == 'key_concept' %}
-          {{__('concepts clés')}}
-        {% elseif term.taxonomy == 'axis' %}
-          {{__('axes')}}
-        {% endif %}
-      </h3>
-      <h2 class="header__title">{{term.name}}</h2>
-    </header>
+    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': '#'} %}
     <div class="taxonomy__wrapper">
       <div class="taxonomy__about">
         <p class="taxonomy__content">
@@ -31,7 +16,7 @@
 						<li>Espace numérique</li>
 					</ul>
 				</div> #}
-        {% include "components/footer-discover.twig" %}
+        {% include "components/single-footer.twig" with {'previous_path': previous.path, 'previous_name': previous.name,'next_path': next.path, 'next_name': next.name} %}
       </div>
       <div class="taxonomy__related">
         <div class="related__container">

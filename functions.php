@@ -407,7 +407,7 @@ function publication_load_more() {
 				$context['discovers'] = $discovers;
 			}
 			$return['posts'][] = array(
-				'content' => Timber::compile('partials/content-publication.twig', $context)
+				'content' => Timber::compile('partials/single-publication-content.twig', $context)
 		);
 		}
 	} else {

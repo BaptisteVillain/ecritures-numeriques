@@ -91,4 +91,4 @@ else{
 $context['next']->path = get_term_link($context['next']->term_id);
 $context['previous']->path = get_term_link($context['previous']->term_id);
 
-Timber::render( array( 'taxonomy.twig' ), $context );
+Timber::render( array( 'single-rubrique.twig' ), $context );

@@ -1,0 +1,63 @@
+.single__header {
+  padding-left: 20px;
+  width: 100%;
+  @include breakpoint(700px) {
+    background: $dark-blue;
+    height: 175px;
+    padding: 0 $padding-main;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .single__header__wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    .single__header__previous {
+      display: inline-block;
+      margin-top: 25px;
+  
+      @include font($source, 1.4rem, 600, $black, uppercase, left);
+      @include breakpoint(700px) {
+        color: $blue-grey;
+      }
+    }
+    .single__header__parent {
+      margin-top: 40px;
+  
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      @include breakpoint(700px) {
+        color: $pink;
+        font-size: 1.6rem;
+        margin-top: 30px;
+      }
+    }
+    .single__header__title {
+      margin-bottom: 10px;
+  
+      @include font($hind, 2.7rem, 500, $black, capitalize, left);
+      @include breakpoint(700px) {
+        color: $white;
+        font-size: 3rem;
+        margin-top: auto;
+        margin-bottom: 35px;
+      }
+    }
+  }
+
+  .single__header__link{
+    margin-left: auto;
+    background: $pink;
+    padding: 20px;
+    justify-content: center;
+
+    @include font($source, 1.4rem, 600, $dark-blue, uppercase, left);
+    span {
+        padding-left: 10px;
+    }
+  }
+
+}
