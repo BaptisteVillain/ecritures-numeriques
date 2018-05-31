@@ -52,29 +52,8 @@
 
     @include font($cabin, 1.8rem, 400, $black, inherit, left);
   }
-  .publication__tags {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
-    margin-top: 30px;
-
-    flex-wrap: wrap;
-    @include breakpoint(700px) {
-      margin-top: 60px;
-    }
-    .tag {
-      background: $pink;
-      height: 40px;
-      line-height: 40px;
-      margin-bottom: 10px;
-      margin-right: 10px;
-      padding: 0 20px;
-
-      @include font($hind, 1.2rem, 400, $black, inherit, center);
-      @include breakpoint(700px) {
-        font-size: 1.6rem;
-      }
-    }
+  .single-tags{
+    padding-bottom: 0;
   }
   .publication__transition {
     height: 10px;

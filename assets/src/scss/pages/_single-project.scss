@@ -4,7 +4,7 @@
   .project{
     display: flex;
     flex-direction: column;
-    margin-bottom: 120px;
+    margin-bottom: 60px;
 
     .project__content {
       @include font($hind, 1.4rem, 400, $black, inherit, left);

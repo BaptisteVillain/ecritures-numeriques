@@ -24,10 +24,7 @@
     {% endif %}
     <p class="publication__content">{{post.content}}</p>
     {% if tags is not empty %}
-      <ul class="publication__tags">
-        {% for tag in tags%}
-          <li class="tag">{{tag.name}}</li>
-        {% endfor %}
+        {% include 'components/single-tags.twig' with {'tags': tags} %}        
       </ul>
     {% endif %}
     <div class="publication__transition"></div>
