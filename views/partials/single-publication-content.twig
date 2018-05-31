@@ -7,8 +7,7 @@
     <h2 class="publication__title">{{post.title}}</h2>
     <p class="publication__authors">Par
       {% for key, author in authors %}
-        {% if key > 0 %},
-        {% endif %}{{author.post_title}}
+        {% if key > 0 %},{% endif %}{{author.post_title}}
       {% endfor %}
     </p>
     <p class="publication__date">Publié le

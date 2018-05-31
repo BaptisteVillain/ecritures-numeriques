@@ -3,7 +3,6 @@ import qs from 'qs'
 
 export default class LoadMore {
   constructor(container) {
-
     this.container = container
     this.footer = document.querySelector('footer.site-footer')
     this.wait = false
@@ -14,15 +13,16 @@ export default class LoadMore {
 
     this.select = {}
 
-    window.addEventListener('popstate', e => {
-      // if (e.originalEvent.state !== null) {
-      location.reload()
-      // }
+    window.addEventListener('onload', () => {
+      window.scrollTo(0, 0)
     })
 
-    window.addEventListener('scroll', e => {
-      const scrollBottom = document.body.scrollHeight - document.documentElement.scrollTop
-      - (window.innerHeight + this.footer.offsetHeight)
+    window.addEventListener('popstate', e => {
+      location.reload()
+    })
+
+    window.addEventListener('scroll', () => {
+      const scrollBottom = document.body.scrollHeight - document.documentElement.scrollTop - (window.innerHeight + this.footer.offsetHeight)
 
       if (scrollBottom <= (window.innerHeight * 2) && !this.wait) {
         this.addPost()
@@ -43,11 +43,10 @@ export default class LoadMore {
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(res => {
-        console.log(res)
         res.data.data.posts.forEach(post => {
           this.container.insertAdjacentHTML('beforeend', post.content)
         })
-        this.posts = this.container.querySelectorAll('.publication-wrapper')
+        this.posts = this.container.querySelectorAll('.single__wrapper')
         this.page += 1
         this.wait = false
       })
@@ -67,10 +66,10 @@ export default class LoadMore {
         }
       }
     })
+
     if (this.select.title !== select.title && select.title !== undefined) {
       this.select = select
       this.updatePage()
-      console.log(this.select.title)
     }
   }
 
