@@ -1,7 +1,7 @@
 .publication__container {
   min-height: 100vh;
 
-  .publication__research-field {
+  .publication__authors{
     @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
     @include breakpoint(700px) {
       font-size: 1.6rem;
@@ -18,7 +18,6 @@
       line-height: 1.56;
     }
   }
-  .publication__authors,
   .publication__date {
     margin-top: 10px;
 
