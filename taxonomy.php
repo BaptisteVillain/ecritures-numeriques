@@ -7,12 +7,23 @@
  * @since    Timber 0.1
  */
 
+global $params;
+
+
+$term = new TimberTerm($params['term']);
+
+if(!$params['term'] || empty($term->name))
+{
+  Timber::render( '404.twig', $context );
+  exit;
+}
+
 $context = Timber::get_context();
-$context['term'] = new TimberTerm();
+$context['term'] = $term;
+
 
 $context['term']->description = term_description($context['term']->term_id);
-
-$context['term']->related = []; 
+$context['term']->related = [];
 
 /**
  * Get Related Publications, projects and events
@@ -41,7 +52,7 @@ foreach ($types as $key => $type) {
     );
   }
 
-  $result = get_posts($args);
+  $result = Timber::get_posts($args);
   
   foreach ($result as $key => $item) {
     $result[$key]->path = get_permalink($item->ID);
@@ -88,7 +99,7 @@ else{
   $context['next'] = $terms[0];
 }
 
-$context['next']->path = get_term_link($context['next']->term_id);
-$context['previous']->path = get_term_link($context['previous']->term_id);
+$context['next']->path = term_link($context['next']);
+$context['previous']->path = term_link($context['previous']);
 
-Timber::render( array( 'single-rubrique.twig' ), $context );
+Timber::render( array( 'single-rubric.twig' ), $context );
