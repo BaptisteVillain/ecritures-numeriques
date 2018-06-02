@@ -4,6 +4,8 @@
   function add_filters($twig)
   {
     $twig->addFilter(new Twig_SimpleFilter('join_authors', 'join_authors'));
+    $twig->addFilter(new Twig_SimpleFilter('join_terms', 'join_terms'));
+
     return $twig;
   }
 
@@ -24,7 +26,7 @@
     $result = '';
 
     foreach ($terms as $key => $term) {
-      $result .=  $key > 0 ? ', '.$term->name : $term->name;
+      $result .=  $key > 0 ? ' - '.$term->name : $term->name;
     }
 
     return $result;
