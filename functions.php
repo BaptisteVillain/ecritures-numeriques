@@ -1,8 +1,14 @@
 <?php
 
+
 foreach (glob(__DIR__.'/inc/*.php') as $filename)
 {
-    include $filename;
+	include $filename;
+}
+
+foreach (glob(__DIR__.'/controller/*.php') as $controller)
+{
+		include $controller;
 }
 
 /**

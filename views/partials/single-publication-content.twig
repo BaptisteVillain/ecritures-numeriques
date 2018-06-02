@@ -1,12 +1,12 @@
 <div class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
-  {% if discovers is not empty %}
-    {% include 'components/single-discover.twig' with {'discovers': discovers} %}
+  {% if post.related is not empty %}
+    {% include 'components/single-discover.twig' with {'related': post.related} %}
   {% endif %}
-  <article class="single__container publication {% if discovers is empty %} single__container--margin {% endif %}">
+  <article class="single__container publication {% if post.related is empty %} single__container--margin {% endif %}">
     <p class="publication__research-field">{{post.research_field.name}}</p>
     <h2 class="publication__title">{{post.title}}</h2>
     <p class="publication__authors">Par
-      {% for key, author in authors %}
+      {% for key, author in post.authors %}
         {% if key > 0 %},{% endif %}{{author.post_title}}
       {% endfor %}
     </p>
@@ -22,8 +22,8 @@
         ></a>
     {% endif %}
     <p class="publication__content">{{post.content}}</p>
-    {% if tags is not empty %}
-        {% include 'components/single-tags.twig' with {'tags': tags} %}        
+    {% if post.tags is not empty %}
+        {% include 'components/single-tags.twig' with {'tags': post.tags} %}        
       </ul>
     {% endif %}
     <div class="publication__transition"></div>
