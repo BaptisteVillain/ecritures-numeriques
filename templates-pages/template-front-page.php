@@ -27,16 +27,6 @@ $context['publications'] = Timber::get_posts(array(
   'posts_per_page' => 3
 ));
 
-foreach ($context['publications'] as $key => $publication) {
-  $terms = Timber::get_terms($taxonomy);
-  $context['publications'][$key]->terms = wp_get_post_terms($publication->ID, array('research_field'));
-
-  $context['publications'][$key]->authors = get_posts(array(
-    'post_type' => 'member',
-    'post__in' => $$publication->publication_authors
-  ));  
-}
-
 /**
  * Get last projects
  */

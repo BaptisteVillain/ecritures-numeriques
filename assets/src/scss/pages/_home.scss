@@ -308,6 +308,7 @@ section.publications {
     }
   }
   .publications__wrapper {
+
     @include breakpoint(800px) {
       display: flex;
       flex-direction: column;
@@ -360,7 +361,7 @@ section.publications {
     .card__footer {
       margin-top: auto;
     }
-    .card__author {
+    .card__terms {
       margin-top: auto;
       padding-top: 30px;
 
