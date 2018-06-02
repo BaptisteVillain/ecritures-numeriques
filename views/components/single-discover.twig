@@ -3,16 +3,12 @@
     <h3 class="discover__title">découvrir aussi</h3>
   {% endif %}
   {% for post in related %}
-    <div class="discover__item">
-      <p class="item__research-field">{{post.research_field.name}}</p>
+    <a href="{{post.link}}" class="discover__item">
+      <p class="item__authors">{{post.authors|join_authors}}</p>
       <h5 class="item__title">{{post.post_title}}</h5>
-      <p class="item__authors">
-        {{post.domain}},
-        {% for key, author in post.authors %}
-          {% if key > 0 %},
-          {% endif %}{{author.post_title}}
-        {% endfor %}
+      <p class="item__infos">
+        <i class="infos--italic">{{post.domain}}</i> - <span class="infos--uppercase">[{{post.post_date | date('d M Y')}}]</span>
       </p>
-    </div>
+    </a>
   {% endfor %}
 </div>

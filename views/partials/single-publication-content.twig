@@ -7,11 +7,11 @@
       {{post.authors | join_authors}}
     </p>
     <h2 class="publication__title">{{post.title}}</h2>
-    <p class="publication__date">Publié
+    <p class="publication__date">{{__('Publié')}}
       {% if post.domain %}
-        sur <span class="card__italic">{{post.domain}}</span>
+        {{__('sur')}} <span class="card__italic">{{post.domain}}</span>
       {% endif %}
-      le <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
+      {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
     </p>
     {% if post.url %}
       <a href="{{post.url}}" class="publication__link" target="_blank">lire sur
