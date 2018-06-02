@@ -14,13 +14,13 @@
       {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
     </p>
     {% if post.url %}
-      <a href="{{post.url}}" class="publication__link" target="_blank">lire sur
+      <a href="{{post.url}}" class="publication__link" target="_blank">{{__('lire sur')}}
         {{post.domain}}
         ></a>
     {% endif %}
     <p class="publication__content">{{post.content}}</p>
-    {% if post.tags is not empty %}
-        {% include 'components/single-tags.twig' with {'tags': post.tags} %}        
+    {% if post.terms is not empty %}
+        {% include 'components/single-tags.twig' with {'tags': post.terms} %}        
       </ul>
     {% endif %}
     <div class="publication__transition"></div>

@@ -51,20 +51,4 @@ class Publication extends Timber\Post
 
     return $this->_related;
   }
-
-  /**
-   * Array
-   */
-  var $_tags;
-  public function tags() : array
-  {
-    $taxonomies = get_taxonomies(array(
-      'public' => true,
-      '_builtin' => false
-    ));
-    $this->_tags = wp_get_post_terms($this->ID, $taxonomies);
-
-    return $this->_tags;
-  }
-
 }
