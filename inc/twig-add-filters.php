@@ -18,3 +18,14 @@
 
     return $result;
   }
+
+  function join_terms($terms) : string
+  {
+    $result = '';
+
+    foreach ($terms as $key => $term) {
+      $result .=  $key > 0 ? ', '.$term->name : $term->name;
+    }
+
+    return $result;
+  }
