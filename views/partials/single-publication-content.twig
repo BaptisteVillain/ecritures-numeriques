@@ -6,9 +6,7 @@
     <p class="publication__research-field">{{post.research_field.name}}</p>
     <h2 class="publication__title">{{post.title}}</h2>
     <p class="publication__authors">Par
-      {% for key, author in post.authors %}
-        {% if key > 0 %},{% endif %}{{author.post_title}}
-      {% endfor %}
+      {{post.authors | join_authors}}
     </p>
     <p class="publication__date">Publié le
       <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
