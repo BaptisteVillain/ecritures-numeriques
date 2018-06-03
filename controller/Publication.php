@@ -20,21 +20,6 @@ class Publication extends Timber\Post
   }
 
   /**
-   * Contributors
-   */
-  var $_contributors;
-
-  /**
-   * Timestamp
-   */
-  var $_date_creation;
-
-  /**
-   * String
-   */
-  var $_url;
-
-  /**
    * Array
    */
   var $_related;
