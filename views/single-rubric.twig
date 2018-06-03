@@ -53,7 +53,7 @@
                     </h5>
                     <div class="item__about">
                       <p class="item__author">
-                      {{post.authors|join_authors}}
+                      {{ post.authors|join_authors|excerpt(3)}}
                       </p>
                       <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
                         {% if post.domain %}-
