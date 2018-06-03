@@ -16,7 +16,7 @@
 						<li>Espace numérique</li>
 					</ul>
 				</div> #}
-        {% include "components/single-footer.twig" with {'previous_path': previous.path, 'previous_name': previous.name,'next_path': next.path, 'next_name': next.name} %}
+        {% include "components/single-footer.twig" with {'previous_path': function('term_link', term.previous), 'previous_name': term.previous.name,'next_path': function('term_link', term.next), 'next_name': term.next.name} %}
       </div>
       <div class="taxonomy__related">
         <div class="related__container">
@@ -42,11 +42,11 @@
           </header>
           <div class="related__wrapper wrapper--hide">
             <button class="related__return">
-              {{__('retour', 'ecritures-numeriques')}}
+              < {{__('retour', 'ecritures-numeriques')}}
             </button>
-            {% for section in term.related %}
+            {% for type in term.related %}
               <section class="related__section {% if key == 0 %}active{% endif %}">
-                {% for post in section %}
+                {% for post in type %}
                   <a href="{{post.path}}" title="{{post.post_title}}" class="related__item">
                     <h5 class="item__title">
                       {{post.post_title}}
