@@ -15,10 +15,10 @@
     </p>
     {% if post.url %}
       <a href="{{post.url}}" class="publication__link" target="_blank">{{__('lire sur')}}
-        {{post.domain}}
-        ></a>
+        {{post.domain}} >
+      </a>
     {% endif %}
-    <p class="single__content publication__content">{{post.content}}</p>
+    <div class="single__content publication__content">{{post.get_field('content')}}</p>
     {% if post.terms is not empty %}
         {% include 'components/single-tags.twig' with {'tags': post.terms} %}        
       </ul>
