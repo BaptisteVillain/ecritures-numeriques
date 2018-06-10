@@ -3,11 +3,33 @@
     "title": "Publication",
     "fields": [
         {
-            "key": "field_5aad63bd4827d",
-            "label": "Key",
-            "name": "key",
-            "type": "text",
-            "instructions": "Zotero unique Key",
+            "key": "field_5b1d9b024cbf6",
+            "label": "Authors",
+            "name": "publication_authors",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "member"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5b1afea38b967",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,10 +38,29 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5ae49280e9f47",
+            "label": "Private",
+            "name": "private",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5ab220fcf198c",
@@ -38,72 +79,8 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ab22fa20b38e",
-            "label": "Images",
-            "name": "images",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5ab22fba0b38f",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5ab22fe80b390",
-                    "label": "label",
-                    "name": "label",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
             "key": "field_5ae0fd84a4bb9",
-            "label": "domain",
+            "label": "Domain",
             "name": "domain",
             "type": "text",
             "instructions": "",
@@ -122,7 +99,7 @@
         },
         {
             "key": "field_5ab270d4512f7",
-            "label": "Publication Related",
+            "label": "Publications Related",
             "name": "relation_publication_publication",
             "type": "post_object",
             "instructions": "",
@@ -135,50 +112,6 @@
             },
             "post_type": [
                 "publication"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
-            "key": "field_5ab2246e5de91",
-            "label": "Event Related",
-            "name": "relation_publication_event",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "event"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
-        },
-        {
-            "key": "field_5ab270ef512f8",
-            "label": "Project Related",
-            "name": "relation_publication_project",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "project"
             ],
             "taxonomy": [],
             "allow_null": 0,
@@ -221,11 +154,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ae49280e9f47",
-            "label": "Private",
-            "name": "private",
-            "type": "true_false",
-            "instructions": "",
+            "key": "field_5aad63bd4827d",
+            "label": "Key",
+            "name": "key",
+            "type": "text",
+            "instructions": "Zotero unique Key",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -233,11 +166,11 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -254,8 +187,20 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1525048409
+    "modified": 1528667015
 }

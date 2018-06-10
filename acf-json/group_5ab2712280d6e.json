@@ -3,6 +3,47 @@
     "title": "Project",
     "fields": [
         {
+            "key": "field_5b1d9bc04dec6",
+            "label": "Authors",
+            "name": "project_authors",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "member"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_5b1d3a7065dbe",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
             "key": "field_5ae0f91514976",
             "label": "Cover Image",
             "name": "cover_image",
@@ -108,8 +149,20 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags"
+    ],
     "active": 1,
     "description": "",
-    "modified": 1524772731
+    "modified": 1528667518
 }
