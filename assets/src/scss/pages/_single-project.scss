@@ -7,8 +7,11 @@
     margin-bottom: 60px;
 
     .project__content {
-      @include font($hind, 1.4rem, 400, $black, inherit, left);
-      margin-bottom: 120px;
+      margin-bottom: 60px;
+      @include breakpoint(800px){
+        margin-bottom: 120px;
+      }
     }
+    
   }
 }

@@ -46,10 +46,7 @@
     }
   }
   .publication__content {
-    line-height: 1.56;
     margin-top: 60px;
-
-    @include font($cabin, 1.8rem, 400, $black, inherit, left);
   }
   .single-tags{
     padding-bottom: 0;

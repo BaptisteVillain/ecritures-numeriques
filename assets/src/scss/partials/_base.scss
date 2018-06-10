@@ -93,6 +93,11 @@ footer.section-footer{
 	}
 }
 
+.single__content{
+	@include font($hind, 1.4rem, 400, $black, inherit, left);
+	line-height: 1.7;
+}
+
 // ---
 // Media
 // ---

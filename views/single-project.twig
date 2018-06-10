@@ -11,7 +11,7 @@
     {% endif %}
 
     <article class="single__container project {% if discovers is empty %} single__container--margin {% endif %}">
-      <p class="project__content">{{post.content}}</p>
+      <p class="single__content project__content">{{post.content}}</p>
       {% if tags is not empty %}
         {% include 'components/single-tags.twig' with {'tags': tags} %}
       {% endif %}

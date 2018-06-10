@@ -18,7 +18,7 @@
         {{post.domain}}
         ></a>
     {% endif %}
-    <p class="publication__content">{{post.content}}</p>
+    <p class="single__content publication__content">{{post.content}}</p>
     {% if post.terms is not empty %}
         {% include 'components/single-tags.twig' with {'tags': post.terms} %}        
       </ul>
