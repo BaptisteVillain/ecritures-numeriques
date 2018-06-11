@@ -2,6 +2,7 @@ import Header from './Classes/Header'
 import Rubrics from './Classes/Rubrics'
 import TaxonomyTabs from './Classes/TaxonomyTabs'
 import LoadMore from './Classes/LoadMore'
+import Results from './Classes/Results'
 
 
 const header = new Header(document.querySelector('.site-header'))
@@ -20,4 +21,8 @@ if (document.querySelector('.page-rubrics')) {
 
 if (document.querySelector('.publication__container')) {
   const loadMore = new LoadMore(document.querySelector('.publication__container'))
+}
+
+if (document.querySelector('.results')) {
+  const results = new Results(document.querySelector('.results'))
 }
