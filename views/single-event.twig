@@ -15,19 +15,24 @@
           <img src="{{event.custom.image_url}}" alt="{{event.title}}">
         </div>
         <div class="event__infos__wrapper">
-          <ul>
+          <ul class="event__infos__nav">
             <li class="event__infos">
               <div class="infos__left">
-                <h2 class="infos__date">
-                  {{event.date_start|date('d m')}}</h2>
+                <h2 class="infos__date">{{event.date_start|date('d F')}}</h2>
+                <h4 class=" infos__hour infos__hour--mobile">[
+                  {{event.date_start|date('H:i')}}
+                  ]</h4>
               </div>
               <div class="infos__right">
-                <h1 class="infos__title">{{event.post_name}}</h1>
+                <h1 class="infos__title">{{event.post_title}}</h1>
+                <h3 class="infos__location infos__location--mobile">{{event.event_venue}}</h3>
               </div>
             </li>
             <li class="event__infos">
               <div class="infos__left">
-                <h4 class="infos__hour">{{event.date_start|date('H:i')}}</h4>
+                <h4 class="infos__hour">[
+                  {{event.date_start|date('H:i')}}
+                  ]</h4>
               </div>
               <div class="infos__right">
                 <h3 class="infos__location">
@@ -36,12 +41,17 @@
               </div>
             </li>
           </ul>
-          <div>
-            {{event.post_content}}
-            <h2>{{event.custom.medias_title}}</h2>
-            {{event.custom.video_url}}
+          <div class="event__content__container">
+            <div class="event__description">
+              {{event.post_content}}
+            </div>
+            <div class="event__medias">
+              <h2 class="medias__title">{{event.custom.medias_title}}</h2>
+              <div class="medias__video">
+                {{event.custom.video_url}}
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
     </div>
