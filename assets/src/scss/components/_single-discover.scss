@@ -1,0 +1,41 @@
+.discover__container{
+  display: none;
+
+  @include breakpoint(700px) {
+    display: block;
+    width: 15vw;
+    flex-shrink: 0;
+  }
+  .discover__title {
+    @include font($source, 1.6rem, 600, $black, uppercase, left);
+  }
+  .discover__item {
+    display: block;
+    background: $light-grey;
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    .item__title {
+      line-height: 1.56;
+      margin: 10px 0;
+
+      @include font($cabin, 1.4rem, 500, $black, inherit, left);
+    }
+    .item__authors{
+      line-height: 1.5;
+      
+      @include font($source, 1.2rem, 600, $light-blue, uppercase, left);
+    }
+    .item__infos {
+      line-height: 1.5;
+
+      @include font($source, 1.2rem, 400, $dark-grey, inherit, left);
+      .infos--italic{
+        text-transform: capitalize;
+      }
+      .infos--uppercase{
+        text-transform: uppercase;
+      }
+    }
+  }
+}

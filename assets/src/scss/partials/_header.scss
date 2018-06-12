@@ -1,17 +1,23 @@
 .site-header{
   position: fixed;
   z-index: 100;
-}
-
-.site-header__wrapper{
   width: 100vw;
   height: 80px;
   background: $dark-blue;
-  border-bottom: 1px solid rgba(#ffffff, .14);
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(#ffffff, .14);
+  }
   @include breakpoint(950px){
     padding: 0 7.5vw;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
@@ -28,27 +34,39 @@
   }
 }
 
-.site-header__nav{
-  position: relative;
-  width: 100vw;
+.site-header__wrapper{
+  width: 100%;
   height: calc(100vh - 80px);
   overflow-y: scroll;
   background: $dark-blue;
-  transform: translateX(-100%);
+  transform: translateX(-100vw);
   transition: transform .3s $easing;
-  &.site-header__nav--hide{
+  padding: 0 40px;
+  &.site-header__wrapper--hide{
     transform: translateX(0);    
   }
   @include breakpoint(950px){
-    height: 80px;
     width: auto;
-    margin-left: 50px;
-    overflow-y: visible;   
+    display: flex;
+    flex-direction: row;
+    height: 80px;
     transform: translateX(0%);     
+    overflow-y: visible;   
+    padding: 0;
   }
 }
 
-.nav__trigger{
+.site-header__nav{
+  position: relative;
+  width: 100%;
+  @include breakpoint(950px){
+    height: 80px;
+    width: auto;
+    margin-left: 30px;
+  }
+}
+
+.site-header__nav-trigger{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -74,8 +92,6 @@
   flex-direction: column;
   width: auto;
   height: 100%;
-  background: $dark-blue;
-  padding: 0 40px;
   @include breakpoint(950px){
     flex-direction: row;
     padding: 0;
@@ -104,6 +120,7 @@
       padding: 15px 0;
       @include font($hind, 1.5rem, 500, $white, uppercase, left);
       background: $dark-blue;
+      white-space: nowrap;
       &:active{
         background: darken($dark-blue, 3%);
       }
@@ -114,7 +131,6 @@
         width: 100%;
         height: 100%;
         padding: 0 15px;
-        border-bottom: 1px solid rgba(#ffffff, .14);
       }
     }
     .drop__trigger{
@@ -124,6 +140,7 @@
       padding-bottom: 0;
       @include font($hind, 1.5rem, 500, $blue-grey, uppercase, left);
       user-select: none;
+      pointer-events: none;
       &::before{
         content: "";
         position: absolute;
@@ -137,27 +154,40 @@
         }
       }
       @include breakpoint(950px){
+        pointer-events: auto;
         padding: 0 15px;
         @include font($hind, 1.3rem, 500, $white, uppercase, left);
         z-index: 100;
+      }
+      .drop__icon{
+        display: none;
+        transform: rotate(90deg);
+        @include breakpoint(950px){
+          margin-left: 10px;
+          display: inline;
+        }
       }
     }
     .item__drop{
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      padding-bottom: 30px;
       @include breakpoint(950px){
+        padding-bottom: 0;
         display: block;
         width: auto;
         height: auto;
         background: $dark-blue;
         transition: transform .25s $easing;
         transform: translateY(-100%);
+        position: absolute;
+        z-index: -1;
       }
       .drop__item{
-        margin-right: 15px;
+        margin-right: 20px;
         &:nth-child(2n+1){
-          min-width: 75px;
+          min-width: 80px;
         }
         @include breakpoint(950px){        
           width: 100%;
@@ -176,11 +206,72 @@
         &:active{
           background: darken($dark-blue, 3%);
         }      
-        @include breakpoint(950px){            
+        @include breakpoint(950px){        
           padding: 0 15px;       
           @include font($hind, 1.3rem, 500, $white, uppercase, left);
         }
       }
+    }
+  }
+}
+
+.site-header__search-wrapper{
+  display: none;
+  @include breakpoint(950px){
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    padding: 0 30px;
+    background: $dark-blue;
+    input{
+      height: 20px;
+      background: none;
+      border: none;
+      outline: none;
+      @include font($hind, 1.5rem, 500, $white, none, left);
+      &::-webkit-input-placeholder{
+        @include font($hind, 1.2rem, 400, $blue-grey, none, left);
+      }
+    }
+  }
+}
+
+.site-header__language-switch{
+  width: 100%;
+  padding-top: 30px;
+  position: relative;
+  @include breakpoint(950px){
+    width: auto;
+    padding-top: 0;
+    // margin-left: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -20px;
+    right: -20px;
+    height: 1px;
+    background: rgba(#ffffff, .14);
+    @include breakpoint(950px){
+      display: none;
+    }
+  }
+  li a{
+    @include font($hind, 1.5rem, 500, $white, uppercase, left);
+    @include breakpoint(950px){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80px;
     }
   }
 }

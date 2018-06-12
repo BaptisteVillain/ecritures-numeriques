@@ -1,0 +1,43 @@
+<a class="site-header__logo" href="{{site.link}}" rel="home">
+	<img src="{{header.logo}}" alt="logo">
+</a>
+<button class="site-header__nav-trigger">
+	<span></span>
+	<span></span>
+	<span></span>
+</button>
+<div class="site-header__wrapper">
+	<nav class="site-header__nav" role="navigation">
+		<ul class="nav__wrapper">
+		{% for item in menu.get_items %}
+			<li class="nav__item {{item.classes | join(' ')}}">
+				<a class="item__link {% if item.get_children %} drop__trigger {% endif %}" href="{{item.link}}">{{item.title}}{% if item.get_children %} <span class="drop__icon">></span> {% endif %}</a>
+				{% if item.get_children %}
+					<ul class="item__drop">
+					{% for child in item.get_children %}
+						<li class="drop__item">
+							<a class="drop__link" target="_blank" href="{{child.get_link}}">{{child.title}}</a>
+						</li>
+					{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+		</ul>
+	</nav>
+	<form role="search" class="site-header__search-wrapper" action="{{function('get_site_url')}}" method="GET" id="searchform">
+		<input type="text" name="s" value="{{function('get_search_query')}}" id="s" placeholder="Rechercher une publication, ...">
+		<button id="searchsubmit">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+				<path fill="#F9F9FB" d="M1269.8072,46.8974359 L1265.44262,42.5833333 C1266.36418,41.4679487 1266.91455,40.0320513 1266.91455,38.4679487 C1266.91455,34.8974359 1264.02189,32 1260.45727,32 C1256.89265,32 1254,34.8974359 1254,38.4679487 C1254,42.0384615 1256.89265,44.9358974 1260.45727,44.9358974 C1262.006,44.9358974 1263.42032,44.3910256 1264.53387,43.4871795 L1268.91125,47.8141026 C1269.03284,47.9358974 1269.19923,48 1269.35922,48 C1269.52562,48 1269.69201,47.9358974 1269.8136,47.8076923 C1270.06319,47.5512821 1270.06319,47.1474359 1269.8072,46.8974359 Z M1255.27994,38.4679487 C1255.27994,35.6089744 1257.60302,33.2820513 1260.45727,33.2820513 C1263.31153,33.2820513 1265.63461,35.6089744 1265.63461,38.4679487 C1265.63461,41.3269231 1263.31153,43.6538462 1260.45727,43.6538462 C1257.60302,43.6538462 1255.27994,41.3269231 1255.27994,38.4679487 Z" transform="translate(-1254 -32)"/>
+			</svg>
+		</button>
+	</form>
+	<ul class="site-header__language-switch">
+	{% for item in language.get_items %}
+		<li>
+			<a class="item__link" href="{{item.link}}">{{ item.title }}</a>
+		</li>
+	{% endfor %}
+	</ul>
+</div>

@@ -1,0 +1,63 @@
+.single__header {
+  padding: 0 20px;
+  width: 100%;
+  background: $dark-blue;
+  padding-bottom: 30px;
+  @include breakpoint(700px) {
+    height: 175px;
+    padding: 0 $padding-main;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .single__header__wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+    .single__header__previous {
+      display: inline-block;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      @include font($source, 1.4rem, 600, $blue-grey, uppercase, left);    
+    }
+    .single__header__parent {
+      margin-bottom: 5px;
+  
+      @include font($source, 1.4rem, 600, $pink, uppercase, left);
+      @include breakpoint(700px) {
+        font-size: 1.6rem;
+        margin-bottom: 0px;
+      }
+    }
+    .single__header__title {
+      @include font($hind, 2.7rem, 500, $white, capitalize, left);
+      @include breakpoint(700px) {
+        font-size: 2.9rem;
+      }
+    }
+  }
+
+  .single__header__link{
+    display: inline-block;
+    margin-left: auto;
+    background: $pink;
+    padding: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    width: 100%;
+
+    @include font($source, 1.4rem, 600, $dark-blue, uppercase, left);
+    @include breakpoint(700px) {
+      margin-top: 0;
+      width: auto;
+    }
+    span {
+        padding-left: 10px;
+    }
+
+  }
+
+}

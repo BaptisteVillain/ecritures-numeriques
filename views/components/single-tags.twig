@@ -1,0 +1,7 @@
+<ul class="single-tags">
+  {% for tag in tags%}
+    <li class="tag {% if tag.taxonomy == 'research_field' %} tag--highlight {% endif %}">
+      <a href="{{function('term_link', tag)}}">{{tag.name}}</a>
+    </li>
+  {% endfor %}
+</ul>

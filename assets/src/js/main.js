@@ -1,13 +1,14 @@
 import Header from './Classes/Header'
-import HomeRubrics from './Classes/HomeRubrics'
+import Rubrics from './Classes/Rubrics'
 import TaxonomyTabs from './Classes/TaxonomyTabs'
 import LoadMore from './Classes/LoadMore'
+import Results from './Classes/Results'
 
 
 const header = new Header(document.querySelector('.site-header'))
 
 if (document.querySelector('.home-section.rubrics')) {
-  const homeRubrics = new HomeRubrics(document.querySelector('.home-section.rubrics'), true)
+  const homeRubrics = new Rubrics(document.querySelector('.home-section.rubrics'), true)
 }
 
 if (document.querySelector('.taxonomy__related')) {
@@ -15,7 +16,13 @@ if (document.querySelector('.taxonomy__related')) {
 }
 
 if (document.querySelector('.page-rubrics')) {
-  const pageRubrics = new HomeRubrics(document.querySelector('.page-rubrics'), false)
+  const pageRubrics = new Rubrics(document.querySelector('.page-rubrics'), false)
 }
 
-const PublicationLoad = new LoadMore(document.querySelector('.publication__container'))
+if (document.querySelector('.publication__container')) {
+  const loadMore = new LoadMore(document.querySelector('.publication__container'))
+}
+
+if (document.querySelector('.results')) {
+  const results = new Results(document.querySelector('.results'))
+}

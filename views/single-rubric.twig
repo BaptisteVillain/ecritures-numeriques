@@ -1,23 +1,8 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% include "partials/background-lines.twig" %}
   <div class="taxonomy__container">
-    <header class="taxonomy__header">
-      <a href="#" class="header__link">< {{__('retour')}}</a>
-      <h3 class="header__parent">
-        {% if term.taxonomy == 'research_field' %}
-          {{__('théorie')}}
-        {% elseif term.taxonomy == 'research_topic' %}
-          {{__('objets de recherche')}}
-        {% elseif term.taxonomy == 'key_concept' %}
-          {{__('concepts clés')}}
-        {% elseif term.taxonomy == 'axis' %}
-          {{__('axes')}}
-        {% endif %}
-      </h3>
-      <h2 class="header__title">{{term.name}}</h2>
-    </header>
+    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': '#'} %}
     <div class="taxonomy__wrapper">
       <div class="taxonomy__about">
         <p class="taxonomy__content">
@@ -31,7 +16,7 @@
 						<li>Espace numérique</li>
 					</ul>
 				</div> #}
-        {% include "components/footer-discover.twig" %}
+        {% include "components/single-footer.twig" with {'previous_path': function('term_link', term.previous), 'previous_name': term.previous.name,'next_path': function('term_link', term.next), 'next_name': term.next.name} %}
       </div>
       <div class="taxonomy__related">
         <div class="related__container">
@@ -57,18 +42,18 @@
           </header>
           <div class="related__wrapper wrapper--hide">
             <button class="related__return">
-              {{__('retour', 'ecritures-numeriques')}}
+              < {{__('retour', 'ecritures-numeriques')}}
             </button>
-            {% for section in term.related %}
+            {% for type in term.related %}
               <section class="related__section {% if key == 0 %}active{% endif %}">
-                {% for post in section %}
+                {% for post in type %}
                   <a href="{{post.path}}" title="{{post.post_title}}" class="related__item">
                     <h5 class="item__title">
                       {{post.post_title}}
                     </h5>
                     <div class="item__about">
                       <p class="item__author">
-                        Marcello Vitali-Rosati
+                      {{ post.authors|join_authors|excerpt(3)}}
                       </p>
                       <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
                         {% if post.domain %}-

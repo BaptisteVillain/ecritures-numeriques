@@ -2,12 +2,13 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
 const server = browserSync.create();
+import { bsServer } from '../config';
 /* eslint-enable */
 
 const serverTask = done => {
   server.init(
     {
-      proxy: 'localhost:8888'
+      proxy: `localhost:${bsServer.port}`
     },
     done()
   );

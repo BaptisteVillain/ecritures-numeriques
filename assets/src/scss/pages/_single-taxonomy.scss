@@ -147,10 +147,10 @@
         background: $light-grey;
         border-top: 1px solid $dark-grey;
         width: 100%;
-
         flex-shrink: 0;
         @include breakpoint(700px) {
           background: $dark-blue;
+          background: $light-grey;          
           border-top: none;
           height: 59px;
           padding: 0 20px;
@@ -188,6 +188,7 @@
 
               @include breakpoint(700px) {
                 border-left: none;
+                background: $dark-blue;
               }
               &.active {
                 @include breakpoint(700px) {
@@ -227,7 +228,7 @@
       }
       .related__wrapper {
         background: $light-grey;
-        height: calc(100% - 90px);
+        height: calc(100% - 60px);
         width: 100%;
 
         flex-shrink: 0;
@@ -281,6 +282,9 @@
           }
           &:first-child {
             margin-top: 0;
+          }
+          &:last-child {
+            margin-bottom: 20px;
           }
           .item__title {
             line-height: 1.5;

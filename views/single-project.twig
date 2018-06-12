@@ -1,30 +1,30 @@
-{% extends "base.twig" %}
+{% extends 'base.twig' %}
 
 {% block content %}
-  <!-- Header project -->
-  <section class="project__header">
-    {% include "partials/header-project.twig" %}
-  </section>
 
+  {% include "components/single-header.twig" with {'title': post.title, 'subtitle': false, 'link': '#', 'previous': '#'} %}
   <!-- Project content -->
-  <section class="project__container">
-    <div class="project-wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
-      {% include "components/sidebar-discover-project.twig" %}
-      <article class="project">
+  <div class="single__wrapper project__wrapper">
 
-        <p class="project__content">{{post.content}}</p>
-        {% if tags is not empty %}
-          <ul class="publication__tags">
-            {% for tag in tags%}
-              <li class="tag">{{tag.name}}</li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-        {% include "components/footer-discover.twig" %}
-      </article>
+    {% if discover is not empty %}
+      {% include "components/single-discover.twig" %}
+    {% endif %}
 
-    </div>
-
-  </section>
+    <article class="single__container project {% if discovers is empty %} single__container--margin {% endif %}">
+      <div class="single__content project__content">
+        {{ post.get_field('content') }}
+      </div>
+      {% if tags is not empty %}
+        {% include 'components/single-tags.twig' with {'tags': tags} %}
+      {% endif %}
+      {% if tags is not empty %}      
+        <div>
+          {% include "components/single-footer.twig" with {'previous_path': previous.path, 'previous_name': 'previous','next_path': next.path, 'next_name': 'next'} %}
+        </div>
+      {% else %}   
+          {% include "components/single-footer.twig" with {'previous_path': previous.path, 'previous_name': 'previous','next_path': next.path, 'next_name': 'next'} %}
+      {% endif %}
+    </article>
+  </div>
 
 {% endblock %}

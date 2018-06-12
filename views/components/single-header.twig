@@ -1,0 +1,26 @@
+<header class="single__header">
+  <div class="single__header__wrapper">
+    <a href="{{previous}}" class="single__header__previous">< {{__('retour')}}</a>
+    {% if subtitle %}
+    <h3 class="single__header__parent">
+      {% if subtitle == 'research_field' %}
+        {{__('théorie')}}
+      {% elseif subtitle == 'research_topic' %}
+        {{__('objets de recherche')}}
+      {% elseif subtitle == 'key_concept' %}
+        {{__('concepts clés')}}
+      {% elseif subtitle == 'axis' %}
+        {{__('axes')}}
+      {% else %}
+        {{ subtitle }}
+      {% endif %}
+    </h3>
+    {% endif %}
+    <h2 class="single__header__title">{{title}}</h2>
+  </div>
+  {% if link %}
+    <a href="#" class="single__header__link">
+      {{__('Accéder au projet')}} <span>></span>
+    </a>
+  {% endif %}
+</header>

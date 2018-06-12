@@ -1,0 +1,14 @@
+<div class="discover__container">
+  {% if related is not empty %}
+    <h3 class="discover__title">découvrir aussi</h3>
+  {% endif %}
+  {% for post in related %}
+    <a href="{{post.link}}" class="discover__item">
+      <p class="item__authors">{{post.authors|join_authors}}</p>
+      <h5 class="item__title">{{post.post_title}}</h5>
+      <p class="item__infos">
+        <i class="infos--italic">{{post.domain}}</i> - <span class="infos--uppercase">[{{post.post_date | date('d M Y')}}]</span>
+      </p>
+    </a>
+  {% endfor %}
+</div>

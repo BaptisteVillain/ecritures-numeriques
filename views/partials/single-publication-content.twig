@@ -1,0 +1,28 @@
+<div class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
+  {% if post.related is not empty %}
+    {% include 'components/single-discover.twig' with {'related': post.related} %}
+  {% endif %}
+  <article class="single__container publication {% if post.related is empty %} single__container--margin {% endif %}">
+    <p class="publication__authors">
+      {{post.authors | join_authors}}
+    </p>
+    <h2 class="publication__title">{{post.title}}</h2>
+    <p class="publication__date">{{__('Publié')}}
+      {% if post.domain %}
+        {{__('sur')}} <span class="card__italic">{{post.domain}}</span>
+      {% endif %}
+      {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
+    </p>
+    {% if post.url %}
+      <a href="{{post.url}}" class="publication__link" target="_blank">{{__('lire sur')}}
+        {{post.domain}} >
+      </a>
+    {% endif %}
+    <div class="single__content publication__content">{{post.get_field('content')}}</p>
+    {% if post.terms is not empty %}
+        {% include 'components/single-tags.twig' with {'tags': post.terms} %}        
+      </ul>
+    {% endif %}
+    <div class="publication__transition"></div>
+  </article>
+</div>

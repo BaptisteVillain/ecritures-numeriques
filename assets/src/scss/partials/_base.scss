@@ -29,10 +29,13 @@ img {
 // ---
 // Main Site Content
 // ---
+html{
+	background: $white;
+}
+
 html, body{
 	width: 100%;
 	height: 100%;
-	// background: $dark-blue;
 }
 
 main.site-main{
@@ -90,6 +93,29 @@ footer.section-footer{
 	}
 	@include breakpoint(800px){
 		display: none;
+	}
+}
+
+.single__content{
+	@include font($hind, 1.4rem, 400, $black, inherit, left);
+	line-height: 1.7;
+	img{
+		display: block;
+		max-width: 550px;
+		width: 100%;
+		height: auto;
+		margin: 60px auto;
+		background: $light-blue;
+	}
+	.content__youtube{
+		display: flex;
+		margin: 60px auto;
+		max-width: 550px;
+		position: relative;
+		background: $light-blue;
+		iframe{
+			width: 100%;
+		}
 	}
 }
 

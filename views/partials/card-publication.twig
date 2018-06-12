@@ -1,20 +1,20 @@
 <a href="{{post.path}}" title="{{post.title}}" class="publication__card">
   <div class="card__surtitle">
-      {% for key,term in post.terms %}{% if key > 0 %} - {% endif %}{{ term.name }}{% endfor %}    
+      {{post.authors|join_authors}}
   </div>
   <h4 class="card__title">{{ post.title }}</h4>
   {% if content %}
     <div class="card__subtitle">{{post.content | excerpt(41)}}</div>
   {% endif %}
   <div class="card__footer">
-    <div class="card__author">
-      {% for key,author in post.authors %}{% if key > 0 %}, {% endif %}{{ author.post_title }}{% endfor %}          
+    <div class="card__terms">
+      {{post.terms | join_terms}}
     </div>
     <div class="card__source">
       {% if post.domain is not empty %}
         <span class="card__italic">{{post.domain}} -</span>
       {% endif %}
-      <span>{{post.date|date('d M')}}</span>
+      <span>{{post.post_date|date('d M')}}</span>
     </div>
   </div>
 </a>

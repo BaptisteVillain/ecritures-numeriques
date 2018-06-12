@@ -1,0 +1,221 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+  {% include "./partials/background-lines.twig" %}
+
+  <div class="results">
+    <header class="results__header">
+      <nav>
+        <ul>
+          <li>
+            <button class="header__button header__switch header__button--active" data-index="0">
+              publications
+              <span>0</span>
+            </button>
+          </li>
+          <li>
+            <button class="header__button header__switch" data-index="1">
+              projets
+              <span>0</span>
+            </button>
+          </li>
+          <li>
+            <button class="header__button header__switch" data-index="2">
+              événements
+              <span>0</span>
+            </button>
+          </li>
+          <li>
+            <button class="header__button header__switch" data-index="3">
+              auteurs
+              <span>0</span>
+            </button>
+          </li>
+          <li>
+            <button class="header__button header__button--filter">
+              filtrer
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="results__filters">
+      <div class="taxonomy">
+        <p class="taxonomy__title">théories</p>
+        <ul class="taxonomy__filters">
+          <li>
+            <button class="filter">
+              <div class="filter__radio"></div>
+              <p class="filter__label"> salut </p>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="results__selected-filters">
+      <ul class="selected__container">
+        <li class="selected__item">
+          <div class="item__label">label</div>
+          <button class="item__delete">
+            <span></span>
+            <span></span>
+          </button>
+        </li>
+      </ul>
+      <button class="selected__delete">tout supprimer</button>
+    </div>
+    <div class="results__list-wrapper">
+      <div class="list__container list__container--active">
+        <ul class="list__header">
+          <li class="header__item item--title">
+            titre
+          </li>
+          <li class="header__item item--domain">
+            publication
+          </li>
+          <li class="header__item item--authors">
+            Auteur
+          </li>
+          <li class="header__item item--date">
+            Date
+          </li>
+          <li class="header__item item--rubrics">
+            Rubriques
+          </li>
+        </ul>
+        <ul class="list">
+          <li class="list__item">
+            <a href="#">
+              <div class="item__title">
+                « Les gestes dans l’environnement numérique : la ponctuation des affects »
+              </div>
+              <div class="item__domain">
+                Revue française des sciences de l’information et de la communication
+              </div>
+              <div class="item__authors">
+                Peppe Cavallari
+              </div>
+              <div class="item__date">
+                [01-08-17]
+              </div>
+              <div class="item__rubrics">
+                {% include "./components/single-discover.twig" %}
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="list__container">
+        <ul class="list__header">
+          <li class="header__item item--title">
+            titre
+          </li>
+          <li class="header__item item--authors">
+            Auteur
+          </li>
+          <li class="header__item item--date">
+            Date
+          </li>
+          <li class="header__item item--rubrics">
+            Rubriques
+          </li>
+        </ul>
+        <ul class="list">
+          <li class="list__item">
+            <a href="#">
+              <div class="item__title">
+                « Les gestes dans l’environnement numérique : la ponctuation des affects »
+              </div>
+              <div class="item__authors">
+                Peppe Cavallari
+              </div>
+              <div class="item__date">
+                [01-08-17]
+              </div>
+              <div class="item__rubrics">
+                {% include "./components/single-discover.twig" %}
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="list__container">
+        <ul class="list__header">
+          <li class="header__item item--title">
+            titre
+          </li>
+          <li class="header__item item--authors">
+            Auteur
+          </li>
+          <li class="header__item item--date">
+            Date
+          </li>
+          <li class="header__item item--rubrics">
+            Rubriques
+          </li>
+        </ul>
+        <ul class="list">
+          <li class="list__item">
+            <a href="#">
+              <div class="item__title">
+                « Les gestes dans l’environnement numérique : la ponctuation des affects »
+              </div>
+              <div class="item__domain">
+                Revue française des sciences de l’information et de la communication
+              </div>
+              <div class="item__authors">
+                Peppe Cavallari
+              </div>
+              <div class="item__date">
+                [01-08-17]
+              </div>
+              <div class="item__rubrics">
+                {% include "./components/single-discover.twig" %}
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="list__container">
+        <ul class="list__header">
+          <li class="header__item item--title">
+            Nom
+          </li>
+          <li class="header__item item--domain">
+            publication
+          </li>
+          <li class="header__item item--date">
+            Date
+          </li>
+          <li class="header__item item--rubrics">
+            Rubriques
+          </li>
+        </ul>
+        <ul class="list">
+          <li class="list__item">
+            <a href="#">
+              <div class="item__title">
+                « Les gestes dans l’environnement numérique : la ponctuation des affects »
+              </div>
+              <div class="item__domain">
+                Revue française des sciences de l’information et de la communication
+              </div>
+              <div class="item__authors">
+                Peppe Cavallari
+              </div>
+              <div class="item__date">
+                [01-08-17]
+              </div>
+              <div class="item__rubrics">
+                {% include "./components/single-discover.twig" %}
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

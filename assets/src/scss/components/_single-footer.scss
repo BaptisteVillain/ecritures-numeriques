@@ -1,0 +1,26 @@
+.single__footer {
+  margin-top: auto;
+}
+
+.single__footer__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.single__footer__page {
+  &--previous {
+    text-align: left;
+  }
+  &--next {
+    text-align: right;
+  }
+}
+
+.page__label {
+  @include font($source, 1.4rem, 400, $blue-grey, inherit, inherit);
+}
+
+a.page__title {
+  @include font($source, 1.6rem, 600, $dark-blue, uppercase, left);
+}
