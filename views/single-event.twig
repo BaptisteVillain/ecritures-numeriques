@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <section class="event">
+    <!-- Header event -->
+    <div class="event__container">
+      <a href="" class="header__project__back">
+        <span>< </span>
+        Retour
+      </a>
+
+    </section>
+
+    <!-- Event content -->
+    <div class="event__wrapper">
+      <div class="event__cover-image">
+        <img src="{{event.custom.image_url}}" alt="{{event.title}}">
+      </div>
+      <div class="event__infos__wrapper">
+        <ul>
+          <li class="event__infos">
+            <div class="infos__left">
+              <h2 class="infos__date">{{event.date_start|date('d M')}}</h2>
+              <h1 class="infos__title">{{event.post_name}}</h1>
+              {{event.date_start|date('H:i')}}
+              {{event.event_venue}}
+              {{event.post_content}}
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}
