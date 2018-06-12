@@ -7,11 +7,14 @@
  * @since    Timber 0.1
  */
 
+ global $wp_embed;
+
 $context = Timber::get_context();
 $context['event'] = $post;
 
 $context['event']->custom['image_url'] = get_field('cover_image', $context['event']->ID);
-
+$context['event']->custom['video_url'] = $wp_embed->run_shortcode('[embed]' . $context['event']->custom['medias_0_media_link'] . '[/embed]');
+$context['event']->custom['medias_title'] = get_field('medias_0_media_title');
 
 // echo '<pre>';
 // print_r($context['event']);

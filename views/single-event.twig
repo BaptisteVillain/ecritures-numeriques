@@ -5,13 +5,10 @@
   <section class="event">
     <!-- Header event -->
     <div class="event__container">
-      <a href="" class="header__project__back">
-        <span>< </span>
-        Retour
-      </a>
-
+      <header class="single__header__wrapper">
+        <a href="#" class="header__project__back single__header__previous">< {{__('retour')}}</a>
+      </header>
     </section>
-
     <!-- Event content -->
     <div class="event__wrapper">
       <div class="event__cover-image">
@@ -21,12 +18,16 @@
         <ul>
           <li class="event__infos">
             <div class="infos__left">
-              <h2 class="infos__date">{{event.date_start|date('d M')}}</h2>
+              <h2 class="infos__date">{{__('retour')}}
+                {{event.date_start|date('d m')}}</h2>
               <h1 class="infos__title">{{event.post_name}}</h1>
               {{event.date_start|date('H:i')}}
               {{event.event_venue}}
               {{event.post_content}}
+              {{event.custom.video_url}}
             </div>
+
+            <h2>{{event.custom.medias_title}}</h2>
           </li>
         </ul>
       </div>
