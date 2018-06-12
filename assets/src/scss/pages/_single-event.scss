@@ -33,6 +33,10 @@
 
 .event__cover_image {
   height: 220px;
+
+  @include breakpoint(700px) {
+    border: 1px solid #b9b9b9;
+  }
   img {
     height: 100%;
     width: 100%;
@@ -46,7 +50,10 @@
   flex-direction: column;
 
   @include breakpoint(700px) {
+    border: 1px solid #b9b9b9;
+    border-top: none;
     flex-direction: row;
+    height: 130px;
   }
 }
 
@@ -56,6 +63,8 @@
 
   @include breakpoint(700px) {
     display: flex;
+    flex-direction: row;
+    height: 80px;
   }
 }
 
@@ -69,6 +78,13 @@
   flex-direction: row;
   height: 50px;
   padding: 0 30px;
+
+  @include breakpoint(700px) {
+    border: none;
+    height: inherit;
+    justify-content: center;
+    min-width: 188px;
+  }
 }
 
 .infos__right {
@@ -77,6 +93,12 @@
   flex-direction: column;
   height: 100%;
   padding: 15px 30px;
+
+  @include breakpoint(700px) {
+    border-left: 1px solid #b9b9b9;
+    justify-content: center;
+    min-width: auto;
+  }
 }
 
 .infos__date {
@@ -96,6 +118,9 @@
 
 .infos__title {
   @include font($hind, 1.8rem, 700, $black, none, left);
+  @include breakpoint(700px) {
+    @include font($hind, 2.4rem, 700, $black, none, left);
+  }
 }
 
 .infos__location {
@@ -110,10 +135,20 @@
 // Main content
 .event__content__container {
   padding: 30px 20px 120px;
+
+  @include breakpoint(700px) {
+    padding: 30px 0 120px;
+  }
 }
 
 .event__description {
   padding-bottom: 60px;
+}
+
+.event__description__text {
+  line-height: 2.3rem;
+
+  @include font($hind, 1.4rem, 400, $black, none, left);
 }
 
 .medias__title {
@@ -122,8 +157,20 @@
   @include font($source, 1.6rem, 600, $light-blue, uppercase, center);
 }
 
+.medias__video__wrapper {
+  @include breakpoint(700px) {
+    text-align: center;
+  }
+}
+
 .medias__video {
+  display: inline-block;
   position: relative;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    width: 510px;
+  }
   &::before {
     background: darken($light-blue, 5%);
     content: '';
