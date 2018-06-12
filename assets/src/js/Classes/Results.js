@@ -4,16 +4,29 @@ class Results {
     this.container = container
     this.results_buttons = container.querySelectorAll('.header__switch')
     this.results_tabs = container.querySelectorAll('.list__container')
+
+    this.filters_visibility = container.querySelector('.header__button--filter')
+    this.filters_container = container.querySelector('.results__filters')
     this.filters = container.querySelectorAll('.filter')
+
+    this.containerToFix = container.querySelectorAll('.taxonomy-fix')
 
     this.selected_tab = 0
     this.selected_filters = []
 
     this.results_buttons.forEach(button => {
       button.addEventListener('click', e => {
-        console.log(e.srcElement.dataset.index)
         this.setTabs(e.srcElement.dataset.index)
       })
+    })
+
+    this.filters_visibility.addEventListener('click', () => {
+      this.filters_container.classList.toggle('results__filters--active')
+    })
+
+    this.containerToFix.forEach(cont => {
+      const { width } = cont.querySelector('li').getBoundingClientRect()
+      cont.style.width = `${ width * 2 }px`
     })
   }
 
