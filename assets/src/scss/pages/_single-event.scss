@@ -1,7 +1,41 @@
 .event {
-  margin: 3rem 0 12rem;
+  margin: 0;
+
+  @include breakpoint(700px) {
+    margin: 30px 0 120px;
+  } // CSS for the single__header
+  .single__header__wrapper {
+    left: 7vw;
+    position: absolute;
+
+    @include breakpoint(700px) {
+      left: 0;
+      position: relative;
+    }
+  }
 }
 
 .event__container {
-  padding: 0 7.5vw;
+  padding: 0;
+
+  @include breakpoint(700px) {
+    padding: 0 7.5vw;
+  }
+}
+
+// CSS for the content of the single event
+.event__wrapper {
+  @include breakpoint(700px) {
+    margin: 0 auto;
+    max-width: 790px;
+  }
+}
+
+.event__cover_image {
+  img {
+    height: 220px;
+    width: 100%;
+
+    object-fit: cover;
+  }
 }
