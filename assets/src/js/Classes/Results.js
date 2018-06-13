@@ -80,7 +80,7 @@ class Results {
   searchWithFilters() {
     const data = {
       action: 'search_filters',
-      query: 'media',
+      query: searchquery,
       filters: this.selected_filters
     }
 
