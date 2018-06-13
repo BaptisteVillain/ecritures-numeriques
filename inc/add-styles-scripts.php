@@ -14,6 +14,10 @@ function my_scripts() {
 		'postID' => $post->ID,
 		'postDate' => $post->date_create,
 	));
+
+	if(!empty(get_search_query())){
+		wp_localize_script('my-js', 'searchquery', get_search_query());
+	}
 }
 add_action( 'wp_enqueue_scripts', 'my_scripts' );
 

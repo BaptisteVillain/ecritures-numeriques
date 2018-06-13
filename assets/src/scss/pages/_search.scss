@@ -226,7 +226,7 @@
       width: 100%;
       display: flex;
       flex-direction: column;
-      .list__item{
+      .list__card{
         width: 100%;
         border: 1px solid $dark-grey;
         background: $white;
@@ -234,45 +234,46 @@
         &:last-child{
           margin-bottom: 0;
         }
-        a{
-          display: flex;
-          width: 100%;
-          height: 100%;
-          min-height: 100px;
-          padding: 20px;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: nowrap;  
-          div{
-            display: flex;
-            height: 100%;
-            flex-direction: row;
-          }
-        }
-        .item__title{
-          width: 35%;
-          line-height: 1.5;
-          @include font($hind, 1.4rem, 500, $black, capitalize, left);
-        }
-        .item__domain, .item__authors, .item__date, .item__rubrics{
-          margin-left: 30px;
-          line-height: 1.7;
-          @include font($hind, 1.2rem, 400, $dark-grey, capitalize, left);
-        }
-        .item__domain{
-          width: 20%;
-        }
-        .item__authors{
-          width: 10%;
-        }
-        .item__date{
-          width: 10%;
-        }
-        .item__rubrics{
-          width: 25%;
-        }
       }
     }
+  }
+}
+
+.card{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  padding: 20px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  :not(.card__rubrics){
+    display: flex;
+    height: 100%;
+    flex-direction: row;
+  }
+  .card__title{
+    width: 35%;
+    line-height: 1.5;
+    @include font($hind, 1.4rem, 500, $black, capitalize, left);
+  }
+  .card__domain, .card__authors, .card__date, .card__rubrics{
+    margin-left: 30px;
+    line-height: 1.7;
+    @include font($hind, 1.2rem, 400, $dark-grey, capitalize, left);
+  }
+  .card__domain{
+    width: 20%;
+  }
+  .card__authors{
+    width: 10%;
+  }
+  .card__date{
+    width: 10%;
+  }
+  .card__rubrics{
+    width: 25%;
   }
 }

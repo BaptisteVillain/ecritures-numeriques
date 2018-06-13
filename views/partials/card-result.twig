@@ -1,19 +1,19 @@
-<li class="list__item">
-  <a href="{{post.link}}">
-    <div class="item__title">
+<li class="list__card">
+  <a class="card"href="{{post.link}}">
+    <div class="card__title">
       {{ post.post_title }}
     </div>
-    <div class="item__domain">
+    <div class="card__domain">
       Revue française des sciences de l’information et de la communication
     </div>
-    <div class="item__authors">
+    <div class="card__authors">
       Peppe Cavallari
     </div>
-    <div class="item__date">
+    <div class="card__date">
       [01-08-17]
     </div>
-    <div class="item__rubrics">
-      {% include "./components/single-discover.twig" %}
+    <div class="card__rubrics">
+      {{ post.terms[0].name }}
     </div>
   </a>
 </li>
