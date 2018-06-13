@@ -4,7 +4,7 @@
   </div>
   <h4 class="card__title">{{ post.title }}</h4>
   {% if content %}
-    <div class="card__subtitle">{{post.content | excerpt(41)}}</div>
+    <div class="card__subtitle">{{post.get_field('content') | excerpt(41)}}</div>
   {% endif %}
   <div class="card__footer">
     <div class="card__terms">
