@@ -14,8 +14,10 @@
   {
     $result = '';
 
-    foreach ($authors as $key => $author) {
-      $result .=  $key > 0 ? ', '.$author->post_title : $author->post_title;
+    if(!empty($authors)){
+      foreach ($authors as $key => $author) {
+        $result .=  $key > 0 ? ', '.$author->post_title : $author->post_title;
+      }
     }
 
     return $result;
@@ -24,9 +26,10 @@
   function join_terms($terms) : string
   {
     $result = '';
-
-    foreach ($terms as $key => $term) {
-      $result .=  $key > 0 ? ' - '.$term->name : $term->name;
+    if(!empty($terms)){
+      foreach ($terms as $key => $term) {
+        $result .=  $key > 0 ? ' - '.$term->name : $term->name;
+      }
     }
 
     return $result;
