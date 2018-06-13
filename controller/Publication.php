@@ -9,12 +9,14 @@ class Publication extends Timber\Post
    */
   var $_authors;
 
-  public function authors() : array
+  public function authors() : ?Timber\PostQuery
   {
-    $this->_authors = Timber::get_posts(array(
-      'post_type' => 'member',
-      'post__in' => $this->publication_authors
-    ));
+    if(!empty($this->publication_authors)){
+      $this->_authors = new Timber\PostQuery(array(
+        'post_type' => 'member',
+        'post__in' => $this->publication_authors
+      ));
+    }
 
     return $this->_authors;
   }
@@ -23,16 +25,16 @@ class Publication extends Timber\Post
    * Array
    */
   var $_related;
-  public function related() : array
+  public function related() : ?Timber\PostQuery
   {
-    if(empty($this->relation_publication_publication)){
-      return array();
-    }
+    if(!empty($this->relation_publication_publication)){
 
-    $this->_related = Timber::get_posts(array(
-      'post_type' => 'publication',
-      'post__in' => $this->relation_publication_publication
-    ));
+      $this->_related = new Timber\PostQuery(array(
+        'post_type' => 'publication',
+        'post__in' => $this->relation_publication_publication
+      ));
+
+    }
 
     return $this->_related;
   }

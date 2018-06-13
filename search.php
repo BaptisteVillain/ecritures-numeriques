@@ -9,18 +9,15 @@
  * @since   Timber 0.1
  */
 
-$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
 $context = Timber::get_context();
 
-$context['title'] = 'Search results for '. get_search_query();
-$context['posts'] = Timber::get_posts();
 
 $context['results'] = array();
 
 $types = array('publication', 'project', 'event', 'member');
 
 foreach ($types as $type) {
-  $context['results'][] = Timber::get_posts(array(
+  $context['results'][] = new Timber\PostQuery(array(
     'post_type' => $type,
     's' => get_search_query()
   ));
@@ -38,7 +35,7 @@ $taxonomies = get_taxonomies(array(
 ));
 
 foreach ($taxonomies as $taxonomy) {
-  $context['filters'][] = get_terms(array(
+  $context['filters'][] = Timber::get_terms(array(
     'taxonomy' => $taxonomy,
     'hide_empty' => false,
   ));
@@ -48,4 +45,4 @@ foreach ($taxonomies as $taxonomy) {
 // print_r($context['results']);
 // echo '</pre>';
 
-Timber::render( $templates, $context );
+Timber::render( 'search.twig', $context );

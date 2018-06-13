@@ -14,7 +14,7 @@ class Term extends Timber\Term
     $types = array('publication', 'project', 'event');
     foreach ($types as $key => $type) {
 
-      $result = Timber::get_posts(array(
+      $result = new Timber\PostQuery(array(
       'posts_per_page' => -1,
       'post_type' => $type,
       'tax_query' => array(
@@ -47,14 +47,14 @@ class Term extends Timber\Term
 
 
   var $_next;
-  public function next() : WP_Term
+  public function next() : Timber\Term
   {
     $taxonomies = get_taxonomies(array(
       'public' => true,
       '_builtin' => false
     ));
 
-    $this->terms = get_terms(array(
+    $this->terms = Timber::get_terms(array(
       "taxonomy" => $taxonomies,
       "hide_empty" => false
     ));
@@ -72,7 +72,7 @@ class Term extends Timber\Term
   }
 
   var $_previous;
-  public function previous() : WP_Term
+  public function previous() : Timber\Term
   {
 
     $taxonomies = get_taxonomies(array(
@@ -80,7 +80,7 @@ class Term extends Timber\Term
       '_builtin' => false
     ));
 
-    $this->terms = get_terms(array(
+    $this->terms = Timber::get_terms(array(
       "taxonomy" => $taxonomies,
       "hide_empty" => false
     ));

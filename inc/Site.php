@@ -1,6 +1,6 @@
 <?php
 
-class Site extends TimberSite {
+class Site extends Timber\Site {
 
 	// This function applies some fundamental WordPress setup, as well as our functions to include custom post types and taxonomies.
 	function __construct() {
@@ -20,9 +20,9 @@ class Site extends TimberSite {
 	function add_to_context( $context ) {
 
 		// Our menu occurs on every page, so we add it to the global context.
-		$context['menu'] = new TimberMenu('header-menu');
-		$context['language'] = new TimberMenu('language-switch');
-		$context['socials'] = new TimberMenu('socials');
+		$context['menu'] = new Timber\Menu('header-menu');
+		$context['language'] = new Timber\Menu('language-switch');
+		$context['socials'] = new Timber\Menu('socials');
 
 		$context['header'] = get_fields(pll_current_language('slug'));
 

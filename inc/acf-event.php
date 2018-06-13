@@ -25,7 +25,7 @@ function check_save_event($post_id){
 				),
 			);
 
-			$query = new WP_Query($args);
+			$query = new Timber/PostQuery($args);
 			
 			if($query->have_posts()){
 				while ($query->have_posts()) {
