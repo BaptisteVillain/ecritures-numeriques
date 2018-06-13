@@ -19,7 +19,8 @@ $types = array('publication', 'project', 'event', 'member');
 foreach ($types as $type) {
   $context['results'][] = new Timber\PostQuery(array(
     'post_type' => $type,
-    's' => get_search_query()
+    's' => get_search_query(),
+		'posts_per_page' => -1,
   ));
 }
 
@@ -41,8 +42,5 @@ foreach ($taxonomies as $taxonomy) {
   ));
 }
 
-// echo '<pre>';
-// print_r($context['results']);
-// echo '</pre>';
 
 Timber::render( 'search.twig', $context );
