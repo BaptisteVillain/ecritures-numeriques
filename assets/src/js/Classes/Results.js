@@ -1,3 +1,6 @@
+import axios from 'axios'
+import qs from 'qs'
+
 class Results {
   constructor(container) {
 
@@ -26,7 +29,14 @@ class Results {
 
     this.containerToFix.forEach(cont => {
       const { width } = cont.querySelector('li').getBoundingClientRect()
-      cont.style.width = `${ width * 2 }px`
+      cont.style.width = `${width * 2}px`
+    })
+
+    this.filters.forEach(filter => {
+      filter.addEventListener('click', e => {
+        this.toggleFilter(e.currentTarget)
+        this.searchWithFilters()
+      })
     })
   }
 
@@ -40,6 +50,44 @@ class Results {
 
       this.selected_tab = index
     }
+  }
+
+  toggleFilter(element) {
+    const filter = {
+      slug: element.dataset.slug,
+      taxonomy: element.dataset.taxonomy,
+    }
+    if (!element.classList.contains('filter--active')) {
+      this.selected_filters.push(filter)
+    } else {
+      const index = this.selected_filters.findIndex(selected => {
+        return selected.slug === filter.slug && selected.taxonomy === filter.taxonomy
+      })
+      this.selected_filters.splice(index, 1)
+    }
+
+    element.classList.toggle('filter--active')
+  }
+
+  clearFilter() {
+    this.filters.forEach(filter => {
+      filter.classList.remove('filter--active')
+    })
+
+    this.selected_filters = []
+  }
+
+  searchWithFilters() {
+    const data = {
+      action: 'search_filters',
+      query: 'ezok',
+      filters: this.selected_filters
+    }
+
+    axios.post(ajaxurl, qs.stringify(data))
+      .then(response => {
+        console.log(response)
+      })
   }
 }
 
