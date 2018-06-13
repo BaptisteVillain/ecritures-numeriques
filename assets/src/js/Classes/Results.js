@@ -19,7 +19,7 @@ class Results {
 
     this.results_buttons.forEach(button => {
       button.addEventListener('click', e => {
-        this.setTabs(e.srcElement.dataset.index)
+        this.setTabs(e.currentTarget.dataset.index)
       })
     })
 
@@ -80,7 +80,7 @@ class Results {
   searchWithFilters() {
     const data = {
       action: 'search_filters',
-      query: 'ezok',
+      query: 'media',
       filters: this.selected_filters
     }
 
