@@ -1,119 +1,124 @@
-
 // ---
 // Base Site Styles
 // ---
-
 // Keep it mobile first, yo! Read this:
 // http://www.abookapart.com/products/mobile-first
 // Actually, just buy all of those books.
-
 // Anyways, here's how I like to structure my content styles:
-
-
 // Border box all the things:
-
-*, *::before, *::after {
-	 box-sizing: border-box;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
 }
 
 // ---
 // General Selectors
 // ---
-
 img {
 	max-width: 100%;
 }
 
-
-
 // ---
 // Main Site Content
 // ---
-html{
+html {
 	background: $white;
 }
 
-html, body{
-	width: 100%;
+html,
+body {
 	height: 100%;
-}
-
-main.site-main{
-	padding-top: 80px;
-}
-
-section.home-section{
 	width: 100%;
 }
 
-header.section-header{
+main.site-main {
+	padding-top: 60px;
+
+	@include breakpoint(700px) {
+		padding-top: 80px;
+	}
+}
+
+section.home-section {
 	width: 100%;
-	height: 60px;
+}
+
+header.section-header {
 	display: flex;
+	height: 60px;
 	justify-content: space-between;
-	@include breakpoint(800px){
+	width: 100%;
+
+	@include breakpoint(800px) {
 		height: 78px;
-	}	
-	h2.header__title{
-		width: 100%;
-		padding: 0 30px;
-		height: 100%;
-		display: flex;
-		justify-content: center;
+	}
+	h2.header__title {
 		align-items: center;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		padding: 0 30px;
+		width: 100%;
+
 		@include font($hind, 2.0rem, 600, $dark-blue, uppercase, center);
-		@include breakpoint(800px){
+		@include breakpoint(800px) {
 			min-width: 300px;
 			width: calc(100% / 4);
 		}
 	}
-	a.header__link{
+	a.header__link {
 		display: none;
-		@include breakpoint(800px){
-			display: flex;
-			justify-content: center;
+
+		@include breakpoint(800px) {
 			align-items: center;
-			height: 100%;		
+			display: flex;
+			height: 100%;
+			justify-content: center;
 			margin-right: 50px;
 			padding: 0 10px;
+
 			@include font($source, 1.6rem, 600, $dark-blue, uppercase, center);
 		}
 	}
 }
 
-footer.section-footer{
-	width: 100%;
+footer.section-footer {
 	height: 60px;
-	.footer__link{
+	width: 100%;
+
+	@include breakpoint(800px) {
+		display: none;
+	}
+	.footer__link {
 		display: block;
-		width: 100%;
 		height: 100%;
 		line-height: 60px;
+		width: 100%;
+
 		@include font($source, 1.4rem, 600, $dark-blue, uppercase, center);
-	}
-	@include breakpoint(800px){
-		display: none;
 	}
 }
 
-.single__content{
-	@include font($hind, 1.4rem, 400, $black, inherit, left);
+.single__content {
 	line-height: 1.7;
-	img{
+
+	@include font($hind, 1.4rem, 400, $black, inherit, left);
+	img {
+		background: $light-blue;
 		display: block;
-		max-width: 550px;
-		width: 100%;
 		height: auto;
 		margin: 60px auto;
-		background: $light-blue;
+		max-width: 550px;
+		width: 100%;
 	}
-	.content__youtube{
+	.content__youtube {
+		background: $light-blue;
 		display: flex;
 		margin: 60px auto;
 		max-width: 550px;
 		position: relative;
-		background: $light-blue;
-		iframe{
+		iframe {
 			width: 100%;
 		}
 	}
@@ -122,23 +127,14 @@ footer.section-footer{
 // ---
 // Media
 // ---
-
-
-
-
 // ---
 // Footer
 // ---
-
-
-
-
 // ---
 // Misc Utilities
 // ---
-
-ul{
+ul {
 	list-style: none;
-	padding: 0;
 	margin: 0;
+	padding: 0;
 }

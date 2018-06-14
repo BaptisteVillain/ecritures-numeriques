@@ -166,31 +166,3 @@
     }
   }
 }
-
-// .medias__video__wrapper {
-//   @include breakpoint(700px) {
-//     text-align: center;
-//   }
-// }
-// .medias__video {
-//   display: inline-block;
-//   position: relative;
-//   width: 100%;
-//   @include breakpoint(700px) {
-//     width: 510px;
-//   }
-//   &::before {
-//     background: darken($light-blue, 5%);
-//     content: '';
-//     height: 100%;
-//     left: 0;
-//     position: absolute;
-//     top: 0;
-//     width: 100%;
-//     z-index: 10;
-//     mix-blend-mode: lighten;
-//   }
-//   iframe {
-//     width: 100%;
-//   }
-// }

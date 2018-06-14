@@ -1,277 +1,301 @@
-.site-header{
-  position: fixed;
-  z-index: 100;
-  width: 100vw;
-  height: 80px;
+.site-header {
   background: $dark-blue;
-  &::after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(#ffffff, .14);
+  height: 60px;
+  position: fixed;
+  width: 100vw;
+  z-index: 100;
+
+  @include breakpoint(700px) {
+    height: 80px;
   }
-  @include breakpoint(950px){
-    padding: 0 7.5vw;
+  @include breakpoint(950px) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 7.5vw;
+  }
+  &::after {
+    background-color: rgba(#ffffff, .14);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
   }
 }
 
-.site-header__logo{
-  display: flex;
-  justify-content: center;
+.site-header__logo {
   align-items: center;
-  width: 150px;
+  display: flex;
   height: 80px;
+  justify-content: center;
   margin: 0 auto;
-  @include breakpoint(950px){
+  width: 150px;
+
+  @include breakpoint(950px) {
     margin: 0;
     width: 250px;
   }
 }
 
-.site-header__wrapper{
-  width: 100%;
+.site-header__wrapper {
+  background: $dark-blue;
   height: calc(100vh - 80px);
   overflow-y: scroll;
-  background: $dark-blue;
+  padding: 0 40px;
   transform: translateX(-100vw);
   transition: transform .3s $easing;
-  padding: 0 40px;
-  &.site-header__wrapper--hide{
-    transform: translateX(0);    
-  }
-  @include breakpoint(950px){
-    width: auto;
+  width: 100%;
+
+  @include breakpoint(950px) {
     display: flex;
     flex-direction: row;
     height: 80px;
-    transform: translateX(0%);     
-    overflow-y: visible;   
+    overflow-y: visible;
     padding: 0;
+    transform: translateX(0%);
+    width: auto;
+  }
+  &.site-header__wrapper--hide {
+    transform: translateX(0);
   }
 }
 
-.site-header__nav{
+.site-header__nav {
   position: relative;
   width: 100%;
-  @include breakpoint(950px){
+
+  @include breakpoint(950px) {
     height: 80px;
-    width: auto;
     margin-left: 30px;
+    width: auto;
   }
 }
 
-.site-header__nav-trigger{
+.site-header__nav-trigger {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: 80px;
   justify-content: center;
-  align-items: center;
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   width: 80px;
-  height: 80px;
-  span{
-    width: 16px;
-    height: 1px;
-    background: $white;
-    margin: 2px 0;
-  }
-  @include breakpoint(950px){
+
+  @include breakpoint(950px) {
     display: none;
+  }
+  span {
+    background: $white;
+    height: 1px;
+    margin: 2px 0;
+    width: 16px;
   }
 }
 
-.nav__wrapper{
+.nav__wrapper {
   display: flex;
   flex-direction: column;
-  width: auto;
   height: 100%;
-  @include breakpoint(950px){
+  width: auto;
+
+  @include breakpoint(950px) {
     flex-direction: row;
     padding: 0;
   }
-  .nav__item{
+  .nav__item {
+    height: auto;
     position: relative;
     width: 100%;
-    height: auto;
-    &:first-child{
-      margin-top: 15px;
-      @include breakpoint(950px){
-        margin: 0;
-      }      
-    }
-    @include breakpoint(950px){
-      width: auto;
+
+    @include breakpoint(950px) {
       height: 100%;
-      &:hover{
-        .item__drop{
+      width: auto;
+      &:hover {
+        .item__drop {
           transform: translateY(0);
         }
       }
     }
-    .item__link{
-      display: block;
-      padding: 15px 0;
-      @include font($hind, 1.5rem, 500, $white, uppercase, left);
-      background: $dark-blue;
-      white-space: nowrap;
-      &:active{
-        background: darken($dark-blue, 3%);
-      }
-      @include breakpoint(950px){
-        @include font($hind, 1.3rem, 500, $white, uppercase, center);
-        display: flex;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-        padding: 0 15px;
+    &:first-child {
+      margin-top: 15px;
+
+      @include breakpoint(950px) {
+        margin: 0;
       }
     }
-    .drop__trigger{
+    .item__link {
+      background: $dark-blue;
+      display: block;
+      padding: 15px 0;
+      white-space: nowrap;
+
+      @include font($hind, 1.5rem, 500, $white, uppercase, left);
+      @include breakpoint(950px) {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        padding: 0 15px;
+        width: 100%;
+
+        @include font($hind, 1.3rem, 500, $white, uppercase, center);
+      }
+      &:active {
+        background: darken($dark-blue, 3%);
+      }
+    }
+    .drop__trigger {
       display: flex;
-      position: relative;
-      padding-top: 45px;
       padding-bottom: 0;
+      padding-top: 45px;
+      position: relative;
+
       @include font($hind, 1.5rem, 500, $blue-grey, uppercase, left);
       user-select: none;
       pointer-events: none;
-      &::before{
-        content: "";
-        position: absolute;
-        top: 15px;
-        left: -20px;
-        right: -20px;
-        height: 1px;
+      @include breakpoint(950px) {
+        padding: 0 15px;
+        z-index: 100;
+
+        pointer-events: auto;
+        @include font($hind, 1.3rem, 500, $white, uppercase, left);
+      }
+      &::before {
         background: rgba(#ffffff, .14);
-        @include breakpoint(950px){
+        content: "";
+        height: 1px;
+        left: -20px;
+        position: absolute;
+        right: -20px;
+        top: 15px;
+
+        @include breakpoint(950px) {
           display: none;
         }
       }
-      @include breakpoint(950px){
-        pointer-events: auto;
-        padding: 0 15px;
-        @include font($hind, 1.3rem, 500, $white, uppercase, left);
-        z-index: 100;
-      }
-      .drop__icon{
+      .drop__icon {
         display: none;
         transform: rotate(90deg);
-        @include breakpoint(950px){
-          margin-left: 10px;
+
+        @include breakpoint(950px) {
           display: inline;
+          margin-left: 10px;
         }
       }
     }
-    .item__drop{
+    .item__drop {
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
       padding-bottom: 30px;
-      @include breakpoint(950px){
-        padding-bottom: 0;
-        display: block;
-        width: auto;
-        height: auto;
+
+      flex-wrap: wrap;
+      @include breakpoint(950px) {
         background: $dark-blue;
-        transition: transform .25s $easing;
-        transform: translateY(-100%);
+        display: block;
+        height: auto;
+        padding-bottom: 0;
         position: absolute;
+        transform: translateY(-100%);
+        transition: transform .25s $easing;
+        width: auto;
         z-index: -1;
       }
-      .drop__item{
+      .drop__item {
         margin-right: 20px;
-        &:nth-child(2n+1){
+
+        @include breakpoint(950px) {
+          height: 40px;
+          width: 100%;
+        }
+        &:nth-child(2n+1) {
           min-width: 80px;
         }
-        @include breakpoint(950px){        
-          width: 100%;
-          height: 40px;
-        }
       }
-      .drop__link{
-        display: flex;
+      .drop__link {
         align-items: center;
-        padding: 10px 0;        
-        width: 100%;
-        height: 100%;
-        white-space: nowrap;
-        @include font($hind, 1.5rem, 500, $white, capitalize, left);
         background: $dark-blue;
-        &:active{
-          background: darken($dark-blue, 3%);
-        }      
-        @include breakpoint(950px){        
-          padding: 0 15px;       
+        display: flex;
+        height: 100%;
+        padding: 10px 0;
+        white-space: nowrap;
+        width: 100%;
+
+        @include font($hind, 1.5rem, 500, $white, capitalize, left);
+        @include breakpoint(950px) {
+          padding: 0 15px;
+
           @include font($hind, 1.3rem, 500, $white, uppercase, left);
+        }
+        &:active {
+          background: darken($dark-blue, 3%);
         }
       }
     }
   }
 }
 
-.site-header__search-wrapper{
+.site-header__search-wrapper {
   display: none;
-  @include breakpoint(950px){
-    position: relative;
+
+  @include breakpoint(950px) {
+    align-items: center;
+    background: $dark-blue;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    padding: 0 30px;
+    position: relative;
     position: relative;
     z-index: 10;
-    padding: 0 30px;
-    background: $dark-blue;
-    input{
-      height: 20px;
+    input {
       background: none;
       border: none;
+      height: 20px;
       outline: none;
+
       @include font($hind, 1.5rem, 500, $white, none, left);
-      &::-webkit-input-placeholder{
+      &::-webkit-input-placeholder {
         @include font($hind, 1.2rem, 400, $blue-grey, none, left);
       }
     }
   }
 }
 
-.site-header__language-switch{
-  width: 100%;
+.site-header__language-switch {
   padding-top: 30px;
   position: relative;
-  @include breakpoint(950px){
-    width: auto;
-    padding-top: 0;
-    // margin-left: auto;
-    height: 100%;
+  width: 100%;
+
+  @include breakpoint(950px) {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    height: 100%;
+    padding-top: 0; // margin-left: auto;
     position: relative;
+    width: auto;
   }
-  &::before{
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: -20px;
-    right: -20px;
-    height: 1px;
+  &::before {
     background: rgba(#ffffff, .14);
-    @include breakpoint(950px){
+    content: "";
+    height: 1px;
+    left: -20px;
+    position: absolute;
+    right: -20px;
+    top: 0px;
+
+    @include breakpoint(950px) {
       display: none;
     }
   }
-  li a{
+  li a {
     @include font($hind, 1.5rem, 500, $white, uppercase, left);
-    @include breakpoint(950px){
-      display: flex;
-      justify-content: center;
+    @include breakpoint(950px) {
       align-items: center;
+      display: flex;
       height: 80px;
+      justify-content: center;
     }
   }
 }

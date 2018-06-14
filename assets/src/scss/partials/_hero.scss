@@ -1,8 +1,11 @@
 .hero {
   background-color: $dark-blue;
-  height: calc(100vh - 8rem - 8rem);
-  // max-height: 67rem;
+  height: calc(100vh - 57px - 60px); // max-height: 67rem;
   overflow-y: hidden;
+
+  @include breakpoint(700px) {
+    height: calc(100vh - 80px - 80px); // max-height: 67rem;
+  }
 }
 
 .hero__container {
@@ -10,46 +13,49 @@
   margin: 0 auto;
   max-width: 123rem;
   position: relative;
-  width: 90vw;
+  width: 100%;
 
+  @include breakpoint(700px) {
+    width: 90vw;
+  }
   @include breakpoint(1244px) {
     width: 85vw;
   }
 }
 
 .grid {
+  // Single case
   &__case {
     align-items: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 0;
     display: flex;
-    height: calc(90vw / 24);
+    height: 50px;
     justify-content: center;
-    max-height: calc(123rem / 24);
-    max-width: calc(123rem / 24);
     text-transform: uppercase;
-    width: calc(90vw / 24);
+    width: calc(100vw/7);
 
+    @include breakpoint(700px) {
+      height: calc(90vw / 24);
+      max-height: calc(123rem / 24);
+      max-width: calc(123rem / 24);
+      width: calc(90vw / 24);
+    }
     @include breakpoint(1244px) {
       height: calc(85vw / 24);
       width: calc(85vw / 24);
     }
-    @include font(
-      $hind,
-      1.3rem,
-      500,
-      rgba(255, 255, 255, 0.08),
-      uppercase,
-      center
-    );
-
+    @include font( $hind, 1.3rem, 500, rgba(255, 255, 255, 0.08), uppercase, center);
     &:not(:last-child) {
       border-right: 0;
     }
+    /* Bold caracters */
     &--bold {
-      color: rgba(255, 255, 255, 0.2);
+      @include breakpoint(700px) {
+        color: rgba(255, 255, 255, 0.2);
+      }
     }
-
+    /* Double case */
     &--double {
       max-width: calc(123rem / 24 * 2);
       width: calc(90vw / 24 * 2);
@@ -58,40 +64,50 @@
         width: calc(85vw / 24 * 2);
       }
     }
-
+    /* Triple case */
     &--triple {
-      max-width: calc(123rem / 24 * 3);
-      width: calc(90vw / 24 * 3);
+      width: calc(100% / 7);
 
+      @include breakpoint(700px) {
+        max-width: calc(123rem / 24 * 3);
+        width: calc(90vw / 24 * 3);
+      }
       @include breakpoint(1244px) {
         width: calc(85vw / 24 * 3);
       }
     }
-
+    /* Description case */
     &--description {
-      max-width: calc(123rem / 24 * 11);
-      width: calc(90vw / 24 * 11);
+      height: 100%;
+      width: 100%;
 
+      @include breakpoint(700px) {
+        height: inherit;
+        max-width: calc(123rem / 24 * 11);
+        width: calc(90vw / 24 * 11);
+      }
       @include breakpoint(1244px) {
         width: calc(85vw / 24 * 11);
       }
     }
-
+    /* Title case */
     &--title {
       border-left: 1px solid $light-grey;
 
       @include font($source, 3rem, 700, $light-grey, uppercase, center);
     }
-
+    /* Tab links case */
     &--tab {
       border: 1px solid $pink;
       max-width: calc(123rem / 24 * 4);
-      width: calc(90vw / 24 * 4);
+      width: 50%;
 
+      @include breakpoint(700px) {
+        width: calc(90vw / 24 * 4);
+      }
       @include breakpoint(1244px) {
         width: calc(85vw / 24 * 4);
       }
-
       h2 {
         margin-right: auto;
         padding-left: 2rem;
@@ -99,24 +115,20 @@
         @include font($hind, 1.6rem, 500, $light-grey, none, left);
       }
     }
-
+    /* CSS special case */
     &--noBorderTop {
       border-top: 0;
-    }
-
-    // Handling border
+    } // Handling border
     &--leftAdjacentBorder {
       border: none;
       border-left: 1px $pink solid;
       border-right: 1px $border-grey solid;
       border-top: 1px solid $border-grey;
     }
-
-    // Youtube notification
+    /* Youtube notification */
     &--notification {
       color: $pink;
     }
-
     &--popUp {
       background-color: $border-grey;
       border: 1px $pink solid;
@@ -144,13 +156,36 @@
       width: calc(90vw / 24 * 6);
     }
   }
+  /* Row */
   &__row {
     display: flex;
+    height: 50px;
+    overflow: hidden;
 
     flex-wrap: wrap;
+    @include breakpoint(700px) {
+      height: inherit;
+      overflow: inherit;
+    }
     &:first-child {
       .grid__case {
         border-top: none;
+      }
+    }
+    /* Row description */
+    &__description {
+      height: 150px;
+
+      @include breakpoint(700px) {
+        height: inherit;
+      }
+    }
+    /* Row tab */
+    &__tab {
+      height: 100px;
+
+      @include breakpoint(700px) {
+        height: inherit;
       }
     }
   }
@@ -168,6 +203,7 @@
 .grid__case--live {
   position: relative;
 }
+
 .live--icon {
   background-color: rgba(248, 206, 205, 0.4);
   border-radius: 100%;
@@ -189,34 +225,61 @@
   top: calc(50% - 0.25rem);
   width: 0.5rem;
 }
+
 // Youtube notification content
 .popUp__label {
   font-size: 13px;
   text-transform: uppercase;
 
-  @include font($source, 1.3rem, 700, $pink, uppercase, center);
+  @include font($source,
+  1.3rem,
+  700,
+  $pink,
+  uppercase,
+  center);
 }
 
 .popUp__title {
-  @include font($hind, 1.2rem, 500, $light-grey, none, center);
+  @include font($hind,
+  1.2rem,
+  500,
+  $light-grey,
+  none,
+  center);
 }
 
 // H1 title
 .title__first {
   border-left: 1px solid $border-grey;
 }
+
 .title__sub {
   color: $pink;
 }
 
 // Description
 .subcase__description {
-  width: 95%;
+  padding: 20px 40px;
+  width: 100%;
 
+  @include breakpoint(700px) {
+    padding: 0;
+    width: 95%;
+  }
   p {
-    @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
+    @include font($source,
+    1.2rem,
+    500,
+    $light-grey,
+    uppercase,
+    left);
     @include breakpoint(1244px) {
-      @include font($source, 1rem, 500, $light-grey, uppercase, left);
+      @include font($source,
+      1rem,
+      500,
+      $light-grey,
+      uppercase,
+      left);
     }
   }
 }
@@ -225,4 +288,54 @@
 .tab__arrow {
   margin-left: auto;
   padding-right: 2rem;
+}
+
+// Mobile style
+.hero__title {
+  left: 50px;
+  letter-spacing: 8px;
+  position: absolute;
+  top: 100px;
+
+  @include font($source,
+  3.2rem,
+  700,
+  $white,
+  uppercase,
+  left);
+  @include breakpoint(700px) {
+    display: none;
+  }
+  .hero__title--color {
+    @include font($source,
+    3.2rem,
+    700,
+    $pink,
+    uppercase,
+    left);
+  }
+}
+
+.grid--hidden {
+  display: none;
+
+  @include breakpoint(700px) {
+    display: flex;
+  }
+}
+
+.grid__case--tab--left {
+  border-left: none;
+
+  @include breakpoint(700px) {
+    border-left: 1px solid #f8cecd;
+  }
+}
+
+.grid__case--tab--bottom {
+  border-top: none;
+
+  @include breakpoint(700px) {
+    border-top: 1px solid #f8cecd;
+  }
 }
