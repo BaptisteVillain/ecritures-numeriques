@@ -6,6 +6,7 @@
 
 $context = Timber::get_context();
 
+$context['home_url'] = get_home_url();
 
 /**
  * Links
