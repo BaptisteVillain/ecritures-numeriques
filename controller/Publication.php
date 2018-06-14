@@ -9,7 +9,7 @@ class Publication extends Timber\Post
    */
   var $_authors;
 
-  public function authors() : ?Timber\PostQuery
+  public function authors()
   {
     if(!empty($this->publication_authors)){
       $this->_authors = new Timber\PostQuery(array(
@@ -25,7 +25,7 @@ class Publication extends Timber\Post
    * Array
    */
   var $_related;
-  public function related() : ?Timber\PostQuery
+  public function related()
   {
     if(!empty($this->relation_publication_publication)){
 
