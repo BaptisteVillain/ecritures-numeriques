@@ -144,8 +144,9 @@
 .event__description {
   line-height: 2.3rem;
   padding-bottom: 60px;
-
-  @include font($hind, 1.4rem, 400, $black, none, left);
+  p {
+    @include font($hind, 1.4rem, 400, $black, none, left);
+  }
   h2 {
     margin-bottom: 30px;
 
@@ -153,6 +154,16 @@
   }
   h3 {
     @include font($hind, 1.6rem, 500, $black, none, left);
+  }
+  .content__youtube {
+    text-align: center;
+    iframe {
+      width: 100%;
+
+      @include breakpoint(700px) {
+        width: 510px;
+      }
+    }
   }
 }
 

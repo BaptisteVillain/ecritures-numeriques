@@ -1,11 +1,12 @@
 {
     "key": "group_5ab2712e9cb14",
     "title": "Event",
-    "fields": [{
-            "key": "field_5b1d9d8d5b39d",
-            "label": "Authors",
-            "name": "event_authors",
-            "type": "post_object",
+    "fields": [
+        {
+            "key": "field_5ae0f79f8f1fd",
+            "label": "Cover Image",
+            "name": "cover_image",
+            "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -14,14 +15,17 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "member"
-            ],
-            "taxonomy": [],
-            "allow_null": 0,
-            "multiple": 1,
-            "return_format": "object",
-            "ui": 1
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "default_value": 8366
         },
         {
             "key": "field_5ab8ba4dd78d9",
@@ -43,10 +47,10 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5ae0f79f8f1fd",
-            "label": "Cover Image",
-            "name": "cover_image",
-            "type": "image",
+            "key": "field_5b2241f5e5c3e",
+            "label": "Content",
+            "name": "content",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -55,21 +59,15 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "default_value": 8366
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5ae0f5969d26a",
-            "label": "Event Place",
+            "label": "Event Venue",
             "name": "event_venue",
             "type": "text",
             "instructions": "",
@@ -185,84 +183,16 @@
             "multiple": 1,
             "return_format": "object",
             "ui": 1
-        },
-        { <<
-            << << < HEAD "key": "field_5b0e9effb1a3d",
-            "label": "Medias",
-            "name": "medias",
-            "type": "repeater",
-            ===
-            === =
-            "key": "field_5b1d9df38cc60",
-            "label": "Content",
-            "name": "content",
-            "type": "wysiwyg",
-            >>>
-            >>> > 3 a60d91251f9759d2348fd44d6c3e7c6776bb7ed "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            <<
-            << << < HEAD "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [{
-                        "key": "field_5b0e9f0cb1a3e",
-                        "label": "Media title",
-                        "name": "media_title",
-                        "type": "text",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
-                    },
-                    {
-                        "key": "field_5b0e9f4db1a3f",
-                        "label": "Media link",
-                        "name": "media_link",
-                        "type": "oembed",
-                        "instructions": "",
-                        "required": 0,
-                        "conditional_logic": 0,
-                        "wrapper": {
-                            "width": "",
-                            "class": "",
-                            "id": ""
-                        },
-                        "width": "",
-                        "height": ""
-                    }
-                ] ===
-                === =
-                "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0 >>>
-                >>> > 3 a60d91251f9759d2348fd44d6c3e7c6776bb7ed
         }
     ],
     "location": [
-        [{
-            "param": "post_type",
-            "operator": "==",
-            "value": "event"
-        }]
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
     ],
     "menu_order": 0,
     "position": "normal",
@@ -274,21 +204,9 @@
         "the_content",
         "excerpt",
         "discussion",
-        "comments",
-        "revisions",
-        "author",
-        "format",
-        "page_attributes",
-        "featured_image",
-        "categories",
-        "tags",
-        "send-trackbacks"
+        "comments"
     ],
     "active": 1,
     "description": "",
-    <<
-    << << < HEAD "modified": 1527686148 ===
-        === =
-        "modified": 1528667678 >>>
-        >>> > 3 a60d91251f9759d2348fd44d6c3e7c6776bb7ed
+    "modified": 1528973089
 }
