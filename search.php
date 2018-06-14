@@ -25,6 +25,7 @@ foreach ($types as $type) {
 }
 
 
+
 /**
  * Get all taxonmies terms as filters
  */
@@ -41,6 +42,22 @@ foreach ($taxonomies as $taxonomy) {
     'hide_empty' => false,
   ));
 }
+
+/**
+ * Get all available filters
+ */
+$context['available_filters'] = array();
+
+foreach ($context['results'] as $key => $result) {
+  foreach ($result as $post) {
+    foreach ($post->terms as $term) {
+      if(!in_array($term->slug, $context['available_filters'])){
+        $context['available_filters'][] = $term->slug;
+      }
+    }
+  }
+}
+
 
 
 Timber::render( 'search.twig', $context );

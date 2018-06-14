@@ -59,7 +59,7 @@
         <ul class="taxonomy__filters">
           {% for term in taxonomy %}
           <li>
-            <button class="filter" data-slug="{{term.slug}}" data-taxonomy="{{term.taxonomy}}">
+            <button class="filter {% if term.slug not in available_filters %}filter--inactive{% endif %}" data-slug="{{term.slug}}" data-taxonomy="{{term.taxonomy}}">
               <div class="filter__radio"></div>
               <p class="filter__label">{{term.name}}</p>
             </button>

@@ -7,6 +7,8 @@ class Results {
     this.container = container
     this.results_buttons = container.querySelectorAll('.header__switch')
     this.results_tabs = container.querySelectorAll('.list__container')
+    this.results_container = container.querySelectorAll('.list')
+    this.results_count = container.querySelectorAll('.header__button span')
 
     this.filters_visibility = container.querySelector('.header__button--filter')
     this.filters_container = container.querySelector('.results__filters')
@@ -16,6 +18,7 @@ class Results {
 
     this.selected_tab = 0
     this.selected_filters = []
+    this.available_filters = []
 
     this.results_buttons.forEach(button => {
       button.addEventListener('click', e => {
@@ -35,7 +38,7 @@ class Results {
     this.filters.forEach(filter => {
       filter.addEventListener('click', e => {
         this.toggleFilter(e.currentTarget)
-        this.searchWithFilters()
+        this.search()
       })
     })
   }
@@ -77,7 +80,16 @@ class Results {
     this.selected_filters = []
   }
 
-  searchWithFilters() {
+  updateFiltersVisibility() {
+    this.filters.forEach(filter => {
+      if (this.available_filters.indexOf(filter.dataset.slug) === -1) {
+        filter.classList.add('filter--inactive')
+        filter.classList.remove('filter--active')
+      }
+    })
+  }
+
+  search() {
     const data = {
       action: 'search_filters',
       query: searchquery,
@@ -87,6 +99,16 @@ class Results {
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
         console.log(response)
+        this.results_container.forEach((container, index) => {
+          container.innerHTML = ''
+          this.results_count[index].innerHTML = response.data.data.results[index].length
+          response.data.data.results[index].forEach(result => {
+            container.insertAdjacentHTML('beforeend', result)
+          })
+        })
+
+        this.available_filters = response.data.data.available_filters
+        this.updateFiltersVisibility()
       })
   }
 }
