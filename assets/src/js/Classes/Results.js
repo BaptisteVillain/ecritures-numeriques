@@ -85,6 +85,8 @@ class Results {
       if (this.available_filters.indexOf(filter.dataset.slug) === -1) {
         filter.classList.add('filter--inactive')
         filter.classList.remove('filter--active')
+      } else {
+        filter.classList.remove('filter--inactive')
       }
     })
   }
