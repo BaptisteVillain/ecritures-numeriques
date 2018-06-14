@@ -136,6 +136,10 @@
       @include breakpoint(1244px) {
         width: calc(85vw / 24 * 4);
       }
+      @include breakpoint(1447px) {
+        max-width: 50%;
+        width: 50%;
+      }
       h2 {
         margin-right: auto;
         padding-left: 2rem;
@@ -248,6 +252,9 @@
 
         @include breakpoint(1023px) {
           display: flex;
+        }
+        @include breakpoint(1447px) {
+          display: none;
         }
       }
     }
@@ -431,5 +438,14 @@
 
   @include breakpoint(1023px) {
     border-top: 1px solid #f8cecd;
+  }
+  @include breakpoint(1447px) {
+    border-top: none;
+  }
+}
+
+.grid__case.grid__case--tab--right {
+  @include breakpoint(1447px) {
+    border-right: 1px solid $pink;
   }
 }
