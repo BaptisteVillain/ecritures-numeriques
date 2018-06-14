@@ -7,7 +7,7 @@ class Term extends Timber\Term
    * Array
    */
   var $_related;
-  public function related() : array
+  public function related()
   {
     $this->_related = array();
 
@@ -47,7 +47,7 @@ class Term extends Timber\Term
 
 
   var $_next;
-  public function next() : Timber\Term
+  public function next()
   {
     $taxonomies = get_taxonomies(array(
       'public' => true,
@@ -72,7 +72,7 @@ class Term extends Timber\Term
   }
 
   var $_previous;
-  public function previous() : Timber\Term
+  public function previous()
   {
 
     $taxonomies = get_taxonomies(array(
