@@ -39,7 +39,7 @@
     height: 50px;
     justify-content: center;
     text-transform: uppercase;
-    width: calc(100vw/7);
+    width: calc(100vw / 7);
 
     @include breakpoint(700px) {
       height: calc(100vw / 18);
@@ -57,7 +57,14 @@
       height: calc(90vw / 24);
       width: calc(85vw / 24);
     }
-    @include font( $hind, 1.3rem, 500, rgba(255, 255, 255, 0.08), uppercase, center);
+    @include font(
+      $hind,
+      1.3rem,
+      500,
+      rgba(255, 255, 255, 0.08),
+      uppercase,
+      center
+    );
     &:not(:last-child) {
       border-right: 0;
     }
@@ -136,7 +143,7 @@
       @include breakpoint(1244px) {
         width: calc(85vw / 24 * 4);
       }
-      @include breakpoint(1447px) {
+      @include breakpoint(1780px) {
         max-width: 50%;
         width: 50%;
       }
@@ -253,7 +260,7 @@
         @include breakpoint(1023px) {
           display: flex;
         }
-        @include breakpoint(1447px) {
+        @include breakpoint(1780px) {
           display: none;
         }
       }
@@ -309,21 +316,11 @@
   font-size: 13px;
   text-transform: uppercase;
 
-  @include font($source,
-  1.3rem,
-  700,
-  $pink,
-  uppercase,
-  center);
+  @include font($source, 1.3rem, 700, $pink, uppercase, center);
 }
 
 .popUp__title {
-  @include font($hind,
-  1.2rem,
-  500,
-  $light-grey,
-  none,
-  center);
+  @include font($hind, 1.2rem, 500, $light-grey, none, center);
 }
 
 // H1 title
@@ -345,35 +342,15 @@
     width: 95%;
   }
   p {
-    @include font($source,
-    1.2rem,
-    500,
-    $light-grey,
-    uppercase,
-    left);
+    @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
     @include breakpoint(700px) {
-      @include font($source,
-      1.4rem,
-      500,
-      $light-grey,
-      uppercase,
-      left);
+      @include font($source, 1.4rem, 500, $light-grey, uppercase, left);
     }
     @include breakpoint(1023px) {
-      @include font($source,
-      1.2rem,
-      500,
-      $light-grey,
-      uppercase,
-      left);
+      @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
     }
     @include breakpoint(1244px) {
-      @include font($source,
-      1rem,
-      500,
-      $light-grey,
-      uppercase,
-      left);
+      @include font($source, 1rem, 500, $light-grey, uppercase, left);
     }
   }
 }
@@ -383,12 +360,7 @@
   margin-left: auto;
   padding-right: 2rem;
 
-  @include font($hind,
-  1.6rem,
-  500,
-  $white,
-  uppercase,
-  left);
+  @include font($hind, 1.6rem, 500, $white, uppercase, left);
 }
 
 // Mobile style
@@ -398,22 +370,12 @@
   position: absolute;
   top: 100px;
 
-  @include font($source,
-  3.2rem,
-  700,
-  $white,
-  uppercase,
-  left);
+  @include font($source, 3.2rem, 700, $white, uppercase, left);
   @include breakpoint(700px) {
     display: none;
   }
   .hero__title--color {
-    @include font($source,
-    3.2rem,
-    700,
-    $pink,
-    uppercase,
-    left);
+    @include font($source, 3.2rem, 700, $pink, uppercase, left);
   }
 }
 
@@ -439,13 +401,21 @@
   @include breakpoint(1023px) {
     border-top: 1px solid #f8cecd;
   }
-  @include breakpoint(1447px) {
+  @include breakpoint(1780px) {
     border-top: none;
   }
 }
 
 .grid__case.grid__case--tab--right {
-  @include breakpoint(1447px) {
+  @include breakpoint(1780px) {
     border-right: 1px solid $pink;
+  }
+}
+
+svg.grid--hidden {
+  display: none;
+
+  @include breakpoint(1023px) {
+    display: inline-block;
   }
 }
