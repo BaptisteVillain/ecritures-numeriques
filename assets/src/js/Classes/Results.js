@@ -84,7 +84,6 @@ class Results {
 
   addFilter(filter) {
     const element = this.results_selected_model.cloneNode(true)
-    console.log(element)
     element.querySelector('.item__label').textContent = filter.name
     element.dataset.slug = filter.slug
     element.classList.remove('item--model')
@@ -164,7 +163,6 @@ class Results {
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
-        console.log(response)
         this.results_container.forEach((container, index) => {
           container.innerHTML = ''
           this.results_count[index].innerHTML = response.data.data.results[index].length
