@@ -76,10 +76,6 @@ class Results {
       this.selected_filters.push(filter)
       this.addFilter(filter)
     } else {
-      const index = this.selected_filters.findIndex(selected => {
-        return selected.slug === filter.slug && selected.taxonomy === filter.taxonomy
-      })
-      this.selected_filters.splice(index, 1)
       this.removeFilter(filter)
     }
 
@@ -95,15 +91,34 @@ class Results {
 
     this.results_selected_container.appendChild(element)
     this.results_selected_items.push(element)
+
+    element.querySelector('.item__delete').addEventListener('click', e => {
+      const fil = {
+        slug: e.currentTarget.parentNode.dataset.slug,
+        taxonomy: e.currentTarget.parentNode.dataset.taxonomy,
+        name: e.currentTarget.parentNode.dataset.name
+      }
+
+      this.removeFilter(fil)
+      this.search()
+    })
     this.setSelectedVisibility()
   }
 
   removeFilter(filter) {
     const element = document.querySelector(`.selected__item[data-slug=${filter.slug}]`)
-
     element.remove()
 
+    const button = document.querySelector(`.taxonomy__filters .filter[data-slug=${filter.slug}]`)
+    button.classList.remove('filter--active')
+
+    const index = this.selected_filters.findIndex(selected => {
+      return selected.slug === filter.slug && selected.taxonomy === filter.taxonomy
+    })
+    this.selected_filters.splice(index, 1)
+
     this.setSelectedVisibility()
+    this.updateFiltersVisibility()
   }
 
   clearFilter() {
@@ -118,7 +133,7 @@ class Results {
 
     this.setSelectedVisibility()
 
-    this.search();
+    this.search()
   }
 
   setSelectedVisibility() {
