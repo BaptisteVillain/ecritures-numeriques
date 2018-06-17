@@ -1,0 +1,54 @@
+.members{
+  padding: 0 $padding-main;
+}
+.members__presentation{
+  margin-top: 60px;
+  .presentation__subtitle{
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
+    margin-bottom: 10px;
+  }
+  .presentation__title{
+    @include font($hind, 2rem, 600, $dark-blue, uppercase, center);
+  }
+  .presentation__content{
+    margin-top: 20px;
+    @include font($hind, 1.6rem, 400, $dark-blue, inherit, center);
+    line-height: 1.6;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 60px auto 0;
+  }
+}
+
+.members__list{
+  margin-top: 60px;
+  &:last-child{
+    margin-bottom: 60px;
+  }
+  .list__title{
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
+  }
+  .list__container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .list__member{
+      display: block;
+      margin-top: 60px;
+      .member__photo{
+        width: 250px;
+        height: 250px;
+        background-color: $light-blue;
+        background-size: cover;
+      }
+      .member__name{
+        margin-top: 20px;
+        @include font($hind, 1.8rem, 500, $black, capitalize, left);
+      }
+      .member__post{
+        @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
+      }
+    }
+  }
+}

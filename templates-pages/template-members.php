@@ -6,5 +6,5 @@
 
 $context = Timber::get_context();
 
-Timber::render( 'front-page.twig', $context );
+Timber::render( 'members.twig', $context );
  
