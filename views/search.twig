@@ -59,7 +59,7 @@
         <ul class="taxonomy__filters">
           {% for term in taxonomy %}
           <li>
-            <button class="filter {% if term.slug not in available_filters %}filter--inactive{% endif %}" data-slug="{{term.slug}}" data-taxonomy="{{term.taxonomy}}">
+            <button class="filter {% if term.slug not in available_filters %}filter--inactive{% endif %}" data-name="{{term.name}}" data-slug="{{term.slug}}" data-taxonomy="{{term.taxonomy}}">
               <div class="filter__radio"></div>
               <p class="filter__label">{{term.name}}</p>
             </button>
@@ -71,7 +71,7 @@
     </div>
     <div class="results__selected-filters">
       <ul class="selected__container">
-        <li class="selected__item">
+        <li class="selected__item item--model">
           <div class="item__label">label</div>
           <button class="item__delete">
             <span></span>

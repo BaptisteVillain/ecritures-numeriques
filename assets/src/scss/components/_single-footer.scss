@@ -18,9 +18,13 @@
 }
 
 .page__label {
-  @include font($source, 1.4rem, 400, $blue-grey, inherit, inherit);
+  @include font($source, 1.4rem, 400, $dark-grey, inherit, inherit);
+  margin-bottom: 5px;
 }
 
 a.page__title {
   @include font($source, 1.6rem, 600, $dark-blue, uppercase, left);
+  .page__post{
+    @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
+  }
 }

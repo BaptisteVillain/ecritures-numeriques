@@ -2,11 +2,20 @@
   <div class="single__footer__wrapper">
     <div class="single__footer__page--previous">
       <p class="page__label">{{__('précédent', 'ecritures-numeriques')}}</p>
-      <a href="{{previous_path}}" class="page__title">{{previous_name}}</a>
+      <a href="{{previous_path}}" class="page__title">{{previous_name}}
+      {% if previous_post %}
+        <p class="page__post">{{previous_post}}</p>
+      {% endif %}
+      </a>
+
     </div>
     <div class="single__footer__page--next">
       <p class="page__label">{{__('suivant', 'ecritures-numeriques')}}</p>
-      <a href="{{next_path}}" class="page__title">{{next_name}}</a>
+      <a href="{{next_path}}" class="page__title">{{next_name}}
+      {% if next_post %}
+        <p class="page__post">{{next_post}}</p>
+      {% endif %}
+      </a>
     </div>
   </div>
 </section>

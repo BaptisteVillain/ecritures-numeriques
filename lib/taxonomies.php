@@ -116,3 +116,30 @@ $args = array(
   'rewrite'           => array( 'slug' => 'axis' ),
 );
 register_taxonomy( 'axis', array( 'publication', 'project', 'event' ), $args );
+
+/**
+ * Member Taxonomy
+ */
+$labels = array(
+  'name'              => _x( 'Posts', 'taxonomy general name', 'textdomain' ),
+  'singular_name'     => _x( 'Post', 'taxonomy singular name', 'textdomain' ),
+  'search_items'      => __( 'Search Posts', 'textdomain' ),
+  'all_items'         => __( 'All Posts', 'textdomain' ),
+  'parent_item'       => __( 'Parent Post', 'textdomain' ),
+  'parent_item_colon' => __( 'Parent Post:', 'textdomain' ),
+  'edit_item'         => __( 'Edit Post', 'textdomain' ),
+  'update_item'       => __( 'Update Post', 'textdomain' ),
+  'add_new_item'      => __( 'Add New Post', 'textdomain' ),
+  'new_item_name'     => __( 'New Post Name', 'textdomain' ),
+  'menu_name'         => __( 'Posts', 'textdomain' ),
+);
+
+$args = array(
+  'hierarchical'      => true,
+  'labels'            => $labels,
+  'show_ui'           => true,
+  'show_admin_column' => true,
+  'query_var'         => true,
+  'rewrite'           => array( 'slug' => 'post' ),
+);
+register_taxonomy( 'post', 'member', $args );
