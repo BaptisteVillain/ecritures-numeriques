@@ -15,10 +15,4 @@ $context['event'] = new Timber\Post();
 $context['event']->custom['image_url'] = get_field('cover_image', $context['event']->ID);
 $context['event']->custom['content_text'] = get_field('content');
 
-// echo '<pre>';
-// print_r($context['event']);
-// echo '</pre>';
-// exit;
-
-
 Timber::render('single-event.twig', $context );

@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  {% include "partials/background-lines.twig" %}
+  {% for event in events %}
+    <h2>{{ event.title }}</h2>
+    <p>{{ event.date_start|date('d F')}}</p>
+    <p>{{ event.date_end|date('d F')}}</p>
+    <p>{{ event.event_venue}}</p>
+    <p>{{ event.date_start|date('H:i')}}</p>
+    <p>{{ event.summary}}</p>
+    <img src="{{event.custom.image_url}}" alt="{{event.title}}">
+
+  {% endfor %}
+{% endblock %}

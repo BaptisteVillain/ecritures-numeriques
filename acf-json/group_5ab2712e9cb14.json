@@ -47,6 +47,25 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5b26e8b6a30e1",
+            "label": "Summary",
+            "name": "summary",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_5b2241f5e5c3e",
             "label": "Content",
             "name": "content",
@@ -208,5 +227,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528973089
+    "modified": 1529276701
 }
