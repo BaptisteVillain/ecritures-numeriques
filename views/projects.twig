@@ -1,10 +1,39 @@
 {% extends "base.twig" %}
 
 {% block content %}
-  {% include "partials/background-lines.twig" %}
-  {% for project in projects %}
-    <h2>{{ project.title }}</h2>
-    <p>{{project.post_content}}</p>
+  <section class="all_projects">
+    <div class="projects__wrapper">
+      {% for project in projects %}
 
-  {% endfor %}
+        {% if project.highlighted_project == 1 %}
+          <div class="projects__block projects__block--highlighted">
+            <div class="projects__img projects__img--highlighted">
+              {% if project.cover is not empty %}
+                <img src="{{project.cover.url}}" alt="{{project.title}}">
+              {% endif %}
+            </div>
+            <div class="projects__content projects__content--highlighted">
+              <span class="projects__index">0{{project.index}}</span>
+              <h1 class="projects__title projects__title--highlighted">{{ project.title }}</h1>
+              <p class="projects__description">{{project.description}}</p>
+            </div>
+          </div>
+        {% else %}
+          <div class="projects__block">
+            <div class="projects__img">
+              {% if project.cover is not empty %}
+                <img src="{{project.cover.url}}" alt="{{project.title}}">
+              {% endif %}
+            </div>
+            <div class="projects__content">
+              <span class="projects__index">0{{project.index}}</span>
+              <h2 class="projects__title">{{ project.title }}</h2>
+              <p class="projects__description">{{project.description[:70] ~ '...'}}</p>
+            </div>
+          </div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+  </section>
 {% endblock %}

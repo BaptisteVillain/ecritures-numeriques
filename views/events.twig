@@ -9,7 +9,8 @@
     <p>{{ event.event_venue}}</p>
     <p>{{ event.date_start|date('H:i')}}</p>
     <p>{{ event.summary}}</p>
-    <img src="{{event.custom.image_url}}" alt="{{event.title}}">
-
+    {% if event.cover is not empty %}
+      <img src="{{event.cover}}" alt="{{event.title}}">
+    {% endif %}
   {% endfor %}
 {% endblock %}

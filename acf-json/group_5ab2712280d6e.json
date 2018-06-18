@@ -25,6 +25,46 @@
             "ui": 1
         },
         {
+            "key": "field_5b2778eb5de51",
+            "label": "highlighted_project",
+            "name": "highlighted_project",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b27bec6d0e3a",
+            "label": "Number",
+            "name": "id_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_5b1d3a7065dbe",
             "label": "Content",
             "name": "content",
@@ -164,5 +204,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1528971832
+    "modified": 1529331498
 }

@@ -12,16 +12,17 @@ $args = array(
 // Get all posts
 'posts_per_page' => -1,
 // Order by post date
-'orderby' => array(
-    'date' => 'DESC'
-));
+'orderby' => array('id_number'), 
+'order' => 'ASC'
+);
 
 $context['projects'] = Timber::get_posts( $args );
 
+foreach ($context['projects'] as $key => $project) {
+  $context['projects'][$key]->cover = get_field('cover_image', $project->ID);
+  $context['projects'][$key]->description = get_field('content', $project->ID);
+  $context['projects'][$key]->index = get_field('id_number', $project->ID);
+}
 
-// echo '<pre>';
-// print_r($context['projects']);
-// echo '</pre>';
-// exit;
 Timber::render( 'projects.twig', $context );
  

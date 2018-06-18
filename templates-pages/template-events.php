@@ -16,10 +16,11 @@ $args = array(
     'date' => 'DESC'
 ));
 
-$context['events']->custom['image_url'] = get_field('cover_image', $context['events']->ID);
-
-
 $context['events'] = Timber::get_posts( $args );
+
+foreach ($context['events'] as $key => $event) {
+  $context['events'][$key]->cover = get_field('cover_image', $event->ID);
+}
 
 // echo '<pre>';
 // print_r($context['events']);
