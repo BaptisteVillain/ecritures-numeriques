@@ -44,12 +44,30 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 1,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5b26a90f7acca",
-            "label": "",
+            "label": "Email",
             "name": "email",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "#",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "enrico@gmai.com",
+            "append": ""
+        },
+        {
+            "key": "field_5b27049f1813d",
+            "label": "Email (copy)",
+            "name": "email_copy",
             "type": "email",
             "instructions": "",
             "required": 0,
@@ -61,7 +79,43 @@
             },
             "default_value": "",
             "placeholder": "",
-            "prepend": "",
+            "prepend": "enrico@gmai.com",
+            "append": ""
+        },
+        {
+            "key": "field_5b27049f1813d",
+            "label": "Email (copy)",
+            "name": "email_copy",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "enrico@gmai.com",
+            "append": ""
+        },
+        {
+            "key": "field_5b27049f1813d",
+            "label": "Email (copy)",
+            "name": "email_copy",
+            "type": "email",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "enrico@gmai.com",
             "append": ""
         },
         {
@@ -221,5 +275,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529264875
+    "modified": 1529286035
 }

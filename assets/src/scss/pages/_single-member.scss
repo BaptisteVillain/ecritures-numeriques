@@ -40,13 +40,14 @@
   border: 1px solid $dark-grey;
   .resume__photo{
     width: 100%;
-    height: calc(42vw - (8.3vw * 2));
+    height: calc(42vw - ((8.3vw) * 2));
     padding: 60px;
     .photo{
       width: 100%;
       height: 100%;
       background: $light-blue;
       background-size: cover;
+      filter: grayscale(1);
     }
   }
   .resume__section{

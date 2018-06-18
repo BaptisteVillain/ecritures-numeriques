@@ -9,38 +9,47 @@
       </header>
       <div class="resume__container">
         <div class="resume__photo">
-          <div class="photo"></div>
+          <div class="photo" style="background-image:url({{TimberImage(member.photo).src}})"></div>
         </div>
         <div class="resume__section">
           <h1 class="resume__name">
-            Jerome
+            {{member.title}}
           </h1>
           <div class="resume__post">
-            Etudiant
+            {{member.posts|join(', ')}}
           </div>
         </div>
         <div class="resume__section">
           <ul class="resume__works">
-            <li>21 publications</li>
-            <li>21 publications</li>
-            <li>21 publications</li>
+            {% if member.publications|length > 0 %}
+              <li>{{member.publications|length}} {{__('publications')}}</li>
+            {% endif %}
+            {% if member.projects|length > 0 %}
+              <li>{{member.projects|length}} {{__('projets')}}</li>
+            {% endif %}
+            {% if member.events|length > 0 %}
+              <li>{{member.events|length}} {{__('évenements')}}</li>
+            {% endif %}
           </ul>
         </div>
         <div class="resume__section">
-          <a href="mailto:tes@eok.fr" class="resume__mail">
-            1232103120@gmail.xom
+          <a href="mailto:{{member.email}}" class="resume__mail">
+            {{member.email}}
           </a>
-          <ul class="resume__infos">
-            <li><a href="#">1232103120@gmail.xom</a></li>
-            <li><a href="#">1232103120@gmail.xom</a></li>
-          </ul>
+          {% if member.infos is not empty %}
+            <ul class="resume__infos">
+              {% for info in member.get_field('infos') %}
+                <li><a href="{{info.link}}">{{info.label}}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
         </div>
       </div>
     </div>
     <div class="member__about">
       <div class="about__wrapper">
         <div class="single__content about__content">
-          Marcello Vitali-Rosati est professeur agrégé de Littérature et culture numérique au Département des littératures de langue française et il est le titulaire de la Chaire de recherche du Canada sur les écritures numériques. Après avoir étudié la philosophie à l’Université de Pise et publié une première monographie sur Emmanuel Lévinas, il a obtenu un doctorat en philosophie (Pise / Paris IV-Sorbonne, 2006). Sa thèse (Corps et virtuel. Itinéraires à partir de Merleau-Ponty, publiée chez L’Harmattan, Paris, 2009) portait sur le concept de virtuel, notion à laquelle est également dédié son essai S’orienter dans le virtuel (Hermann, Paris, 2012). Son dernier ouvrage, Égarements, amour mort et identités numériques (Hermann, Paris, 2014), explore la question identitaire telle qu'elle se pose à l'ère d'internet. Il a enseigné à l’Université pour étrangers de Pérouse (Italie) et dans des écoles d’art et de technologie à Paris. Il mène une réflexion philosophique sur les enjeux des technologies numériques : la notion d’identité virtuelle, le concept d’auteur à l’ère d’Internet, et les formes de production, publication et diffusion des contenus en ligne.
+          {{member.get_field('about')}}
         </div>
         <div class="about__footer">
           {% include "components/single-footer.twig" with {'previous_path': '#', 'previous_name': 'hello','next_path': '#', 'next_name': 'world'} %}

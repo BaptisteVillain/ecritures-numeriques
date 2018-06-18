@@ -9,6 +9,6 @@
 
 $context = Timber::get_context();
 
-$context['post'] = new Publication();
+$context['member'] = new Member();
 
 Timber::render('single-member.twig', $context );
