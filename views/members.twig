@@ -11,19 +11,23 @@
       Sur ce site, vous trouverez l’ensemble des projets menés par Marcello Vitali-Rosati et son équipe, les publications des membres de la Chaire et la description de tous les concepts théoriques mobilisés pour nos recherches.
     </p>
   </section>
-  <section class="members__list">
-    <h2 class="list__title">l'équipe</h2>
-    <div class="list__container">
-      <a href="#" class="list__member">
-        <div class="member__photo"></div>
-        <div class="member__name">
-          hello world
-        </div>
-        <div class="member__post">
-          etudiant
-        </div>
-      </a>
-    </div>
-  </section>
+  {% for category in categories %}
+    <section class="members__list">
+      <h2 class="list__title">l'équipe</h2>
+      <div class="list__container">
+      {% for member in category %}
+        <a href="#" class="list__member">
+          <div class="member__photo" style="background-image:url({{TimberImage(member.photo).src}})"></div>
+          <div class="member__name">
+            {{member.title}}
+          </div>
+          <div class="member__post">
+            {{member.posts|join(', ')|excerpt(4)}}
+          </div>
+        </a>
+      {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
 </div>
 {% endblock %}

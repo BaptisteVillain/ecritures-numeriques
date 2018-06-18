@@ -35,12 +35,14 @@
     flex-wrap: wrap;
     .list__member{
       display: block;
-      margin-top: 60px;
+      margin: 60px 30px 0 30px;
+      width: 250px;
       .member__photo{
         width: 250px;
         height: 250px;
         background-color: $light-blue;
         background-size: cover;
+        filter: grayscale(1);
       }
       .member__name{
         margin-top: 20px;
