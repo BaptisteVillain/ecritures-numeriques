@@ -6,7 +6,7 @@
 
 $context = Timber::get_context();
 
-$context['categories'] = array();
+$context['members'] = array();
 
 $categories = Timber::get_terms(array(
   'taxonomy' => 'post',
@@ -14,7 +14,7 @@ $categories = Timber::get_terms(array(
 ));
 
 foreach ($categories as $category) {
-  $context['categories'][] = new Timber\PostQuery(array(
+  $context['members'][] = new Timber\PostQuery(array(
     'post_type' => 'member',
     'tax_query' => array(
       array(
@@ -25,6 +25,8 @@ foreach ($categories as $category) {
     )
   ));
 }
+
+$context['categories'] = $categories;
 
 Timber::render( 'members.twig', $context );
  

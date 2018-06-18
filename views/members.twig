@@ -1,6 +1,7 @@
 {% extends 'base.twig' %}
 
 {% block content %}
+{% include "partials/background-lines.twig" %}
 <div class="members">
   <section class="members__presentation">
     <h3 class="presentation__subtitle">La Chaire</h3>
@@ -11,12 +12,13 @@
       Sur ce site, vous trouverez l’ensemble des projets menés par Marcello Vitali-Rosati et son équipe, les publications des membres de la Chaire et la description de tous les concepts théoriques mobilisés pour nos recherches.
     </p>
   </section>
-  {% for category in categories %}
-    <section class="members__list">
-      <h2 class="list__title">l'équipe</h2>
+  <div class="members__container">
+  {% for key, category in members %}
+    <section class="members__list {{ categories[key].slug == 'team' ? 'list--top' : '' }}">
+      <h2 class="list__title">{{categories[key].name}}</h2>
       <div class="list__container">
       {% for member in category %}
-        <a href="#" class="list__member">
+        <a href="{{member.path}}" class="list__member">
           <div class="member__photo" style="background-image:url({{TimberImage(member.photo).src}})"></div>
           <div class="member__name">
             {{member.title}}
@@ -29,5 +31,6 @@
       </div>
     </section>
   {% endfor %}
+  </div>
 </div>
 {% endblock %}
