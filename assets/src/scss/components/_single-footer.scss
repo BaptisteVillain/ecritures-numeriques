@@ -11,9 +11,16 @@
 .single__footer__page {
   &--previous {
     text-align: left;
+    .page__post{
+      left: 0;
+    }
   }
   &--next {
     text-align: right;
+    .page__post{
+      right: 0;
+      text-align: right;
+    }
   }
 }
 
@@ -23,8 +30,10 @@
 }
 
 a.page__title {
-  @include font($source, 1.6rem, 600, $dark-blue, uppercase, left);
+  position: relative;
+  @include font($source, 1.6rem, 600, $dark-blue, uppercase, inherit);
   .page__post{
-    @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
+    position: absolute;
+    @include font($source, 1.2rem, 600, $dark-grey, uppercase, inherit);
   }
 }

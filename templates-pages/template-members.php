@@ -6,15 +6,17 @@
 
 $context = Timber::get_context();
 
-$context['categories'] = array();
+$context['page'] = new Timber\Post();
 
-$categories = Timber::get_terms(array(
+$context['members'] = array();
+
+$context['categories'] = Timber::get_terms(array(
   'taxonomy' => 'post',
   'parent' => 0
 ));
 
-foreach ($categories as $category) {
-  $context['categories'][] = new Timber\PostQuery(array(
+foreach ($context['categories'] as $category) {
+  $context['members'][] = new Timber\PostQuery(array(
     'post_type' => 'member',
     'tax_query' => array(
       array(

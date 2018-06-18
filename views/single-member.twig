@@ -52,7 +52,7 @@
           {{member.get_field('about')}}
         </div>
         <div class="about__footer">
-          {% include "components/single-footer.twig" with {'previous_path': '#', 'previous_name': 'hello','next_path': '#', 'next_name': 'world'} %}
+          {% include "components/single-footer.twig" with {'previous_path': member.previous.path, 'previous_name': member.previous.title, 'previous_post': member.previous.posts[0].title,'next_path': member.next.path, 'next_name': member.next.title, 'next_post': member.next.posts[0].title} %}
         </div>
       </div>
     </div>
