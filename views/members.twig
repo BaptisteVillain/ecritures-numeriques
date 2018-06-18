@@ -4,12 +4,10 @@
 {% include "partials/background-lines.twig" %}
 <div class="members">
   <section class="members__presentation">
-    <h3 class="presentation__subtitle">La Chaire</h3>
-    <h2 class="presentation__title">Une nouvelle compréhension des écritures</h2>
+    <h3 class="presentation__subtitle">{{page.subtitle}}</h3>
+    <h2 class="presentation__title">{{page.custom.title}}</h2>
     <p class="presentation__content">
-      Nous vivons désormais dans un espace numérique. Cet espace est fait d’écriture : nos identités sont de l’écriture (profils, entrées dans des bases de données, lignes de codes..). Nos actions sont de l’écriture : à partir des clics jusqu’à l’achat d’un livre ou à la planification d’un voyage, les objets qui nous entourent sont faits d’écriture. 
-      La Chaire de recherche du Canada sur les Écritures Numériques a pour objectif de proposer une nouvelle lecture et une nouvelle compréhension de cette écriture qui fait désormais notre monde.
-      Sur ce site, vous trouverez l’ensemble des projets menés par Marcello Vitali-Rosati et son équipe, les publications des membres de la Chaire et la description de tous les concepts théoriques mobilisés pour nos recherches.
+      {{page.description}}
     </p>
   </section>
   <div class="members__container">
