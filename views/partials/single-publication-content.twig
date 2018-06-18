@@ -1,10 +1,12 @@
-<div class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
+<section class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
   {% if post.related is not empty %}
     {% include 'components/single-discover.twig' with {'related': post.related} %}
   {% endif %}
-  <article class="single__container publication {% if post.related is empty %} single__container--margin {% endif %}">
+  <article class="single__container publication {{post.related is empty ? 'single__container--margin' : ''}}">
     <p class="publication__authors">
-      {{post.authors | join_authors}}
+      {% for key,author in post.authors %}
+        <a href="{{author.path}}">{{author.title}}</a>{{ key + 1 < post.authors|length ? ', ' : '' }}
+      {% endfor %}
     </p>
     <h2 class="publication__title">{{post.title}}</h2>
     <p class="publication__date">{{__('Publié')}}
@@ -25,4 +27,4 @@
     {% endif %}
     <div class="publication__transition"></div>
   </article>
-</div>
+</section>
