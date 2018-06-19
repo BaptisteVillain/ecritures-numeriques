@@ -256,7 +256,7 @@
       height: 20px;
       outline: none;
 
-      @include font($hind, 1.5rem, 500, $white, none, left);
+      @include font($hind, 1.2rem, 400, $white, none, left);
       &::-webkit-input-placeholder {
         @include font($hind, 1.2rem, 400, $blue-grey, none, left);
       }

@@ -102,11 +102,14 @@
 }
 
 .infos__date {
-  @include font($source, 1.8rem, 600, $light-blue, uppercase, left);
+  @include font($source, 1.6rem, 600, $light-blue, uppercase, left);
+  @include breakpoint(700px) {
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+  }
 }
 
 .infos__hour {
-  @include font($source, 1.8rem, 400, $blue-grey, uppercase, left);
+  @include font($source, 1.4rem, 400, $blue-grey, uppercase, left);
   &--mobile {
     padding-left: 10px;
 
@@ -118,14 +121,13 @@
 
 .infos__title {
   @include font($hind, 1.8rem, 700, $black, none, left);
-  @include breakpoint(700px) {
-    @include font($hind, 2.4rem, 700, $black, none, left);
-  }
 }
 
 .infos__location {
-  @include font($source, 1.6rem, 400, $blue-grey, none, left);
+  @include font($source, 1.4rem, 400, $blue-grey, none, left);
   &--mobile {
+    margin-top: 5px;
+
     @include breakpoint(700px) {
       display: none;
     }
@@ -137,12 +139,12 @@
   padding: 30px 20px 120px;
 
   @include breakpoint(700px) {
-    padding: 30px 0 120px;
+    padding: 60px 0 120px;
   }
 }
 
 .event__description {
-  line-height: 2.3rem;
+  line-height: 2.6rem;
   padding-bottom: 60px;
   p {
     @include font($hind, 1.4rem, 400, $black, none, left);
