@@ -1,18 +1,44 @@
-<div class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
+<section class="single__wrapper" data-path="{{post.path}}" data-title="{{post.title}}">
   {% if post.related is not empty %}
     {% include 'components/single-discover.twig' with {'related': post.related} %}
   {% endif %}
-  <article class="single__container publication {% if post.related is empty %} single__container--margin {% endif %}">
-    <p class="publication__authors">
-      {{post.authors | join_authors}}
-    </p>
-    <h2 class="publication__title">{{post.title}}</h2>
-    <p class="publication__date">{{__('Publié')}}
-      {% if post.domain %}
-        {{__('sur')}} <span class="card__italic">{{post.domain}}</span>
+  <article class="single__container publication {{post.related is empty ? 'single__container--margin' : ''}}">
+    <header class="publication__header">
+      {% if post.book_cover %}
+        <div class="publication__cover">
+          <img src="{{TimberImage(post.book_cover).src}}" alt="{{post.title}}">
+        </div>
       {% endif %}
-      {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
-    </p>
+      <div class="header__wrapper">
+        <p class="publication__authors">
+          {% for key,author in post.authors %}
+            <a href="{{author.path}}">{{author.title}}</a>{{ key + 1 < post.authors|length ? ', ' : '' }}
+          {% endfor %}
+        </p>
+        <h2 class="publication__title {{post.type == 'book' ? 'title--italic' : ''}}">{{post.title}}</h2>
+        {% if post.type == 'journalArticle' %}
+          <p class="publication__date">{{__('Publié')}}
+            {% if post.domain %}
+              {{__('sur')}} <span class="card__italic">{{post.domain}}</span>
+            {% endif %}
+            {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
+          </p>
+        {% elseif post.type == 'bookSection' %}
+          <p class="publication__date">
+            {{__('Publié dans')}} <span class="card__italic">{{post.book_name}}</span>,
+            {{__('Édition')}} {{post.edition}},
+            {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
+            p. {{post.pages_selection}}.
+          </p>
+        {% elseif post.type == 'book' %}
+          <p class="publication__date">
+            {{__('Édition')}} {{post.edition}},
+            <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
+            {{post.number_of_pages}} p.
+          </p>
+        {% endif %}
+      </div>
+    </header>
     {% if post.url %}
       <a href="{{post.url}}" class="publication__link" target="_blank">{{__('lire sur')}}
         {{post.domain}} >
@@ -25,4 +51,4 @@
     {% endif %}
     <div class="publication__transition"></div>
   </article>
-</div>
+</section>
