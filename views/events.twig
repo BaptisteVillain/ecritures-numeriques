@@ -2,15 +2,95 @@
 
 {% block content %}
   {% include "partials/background-lines.twig" %}
-  {% for event in events %}
-    <h2>{{ event.title }}</h2>
-    <p>{{ event.date_start|date('d F')}}</p>
-    <p>{{ event.date_end|date('d F')}}</p>
-    <p>{{ event.event_venue}}</p>
-    <p>{{ event.date_start|date('H:i')}}</p>
-    <p>{{ event.summary}}</p>
-    {% if event.cover is not empty %}
-      <img src="{{event.cover}}" alt="{{event.title}}">
-    {% endif %}
+  <section class="upcoming__events">
+    <div class="upcoming__events__wrapper">
+      <header class="events__header">
+        <h2 class="events__header__title">Événements à venir</h2>
+      </header>
+      {% for event in events %}
+        {% if project.highlighted_project == 1 %}
+          <div class="events__card events__card--highlighted">
+            <div class="events__card__img events__card__img--highlighted">
+              {% if event.cover is not empty %}
+                <img src="{{event.cover}}" alt="{{event.title}}">
+              {% endif %}
+            </div>
+            <div class="events__card__content">
+              <h2 class="events__card__date">{{ event.date_start|date('d F')}}
+                -
+                {{ event.date_end|date('d F')}}</h2>
+              <h1 class="events__card__title">{{ event.title }}</h1>
+              <p class="events__card__summary">{{ event.summary}}</p>
+              <div class="events__card__infos">
+                <h4>[
+                  {{ event.date_start|date('H:i')}}
+                  -
+                  {{ event.date_end|date('H:i')}}
+                  ]</h4>
+                <h3>{{ event.event_venue}}</h3>
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="events__card">
+            <div class="events__card__img">
+              {% if event.cover is not empty %}
+                <img src="{{event.cover}}" alt="{{event.title}}">
+              {% endif %}
+            </div>
+            <div class="events__card__content">
+              <h3 class="events__card__date">{{ event.date_start|date('d F')}}
+                -
+                {{ event.date_end|date('d F')}}</h3>
+              <h1 class="events__card__title">{{ event.title }}</h1>
+              <p class="events__card__summary">{{ event.summary}}</p>
+              <div class="events__card__infos">
+                <h4>[
+                  {{ event.date_start|date('H:i')}}
+                  -
+                  {{ event.date_end|date('H:i')}}
+                  ]</h4>
+                <h3>{{ event.event_venue}}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+</section>
+
+<section class="past__events">
+  <div class="past__events__wrapper">
+    <header class="events__header">
+      <h2 class="events__header__title">Événements passés</h2>
+    </header>
+    {% for event in events_past %}
+
+      <div class="events__card">
+        <div class="events__card__date">
+          <h2 class="events__card__date">{{ event.date_start|date('d F')}}
+            -
+            {{ event.date_end|date('d F')}}</h2>
+          {% if event.date_start is not empty %}
+            <h4>[
+              {{ event.date_start|date('H:i')}}
+              -
+              {{ event.date_end|date('H:i')}}
+              ]</h4>
+          {% endif %}
+        </div>
+        <div class="events__card__content">
+          <h1 class="events__card__title">{{ event.title }}</h1>
+          <h3>{{ event.event_venue}}</h3>
+        </div>
+      </div>
+    </div>
+
   {% endfor %}
+
+</div>
+</section>
 {% endblock %}
