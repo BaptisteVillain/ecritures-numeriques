@@ -1,147 +1,164 @@
-.site-footer{
-  width: 100%;
+.site-footer {
   background: $dark-blue;
   color: $white;
   overflow: hidden;
-  .footer__wrapper{
+  width: 100%;
+  .footer__wrapper {
     width: 100%;
-    @include breakpoint(700px){
+
+    @include breakpoint(700px) {
       display: flex;
       flex-direction: row;
+
       flex-wrap: wrap;
     }
   }
-  .footer__section{
+  .footer__section {
     margin-top: 60px;
-    padding: 0 20px;    
-    @include breakpoint(700px){
+    padding: 0 20px;
+
+    @include breakpoint(700px) {
       margin-top: 80px;
-      width: calc(100% / 3);
-      order: 3;
       padding: 0 60px;
+      width: calc(100% / 3);
+
+      order: 3;
     }
-    p{
-      @include font($hind, 1.3rem, 400, $blue-grey, inherit, 'left');
+    p {
       line-height: 1.62;
       margin: 0;
+
+      @include font($hind, 1.3rem, 400, $blue-grey, inherit, 'left');
     }
   }
-  .wrapper__socials{
+  .wrapper__socials {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    @include breakpoint(700px){
+
+    @include breakpoint(700px) {
       order: 1;
     }
-    .icon{
-      width: 90px;
+    .icon {
       margin-bottom: 60px;
-      @include breakpoint(700px){
+      width: 90px;
+
+      @include breakpoint(700px) {
         margin-bottom: 80px;
-      }      
-      svg{
+      }
+      svg {
         width: 100%;
       }
     }
-    .socials_list{
+    .socials_list {
       display: flex;
       flex-direction: row;
-      width: auto;
       justify-content: center;
-      .social{
-        width: 28px;
-        height: 28px;
+      width: auto;
+      .social {
         border: 1px solid $pink;
+        height: 38px;
         margin: 0 8px;
-        a{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          justify-content: center;
+        width: 38px;
+        a {
           align-items: center;
-          svg{
-            width: 13px;
+          display: flex;
+          height: 100%;
+          justify-content: center;
+          width: 100%;
+          svg {
             height: 13px;
+            width: 13px;
+
             fill: $pink;
           }
         }
       }
     }
   }
-  .footer__description{
-    @include breakpoint(700px){
+  .footer__description {
+    @include breakpoint(700px) {
       order: 0;
     }
   }
-  .wrapper__contact{
-    h3{
-      @include font($hind, 1.3rem, 600, $pink, uppercase, 'left');
+  .wrapper__contact {
+    h3 {
       margin: 0;
-      @include breakpoint(700px){
+
+      @include font($hind, 1.3rem, 600, $pink, uppercase, 'left');
+      @include breakpoint(700px) {
         text-align: right;
-      }      
+      }
     }
-    p{
+    p {
       margin-top: 10px;
-      @include breakpoint(700px){
+
+      @include breakpoint(700px) {
         text-align: right;
-      }      
-    }
-  }
-  .wrapper__partners{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    @include breakpoint(700px){
-      flex-wrap: nowrap;
-    }    
-    a{
-      display: flex;
-      align-items: center;
-      width: calc((100% - 40px) / 2 );
-      height: auto;
-      margin-bottom: 30px;
-      justify-content: space-between;
-      @include breakpoint(700px){
-        width: auto;
-        flex-shrink: 1;
-        margin: 0 22px 40px 22px;
-        &:first-child{
-          margin-left: 0;
-        }
-        &:last-child{
-          margin-right: 0;
-        }
-      }      
-      img{
-        width: 100%;
-        height: auto;
       }
     }
   }
-  .footer{
+  .wrapper__partners {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
+
+    flex-wrap: wrap;
+    @include breakpoint(700px) {
+      flex-wrap: nowrap;
+    }
+    a {
+      align-items: center;
+      display: flex;
+      height: auto;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      width: calc((100% - 40px) / 2);
+
+      @include breakpoint(700px) {
+        margin: 0 22px 40px 22px;
+        width: auto;
+
+        flex-shrink: 1;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+  .footer {
+    align-items: center;
     border-top: 2px solid #403663;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    @include breakpoint(700px){
-      order: 4;
-      padding: 20px 60px;
+    padding: 20px;
+    width: 100%;
+
+    @include breakpoint(700px) {
       flex-direction: row;
       justify-content: space-between;
-    }    
-    a,p{
-      @include font($hind, 1.3rem, 400, $blue-grey, inherit, 'center');      
+      padding: 20px 60px;
+
+      order: 4;
     }
-    p{
+    a,
+    p {
+      @include font($hind, 1.3rem, 400, $blue-grey, inherit, 'center');
+    }
+    p {
       margin: 10px 0 0 0;
-      @include breakpoint(700px){
-        margin: 0; 
-      }      
+
+      @include breakpoint(700px) {
+        margin: 0;
+      }
     }
   }
 }

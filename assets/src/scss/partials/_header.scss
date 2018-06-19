@@ -22,6 +22,7 @@
     left: 0;
     position: absolute;
     width: 100%;
+
     pointer-events: none;
   }
 }
@@ -153,7 +154,7 @@
       padding-top: 45px;
       position: relative;
 
-      @include font($hind, 1.5rem, 500, $blue-grey, uppercase, left);
+      @include font($hind, 1.2rem, 500, $blue-grey, uppercase, left);
       user-select: none;
       pointer-events: none;
       @include breakpoint(950px) {
@@ -161,7 +162,7 @@
         z-index: 100;
 
         pointer-events: auto;
-        @include font($hind, 1.3rem, 500, $white, uppercase, left);
+        @include font($hind, 1.2rem, 500, $white, uppercase, left);
       }
       &::before {
         background: rgba(#ffffff, .14);

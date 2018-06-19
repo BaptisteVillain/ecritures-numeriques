@@ -1,19 +1,14 @@
 /**
 * LANDING
 */
+
 section.landing {
   background: $dark-blue;
   height: calc(100vh - 158px);
   padding: 0 $padding;
   width: 100%;
   .landing__container {
-    background: repeating-linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.1) 1px,
-      $dark-blue 1px,
-      $dark-blue 100px
-    );
+    background: repeating-linear-gradient( to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 1px, $dark-blue 1px, $dark-blue 100px);
     height: 100%;
     width: 100%;
   }
@@ -22,21 +17,20 @@ section.landing {
 /**
 * EVENTS
 */
+
 section.events {
   .events__header {
     background: $pink;
-
     .header__title {
       background: $dark-blue;
       border: 1px solid $border-grey;
 
-      @include font($hind, 2rem, 600, $white, uppercase, center);
+      @include font($hind, 1.6rem, 600, $white, uppercase, center);
     }
     .header__link {
       line-height: 60px;
     }
   }
-
   .events__container {
     @include breakpoint(800px) {
       display: flex;
@@ -85,15 +79,15 @@ section.events {
         margin-top: 10px;
 
         @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+        @include breakpoint(800px) {
+          font-size: 1.2rem;
+        }
       }
       .card__title {
         line-height: 1.4;
         margin: 10px 0 20px 0;
 
         @include font($hind, 1.8rem, 500, $black, inherit, left);
-        @include breakpoint(800px) {
-          font-size: 2.4rem;
-        }
       }
       .card__footer {
         margin-top: auto;
@@ -101,7 +95,7 @@ section.events {
         justify-self: flex-end;
         @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
         @include breakpoint(800px) {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
         }
       }
     }
@@ -138,7 +132,7 @@ section.events {
 
         @include font($hind, 2.2rem, 500, $black, inherit, left);
         @include breakpoint(800px) {
-          font-size: 3rem;
+          font-size: 2rem;
         }
       }
       .card__subtitle {
@@ -163,6 +157,7 @@ section.events {
 /**
 * PROJECTS
 */
+
 section.projects {
   height: auto;
   margin-top: -1px;
@@ -182,10 +177,14 @@ section.projects {
         border-right: 1px solid $dark-blue;
       }
     }
+    a.header__link {
+      @include breakpoint(800px) {
+        padding: 0;
+      }
+    }
   }
   .projects__container {
-    background-image: linear-gradient(to right, #f3f3f6 1px, transparent 1px),
-      linear-gradient(to bottom, #f3f3f6 1px, transparent 1px);
+    background-image: linear-gradient(to right, #f3f3f6 1px, transparent 1px), linear-gradient(to bottom, #f3f3f6 1px, transparent 1px);
     background-size: calc((100vw - 20px) / 20) calc((100vw - 20px) / 20);
     height: auto;
     padding: 120px 20px;
@@ -196,9 +195,10 @@ section.projects {
       background-size: calc((100vw - 15vw) / 33) calc((100vw - 15vw) / 33);
       display: flex;
       flex-direction: row;
-      padding: 250px 0;
-      flex-wrap: wrap;
       margin-top: 1px;
+      padding: 250px 0;
+
+      flex-wrap: wrap;
     }
     &::after {
       background: #f3f3f6;
@@ -215,13 +215,14 @@ section.projects {
       border: 1px solid $dark-grey;
       border-top: none;
       display: block;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       min-height: 245px;
       overflow: hidden;
       padding: 0 25px 30px 25px;
       width: 100%;
-      &:nth-child(4) {
-        border-bottom: none;
-      }
+
       @include breakpoint(800px) {
         border: 1px solid $dark-grey;
         border-top: none;
@@ -236,12 +237,14 @@ section.projects {
           border-left: none;
         }
       }
+      &:nth-child(4) {
+        border-bottom: none;
+      }
       .card__label {
         margin: 30px auto 20px auto;
 
         @include font($source, 1.4rem, 600, $pink, uppercase, center);
         @include breakpoint(800px) {
-          font-size: 1.6rem;
           margin-top: 60px;
         }
       }
@@ -250,16 +253,17 @@ section.projects {
 
         @include font($hind, 1.8rem, 500, $dark-blue, inherit, center);
         @include breakpoint(800px) {
-          font-size: 2.4rem;
           height: 90px;
         }
       }
       .card__subtitle {
+        display: none;
         line-height: 1.6;
         margin-top: 30px;
 
         @include font($source, 1.4rem, 400, $dark-grey, inherit, center);
         @include breakpoint(800px) {
+          display: inline-block;
           font-size: 1.6rem;
         }
       }
@@ -274,6 +278,7 @@ section.projects {
 /**
 * PUBLICATIONS
 */
+
 section.publications {
   background: $dark-blue;
   overflow: hidden;
@@ -308,7 +313,6 @@ section.publications {
     }
   }
   .publications__wrapper {
-
     @include breakpoint(800px) {
       display: flex;
       flex-direction: column;
@@ -350,13 +354,13 @@ section.publications {
       @include font($source, 1.4rem, 600, $pink, uppercase, left);
     }
     .card__title {
-      @include font($hind, 2.2rem, 500, $light-grey, inherit, left);
+      @include font($hind, 2.0rem, 500, $light-grey, inherit, left);
     }
     .card__subtitle {
       line-height: 1.61;
       margin-top: 20px;
 
-      @include font($hind, 1.8rem, 400, rgba($white, 0.5), inherit, left);
+      @include font($hind, 1.4rem, 400, rgba($white, 0.5), inherit, left);
     }
     .card__footer {
       margin-top: auto;
@@ -370,7 +374,7 @@ section.publications {
     .card__source {
       margin-top: 10px;
 
-      @include font($source, 1.4rem, 400, $dark-grey, capitalize, left);
+      @include font($source, 1.2rem, 400, $dark-grey, capitalize, left);
     }
     .card__italic {
       font-style: italic;
@@ -605,8 +609,7 @@ section.home-section.rubrics {
       }
     }
     .item__grid {
-      display: none;
-      // background: red;
+      display: none; // background: red;
       flex-direction: row;
       width: 100%;
 
@@ -778,7 +781,7 @@ section.social {
 
         @include font($hind, 1.6rem, 500, $black, inherit, left);
         @include breakpoint(950px) {
-          font-size: 2.1rem;
+          font-size: 1.8rem;
         }
       }
       .video__views {
@@ -787,7 +790,7 @@ section.social {
 
         @include font($source, 1.2rem, 600, $dark-grey, uppercase, left);
         @include breakpoint(950px) {
-          font-size: 1.4rem;
+          font-size: 1.2rem;
         }
       }
     }
@@ -822,7 +825,7 @@ section.social {
 
         @include font($hind, 1.8rem, 500, $black, inherit, left);
         @include breakpoint(950px) {
-          font-size: 2.4rem;
+          font-size: 2rem;
           margin: 20px 0 10px 0;
           padding: 0;
         }
@@ -830,14 +833,13 @@ section.social {
       .video__views {
         margin: 0;
 
-        @include font($source, 1.6rem, 600, $dark-grey, uppercase, center);
+        @include font($source, 1.2rem, 600, $dark-grey, uppercase, center);
         @include breakpoint(950px) {
           text-align: left;
         }
       }
     }
   }
-
   .social__twitter {
     #tweets {
       .twitter-feed {
@@ -869,6 +871,8 @@ section.social {
           }
           .ctf-author-name {
             text-transform: capitalize;
+
+            @include font($hind, 1.6rem, 700, $dark-grey, none, left);
           }
           .ctf-author-screenname {
             display: none;
@@ -879,7 +883,6 @@ section.social {
           .ctf-tweet-date {
             @include font($source, 1.4rem, 600, $dark-grey, lowercase, left);
           }
-
           .ctf-tweet-content {
             margin-top: 10px;
             padding: 0;
@@ -887,9 +890,6 @@ section.social {
               line-height: 1.5;
 
               @include font($hind, 1.4rem, 400, $black, inherit, left);
-              @include breakpoint(950px) {
-                font-size: 1.6rem;
-              }
             }
           }
         }

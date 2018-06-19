@@ -57,14 +57,7 @@
       height: calc(90vw / 24);
       width: calc(85vw / 24);
     }
-    @include font(
-      $hind,
-      1.3rem,
-      500,
-      rgba(255, 255, 255, 0.08),
-      uppercase,
-      center
-    );
+    @include font( $hind, 1.3rem, 500, rgba(255, 255, 255, 0.08), uppercase, center);
     &:not(:last-child) {
       border-right: 0;
     }
@@ -151,7 +144,7 @@
         margin-right: auto;
         padding-left: 2rem;
 
-        @include font($hind, 1.6rem, 500, $light-grey, none, left);
+        @include font($hind, 1.4rem, 500, $light-grey, none, left);
       }
     }
     /* CSS special case */
@@ -316,11 +309,21 @@
   font-size: 13px;
   text-transform: uppercase;
 
-  @include font($source, 1.3rem, 700, $pink, uppercase, center);
+  @include font($source,
+  1.3rem,
+  700,
+  $pink,
+  uppercase,
+  center);
 }
 
 .popUp__title {
-  @include font($hind, 1.2rem, 500, $light-grey, none, center);
+  @include font($hind,
+  1.2rem,
+  500,
+  $light-grey,
+  none,
+  center);
 }
 
 // H1 title
@@ -342,15 +345,35 @@
     width: 95%;
   }
   p {
-    @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
+    @include font($source,
+    1.2rem,
+    500,
+    $light-grey,
+    uppercase,
+    left);
     @include breakpoint(700px) {
-      @include font($source, 1.4rem, 500, $light-grey, uppercase, left);
+      @include font($source,
+      1.4rem,
+      500,
+      $light-grey,
+      uppercase,
+      left);
     }
     @include breakpoint(1023px) {
-      @include font($source, 1.2rem, 500, $light-grey, uppercase, left);
+      @include font($source,
+      1.2rem,
+      500,
+      $light-grey,
+      uppercase,
+      left);
     }
     @include breakpoint(1244px) {
-      @include font($source, 1rem, 500, $light-grey, uppercase, left);
+      @include font($source,
+      1rem,
+      500,
+      $light-grey,
+      uppercase,
+      left);
     }
   }
 }
@@ -360,7 +383,12 @@
   margin-left: auto;
   padding-right: 2rem;
 
-  @include font($hind, 1.6rem, 500, $white, uppercase, left);
+  @include font($hind,
+  1.6rem,
+  500,
+  $white,
+  uppercase,
+  left);
 }
 
 // Mobile style
@@ -370,12 +398,22 @@
   position: absolute;
   top: 100px;
 
-  @include font($source, 3.2rem, 700, $white, uppercase, left);
+  @include font($source,
+  3.2rem,
+  700,
+  $white,
+  uppercase,
+  left);
   @include breakpoint(700px) {
     display: none;
   }
   .hero__title--color {
-    @include font($source, 3.2rem, 700, $pink, uppercase, left);
+    @include font($source,
+    3.2rem,
+    700,
+    $pink,
+    uppercase,
+    left);
   }
 }
 
