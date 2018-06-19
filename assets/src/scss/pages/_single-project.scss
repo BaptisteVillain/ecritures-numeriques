@@ -1,17 +1,20 @@
 .project__wrapper {
-  min-height: calc(100vh - (80px + 175px));
-  
-  .project{
+  @include breakpoint(700px) {
+    min-height: calc(100vh - (80px + 175px));
+  }
+  .project {
     display: flex;
     flex-direction: column;
     margin-bottom: 60px;
-
     .project__content {
       margin-bottom: 60px;
-      @include breakpoint(800px){
+
+      @include breakpoint(800px) {
         margin-bottom: 120px;
       }
+      h2 {
+        margin-bottom: 30px;
+      }
     }
-    
   }
 }

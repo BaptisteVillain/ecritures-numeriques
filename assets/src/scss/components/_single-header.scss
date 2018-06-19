@@ -21,10 +21,12 @@
     padding: 20px;
     width: 100%;
 
-    @include font($source, 1.4rem, 600, $dark-blue, uppercase, left);
+    @include font($source, 1.2rem, 600, $dark-blue, uppercase, center);
     @include breakpoint(700px) {
       margin-top: 0;
       width: auto;
+
+      @include font($source, 1.2rem, 600, $dark-blue, uppercase, left);
     }
     span {
       padding-left: 10px;
@@ -41,21 +43,20 @@
     margin-bottom: 20px;
     margin-top: 30px;
 
-    @include font($source, 1.4rem, 600, $blue-grey, uppercase, left);
+    @include font($source, 1.2rem, 600, $blue-grey, uppercase, left);
   }
   .single__header__parent {
     margin-bottom: 5px;
 
     @include font($source, 1.4rem, 600, $pink, uppercase, left);
     @include breakpoint(700px) {
-      font-size: 1.6rem;
-      margin-bottom: 0px;
+      margin-bottom: 6px;
     }
   }
   .single__header__title {
     @include font($hind, 2.7rem, 500, $white, capitalize, left);
     @include breakpoint(700px) {
-      font-size: 2.9rem;
+      font-size: 2.6rem;
     }
   }
 }

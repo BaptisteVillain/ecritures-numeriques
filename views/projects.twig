@@ -6,7 +6,7 @@
       {% for project in projects %}
 
         {% if project.highlighted_project == 1 %}
-          <div class="projects__block projects__block--highlighted">
+          <a href="{{project.link}}" class="projects__block projects__block--highlighted">
             <div class="projects__img projects__img--highlighted">
               {% if project.cover is not empty %}
                 <img src="{{project.cover.url}}" alt="{{project.title}}">
@@ -17,9 +17,9 @@
               <h1 class="projects__title projects__title--highlighted">{{ project.title }}</h1>
               <p class="projects__description">{{project.description}}</p>
             </div>
-          </div>
+          </a>
         {% else %}
-          <div class="projects__block">
+          <a href="{{project.link}}" class="projects__block">
             <div class="projects__img">
               {% if project.cover is not empty %}
                 <img src="{{project.cover.url}}" alt="{{project.title}}">
@@ -30,7 +30,7 @@
               <h2 class="projects__title">{{ project.title }}</h2>
               <p class="projects__description">{{project.description[:70] ~ '...'}}</p>
             </div>
-          </div>
+          </a>
         {% endif %}
 
       {% endfor %}

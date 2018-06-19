@@ -11,13 +11,13 @@
 .single__footer__page {
   &--previous {
     text-align: left;
-    .page__post{
+    .page__post {
       left: 0;
     }
   }
   &--next {
     text-align: right;
-    .page__post{
+    .page__post {
       right: 0;
       text-align: right;
     }
@@ -25,15 +25,18 @@
 }
 
 .page__label {
+  margin-bottom: 3px;
+
   @include font($source, 1.4rem, 400, $dark-grey, inherit, inherit);
-  margin-bottom: 5px;
 }
 
 a.page__title {
   position: relative;
-  @include font($source, 1.6rem, 600, $dark-blue, uppercase, inherit);
-  .page__post{
+
+  @include font($source, 1.4rem, 600, $dark-blue, uppercase, inherit);
+  .page__post {
     position: absolute;
+
     @include font($source, 1.2rem, 600, $dark-grey, uppercase, inherit);
   }
 }
