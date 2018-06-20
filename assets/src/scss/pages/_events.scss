@@ -12,12 +12,17 @@
 }
 
 .events__header__title {
-  border-right: 1px solid $dark-blue;
   display: inline-block;
   padding: 25px 52px 21px;
-  width: calc(100% / 4);
+  width: 100%;
 
-  @include font($hind, 1.6rem, 700, $dark-blue, uppercase, left);
+  @include font($hind, 1.6rem, 700, $dark-blue, uppercase, center);
+  @include breakpoint(700px) {
+    border-right: 1px solid $dark-blue;
+    width: calc(100% / 4);
+
+    @include font($hind, 1.6rem, 700, $dark-blue, uppercase, left);
+  }
 }
 
 // Card
@@ -25,14 +30,22 @@
   border: 1px solid $dark-grey;
   border-top: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include breakpoint(700px) {
+    flex-direction: row;
+  }
 }
 
 .events__card__img {
   height: 120px;
-  margin: 30px;
-  max-width: 278px;
-  width: 278px;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    margin: 30px;
+    max-width: 278px;
+    width: 278px;
+  }
   &--highlighted {
     height: 209px;
   }
@@ -45,10 +58,15 @@
 }
 
 .events__card__content {
-  max-width: 802px;
-  padding: 30px;
-  padding-left: 60px;
-  width: calc(100% - 278px);
+  padding: 15px;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    max-width: 802px;
+    padding: 30px;
+    padding-left: 60px;
+    width: calc(100% - 278px);
+  }
 }
 
 .events__card__date {
@@ -85,7 +103,9 @@
 .past__events {
   padding-bottom: 120px;
   .events__card {
-    height: 115px;
+    @include breakpoint(700px) {
+      height: 115px;
+    }
   }
   .events__card__content {
     display: flex;
@@ -102,12 +122,19 @@
 
 .events__card__date--left {
   align-items: center;
-  border-right: 1px solid $dark-grey;
   display: flex;
   flex-direction: column;
-  height: 115px;
+  height: 85px;
   justify-content: center;
-  width: calc(100% / 4);
+  padding-top: 15px;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    border-right: 1px solid $dark-grey;
+    height: 115px;
+    padding-top: inherit;
+    width: calc(100% / 4);
+  }
   h2 {
     @include font($source, 1.6rem, 600, $light-blue, uppercase, left);
     @include breakpoint(700px) {
