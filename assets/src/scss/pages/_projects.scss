@@ -110,4 +110,7 @@
 
 .projects__description {
   @include font($source, 1.4rem, 500, rgba(48, 51, 54, 0.5), normal, left);
+  h2 {
+    @include font($source, 1.4rem, 500, rgba(48, 51, 54, 0.5), normal, left);
+  }
 }

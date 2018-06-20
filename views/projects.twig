@@ -28,7 +28,7 @@
             <div class="projects__content">
               <span class="projects__index">0{{project.index}}</span>
               <h2 class="projects__title">{{ project.title }}</h2>
-              <p class="projects__description">{{project.description[:70] ~ '...'}}</p>
+              <div class="projects__description">{{project.description[:70] ~ '...'}}</div>
             </div>
           </a>
         {% endif %}
