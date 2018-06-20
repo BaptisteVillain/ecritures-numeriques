@@ -1,0 +1,38 @@
+ {% extends "base.twig" %}
+
+{% block content %}
+	{% include "partials/background-lines.twig" %}
+  <div class="publications">
+    <header class="publications__header">
+      <button class="header__nav">
+        <
+      </button>
+      <div class="header__wrapper">
+        <ul class="header__list">
+          <li class="header__item {{term ? '' : 'item--active'}}">
+            <button>
+            {{__('tout')}}
+            </button>
+          </li>
+        {% for item in selected %}
+          <li class="header__item {{term.slug == item.slug ? 'item--active' : ''}}">
+            <button>
+            {{ item.name }}
+            </button>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+      <button class="header__nav">
+        >
+      </button>
+    </header>
+    <div class="publications__posts">
+      {% for post in posts %}
+        <div>
+          {{post.title}}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}

@@ -26,7 +26,7 @@
               {% endif %}
             </div>
             <div class="projects__content">
-              <span class="projects__index">0{{project.id_number}}</span>
+              <span class="projects__index">{{project.id_number}}</span>
               <h2 class="projects__title">{{ project.title }}</h2>
               <div class="projects__description">{{project.get_field('content')[:70] ~ '...'}}</div>
             </div>
