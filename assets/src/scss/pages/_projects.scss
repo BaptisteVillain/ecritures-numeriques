@@ -9,7 +9,9 @@
 
 .projects__block {
   align-items: center;
-  border: 1px solid $light-grey;
+  border: 1px solid $dark-grey;
+  border-left: none;
+  border-top: none;
   display: flex;
   flex-direction: column;
   padding: 15px 30px;

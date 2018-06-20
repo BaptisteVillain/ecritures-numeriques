@@ -49,10 +49,14 @@ $context['events_past'] = Timber::get_posts( $args_past );
 
 foreach ($context['events'] as $key => $event) {
   $context['events'][$key]->cover = get_field('cover_image', $event->ID);
+    $context['events'][$key]->link = get_permalink($event->ID);
+
 }
 
 foreach ($context['events_past'] as $key => $event) {
   $context['events_past'][$key]->cover = get_field('cover_image', $event->ID);
+  $context['events_past'][$key]->link = get_permalink($event->ID);
+
 }
 
 // echo '<pre>';

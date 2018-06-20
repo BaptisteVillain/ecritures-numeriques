@@ -9,8 +9,8 @@
           <h2 class="events__header__title">Événements à venir</h2>
         </header>
         {% for event in events %}
-          {% if project.highlighted_project == 1 %}
-            <div class="events__card events__card--highlighted">
+          {% if event.highlighted_event == 1 %}
+            <a href="{{event.link}}" class="events__card events__card--highlighted">
               <div class="events__card__img events__card__img--highlighted">
                 {% if event.cover is not empty %}
                   <img src="{{event.cover}}" alt="{{event.title}}">
@@ -31,9 +31,9 @@
                   <h3>{{ event.event_venue}}</h3>
                 </div>
               </div>
-            </div>
+            </a>
           {% else %}
-            <div class="events__card">
+            <a href="{{event.link}}" class="events__card">
               <div class="events__card__img">
                 {% if event.cover is not empty %}
                   <img src="{{event.cover}}" alt="{{event.title}}">
@@ -54,7 +54,7 @@
                   <h3>{{ event.event_venue}}</h3>
                 </div>
               </div>
-            </div>
+            </a>
           {% endif %}
         {% endfor %}
       </div>
@@ -67,7 +67,7 @@
         </header>
         {% for event in events_past %}
 
-          <div class="events__card">
+          <a href="{{event.link}}" class="events__card">
             <div class="events__card__date--left">
               <h2 class="events__card__date">{{ event.date_start|date('d F')}}
                 -
@@ -84,7 +84,7 @@
               <h1 class="events__card__title">{{ event.title }}</h1>
               <h3 class="events__card__venue">{{ event.event_venue}}</h3>
             </div>
-          </div>
+          </a>
         {% endfor %}
       </div>
     </section>
