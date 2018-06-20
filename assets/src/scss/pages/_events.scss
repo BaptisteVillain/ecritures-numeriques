@@ -1,0 +1,125 @@
+.all_events {
+  margin: 0 $padding-main;
+}
+
+.events__container {
+  padding: 60px 0;
+}
+
+// Header
+.events__header {
+  border: 1px solid $dark-blue;
+}
+
+.events__header__title {
+  border-right: 1px solid $dark-blue;
+  display: inline-block;
+  padding: 25px 52px 21px;
+  width: calc(100% / 4);
+
+  @include font($hind, 1.6rem, 700, $dark-blue, uppercase, left);
+}
+
+// Card
+.events__card {
+  border: 1px solid $dark-grey;
+  border-top: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.events__card__img {
+  height: 120px;
+  margin: 30px;
+  max-width: 278px;
+  width: 278px;
+  &--highlighted {
+    height: 209px;
+  }
+  img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: cover;
+  }
+}
+
+.events__card__content {
+  max-width: 802px;
+  padding: 30px;
+  padding-left: 60px;
+  width: calc(100% - 278px);
+}
+
+.events__card__date {
+  @include font($source, 1.6rem, 600, $light-blue, uppercase, left);
+  @include breakpoint(700px) {
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+  }
+}
+
+.events__card__title {
+  padding: 10px 0;
+
+  @include font($hind, 1.8rem, 700, $black, none, left);
+  &--highlighted {
+    @include font($hind, 2rem, 700, $black, none, left);
+  }
+}
+
+.events__card__summary {
+  @include font($hind, 1.4rem, 400, $blue-grey, none, left);
+}
+
+.events__card__infos {
+  padding-top: 20px;
+  h3,
+  h4 {
+    display: inline-block;
+
+    @include font($source, 1.4rem, 400, $blue-grey, none, left);
+  }
+}
+
+// Past event
+.past__events {
+  padding-bottom: 120px;
+  .events__card {
+    height: 115px;
+  }
+  .events__card__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .events__card__title {
+    @include font($hind, 1.6rem, 700, $black, none, left);
+  }
+  .events__card__venue {
+    @include font($source, 1.4rem, 400, $blue-grey, none, left);
+  }
+}
+
+.events__card__date--left {
+  align-items: center;
+  border-right: 1px solid $dark-grey;
+  display: flex;
+  flex-direction: column;
+  height: 115px;
+  justify-content: center;
+  width: calc(100% / 4);
+  h2 {
+    @include font($source, 1.6rem, 600, $light-blue, uppercase, left);
+    @include breakpoint(700px) {
+      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+    }
+  }
+  h4 {
+    margin-top: 5px;
+
+    @include font($source, 1.6rem, 600, $blue-grey, uppercase, left);
+    @include breakpoint(700px) {
+      @include font($source, 1.4rem, 600, $blue-grey, uppercase, left);
+    }
+  }
+}
