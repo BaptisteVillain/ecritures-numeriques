@@ -1,10 +1,14 @@
+.all_projects{
+  min-height: calc(100vh - 80px);
+}
+
 .projects__wrapper {
   display: flex;
   flex-direction: row;
   margin: 0 auto;
   max-width: 1440px;
-
   flex-flow: wrap;
+  border-left: 1px solid $dark-grey;
 }
 
 .projects__block {
@@ -16,20 +20,22 @@
   flex-direction: column;
   padding: 15px 30px;
   width: 100%;
+  align-items: left;
+  background: $light-grey;
 
   @include breakpoint(700px) {
     height: 353px;
     max-height: 353px;
-    max-width: 479px;
+    // max-width: 479px;
     padding: 15px 30px;
-    width: calc(100vw / 2);
+    width: calc(100% / 2);
   }
   @include breakpoint(1023px) {
     height: 353px;
     max-height: 353px;
-    max-width: 479px;
+    // max-width: 479px;
     padding: 30px 60px;
-    width: calc(100vw / 3);
+    width: calc(100% / 3);
   }
   /* Highlighed block */
   &--highlighted {
@@ -46,8 +52,8 @@
     @include breakpoint(1023px) {
       height: 353px;
       max-height: 353px;
-      max-width: 958px;
-      width: calc(100vw / 3 * 2);
+      // max-width: 958px;
+      width: calc(100% / 3 * 2);
     }
   }
 }
