@@ -6,29 +6,29 @@
       {% for project in projects %}
 
         {% if project.highlighted_project == 1 %}
-          <a href="{{project.link}}" class="projects__block projects__block--highlighted">
+          <a href="{{project.path}}" class="projects__block projects__block--highlighted">
             <div class="projects__img projects__img--highlighted">
-              {% if project.cover is not empty %}
-                <img src="{{project.cover.url}}" alt="{{project.title}}">
+              {% if project.cover_image is not empty %}
+                <img src="{{TimberImage(project.cover_image).src}}" alt="{{project.title}}">
               {% endif %}
             </div>
             <div class="projects__content projects__content--highlighted">
-              <span class="projects__index">0{{project.index}}</span>
+              <span class="projects__index">{{project.id_number}}</span>
               <h1 class="projects__title projects__title--highlighted">{{ project.title }}</h1>
-              <p class="projects__description">{{project.description}}</p>
+              <div class="projects__description">{{project.get_field('content')}}</div>
             </div>
           </a>
         {% else %}
           <a href="{{project.link}}" class="projects__block">
             <div class="projects__img">
-              {% if project.cover is not empty %}
-                <img src="{{project.cover.url}}" alt="{{project.title}}">
+              {% if project.cover_image is not empty %}
+                <img src="{{TimberImage(project.cover_image).src}}" alt="{{project.title}}">
               {% endif %}
             </div>
             <div class="projects__content">
-              <span class="projects__index">0{{project.index}}</span>
+              <span class="projects__index">0{{project.id_number}}</span>
               <h2 class="projects__title">{{ project.title }}</h2>
-              <div class="projects__description">{{project.description[:70] ~ '...'}}</div>
+              <div class="projects__description">{{project.get_field('content')[:70] ~ '...'}}</div>
             </div>
           </a>
         {% endif %}
