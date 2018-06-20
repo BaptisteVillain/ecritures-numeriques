@@ -9,27 +9,30 @@
 // Header
 .events__header {
   border: 1px solid $dark-blue;
+  height: 60px;
 }
 
 .events__header__title {
   display: inline-block;
-  padding: 25px 52px 21px;
-  width: 100%;
+  padding: 0 30px;
+  height: 100%;
+  line-height: 60px;
+  background: $light-grey;
 
   @include font($hind, 1.6rem, 700, $dark-blue, uppercase, center);
   @include breakpoint(700px) {
     border-right: 1px solid $dark-blue;
-    padding: 15px;
+    padding: 0 30px;
     width: calc(100% / 4);
 
     @include font($hind, 1.2rem, 700, $dark-blue, uppercase, center);
   }
   @include breakpoint(1025px) {
     border-right: 1px solid $dark-blue;
-    padding: 25px 52px 21px;
+    padding: 0 30px;
     width: calc(100% / 4);
 
-    @include font($hind, 1.6rem, 700, $dark-blue, uppercase, left);
+    @include font($hind, 1.6rem, 700, $dark-blue, uppercase, center);
   }
 }
 
@@ -47,24 +50,15 @@
 }
 
 .events__card__img {
-  height: 120px;
+  height: auto;
   width: 100%;
 
   @include breakpoint(700px) {
-    margin: 30px;
-    width: 158px;
-  }
-  @include breakpoint(1023px) {
-    max-width: 278px;
-    width: 278px;
-  }
-  &--highlighted {
-    height: 209px;
+    width: calc(100% / 4);
   }
   img {
-    height: 100%;
+    height: auto;
     width: 100%;
-
     object-fit: cover;
   }
 }
