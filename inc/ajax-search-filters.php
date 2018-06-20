@@ -10,18 +10,6 @@ function search_filters() {
   $query = $_POST['query'];
   $filters = $_POST['filters'];
 
-  // $taxonomies = get_taxonomies(array(
-  //   'public' => true,
-  //   '_builtin' => false
-  // ));
-
-  // foreach ($taxonomies as $taxonomy) {
-  //   $response['filters'][] = get_terms(array(
-  //     'taxonomy' => $taxonomy,
-  //     'hide_empty' => false,
-  //   ));
-  // }
-
   $args = array();
   $args['s'] = $query;
   $args['posts_per_page'] = -1;
