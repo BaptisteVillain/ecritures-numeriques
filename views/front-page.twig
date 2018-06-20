@@ -4,14 +4,14 @@
   <section class="home-section hero">
     {% include 'partials/card-hero.twig' with {'content': true} %}
   </section>
-  <section class="home-section events">
-    <header class="section-header events__header">
+  <section class="home-section home-events">
+    <header class="section-header home-events__header">
       <h2 class="header__title">{{__('Événements à venir', 'ecritures-numeriques')}}</h2>
       <a href="#" class="header__link">{{__('Voir tout', 'ecritures-numeriques')}}
         >
       </a>
     </header>
-    <div class="section-container events__container">
+    <div class="section-container home-events__container">
       {% for event in highlighted_event %}
         {% include 'partials/card-event-highlighted.twig' %}
       {% endfor %}
@@ -41,7 +41,7 @@
       </footer>
     </div>
   </section>
-  <section class="home-section publications">
+  <section class="home-section home-publications">
     <div class="publications__container">
       <header class="section-header publications__header">
         <h2 class="header__title">{{__('Dernières publications', 'ecritures-numeriques')}}</h2>

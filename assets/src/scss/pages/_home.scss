@@ -18,8 +18,8 @@ section.landing {
 * EVENTS
 */
 
-section.events {
-  .events__header {
+section.home-events {
+  .home-events__header {
     background: $pink;
     .header__title {
       background: $dark-blue;
@@ -31,7 +31,7 @@ section.events {
       line-height: 60px;
     }
   }
-  .events__container {
+  .home-events__container {
     @include breakpoint(800px) {
       display: flex;
       flex-direction: row;
