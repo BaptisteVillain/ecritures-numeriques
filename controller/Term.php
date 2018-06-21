@@ -36,6 +36,14 @@ class Term extends Timber\Term
 
   private function setIndex()
   {
+
+    $taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');
+
+    $this->terms = Timber::get_terms(array(
+      "taxonomy" => $taxonomies,
+      "hide_empty" => false
+    ));
+
     $this->index = 0;
 
     foreach ($this->terms as $key => $term) {
@@ -49,15 +57,6 @@ class Term extends Timber\Term
   var $_next;
   public function next()
   {
-    $taxonomies = get_taxonomies(array(
-      'public' => true,
-      '_builtin' => false
-    ));
-
-    $this->terms = Timber::get_terms(array(
-      "taxonomy" => $taxonomies,
-      "hide_empty" => false
-    ));
 
     $this->setIndex();
 
@@ -74,16 +73,6 @@ class Term extends Timber\Term
   var $_previous;
   public function previous()
   {
-
-    $taxonomies = get_taxonomies(array(
-      'public' => true,
-      '_builtin' => false
-    ));
-
-    $this->terms = Timber::get_terms(array(
-      "taxonomy" => $taxonomies,
-      "hide_empty" => false
-    ));
 
     $this->setIndex();
 
