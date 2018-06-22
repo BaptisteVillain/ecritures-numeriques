@@ -12,17 +12,17 @@
  * Research Fields Taxonomy
  */
 $labels = array(
-  'name'              => _x( 'Research Fields', 'taxonomy general name', 'textdomain' ),
-  'singular_name'     => _x( 'Research Field', 'taxonomy singular name', 'textdomain' ),
-  'search_items'      => __( 'Search Research Fields', 'textdomain' ),
-  'all_items'         => __( 'All Research Fields', 'textdomain' ),
-  'parent_item'       => __( 'Parent Research Field', 'textdomain' ),
-  'parent_item_colon' => __( 'Parent Research Field:', 'textdomain' ),
-  'edit_item'         => __( 'Edit Research Field', 'textdomain' ),
-  'update_item'       => __( 'Update Research Field', 'textdomain' ),
-  'add_new_item'      => __( 'Add New Research Field', 'textdomain' ),
-  'new_item_name'     => __( 'New Research Field Name', 'textdomain' ),
-  'menu_name'         => __( 'Research Fields', 'textdomain' ),
+  'name'              => _x( 'Research Fields', 'taxonomy general name', 'ecritures-numeriques' ),
+  'singular_name'     => _x( 'Research Field', 'taxonomy singular name', 'ecritures-numeriques' ),
+  'search_items'      => __( 'Search Research Fields', 'ecritures-numeriques' ),
+  'all_items'         => __( 'All Research Fields', 'ecritures-numeriques' ),
+  'parent_item'       => __( 'Parent Research Field', 'ecritures-numeriques' ),
+  'parent_item_colon' => __( 'Parent Research Field:', 'ecritures-numeriques' ),
+  'edit_item'         => __( 'Edit Research Field', 'ecritures-numeriques' ),
+  'update_item'       => __( 'Update Research Field', 'ecritures-numeriques' ),
+  'add_new_item'      => __( 'Add New Research Field', 'ecritures-numeriques' ),
+  'new_item_name'     => __( 'New Research Field Name', 'ecritures-numeriques' ),
+  'menu_name'         => __( 'Research Fields', 'ecritures-numeriques' ),
 );
 
 $args = array(
@@ -40,17 +40,17 @@ register_taxonomy( 'research_field', array( 'publication', 'project', 'event' ),
  * Research Topics Taxonomy
  */
 $labels = array(
-  'name'              => _x( 'Research Topics', 'taxonomy general name', 'textdomain' ),
-  'singular_name'     => _x( 'Research Topic', 'taxonomy singular name', 'textdomain' ),
-  'search_items'      => __( 'Search Research Topics', 'textdomain' ),
-  'all_items'         => __( 'All Research Topics', 'textdomain' ),
-  'parent_item'       => __( 'Parent Research Topic', 'textdomain' ),
-  'parent_item_colon' => __( 'Parent Research Topic:', 'textdomain' ),
-  'edit_item'         => __( 'Edit Research Topic', 'textdomain' ),
-  'update_item'       => __( 'Update Research Topic', 'textdomain' ),
-  'add_new_item'      => __( 'Add New Research Topic', 'textdomain' ),
-  'new_item_name'     => __( 'New Research Topic Name', 'textdomain' ),
-  'menu_name'         => __( 'Research Topics', 'textdomain' ),
+  'name'              => _x( 'Research Topics', 'taxonomy general name', 'ecritures-numeriques' ),
+  'singular_name'     => _x( 'Research Topic', 'taxonomy singular name', 'ecritures-numeriques' ),
+  'search_items'      => __( 'Search Research Topics', 'ecritures-numeriques' ),
+  'all_items'         => __( 'All Research Topics', 'ecritures-numeriques' ),
+  'parent_item'       => __( 'Parent Research Topic', 'ecritures-numeriques' ),
+  'parent_item_colon' => __( 'Parent Research Topic:', 'ecritures-numeriques' ),
+  'edit_item'         => __( 'Edit Research Topic', 'ecritures-numeriques' ),
+  'update_item'       => __( 'Update Research Topic', 'ecritures-numeriques' ),
+  'add_new_item'      => __( 'Add New Research Topic', 'ecritures-numeriques' ),
+  'new_item_name'     => __( 'New Research Topic Name', 'ecritures-numeriques' ),
+  'menu_name'         => __( 'Research Topics', 'ecritures-numeriques' ),
 );
 
 $args = array(
@@ -67,17 +67,17 @@ register_taxonomy( 'research_topic', array( 'publication', 'project', 'event' ),
  * Key-concepts Taxonomy
  */
 $labels = array(
-  'name'              => _x( 'Key-concepts', 'taxonomy general name', 'textdomain' ),
-  'singular_name'     => _x( 'Key-concept', 'taxonomy singular name', 'textdomain' ),
-  'search_items'      => __( 'Search Key-concepts', 'textdomain' ),
-  'all_items'         => __( 'All Key-concepts', 'textdomain' ),
-  'parent_item'       => __( 'Parent Key-concept', 'textdomain' ),
-  'parent_item_colon' => __( 'Parent Key-concept:', 'textdomain' ),
-  'edit_item'         => __( 'Edit Key-concept', 'textdomain' ),
-  'update_item'       => __( 'Update Key-concept', 'textdomain' ),
-  'add_new_item'      => __( 'Add New Key-concept', 'textdomain' ),
-  'new_item_name'     => __( 'New Key-concept Name', 'textdomain' ),
-  'menu_name'         => __( 'Key-concepts', 'textdomain' ),
+  'name'              => _x( 'Key-concepts', 'taxonomy general name', 'ecritures-numeriques' ),
+  'singular_name'     => _x( 'Key-concept', 'taxonomy singular name', 'ecritures-numeriques' ),
+  'search_items'      => __( 'Search Key-concepts', 'ecritures-numeriques' ),
+  'all_items'         => __( 'All Key-concepts', 'ecritures-numeriques' ),
+  'parent_item'       => __( 'Parent Key-concept', 'ecritures-numeriques' ),
+  'parent_item_colon' => __( 'Parent Key-concept:', 'ecritures-numeriques' ),
+  'edit_item'         => __( 'Edit Key-concept', 'ecritures-numeriques' ),
+  'update_item'       => __( 'Update Key-concept', 'ecritures-numeriques' ),
+  'add_new_item'      => __( 'Add New Key-concept', 'ecritures-numeriques' ),
+  'new_item_name'     => __( 'New Key-concept Name', 'ecritures-numeriques' ),
+  'menu_name'         => __( 'Key-concepts', 'ecritures-numeriques' ),
 );
 
 $args = array(
@@ -94,17 +94,17 @@ register_taxonomy( 'key_concept', array( 'publication', 'project', 'event' ), $a
  * Axes Taxonomy
  */
 $labels = array(
-  'name'              => _x( 'Axes', 'taxonomy general name', 'textdomain' ),
-  'singular_name'     => _x( 'Axis', 'taxonomy singular name', 'textdomain' ),
-  'search_items'      => __( 'Search Axes', 'textdomain' ),
-  'all_items'         => __( 'All Axes', 'textdomain' ),
-  'parent_item'       => __( 'Parent Axis', 'textdomain' ),
-  'parent_item_colon' => __( 'Parent Axis:', 'textdomain' ),
-  'edit_item'         => __( 'Edit Axis', 'textdomain' ),
-  'update_item'       => __( 'Update Axis', 'textdomain' ),
-  'add_new_item'      => __( 'Add New Axis', 'textdomain' ),
-  'new_item_name'     => __( 'New Axis Name', 'textdomain' ),
-  'menu_name'         => __( 'Axes', 'textdomain' ),
+  'name'              => _x( 'Axes', 'taxonomy general name', 'ecritures-numeriques' ),
+  'singular_name'     => _x( 'Axis', 'taxonomy singular name', 'ecritures-numeriques' ),
+  'search_items'      => __( 'Search Axes', 'ecritures-numeriques' ),
+  'all_items'         => __( 'All Axes', 'ecritures-numeriques' ),
+  'parent_item'       => __( 'Parent Axis', 'ecritures-numeriques' ),
+  'parent_item_colon' => __( 'Parent Axis:', 'ecritures-numeriques' ),
+  'edit_item'         => __( 'Edit Axis', 'ecritures-numeriques' ),
+  'update_item'       => __( 'Update Axis', 'ecritures-numeriques' ),
+  'add_new_item'      => __( 'Add New Axis', 'ecritures-numeriques' ),
+  'new_item_name'     => __( 'New Axis Name', 'ecritures-numeriques' ),
+  'menu_name'         => __( 'Axes', 'ecritures-numeriques' ),
 );
 
 $args = array(
@@ -121,17 +121,17 @@ register_taxonomy( 'axis', array( 'publication', 'project', 'event' ), $args );
  * Member Taxonomy
  */
 $labels = array(
-  'name'              => _x( 'Posts', 'taxonomy general name', 'textdomain' ),
-  'singular_name'     => _x( 'Post', 'taxonomy singular name', 'textdomain' ),
-  'search_items'      => __( 'Search Posts', 'textdomain' ),
-  'all_items'         => __( 'All Posts', 'textdomain' ),
-  'parent_item'       => __( 'Parent Post', 'textdomain' ),
-  'parent_item_colon' => __( 'Parent Post:', 'textdomain' ),
-  'edit_item'         => __( 'Edit Post', 'textdomain' ),
-  'update_item'       => __( 'Update Post', 'textdomain' ),
-  'add_new_item'      => __( 'Add New Post', 'textdomain' ),
-  'new_item_name'     => __( 'New Post Name', 'textdomain' ),
-  'menu_name'         => __( 'Posts', 'textdomain' ),
+  'name'              => _x( 'Posts', 'taxonomy general name', 'ecritures-numeriques' ),
+  'singular_name'     => _x( 'Post', 'taxonomy singular name', 'ecritures-numeriques' ),
+  'search_items'      => __( 'Search Posts', 'ecritures-numeriques' ),
+  'all_items'         => __( 'All Posts', 'ecritures-numeriques' ),
+  'parent_item'       => __( 'Parent Post', 'ecritures-numeriques' ),
+  'parent_item_colon' => __( 'Parent Post:', 'ecritures-numeriques' ),
+  'edit_item'         => __( 'Edit Post', 'ecritures-numeriques' ),
+  'update_item'       => __( 'Update Post', 'ecritures-numeriques' ),
+  'add_new_item'      => __( 'Add New Post', 'ecritures-numeriques' ),
+  'new_item_name'     => __( 'New Post Name', 'ecritures-numeriques' ),
+  'menu_name'         => __( 'Posts', 'ecritures-numeriques' ),
 );
 
 $args = array(
