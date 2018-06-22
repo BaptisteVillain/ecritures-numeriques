@@ -6,6 +6,7 @@
 
 $context = Timber::get_context();
 
+// Request for only upcoming events
 $args = array(
 // Get post type project
 'post_type' => 'event',
@@ -25,6 +26,7 @@ $args = array(
     ),
 );
 
+// Request for only past events
 $args_past = array(
 // Get post type project
 'post_type' => 'event',
@@ -44,24 +46,27 @@ $args_past = array(
     ),
 );
 
-$context['events'] = Timber::get_posts( $args );
-$context['events_past'] = Timber::get_posts( $args_past );
+// Request for only highlighted events
+$args_highlight = array(
+// Get post type project
+'post_type' => 'event',
+// Get all posts
+'posts_per_page' => -1,
+// Order by post date
+'orderby' => 'highlight_event',
+'meta_query' => array(
+        array(
+            'key' => 'highlight_event',
+            'value' => '1',
+            'compare' => '=',
+            'type' => 'BOOLEAN'
+        )
+    ),
+);
 
-foreach ($context['events'] as $key => $event) {
-  $context['events'][$key]->cover = get_field('cover_image', $event->ID);
-    $context['events'][$key]->link = get_permalink($event->ID);
+$context['events'] = new Timber\PostQuery( $args );
+$context['events_past'] = new Timber\PostQuery( $args_past );
+$context['events_highlight'] = new Timber\PostQuery( $args_highlight );
 
-}
-
-foreach ($context['events_past'] as $key => $event) {
-  $context['events_past'][$key]->cover = get_field('cover_image', $event->ID);
-  $context['events_past'][$key]->link = get_permalink($event->ID);
-
-}
-
-// echo '<pre>';
-// print_r($context['events']);
-// echo '</pre>';
-// exit;
 Timber::render( 'events.twig', $context );
  

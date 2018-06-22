@@ -13,14 +13,21 @@
 }
 
 .events__header__title {
+  background: $light-grey;
   display: inline-block;
-  padding: 0 30px;
   height: 100%;
   line-height: 60px;
-  background: $light-grey;
+  padding: 0 30px;
 
   @include font($hind, 1.6rem, 700, $dark-blue, uppercase, center);
   @include breakpoint(700px) {
+    border-right: 1px solid $dark-blue;
+    padding: 0 30px;
+    width: auto;
+
+    @include font($hind, 1.2rem, 700, $dark-blue, uppercase, center);
+  }
+  @include breakpoint(1023px) {
     border-right: 1px solid $dark-blue;
     padding: 0 30px;
     width: calc(100% / 4);
@@ -47,6 +54,11 @@
     align-items: center;
     flex-direction: row;
   }
+  &--highlight {
+    @include breakpoint(1023px) {
+      height: 270px;
+    }
+  }
 }
 
 .events__card__img {
@@ -59,7 +71,22 @@
   img {
     height: auto;
     width: 100%;
+
     object-fit: cover;
+    @include breakpoint(1023px) {
+      padding-left: 30px;
+    }
+  }
+  &--highlight {
+    @include breakpoint(1023px) {
+      height: 210px;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+    }
   }
 }
 
@@ -69,11 +96,11 @@
 
   @include breakpoint(700px) {
     max-width: 802px;
-    padding: 30px 0;
+    padding: 30px;
     width: calc(100% - 158px);
   }
   @include breakpoint(1023px) {
-    padding-left: 60px;
+    padding: 30px 15px;
     width: calc(100% - 278px);
   }
 }
@@ -170,5 +197,12 @@
     @include breakpoint(1023px) {
       @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
     }
+  }
+}
+
+// Highlight event
+.events__card__content--highlight {
+  .events__card__title {
+    @include font($hind, 2rem, 700, $black, none, left);
   }
 }

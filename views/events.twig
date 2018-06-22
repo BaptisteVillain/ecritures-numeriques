@@ -8,35 +8,36 @@
         <header class="events__header">
           <h2 class="events__header__title">Événements à venir</h2>
         </header>
-        {% for event in events %}
-          {% if event.highlighted_event == 1 %}
-            <a href="{{event.link}}" class="events__card events__card--highlighted">
-              <div class="events__card__img events__card__img--highlighted">
-                {% if event.cover is not empty %}
-                  <img src="{{event.cover}}" alt="{{event.title}}">
-                {% endif %}
-              </div>
-              <div class="events__card__content">
-                <h2 class="events__card__date">{{ event.date_start|date('d F')}}
+        {% for event in events_highlight %}
+          <a href="{{event.path}}" class="events__card events__card--highlight">
+            <div class="events__card__img events__card__img--highlight">
+              {% if event.cover_image is not empty %}
+                <img src="{{TimberImage(event.cover_image).src}}" alt="{{event.title}}">
+              {% endif %}
+            </div>
+            <div class="events__card__content events__card__content--highlight">
+              <h2 class="events__card__date">{{ event.date_start|date('d F')}}
+                -
+                {{ event.date_end|date('d F')}}</h2>
+              <h1 class="events__card__title">{{ event.title }}</h1>
+              <p class="events__card__summary">{{ event.summary}}</p>
+              <div class="events__card__infos">
+                <h4>[
+                  {{ event.date_start|date('H:i')}}
                   -
-                  {{ event.date_end|date('d F')}}</h2>
-                <h1 class="events__card__title">{{ event.title }}</h1>
-                <p class="events__card__summary">{{ event.summary}}</p>
-                <div class="events__card__infos">
-                  <h4>[
-                    {{ event.date_start|date('H:i')}}
-                    -
-                    {{ event.date_end|date('H:i')}}
-                    ]</h4>
-                  <h3>{{ event.event_venue}}</h3>
-                </div>
+                  {{ event.date_end|date('H:i')}}
+                  ]</h4>
+                <h3>{{ event.event_venue}}</h3>
               </div>
-            </a>
-          {% else %}
-            <a href="{{event.link}}" class="events__card">
+            </div>
+          </a>
+        {% endfor %}
+        {% for event in events %}
+          {% if event.highlight_event != 1 %}
+            <a href="{{event.path}}" class="events__card">
               <div class="events__card__img">
-                {% if event.cover is not empty %}
-                  <img src="{{event.cover}}" alt="{{event.title}}">
+                {% if event.cover_image is not empty %}
+                  <img src="{{TimberImage(event.cover_image).src}}" alt="{{event.title}}">
                 {% endif %}
               </div>
               <div class="events__card__content">
@@ -44,7 +45,6 @@
                   -
                   {{ event.date_end|date('d F')}}</h3>
                 <h1 class="events__card__title">{{ event.title }}</h1>
-                <p class="events__card__summary">{{ event.summary}}</p>
                 <div class="events__card__infos">
                   <h4>[
                     {{ event.date_start|date('H:i')}}
@@ -66,8 +66,7 @@
           <h2 class="events__header__title">Événements passés</h2>
         </header>
         {% for event in events_past %}
-
-          <a href="{{event.link}}" class="events__card">
+          <a href="{{event.path}}" class="events__card">
             <div class="events__card__date--left">
               <h2 class="events__card__date">{{ event.date_start|date('d F')}}
                 -
@@ -89,5 +88,4 @@
       </div>
     </section>
   </div>
-
 {% endblock %}

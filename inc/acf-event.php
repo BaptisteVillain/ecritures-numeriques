@@ -25,12 +25,13 @@ function check_save_event($post_id){
 				),
 			);
 
-			$query = new Timber/PostQuery($args);
+			$posts = new Timber\PostQuery($args);
 			
-			if($query->have_posts()){
-				while ($query->have_posts()) {
-					$query->the_post();
-					update_field('field_5ab8ba4dd78d9', false, get_the_ID());
+			if($posts){
+				foreach($posts as $post){
+					if($post_id !== $post->ID){
+						update_field('field_5ab8ba4dd78d9', false, $post->ID);
+					}
 				}
 			}
 		}
