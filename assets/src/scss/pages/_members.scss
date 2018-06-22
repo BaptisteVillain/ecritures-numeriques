@@ -1,83 +1,138 @@
-.members{
+.members {
   padding: 0 20px;
+
   @include breakpoint(700px) {
-    padding: 0 calc(8.3vw - 30px);
+    padding: 0 $padding-main;
   }
 }
-.members__presentation{
+
+.members__presentation {
   margin-top: 60px;
-  .presentation__subtitle{
-    @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
+  .presentation__subtitle {
     margin-bottom: 10px;
+
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
   }
-  .presentation__title{
+  .presentation__title {
     @include font($hind, 2rem, 600, $dark-blue, uppercase, center);
   }
-  .presentation__content{
-    margin-top: 20px;
-    @include font($hind, 1.6rem, 400, $dark-blue, inherit, left);
+  .presentation__content {
     line-height: 1.6;
+    margin: 0 auto 60px auto 0;
+    margin-top: 20px;
     max-width: 800px;
     width: 100%;
-    margin: 0 auto 60px auto 0;
+
+    @include font($hind, 1.6rem, 400, $dark-blue, inherit, left);
     @include breakpoint(700px) {
       text-align: center;
     }
   }
 }
 
-.members__container{
+.members__container {
   display: flex;
   flex-direction: column;
 }
 
-.members__list{
+.members__list {
   margin-top: 60px;
+
   order: 1;
-  &.list--top{
+  &.list--top {
     order: 0;
   }
-  &:last-child{
+  &:last-child {
     margin-bottom: 60px;
   }
-  .list__title{
+  .list__title {
     @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
   }
-  .list__container{
-    width: 100%;
+  .list__container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+
     @include breakpoint(700px) {
       flex-direction: row;
-      flex-wrap: wrap;
       justify-content: space-between;
+
+      flex-wrap: wrap;
     }
-    .list__member{
+    .list__member {
       display: block;
-      width: 100%;
       margin: 60px 0 0 0;
+      width: 100%;
+
       @include breakpoint(700px) {
         margin: 60px 30px 0 30px;
         width: 250px;
       }
-      .member__photo{
-        width: 100%;
-        height: calc(100vw - 40px);
+      .member__photo {
         background-color: $light-blue;
         background-size: cover;
         filter: grayscale(1);
+        height: calc(100vw - 40px);
+        width: 100%;
+
         @include breakpoint(700px) {
-          width: 250px;
           height: 250px;
+          width: 250px;
         }
       }
-      .member__name{
+      .member__name {
         margin-top: 20px;
+
         @include font($hind, 1.8rem, 500, $black, capitalize, left);
       }
-      .member__post{
+      .member__post {
         @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
       }
     }
+  }
+}
+
+.members__contact {
+  padding: 60px 0;
+
+  @include breakpoint(1441px) {
+    margin: 0 auto;
+    max-width: 1065px;
+  }
+  .presentation__subtitle {
+    margin-bottom: 10px;
+
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, center);
+  }
+}
+
+.members__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 35px;
+
+  @include breakpoint(700px) {
+    flex-direction: row;
+  }
+}
+
+.members__contact__address {
+  span {
+    display: block;
+  }
+}
+
+.members__contact__maps {
+  margin-top: 35px;
+
+  @include breakpoint(700px) {
+    margin-top: 0;
+  }
+  @include breakpoint(1023px) {
+    width: 50%;
+  }
+  iframe {
+    width: 100%;
   }
 }

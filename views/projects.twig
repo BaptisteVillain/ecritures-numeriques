@@ -28,7 +28,7 @@
             <div class="projects__content">
               <span class="projects__index">{{project.id_number}}</span>
               <h2 class="projects__title">{{ project.title }}</h2>
-              <div class="projects__description">{{project.get_field('content')[:70] ~ '...'}}</div>
+              <div class="projects__description">{{project.get_field('content')|truncate(20)}}</div>
             </div>
           </a>
         {% endif %}
