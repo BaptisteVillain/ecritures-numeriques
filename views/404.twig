@@ -1,5 +1,13 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	Sorry, we couldn't find what you're looking for.
+  <section class="error">
+    <div class="error__container">
+      <span class="error__title">404</span>
+      <h1 class="error__text">Sorry, we couldn't find what you're looking for.</h1>
+      <div class="error__text">Back to
+        <a href="{{site.link}}">homepage</a>.
+      </div>
+    </div>
+  </section>
 {% endblock %}

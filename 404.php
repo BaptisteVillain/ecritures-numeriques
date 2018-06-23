@@ -10,4 +10,5 @@
  */
 
 $context = Timber::get_context();
+$context['home_url'] = get_home_url();
 Timber::render( '404.twig', $context );

@@ -1,0 +1,19 @@
+.error {
+  min-height: calc(100vh - 80px - 300px);
+}
+
+.error__container {
+  margin: 0 auto;
+  max-width: 1024px;
+  text-align: center;
+}
+
+.error__title {
+  margin-top: 40px;
+
+  @include font($source, 10rem, 700, $light-blue, inherit, center);
+}
+
+.error__text {
+  @include font($hind, 1.6rem, 400, $dark-blue, inherit, center);
+}

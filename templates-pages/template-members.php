@@ -27,9 +27,6 @@ foreach ($context['categories'] as $category) {
     )
   ));
 }
-// echo '<pre>';
-// print_r($context['page']);
-// echo '</pre>';
-// exit;
+
 Timber::render( 'members.twig', $context );
  
