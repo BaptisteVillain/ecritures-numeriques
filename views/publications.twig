@@ -4,19 +4,19 @@
 	{% include "partials/background-lines.twig" %}
   <div class="publications">
     <header class="publications__header">
-      <button class="header__nav header__nav--prev">
+      <button class="header__nav header__nav--prev header__nav--disable">
         <
       </button>
       <div class="header__wrapper">
         <ul class="header__list">
           <li class="header__item">
-            <button class="{{term ? '' : 'item--active'}}" data-slug="">
+            <button class="{{term ? '' : 'item--active'}}" data-slug="" data-taxonomy="" data-index="0">
             {{__('tout')}}
             </button>
           </li>
-        {% for item in selected %}
+        {% for index, item in selected %}
           <li class="header__item">
-            <button class="{{term.slug == item.slug ? 'item--active' : ''}}" data-slug="{{term.slug}}">
+            <button class="{{term.slug == item.slug ? 'item--active' : ''}}" data-slug="{{item.slug}}" data-taxonomy="{{item.taxonomy}}" data-index="{{index + 1}}">
             {{ item.name }}
             </button>
           </li>
@@ -28,11 +28,7 @@
       </button>
     </header>
     <div class="publications__posts">
-      {% for post in posts %}
-        <div>
-          {{post.title}}
-        </div>
-      {% endfor %}
+      {% include './partials/publications-content.twig' %}
     </div>
   </div>
 {% endblock %}

@@ -17,7 +17,8 @@
     height: 100%;
     background: $pink;
     opacity: 1;
-    transition: opacity .3s $easing;
+    transition: opacity .2s $easing;
+    user-select: none;
     @include font($source, 1.4rem, 400, $black, uppercase, center);
     &:first-child{
       border-right: 1px solid $dark-grey;
