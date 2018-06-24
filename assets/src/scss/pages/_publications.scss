@@ -16,13 +16,18 @@
     width: $padding-main;
     height: 100%;
     background: $pink;
+    opacity: 1;
+    transition: opacity .3s $easing;
     @include font($source, 1.4rem, 400, $black, uppercase, center);
     &:first-child{
       border-right: 1px solid $dark-grey;
     }
-
     &:last-child{
       border-left: 1px solid $dark-grey;
+    }
+    &.header__nav--disable{
+      pointer-events: none;
+      opacity: 0;
     }
   }
   .header__wrapper{
@@ -36,6 +41,7 @@
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
+      transition: transform .3s $easing;
       .header__item{
         flex-shrink: 0;
         width: calc((100vw - 16.6vw - 15px) / 5);
@@ -47,10 +53,6 @@
         &:last-child{
           border-right: 1px solid $dark-grey;
         }
-        &.item--active button{
-          background: $white;
-          color: $dark-blue;
-        }
         button{
           width: 100%;
           height: 100%;
@@ -58,6 +60,10 @@
           justify-content: center;
           align-items: center;
           @include font($hind, 1.3rem, 500, $white, uppercase, center);
+          &.item--active{
+            background: $white;
+            color: $dark-blue;
+          }
         }
       }
     }
