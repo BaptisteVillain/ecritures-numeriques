@@ -9,8 +9,6 @@ function fetch_publications() {
 
   $filter = $_POST['filter'];
 
-  // $context = Timber::get_context();
-
   if($filter['taxonomy'] !== '' || $filter['slug'] !== ''){
     $posts = new Timber\PostQuery(array(
       'post_type' => 'publication',

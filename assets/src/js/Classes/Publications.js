@@ -9,7 +9,7 @@ export default class Publications {
     this.header_items = container.querySelectorAll('.header__item button')
     this.header_prev = container.querySelector('.header__nav--prev')
     this.header_next = container.querySelector('.header__nav--next')
-    this.header_index = undefined
+    this.header_index = 0
     this.header_offset = 5
     this.header_offsetWidth = this.header_list.parentNode.offsetWidth / 5
 
@@ -24,14 +24,13 @@ export default class Publications {
 
       item.addEventListener('click', e => {
         const updated = this.header_index !== e.currentTarget.dataset.index ? true : false
-        this.updateHeader(e.currentTarget.dataset.index)
+        this.updateHeader(parseInt(e.currentTarget.dataset.index, 10))
 
         if (updated) {
           this.setFilter()
 
           this.fetchPublications()
         }
-
       })
     })
 
@@ -91,8 +90,6 @@ export default class Publications {
       action: 'fetch_publications',
       filter: this.filter
     }
-
-    console.log(this.filter)
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
