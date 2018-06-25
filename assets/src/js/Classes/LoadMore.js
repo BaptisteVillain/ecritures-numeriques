@@ -13,14 +13,6 @@ export default class LoadMore {
 
     this.select = {}
 
-    window.addEventListener('onload', () => {
-      window.scrollTo(0, 0)
-    })
-
-    window.addEventListener('popstate', e => {
-      location.reload()
-    })
-
     window.addEventListener('scroll', () => {
       const scrollBottom = document.body.scrollHeight - document.documentElement.scrollTop - (window.innerHeight + this.footer.offsetHeight)
 
@@ -69,13 +61,6 @@ export default class LoadMore {
 
     if (this.select.title !== select.title && select.title !== undefined) {
       this.select = select
-      this.updatePage()
     }
-  }
-
-  updatePage() {
-    document.title = `${this.select.title} - Ecritures Numeriques`
-    window.history.pushState({}, '', this.select.path)
-    window.history.scrollRestoration = 'manual'
   }
 }
