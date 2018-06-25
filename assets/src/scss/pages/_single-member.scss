@@ -15,7 +15,7 @@
     flex-direction: column;
     padding: 0 20px 30px 20px;
     @include breakpoint(700px) {
-      width: 42vw;
+      width: 42%;
       height: 100%;
       justify-content: center;
       align-items: center;
@@ -39,7 +39,7 @@
     width: 100%;
     padding: 0 20px;
     @include breakpoint(700px) {
-      width: 58vw;
+      width: 58%;
       height: 100%;
       overflow-y: scroll;
       padding: 0 $padding-main;
@@ -131,28 +131,99 @@
     }
 
     .about__highlighted{
-      border: 1px solid $dark-grey;
+      border: 1px solid $dark-blue;
       background: $light-grey;
       padding: 20px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       margin-bottom: 20px;
       @include breakpoint(700px) {
+        flex-direction: row;
         margin-bottom: 40px;
+        align-items: center;
       }
       .highlighted__title{
-        width: 30%;
+        width: 100%;
         flex-shrink: 1;
-        @include font($hind, 1.8rem, 500, $black, inherit, left);
+        margin-bottom: 10px;
+        @include font($hind, 1.6rem, 500, $dark-blue, inherit, left);
+        @include breakpoint(700px) {
+          margin-bottom: 0px;
+          width: 30%;
+        }
       }
       .highlighted__content{
-        margin-left: 60px;
+        margin-left: 0px;
         @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
+        @include breakpoint(700px) {
+          margin-left: 60px;
+        }
       }
     }
 
     .about__footer{
       margin-top: auto;
+    }
+  }
+  .about__posts{
+    margin-top: -59px;
+    .section__post{
+      margin-bottom: 40px;
+      .post__header{
+        height: 60px;
+        padding: 0 20px;
+        background: $light-grey;
+        border: 1px solid $dark-blue;
+        display: flex;
+        align-items: center;
+        @include font($hind, 1.6rem, 600, $dark-blue, uppercase, left);
+      }
+      .post__list{
+        .list__item {
+          background: $white;
+          border: 1px solid $dark-grey;
+          display: flex;
+          flex-direction: column;
+          min-height: 90px;
+          padding: 20px;
+          width: 100%;
+          @include breakpoint(700px) {
+            flex-direction: row;
+            align-items: center;
+          }
+          &:first-child {
+            border-top: none;
+          }
+          .item__title {
+            line-height: 1.5;
+            margin-right: 20px;
+            width: 100%;
+
+            @include font($hind, 1.4rem, 500, $black, inherit, left);
+            @include breakpoint(700px) {
+              width: auto;
+            }
+          }
+          .item__about {
+            margin-left: 0;
+            margin-top: 15px;
+
+            flex-shrink: 0;
+            @include breakpoint(700px) {
+              margin-left: auto;
+              margin-top: 0;
+            }
+            .item__author {
+              @include font($source, 1.2rem, 500, $light-blue, capitalize, left);
+            }
+            .item__date {
+              margin-top: 5px;
+
+              @include font($hind, 1.2rem, 400, $dark-grey, capitalize, left);
+            }
+          }
+        }
+      }
     }
   }
 }

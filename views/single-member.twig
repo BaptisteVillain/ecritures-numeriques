@@ -68,6 +68,86 @@
           {% include "components/single-footer.twig" with {'previous_path': member.previous.path, 'previous_name': member.previous.title, 'previous_post': member.previous.posts[0].title,'next_path': member.next.path, 'next_name': member.next.title, 'next_post': member.next.posts[0].title} %}
         </div>
       </div>
+      <div class="about__posts">
+        {% if member.publications is not empty %}
+        <section class="section__post">
+          <div class="post__header">{{__('publications')}}</div>
+          <ul class="post__list">
+            {% for post in member.publications %}
+            <li>
+              <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                <h5 class="item__title">
+                  {{post.post_title}}
+                </h5>
+                <div class="item__about">
+                  <p class="item__author">
+                  {{ post.authors|join_authors|excerpt(3)}}
+                  </p>
+                  <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                    {% if post.domain %}-
+                      {{post.domain}}
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+        {% if member.projects is not empty %}
+        <section class="section__post">
+          <div class="post__header">{{__('projects')}}</div>
+          <ul class="post__list">
+            {% for post in member.projects %}
+            <li>
+              <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                <h5 class="item__title">
+                  {{post.post_title}}
+                </h5>
+                <div class="item__about">
+                  <p class="item__author">
+                  {{ post.authors|join_authors|excerpt(3)}}
+                  </p>
+                  <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                    {% if post.domain %}-
+                      {{post.domain}}
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+        {% if member.events is not empty %}
+        <section class="section__post">
+          <div class="post__header">{{__('events')}}</div>
+          <ul class="post__list">
+            {% for post in member.events %}
+            <li>
+              <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                <h5 class="item__title">
+                  {{post.post_title}}
+                </h5>
+                <div class="item__about">
+                  <p class="item__author">
+                  {{ post.authors|join_authors|excerpt(3)}}
+                  </p>
+                  <p class="item__date">[{{post.end_date|date('d\\-m\\-y')}}]
+                    {% if post.domain %}-
+                      {{post.domain}}
+                    {% endif %}
+                  </p>
+                </div>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+      </div>
     </div>
   </div>
 
