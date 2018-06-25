@@ -51,6 +51,19 @@
         <div class="single__content about__content">
           {{member.get_field('about')}}
         </div>
+        <a href="{{member.post_highlighted.path}}" class="about__highlighted">
+          <div class="highlighted__authors">
+            {% for author in member.post_highlighted.authors %}
+            {{author.title}}
+            {% endfor %}
+          </div>
+          <div class="highlighted__title">
+            {{member.post_highlighted.title}}
+          </div>
+          <div class="highlighted__content">
+            {{member.post_highlighted.get_field('content')|excerpt(20)}}
+          </div>
+        </a>
         <div class="about__footer">
           {% include "components/single-footer.twig" with {'previous_path': member.previous.path, 'previous_name': member.previous.title, 'previous_post': member.previous.posts[0].title,'next_path': member.next.path, 'next_name': member.next.title, 'next_post': member.next.posts[0].title} %}
         </div>

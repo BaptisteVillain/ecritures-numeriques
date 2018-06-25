@@ -118,4 +118,17 @@ class Member extends Timber\Post
 
     return $this->_next;
   }
+
+  var $_post_highlighted;
+  public function post_highlighted()
+  {
+    if(!$this->highlighted){
+      return false;
+    }
+
+    $this->post_highlighted = new Timber\Post($this->highlighted);
+
+
+    return $this->post_highlighted;
+  }
 }

@@ -124,11 +124,33 @@
       min-height: calc(100vh - 80px);
     }
     .about__content{
-      margin-bottom: 60px;
+      margin-bottom: 20px;
       @include breakpoint(700px) {
-        margin-bottom: 120px;
+        margin-bottom: 40px;
       }
     }
+
+    .about__highlighted{
+      border: 1px solid $dark-grey;
+      background: $light-grey;
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+      @include breakpoint(700px) {
+        margin-bottom: 40px;
+      }
+      .highlighted__title{
+        width: 30%;
+        flex-shrink: 1;
+        @include font($hind, 1.8rem, 500, $black, inherit, left);
+      }
+      .highlighted__content{
+        margin-left: 60px;
+        @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
+      }
+    }
+
     .about__footer{
       margin-top: auto;
     }

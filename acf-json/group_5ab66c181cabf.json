@@ -47,6 +47,30 @@
             "delay": 1
         },
         {
+            "key": "field_5b302b1f7eaf6",
+            "label": "Highlighted",
+            "name": "highlighted",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "publication",
+                "project",
+                "event"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
             "key": "field_5b26a90f7acca",
             "label": "Email",
             "name": "email",
@@ -57,60 +81,6 @@
             "wrapper": {
                 "width": "",
                 "class": "#",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "enrico@gmai.com",
-            "append": ""
-        },
-        {
-            "key": "field_5b27049f1813d",
-            "label": "Email (copy)",
-            "name": "email_copy",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "enrico@gmai.com",
-            "append": ""
-        },
-        {
-            "key": "field_5b27049f1813d",
-            "label": "Email (copy)",
-            "name": "email_copy",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "enrico@gmai.com",
-            "append": ""
-        },
-        {
-            "key": "field_5b27049f1813d",
-            "label": "Email (copy)",
-            "name": "email_copy",
-            "type": "email",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
                 "id": ""
             },
             "default_value": "",
@@ -275,5 +245,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529286035
+    "modified": 1529883480
 }
