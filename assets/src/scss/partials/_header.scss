@@ -30,7 +30,7 @@
 .site-header__logo {
   align-items: center;
   display: flex;
-  height: 80px;
+  height: 100%;
   justify-content: center;
   margin: 0 auto;
   width: 150px;
@@ -43,7 +43,7 @@
 
 .site-header__wrapper {
   background: $dark-blue;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
   overflow-y: scroll;
   padding: 0 40px;
   transform: translateX(-100vw);
@@ -79,7 +79,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 80px;
+  height: 100%;
   justify-content: center;
   left: 0;
   position: absolute;
@@ -228,6 +228,10 @@
           padding: 0 15px;
 
           @include font($hind, 1.3rem, 500, $white, uppercase, left);
+          &:hover{
+            background: $pink;
+            color: $dark-blue;
+          }
         }
         &:active {
           background: darken($dark-blue, 3%);

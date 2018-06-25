@@ -51,6 +51,7 @@
         <div class="single__content about__content">
           {{member.get_field('about')}}
         </div>
+       {% if member.post_highlighted %}
         <a href="{{member.post_highlighted.path}}" class="about__highlighted">
           <div class="highlighted__authors">
             {% for author in member.post_highlighted.authors %}
@@ -64,6 +65,7 @@
             {{member.post_highlighted.get_field('content')|excerpt(20)}}
           </div>
         </a>
+        {% endif %}
         <div class="about__footer">
           {% include "components/single-footer.twig" with {'previous_path': member.previous.path, 'previous_name': member.previous.title, 'previous_post': member.previous.posts[0].title,'next_path': member.next.path, 'next_name': member.next.title, 'next_post': member.next.posts[0].title} %}
         </div>
@@ -73,24 +75,77 @@
         <section class="section__post">
           <div class="post__header">{{__('publications')}}</div>
           <ul class="post__list">
-            {% for post in member.publications %}
-            <li>
-              <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
-                <h5 class="item__title">
-                  {{post.post_title}}
-                </h5>
-                <div class="item__about">
-                  <p class="item__author">
-                  {{ post.authors|join_authors|excerpt(3)}}
-                  </p>
-                  <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
-                    {% if post.domain %}-
-                      {{post.domain}}
-                    {% endif %}
-                  </p>
-                </div>
-              </a>
+            <li class="list__section">
+              {{__('Monographs')}}
             </li>
+            {% for post in member.publications %}
+              {% if post.type == 'book' %}
+              <li>
+                <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                  <h5 class="item__title">
+                    {{post.post_title}}
+                  </h5>
+                  <div class="item__about">
+                    <p class="item__author">
+                    {{ post.authors|join_authors|excerpt(3)}}
+                    </p>
+                    <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                      {% if post.domain %}-
+                        {{post.domain}}
+                      {% endif %}
+                    </p>
+                  </div>
+                </a>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="list__section">
+              {{__('Books Sections')}}
+            </li>
+            {% for post in member.publications %}
+              {% if post.type == 'bookSection' %}
+              <li>
+                <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                  <h5 class="item__title">
+                    {{post.post_title}}
+                  </h5>
+                  <div class="item__about">
+                    <p class="item__author">
+                    {{ post.authors|join_authors|excerpt(3)}}
+                    </p>
+                    <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                      {% if post.domain %}-
+                        {{post.domain}}
+                      {% endif %}
+                    </p>
+                  </div>
+                </a>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="list__section">
+              {{__('Articles')}}
+            </li>
+            {% for post in member.publications %}
+              {% if post.type == 'journalArticle' %}
+              <li>
+                <a href="{{post.path}}" title="{{post.post_title}}" class="list__item">
+                  <h5 class="item__title">
+                    {{post.post_title}}
+                  </h5>
+                  <div class="item__about">
+                    <p class="item__author">
+                    {{ post.authors|join_authors|excerpt(3)}}
+                    </p>
+                    <p class="item__date">[{{post.post_date|date('d\\-m\\-y')}}]
+                      {% if post.domain %}-
+                        {{post.domain}}
+                      {% endif %}
+                    </p>
+                  </div>
+                </a>
+              </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </section>

@@ -123,35 +123,20 @@
             "key": "field_5ae0fd9aa4bba",
             "label": "Type",
             "name": "type",
-            "type": "select",
+            "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5ae49280e9f47",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "bookChapter: Book Chapter": "bookChapter: Book Chapter",
-                "book: Book": "book: Book",
-                "article: Article": "article: Article"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5b281d342179b",
@@ -303,5 +288,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529358169
+    "modified": 1529938410
 }

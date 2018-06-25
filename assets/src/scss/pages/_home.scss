@@ -65,13 +65,10 @@ section.home-events {
         display: none;
 
         @include breakpoint(800px) {
-          background-color: $light-blue;
-          background-repeat: no-repeat;
-          background-size: cover;
-          display: block;
+          display: inline-block;
           height: 120px;
           width: 100%;
-
+          object-fit: cover;
           flex-shrink: 0;
         }
       }
@@ -225,6 +222,7 @@ section.projects {
       &:nth-child(4) {
         border-bottom: none;
       }
+
       @include breakpoint(800px) {
         border: 1px solid $dark-grey;
         border-top: none;
@@ -604,6 +602,10 @@ section.home-section.rubrics {
         @include font($hind, 1.2rem, 500, $black, uppercase, center);
         @include breakpoint(700px) {
           font-size: 1.4rem;
+          &:hover{
+            background: $dark-blue;
+            color: $white;
+          }
         }
       }
     }
@@ -664,6 +666,9 @@ section.social {
         border-left: 1px solid $dark-grey;
         width: calc(100% / 2 + 1px);
       }
+    }
+    @include breakpoint(1136px) {
+      width: calc(100% / 2);
     }
   }
   .social__header {

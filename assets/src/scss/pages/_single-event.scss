@@ -32,6 +32,7 @@
 }
 
 .event__cover_image {
+  background-color: $light-blue;
   height: 220px;
 
   @include breakpoint(700px) {
@@ -41,7 +42,7 @@
     height: 100%;
     width: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
