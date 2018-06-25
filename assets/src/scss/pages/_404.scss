@@ -1,16 +1,13 @@
-.error {
-  min-height: calc(100vh - 80px - 300px);
-}
-
 .error__container {
-  margin: 0 auto;
-  max-width: 1024px;
-  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .error__title {
-  margin-top: 40px;
-
   @include font($source, 10rem, 700, $light-blue, inherit, center);
 }
 
