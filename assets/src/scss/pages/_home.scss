@@ -602,6 +602,10 @@ section.home-section.rubrics {
         @include font($hind, 1.2rem, 500, $black, uppercase, center);
         @include breakpoint(700px) {
           font-size: 1.4rem;
+          &:hover{
+            background: $dark-blue;
+            color: $white;
+          }
         }
       }
     }
