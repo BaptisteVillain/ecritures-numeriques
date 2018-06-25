@@ -15,7 +15,7 @@
             <div class="projects__content projects__content--highlighted">
               <span class="projects__index">{{project.id_number}}</span>
               <h1 class="projects__title projects__title--highlighted">{{ project.title }}</h1>
-              <div class="projects__description">{{project.get_field('content')}}</div>
+              <div class="projects__description">{{project.get_field('content')|excerpt(35)}}</div>
             </div>
           </a>
         {% else %}
@@ -28,7 +28,7 @@
             <div class="projects__content">
               <span class="projects__index">{{project.id_number}}</span>
               <h2 class="projects__title">{{ project.title }}</h2>
-              <div class="projects__description">{{project.get_field('content')|truncate(20)}}</div>
+              <div class="projects__description">{{project.get_field('content')|excerpt(20)}}</div>
             </div>
           </a>
         {% endif %}
