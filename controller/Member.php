@@ -27,7 +27,8 @@ class Member extends Timber\Post
 
       $this->_publications = new Timber\PostQuery(array(
         'post_type' => 'publication',
-        'post__in' => $this->publication_authors
+        'post__in' => $this->publication_authors,
+        'posts_per_page' => -1
       ));
 
     }
@@ -45,7 +46,8 @@ class Member extends Timber\Post
 
       $this->_projects = new Timber\PostQuery(array(
         'post_type' => 'project',
-        'post__in' => $this->project_authors
+        'post__in' => $this->project_authors,
+        'posts_per_page' => -1
       ));
 
     }
@@ -75,7 +77,7 @@ class Member extends Timber\Post
   {
     $this->members = new Timber\PostQuery(array(
       'post_type' => 'member',
-      'post_per_page' => -1
+      'posts_per_page' => -1
     ));
 
     $this->index = 0;
