@@ -50,17 +50,27 @@
       <div class="grid__case"></div>
       <div class="grid__case"></div>
       <div class="grid__case"></div>
-      <div class="grid__case grid__case--live">
-        <div class="live--icon grid--hidden">
-          <div class="live--dot"></div>
+      {% if live %}
+        <div class="grid__case grid__case--live">
+          <div class="live--icon grid--hidden">
+            <div class="live--dot"></div>
+          </div>
         </div>
-      </div>
-      <div class="grid__case grid__case--notification">D</div>
-      <div class="grid__case grid__case--notification">I</div>
-      <div class="grid__case grid__case--notification">R</div>
-      <div class="grid__case grid__case--notification">E</div>
-      <div class="grid__case grid__case--notification">C</div>
-      <div class="grid__case grid__case--notification">T</div>
+        <div class="grid__case grid__case--notification">D</div>
+        <div class="grid__case grid__case--notification">I</div>
+        <div class="grid__case grid__case--notification">R</div>
+        <div class="grid__case grid__case--notification">E</div>
+        <div class="grid__case grid__case--notification">C</div>
+        <div class="grid__case grid__case--notification">T</div>
+      {% else %}
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+      {% endif %}
       <div class="grid__case"></div>
     </div>
     <!-- End Row 2 -->
@@ -82,22 +92,33 @@
       <div class="grid__case">U</div>
       <div class="grid__case">M</div>
       <div class="grid__case">E</div>
-      <a href="" alt="" class="grid__case grid__case--popUp">
-        <div class="grid__case grid__case--thumbnail"></div>
-        <div class="grid__case grid__case--popUp__content">
-          <div class="popUp__label">Youtube</div>
-          <div class="popUp__title">La performativité de la
+      {% if live %}
+        <a href="" alt="" class="grid__case grid__case--popUp">
+          <div class="grid__case grid__case--thumbnail"></div>
+          <div class="grid__case grid__case--popUp__content">
+            <div class="popUp__label">Youtube</div>
+            <div class="popUp__title">{{ live['items'][0]['snippet']['title'] }}
+            </div>
+            <div class="popUp__arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewbox="0 0 8 9">
+                <text fill="#FFF" fill-rule="evenodd" font-family="Hind-Medium, Hind" font-size="16" font-weight="400" transform="translate(-331 -19)">
+                  <tspan x="331" y="30">&gt;</tspan>
+                </text>
+              </svg>
+            </div>
           </div>
-          <div class="popUp__arrow">
-            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewbox="0 0 8 9">
-              <text fill="#FFF" fill-rule="evenodd" font-family="Hind-Medium, Hind" font-size="16" font-weight="400" transform="translate(-331 -19)">
-                <tspan x="331" y="30">&gt;</tspan>
-              </text>
-            </svg>
-          </div>
-        </div>
-      </a>
-      <div class="grid__case grid__case--leftAdjacentBorder"></div>
+        </a>
+        <div class="grid__case grid__case--leftAdjacentBorder"></div>
+      {% else %}
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+        <div class="grid__case"></div>
+      {% endif %}
     </div>
     <!-- End Row 3 -->
     <!-- Row 4 -->
