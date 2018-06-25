@@ -65,10 +65,7 @@ section.home-events {
         display: none;
 
         @include breakpoint(800px) {
-          background-color: $light-blue;
-          background-repeat: no-repeat;
-          background-size: cover;
-          display: block;
+          display: inline-block;
           height: 120px;
           width: 100%;
 

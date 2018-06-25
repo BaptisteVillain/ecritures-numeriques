@@ -1,25 +1,37 @@
 <a href="{{ event.path }}" title="{{ event.title }}" class="event__card card__highlighted">
-  <div class="card__image" style="background-image:url({{ event.cover.sizes.event_portrait }})">
-  </div>
+  <img src="{{TimberImage(event.cover_image).src}}" class="card__image"/>
   <div class="card__content">
-    {% if event.date_start|date('d M') == event.date_end|date('d M') %}
+    {% if event.date_start | date('d M') == event.date_end | date('d M') %}
       <div class="card__surtitle">{{ event.date_start|date('d M') }}</div>
     {% else %}
-      <div class="card__surtitle">{{ event.date_start|date('d M') }} - {{ event.date_end|date('d M') }}</div>
+      <div class="card__surtitle">{{ event.date_start|date('d M') }}
+        -
+        {{ event.date_end|date('d M') }}</div>
     {% endif %}
     <h3 class="card__title">
       {{ event.title }}
     </h3>
     <div class="card__subtitle">
-      {% for key,tag in event.tags %}{% if key > 0 %}, {% endif %}{{ tag.name }}{% endfor %}
+      {% for key, tag in event.tags %}
+        {% if key > 0 %},
+        {% endif %}{{ tag.name }}
+      {% endfor %}
     </div>
-    {% if event.date_start|date('G\\hi') == event.date_end|date('G\\hi') %}
+    {% if event.date_start | date('G\\hi') == event.date_end | date('G\\hi') %}
       <div class="card__footer">
-        [ {{ event.date_start|date('G\\hi') }} ] {{ event.event_venue }}
+        [
+        {{ event.date_start|date('G\\hi') }}
+        ]
+        {{ event.event_venue }}
       </div>
     {% else %}
       <div class="card__footer">
-        [ {{ event.date_start|date('G\\hi') }} - {{ event.date_end|date('G\\hi') }} ] {{ event.event_venue }}
+        [
+        {{ event.date_start|date('G\\hi') }}
+        -
+        {{ event.date_end|date('G\\hi') }}
+        ]
+        {{ event.event_venue }}
       </div>
     {% endif %}
   </div>
