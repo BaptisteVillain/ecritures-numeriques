@@ -222,9 +222,7 @@ section.projects {
       overflow: hidden;
       padding: 0 25px 30px 25px;
       width: 100%;
-      &:nth-child(4) {
-        border-bottom: none;
-      }
+
       @include breakpoint(800px) {
         border: 1px solid $dark-grey;
         border-top: none;
@@ -238,6 +236,9 @@ section.projects {
           border-bottom: 1px solid $dark-grey;
           border-left: none;
         }
+      }
+      &:nth-child(4) {
+        border-bottom: none;
       }
       .card__label {
         margin: 30px auto 20px auto;
@@ -664,6 +665,9 @@ section.social {
         border-left: 1px solid $dark-grey;
         width: calc(100% / 2 + 1px);
       }
+    }
+    @include breakpoint(1136px) {
+      width: calc(100% / 2);
     }
   }
   .social__header {
