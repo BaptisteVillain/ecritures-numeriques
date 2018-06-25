@@ -17,22 +17,22 @@
         </p>
         <h2 class="publication__title {{post.type == 'book' ? 'title--italic' : ''}}">{{post.title}}</h2>
         {% if post.type == 'journalArticle' %}
-          <p class="publication__date">{{__('Publié')}}
+          <p class="publication__date">{{__('Posted')}}
             {% if post.domain %}
-              {{__('sur')}} <span class="card__italic">{{post.domain}}</span>
+              {{__('on')}} <span class="card__italic">{{post.domain}}</span>
             {% endif %}
             {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
           </p>
         {% elseif post.type == 'bookSection' %}
           <p class="publication__date">
-            {{__('Publié dans')}} <span class="card__italic">{{post.book_name}}</span>,
-            {{__('Édition')}} {{post.edition}},
+            {{__('Posted in')}} <span class="card__italic">{{post.book_name}}</span>,
+            {{__('Edition')}} {{post.edition}},
             {{__('le')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
             p. {{post.pages_selection}}.
           </p>
         {% elseif post.type == 'book' %}
           <p class="publication__date">
-            {{__('Édition')}} {{post.edition}},
+            {{__('Edition')}} {{post.edition}},
             <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
             {{post.number_of_pages}} p.
           </p>
@@ -40,7 +40,7 @@
       </div>
     </header>
     {% if post.url %}
-      <a href="{{post.url}}" class="publication__link" target="_blank">{{__('lire sur')}}
+      <a href="{{post.url}}" class="publication__link" target="_blank">{{__('read on')}}
         {{post.domain}} >
       </a>
     {% endif %}

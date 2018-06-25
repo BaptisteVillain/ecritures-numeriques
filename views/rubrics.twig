@@ -4,7 +4,7 @@
 	{% include "partials/background-lines.twig" %}
   <div class="page-rubrics rubrics__container">
     <div class="rubrics__header">
-      <h2>{{__('rubriques', 'ecritures-numeriques')}}</h2>
+      <h2>{{__('sections', 'ecritures-numeriques')}}</h2>
       <p>
         {{ page.get_field('description') }}
       </p>
@@ -13,13 +13,13 @@
     {% for key,rubric in rubrics %}
       <li class="rubrics__item">
         {% if key == 0 %}
-          <button class="item__button">théories<span>></span></button>
+          <button class="item__button">{{__('theories')}}<span>></span></button>
         {% elseif key == 1 %}
-          <button class="item__button">axes<span>></span></button>
+          <button class="item__button">{{__('axis')}}<span>></span></button>
         {% elseif key == 2 %}
-          <button class="item__button">objets de recherche<span>></span></button>
+          <button class="item__button">{{__('research topics')}}<span>></span></button>
         {% elseif key == 3 %}
-          <button class="item__button">concepts clés<span>></span></button>
+          <button class="item__button">{{__('key-concept')}}<span>></span></button>
         {% endif %}
         <ul class="item__wrapper">
           {% for term in rubric[0:19] %}

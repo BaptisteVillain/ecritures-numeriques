@@ -6,7 +6,7 @@
     <section class="events__container upcoming__events">
       <div class="upcoming__events__wrapper">
         <header class="events__header">
-          <h2 class="events__header__title">Événements à venir</h2>
+          <h2 class="events__header__title">{{__('Upcoming events')}}</h2>
         </header>
         {% for event in events_highlight %}
           <a href="{{event.path}}" class="events__card events__card--highlight">
@@ -63,7 +63,7 @@
     <section class="events__container past__events">
       <div class="past__events__wrapper">
         <header class="events__header">
-          <h2 class="events__header__title">Événements passés</h2>
+          <h2 class="events__header__title">{{__('Past events')}}</h2>
         </header>
         {% for event in events_past %}
           <a href="{{event.path}}" class="events__card">

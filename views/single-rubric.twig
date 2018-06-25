@@ -29,9 +29,9 @@
                       {% if rel[0].post_type == 'publication' %}
                         <p class="header__label">{{__('publications', 'ecritures-numeriques')}}</p>
                       {% elseif rel[0].post_type == 'project' %}
-                        <p class="header__label">{{__('projets', 'ecritures-numeriques')}}</p>
+                        <p class="header__label">{{__('projects', 'ecritures-numeriques')}}</p>
                       {% elseif rel[0].post_type == 'event' %}
-                        <p class="header__label">{{__('événements', 'ecritures-numeriques')}}</p>
+                        <p class="header__label">{{__('events', 'ecritures-numeriques')}}</p>
                       {% endif %}
                       <p class="title__count">{{rel|length}}</p>
                     </button>
@@ -42,7 +42,7 @@
           </header>
           <div class="related__wrapper wrapper--hide">
             <button class="related__return">
-              < {{__('retour', 'ecritures-numeriques')}}
+              < {{__('back', 'ecritures-numeriques')}}
             </button>
             {% for type in term.related %}
               <section class="related__section {% if key == 0 %}active{% endif %}">

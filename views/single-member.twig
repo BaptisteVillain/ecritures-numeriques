@@ -5,7 +5,7 @@
   <div class="member">
     <div class="member__resume">
       <header class="single__header__wrapper resume__header">
-        <a href="#" class="single__header__previous header__previous">< {{__('retour')}}</a>
+        <a href="#" class="single__header__previous header__previous">< {{__('back')}}</a>
       </header>
       <div class="resume__container">
         <div class="resume__photo">
@@ -25,10 +25,10 @@
               <li>{{member.publications|length}} {{__('publications')}}</li>
             {% endif %}
             {% if member.projects|length > 0 %}
-              <li>{{member.projects|length}} {{__('projets')}}</li>
+              <li>{{member.projects|length}} {{__('projects')}}</li>
             {% endif %}
             {% if member.events|length > 0 %}
-              <li>{{member.events|length}} {{__('évenements')}}</li>
+              <li>{{member.events|length}} {{__('events')}}</li>
             {% endif %}
           </ul>
         </div>
