@@ -132,15 +132,25 @@
     <div class="grid__row grid--hidden">
       <div class="grid__case">E</div>
       <div class="grid__case">Y</div>
-      <div class="grid__case grid__case--title title__first">É</div>
-      <div class="grid__case grid__case--title">C</div>
-      <div class="grid__case grid__case--title">R</div>
-      <div class="grid__case grid__case--title">I</div>
-      <div class="grid__case grid__case--title">T</div>
-      <div class="grid__case grid__case--title">U</div>
-      <div class="grid__case grid__case--title">R</div>
-      <div class="grid__case grid__case--title">E</div>
-      <div class="grid__case grid__case--title">S</div>
+      {% if hero_tiles_up | length == 9 %}
+        {% for key, tile in hero_tiles_up %}
+          {% if key == 0 %}
+            <div class="grid__case grid__case--title title__first">{{tile}}</div>
+          {% else %}
+            <div class="grid__case grid__case--title">{{tile}}</div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for key, tile in hero_tiles_up %}
+          {% if key == 0 %}
+            <div class="grid__case grid__case--title title__first">{{tile}}</div>
+          {% else %}
+            <div class="grid__case grid__case--title">{{tile}}</div>
+          {% endif %}
+        {% endfor %}
+        <div class="grid__case">8</div>
+        <div class="grid__case">9</div>
+      {% endif %}
       <div class="grid__case">8</div>
       <div class="grid__case">9</div>
       <div class="grid__case">0</div>
@@ -184,18 +194,25 @@
       <div class="grid__case">K</div>
       <div class="grid__case">B</div>
       <div class="grid__case">F</div>
-      <div class="grid__case grid__case--title title__first title__sub">N</div>
-      <div class="grid__case grid__case--title title__sub">U</div>
-      <div class="grid__case grid__case--title title__sub">M</div>
-      <div class="grid__case grid__case--title title__sub">É</div>
-      <div class="grid__case grid__case--title title__sub">R</div>
-      <div class="grid__case grid__case--title title__sub">I</div>
-      <div class="grid__case grid__case--title title__sub">Q</div>
-      <div class="grid__case grid__case--title title__sub">U</div>
-      <div class="grid__case grid__case--title title__sub">E</div>
-      <div class="grid__case grid__case--title title__sub">S</div>
-      <div class="grid__case">O</div>
-      <div class="grid__case">P</div>
+      {% if hero_tiles_down | length == 12 %}
+        {% for key, tile in hero_tiles_down %}
+          {% if key == 0 %}
+            <div class="grid__case grid__case--title title__first title__sub">{{tile}}</div>
+          {% else %}
+            <div class="grid__case grid__case--title title__sub">{{tile}}</div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for key, tile in hero_tiles_down %}
+          {% if key == 0 %}
+            <div class="grid__case grid__case--title title__first title__sub">{{tile}}</div>
+          {% else %}
+            <div class="grid__case grid__case--title title__sub">{{tile}}</div>
+          {% endif %}
+        {% endfor %}
+        <div class="grid__case">8</div>
+        <div class="grid__case">9</div>
+      {% endif %}
       <div class="grid__case"></div>
       <div class="grid__case grid__case--double">
         <div class="grid__subcase"></div>
@@ -286,7 +303,7 @@
       <div class="grid__case grid--hidden">Q</div>
       <div class="grid__case grid__case--description">
         <div class="grid__subcase subcase__description">
-          <p>La Chaire de Recherche du Canada sur les Écritures Numériques a pour but d’offrir une nouvelle lecture de cette écriture qui racontre notre monde.</p>
+          <p>{{page.custom.page_subtitle}}</p>
         </div>
       </div>
       <div class="grid__case grid--hidden"></div>

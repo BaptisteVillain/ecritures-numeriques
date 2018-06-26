@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_5ab8efbf7d3be",
-            "label": "Page title",
-            "name": "page_title",
+            "label": "Page title up",
+            "name": "page_title_up",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -19,7 +19,26 @@
             "placeholder": "Page Title",
             "prepend": "",
             "append": "",
-            "maxlength": 100
+            "maxlength": 9
+        },
+        {
+            "key": "field_5b315b0105720",
+            "label": "Page title down",
+            "name": "page_title_down",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 12
         },
         {
             "key": "field_5ab8eff37d3bf",
@@ -67,5 +86,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1524702320
+    "modified": 1529961281
 }

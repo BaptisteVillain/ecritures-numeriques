@@ -12,13 +12,42 @@ $context['home_url'] = get_home_url();
  * Links
  */
 
- $context['path_rubrics'] = get_permalink(7460);
+$context['path_rubrics'] = get_permalink(7460);
 
 
 /**
  * Get Page Fields
  */
- $context['page'] = $post;
+$context['page'] = $post;
+
+ /**
+  * Get Hero title traduction
+  */
+function chunk_split_unicode($str, $l = 76, $e = "\r\n") {
+  $tmp = array_chunk(
+      preg_split("//u", $str, -1, PREG_SPLIT_NO_EMPTY), $l);
+  $str = array();
+  foreach ($tmp as $t) {
+      $str[] = join("", $t) . $e;
+  }
+  return $str;
+}
+
+// Get title up
+$context['hero_tiles_up'] = array();
+$letters = chunk_split_unicode($context['page']->custom['page_title_up'], 1);
+
+foreach ($letters as $key => $letter) {
+  $context['hero_tiles_up'][] = $letter;
+}
+
+// Get title down
+$context['hero_tiles_down'] = array();
+$letters_down = chunk_split_unicode($context['page']->custom['page_title_down'], 1);
+
+foreach ($letters_down as $key => $letter) {
+  $context['hero_tiles_down'][] = $letter;
+}
 
 /**
  * Get last publications
