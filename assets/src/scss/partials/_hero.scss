@@ -190,6 +190,8 @@
     /* Youtube notification */
     &--notification {
       color: rgba(255, 255, 255, 0.08);
+      font-weight: 700;
+      font-size: 1.6rem;
 
       @include breakpoint(1023px) {
         color: $pink;
