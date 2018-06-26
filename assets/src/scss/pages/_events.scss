@@ -133,6 +133,10 @@
 
     @include font($source, 1.4rem, 400, $blue-grey, none, left);
   }
+  h4{
+    color: $black;
+    font-weight: 700;
+  }
 }
 
 // Past event

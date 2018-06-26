@@ -1,193 +1,213 @@
-.member{
-  width: 100%;
+.member {
   display: flex;
   flex-direction: column;
+  width: 100%;
+
   @include breakpoint(1024px) {
-    height: calc(100vh - 80px);
     flex-direction: row;
+    height: calc(100vh - 80px);
   }
-  .member__resume{
-    position: relative;
-    width: 100%;
-    height: auto;
+  .member__resume {
     background: $light-grey;
     display: flex;
     flex-direction: column;
+    height: auto;
     padding: 0 20px 30px 20px;
+    position: relative;
+    width: 100%;
+
     @include breakpoint(1024px) {
-      width: 42%;
+      align-items: center;
       height: 100%;
       justify-content: center;
-      align-items: center;
       padding: 0 $padding-main;
+      width: 42%;
     }
-    .resume__header{
-      width: 100%;
+    .resume__header {
       height: auto;
+      width: 100%;
+
       @include breakpoint(1024px) {
-        position: absolute;
-        top: 0;
         left: 0;
         padding-left: $padding-main;
+        position: absolute;
+        top: 0;
       }
-      .header__previous{
+      .header__previous {
         margin: 30px auto 20px 0;
       }
     }
   }
-  .member__about{
-    width: 100%;
+  .member__about {
     padding: 0 20px;
+    width: 100%;
+
     @include breakpoint(1024px) {
-      width: 58%;
       height: 100%;
       overflow-y: scroll;
       padding: 0 $padding-main;
+      width: 58%;
     }
   }
 }
 
-.resume__container{
-  width: 100%;
-  height: auto;
+.resume__container {
   background: $white;
   border: 1px solid $dark-grey;
-  .resume__photo{
-    width: 100%;
+  height: auto;
+  width: 100%;
+  .resume__photo {
     height: calc(100vw - 40px);
     padding: 20px;
+    width: 100%;
+
     @include breakpoint(1024px) {
       height: calc(42vw - ((8.3vw) * 2));
       padding: 60px;
     }
-    .photo{
-      width: 100%;
-      height: 100%;
+    .photo {
       background: $light-blue;
       background-size: cover;
       filter: grayscale(1);
+      height: 100%;
+      width: 100%;
     }
   }
-  .resume__section{
-    padding: 20px 10px;
+  .resume__section {
     border-top: 1px solid $dark-grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px 10px;
   }
-  .resume__name{
-    @include font($hind, 1.8rem, 500, $black, capitalize, center)
+  .resume__name {
+    @include font($hind, 1.8rem, 500, $black, capitalize, center);
   }
-  .resume__post{
+  .resume__post {
     margin-top: 5px;
-    @include font($hind, 1.4rem, 500, $dark-grey, capitalize, center)
+
+    @include font($hind, 1.4rem, 500, $dark-grey, capitalize, center);
   }
-  .resume__works{
+  .resume__works {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    li{
-      @include font($source, 1.2rem, 400, $light-blue, capitalize, center);
+
+    flex-wrap: wrap;
+    li {
       margin: 0 10px;
+
+      @include font($source, 1.2rem, 400, $light-blue, capitalize, center);
     }
   }
-  .resume__mail{
+  .resume__mail {
     margin: 0 auto;
+
     @include font($hind, 1.2rem, 400, $dark-grey, lowercase, center);
   }
-  .resume__infos{
-    margin-top: 10px;
+  .resume__infos {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    li{
+    margin-top: 10px;
+
+    flex-wrap: wrap;
+    li {
       margin: 0 10px;
-      a{
+      a {
         @include font($hind, 1.2rem, 400, $blue-grey, capitalize, center);
       }
     }
   }
 }
 
-.member__about{
-  .about__wrapper{
-    overflow: hidden;
+.member__about {
+  .about__wrapper {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     padding: 30px 0 90px 0;
+
     @include breakpoint(1024px) {
-      padding: $padding-main 0;
       min-height: calc(100vh - 80px);
+      padding: $padding-main 0;
     }
-    .about__content{
+    .about__content {
       margin-bottom: 20px;
+
       @include breakpoint(1024px) {
         margin-bottom: 40px;
       }
     }
+    .highlighted__section__title {
+      padding: 15px 0;
 
-    .about__highlighted{
-      border: 1px solid $dark-blue;
+      @include font($source, 1.6rem, 700, $light-blue, uppercase, left);
+    }
+    .about__highlighted {
       background: $light-grey;
-      padding: 20px;
+      border: 1px solid $dark-blue;
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
+      padding: 20px;
+
       @include breakpoint(1024px) {
+        align-items: center;
         flex-direction: row;
         margin-bottom: 40px;
-        align-items: center;
       }
-      .highlighted__title{
-        width: 100%;
-        flex-shrink: 1;
+      .highlighted__title {
         margin-bottom: 10px;
+        width: 100%;
+
+        flex-shrink: 1;
         @include font($hind, 1.6rem, 500, $dark-blue, inherit, left);
         @include breakpoint(1024px) {
           margin-bottom: 0px;
           width: 30%;
         }
       }
-      .highlighted__content{
+      .highlighted__content {
         margin-left: 0px;
+
         @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
         @include breakpoint(1024px) {
           margin-left: 60px;
         }
       }
     }
-
-    .about__footer{
+    .about__footer {
       margin-top: auto;
     }
   }
-  .about__posts{
+  .about__posts {
     margin-top: -59px;
-    .section__post{
+    .section__post {
       margin-bottom: 40px;
-      .post__header{
-        height: 60px;
-        padding: 0 20px;
+      .post__header {
+        align-items: center;
         background: $light-grey;
         border: 1px solid $dark-blue;
         display: flex;
-        align-items: center;
+        height: 60px;
+        padding: 0 20px;
+
         @include font($hind, 1.6rem, 600, $dark-blue, uppercase, left);
       }
-      .post__list{
-        .list__section{
-          padding: 0 20px;
-          height: 40px;
-          display: flex;
-          flex-direction: row;
+      .post__list {
+        .list__section {
           align-items: center;
+          background: $light-grey;
           border: 1px solid $dark-grey;
           border-top: none;
-          background: $light-grey;
+          display: flex;
+          flex-direction: row;
+          height: 40px;
+          padding: 0 20px;
+
           @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
         }
         .list__item {
@@ -199,9 +219,10 @@
           min-height: 90px;
           padding: 20px;
           width: 100%;
+
           @include breakpoint(1024px) {
-            flex-direction: row;
             align-items: center;
+            flex-direction: row;
           }
           .item__title {
             line-height: 1.5;
@@ -223,7 +244,14 @@
               margin-top: 0;
             }
             .item__author {
-              @include font($source, 1.2rem, 500, $light-blue, capitalize, left);
+              @include font(
+                $source,
+                1.2rem,
+                500,
+                $light-blue,
+                capitalize,
+                left
+              );
             }
             .item__date {
               margin-top: 5px;
