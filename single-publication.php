@@ -11,4 +11,6 @@ $context = Timber::get_context();
 
 $context['post'] = new Publication();
 
+$context['first_post'] = true;
+
 Timber::render('single-publication.twig', $context );
