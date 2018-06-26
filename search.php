@@ -31,10 +31,7 @@ foreach ($types as $type) {
  */
 $context['filters'] = array();
 
-$taxonomies = get_taxonomies(array(
-  'public' => true,
-  '_builtin' => false
-));
+$taxonomies = array('research_field', 'research_topic', 'key_concept', 'axis');
 
 foreach ($taxonomies as $taxonomy) {
   $context['filters'][] = Timber::get_terms(array(
