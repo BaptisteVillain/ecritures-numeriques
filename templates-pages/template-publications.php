@@ -61,4 +61,8 @@ if(!$context['term']){
 
 $context['posts'] = new Timber\PostQuery($args);
 
+echo '<pre>';
+print_r($context['selected']);
+echo '</pre>';
+
 Timber::render( 'publications.twig', $context );
