@@ -187,4 +187,10 @@ else{
   $context['live'] = false;
 }
 
+$context['letters'] = array('U', 'C', 'F', '');
+$context['research_fields'] = Timber::get_terms(array(
+  'taxonomy' => array('research_field'),
+  'hide_empty' => false,
+));
+
 Timber::render( 'front-page.twig', $context);
