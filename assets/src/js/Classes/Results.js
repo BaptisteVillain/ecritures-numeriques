@@ -75,11 +75,11 @@ class Results {
     if (!element.classList.contains('filter--active')) {
       this.selected_filters.push(filter)
       this.addFilter(filter)
+      element.classList.add('filter--active')
     } else {
       this.removeFilter(filter)
+      element.classList.remove('filter--active')
     }
-
-    element.classList.toggle('filter--active')
   }
 
   addFilter(filter) {
