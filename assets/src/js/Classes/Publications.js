@@ -99,12 +99,8 @@ export default class Publications {
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
-        console.log(response)
         this.posts_container.innerHTML = ''
         this.posts_container.insertAdjacentHTML('beforeend', response.data.data.posts)
-      })
-      .catch(err => {
-        console.log(err)
       })
   }
 }

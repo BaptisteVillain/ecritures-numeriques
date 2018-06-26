@@ -40,5 +40,5 @@ function fetch_publications() {
 }
 
 
-add_action( 'wp_ajax_fetch_publicationss', 'fetch_publications', 100 );
+add_action( 'wp_ajax_fetch_publications', 'fetch_publications', 100 );
 add_action( 'wp_ajax_nopriv_fetch_publications', 'fetch_publications', 100 );
