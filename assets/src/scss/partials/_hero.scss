@@ -119,6 +119,16 @@
     /* Title case */
     &--title {
       border-left: 1px solid $light-grey;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        width: 1px;
+        height: calc(100% + 2px);
+        background: $pink;
+      }
 
       @include font($source, 3rem, 700, $light-grey, uppercase, center);
     }
@@ -165,6 +175,16 @@
         border-left: 1px $pink solid;
         border-right: 1px $border-grey solid;
         border-top: 1px solid $border-grey;
+        position: relative;
+        &::after{
+          content: "";
+          position: absolute;
+          top: -1px;
+          left: -1px;
+          width: 1px;
+          height: 100%;
+          background: $pink;
+        }
       }
     }
     /* Youtube notification */
@@ -195,10 +215,12 @@
       }
     }
     &--thumbnail {
-      background-image: url('../images/insert-img.jpg');
-      background-position: center;
-      background-size: cover;
       border: none;
+      img{
+        height: calc(100% - 2px);
+        width: auto;
+        opacity: .2;
+      }
     }
     &--popUp__content {
       border: none;
@@ -207,6 +229,7 @@
       justify-content: space-around;
       max-width: calc(123rem / 24 * 6);
       width: calc(90vw / 24 * 6);
+      padding: 0 2rem;
     }
   }
   /* Row */
@@ -321,6 +344,19 @@
 }
 
 .popUp__title {
+  @include font($hind,
+  1.2rem,
+  500,
+  $light-grey,
+  none,
+  center);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 0 2rem;
+}
+
+.popUp__arrow {
   @include font($hind,
   1.2rem,
   500,

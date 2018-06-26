@@ -93,18 +93,16 @@
       <div class="grid__case">M</div>
       <div class="grid__case">E</div>
       {% if live %}
-        <a href="" alt="" class="grid__case grid__case--popUp">
-          <div class="grid__case grid__case--thumbnail"></div>
+        <a href="https://www.youtube.com/watch?v={{live['items'][0]['id']}}" title="youtube live" target="_blank" class="grid__case grid__case--popUp">
+          <div class="grid__case grid__case--thumbnail">
+            <img src="{{live['items'][0]['snippet']['thumbnails']['default']['url']}}" alt="live thumbnail">
+          </div>
           <div class="grid__case grid__case--popUp__content">
             <div class="popUp__label">Youtube</div>
             <div class="popUp__title">{{ live['items'][0]['snippet']['title'] }}
             </div>
             <div class="popUp__arrow">
-              <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewbox="0 0 8 9">
-                <text fill="#FFF" fill-rule="evenodd" font-family="Hind-Medium, Hind" font-size="16" font-weight="400" transform="translate(-331 -19)">
-                  <tspan x="331" y="30">&gt;</tspan>
-                </text>
-              </svg>
+              >
             </div>
           </div>
         </a>
