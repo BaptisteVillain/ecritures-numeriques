@@ -15,7 +15,7 @@
             <a href="{{author.path}}">{{author.title}}</a>{{ key + 1 < post.authors|length ? ', ' : '' }}
           {% endfor %}
         </p>
-        <h2 class="publication__title {{post.type == 'book' ? 'title--italic' : ''}}">{{post.title}}</h2>
+        <h2 class="publication__title {{post.type == 'book' ? 'title--italic' : ''}} {{first_post ? 'title--first' : ''}}" >{{post.title}}</h2>
         {% if post.type == 'journalArticle' %}
           <p class="publication__date">{{__('Posted')}}
             {% if post.domain %}
