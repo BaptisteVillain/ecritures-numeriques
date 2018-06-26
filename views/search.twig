@@ -106,6 +106,12 @@
             {% include './partials/card-result.twig' %}
           {% endfor %}
         </ul>
+        <div class="card card--no-result {{ result is empty ? '' : 'card--hide' }}">
+          {{__('Aucun résultat', 'ecritures-numeriques')}}
+        </div>
+        <div class="card card--loading card--hide">
+          {{__('Loading...', 'ecritures-numeriques')}}
+        </div>
       </div>
       {% endfor %}
     </div>
