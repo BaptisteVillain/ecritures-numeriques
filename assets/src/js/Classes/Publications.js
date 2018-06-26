@@ -10,8 +10,14 @@ export default class Publications {
     this.header_prev = container.querySelector('.header__nav--prev')
     this.header_next = container.querySelector('.header__nav--next')
     this.header_index = 0
-    this.header_offset = 5
-    this.header_offsetWidth = this.header_list.parentNode.offsetWidth / 5
+
+    if (window.innerWidth >= 900) {
+      this.header_offset = 5
+      this.header_offsetWidth = this.header_list.parentNode.offsetWidth / 5
+    } else {
+      this.header_offset = 1
+      this.header_offsetWidth = this.header_list.parentNode.offsetWidth
+    }
 
     this.filter = {}
 
@@ -93,8 +99,12 @@ export default class Publications {
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
+        console.log(response)
         this.posts_container.innerHTML = ''
         this.posts_container.insertAdjacentHTML('beforeend', response.data.data.posts)
+      })
+      .catch(err => {
+        console.log(err)
       })
   }
 }

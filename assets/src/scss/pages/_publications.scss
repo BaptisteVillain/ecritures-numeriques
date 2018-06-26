@@ -13,7 +13,7 @@
   border-top: 1px solid $dark-grey;
   .header__nav{
     flex-shrink: 0;
-    width: $padding-main;
+    width: 48px;
     height: 100%;
     background: $pink;
     opacity: 1;
@@ -30,6 +30,9 @@
       pointer-events: none;
       opacity: 0;
     }
+    @include breakpoint(900px) {
+      width: $padding-main;      
+    }
   }
   .header__wrapper{
     width: 100%;
@@ -45,7 +48,7 @@
       transition: transform .3s $easing;
       .header__item{
         flex-shrink: 0;
-        width: calc((100vw - 16.6vw - 15px) / 5);
+        width: 100%;
         height: 100%;
         border-left: 1px solid $dark-grey;
         &:first-child{
@@ -53,6 +56,9 @@
         }
         &:last-child{
           border-right: 1px solid $dark-grey;
+        }
+        @include breakpoint(900px) {
+          width: calc((100vw - 16.6vw - 15px) / 5);
         }
         button{
           width: 100%;
