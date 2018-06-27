@@ -93,7 +93,11 @@
 */
 
 .publications__posts {
-  margin: 0 $padding-main;
+  margin: 0 20px;
+
+  @include breakpoint(700px) {
+    margin: 0 $padding-main;
+  }
   .single-tags {
     padding: 40px 0 0;
   }
@@ -146,27 +150,42 @@
 .publications__mid-down-block {
   border: 1px solid $dark-grey;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include breakpoint(700px) {
+    flex-direction: row;
+  }
 }
 
 .top-block__first,
 .top-block__second {
-  width: 50%;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    width: 50%;
+  }
+}
+
+.top-block {
+  padding: 30px;
+
+  @include breakpoint(1024px) {
+    padding: 40px 60px;
+  }
 }
 
 .top-block__first {
-  border-right: 1px solid $dark-grey;
-  padding: 40px 60px;
+  border-bottom: 1px solid $dark-grey;
+
+  @include breakpoint(700px) {
+    border-bottom: none;
+    border-right: 1px solid $dark-grey;
+  }
 }
 
 .top-block__first__title {
   @include font($hind, 2.6rem, 700, $dark-blue, inherit, left);
 } // Right side of the major block
-.top-block__second__top,
-.top-block__second__down {
-  padding: 40px 60px;
-}
-
 .top-block__second__top {
   border-bottom: 1px solid $dark-grey;
 }
@@ -178,24 +197,40 @@
 .publications__mid-top-block {
   border: 1px solid $dark-grey;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  @include breakpoint(1024px) {
+    flex-direction: row;
+  }
 }
 
 .mid-top-block {
-  padding: 40px 60px 30px 60px;
   display: flex;
   flex-direction: column;
-  .publications__terms{
+  padding: 30px;
+  width: 100%;
+
+  @include breakpoint(1024px) {
+    width: calc(100% / 3);
+  }
+  @include breakpoint(1270px) {
+    padding: 40px 60px 30px 60px;
+  }
+  .publications__terms {
     margin-top: auto;
   }
 }
 
 .mid-top-block__second {
-  border-left: 1px solid $dark-grey;
-  border-right: 1px solid $dark-grey;
+  border-bottom: 1px solid $dark-grey;
+  border-top: 1px solid $dark-grey;
+
+  @include breakpoint(1024px) {
+    border: none;
+    border-left: 1px solid $dark-grey;
+    border-right: 1px solid $dark-grey;
+  }
 }
-
-
 
 /*
 * Third major block
@@ -208,15 +243,25 @@
 }
 
 .mid-down-block {
-  padding: 0px 60px 40px;
-  width: 50%;
+  padding: 0px 30px 30px;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    padding: 0px 60px 40px;
+    width: 50%;
+  }
   .publications__author {
     margin-top: 40px;
   }
 }
 
 .mid-down-block:last-child {
-  border-left: 1px solid $dark-grey;
+  border-top: 1px solid $dark-grey;
+
+  @include breakpoint(700px) {
+    border-left: 1px solid $dark-grey;
+    border-top: none;
+  }
 }
 
 /*
@@ -228,8 +273,11 @@
   border-bottom: none;
   border-right: none;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 
+  @include breakpoint(700px) {
+    flex-direction: row;
+  }
   flex-wrap: wrap;
   .single-tags {
     padding: 0;
@@ -239,8 +287,17 @@
 .last-block {
   border-bottom: 1px solid $dark-grey;
   border-right: 1px solid $dark-grey;
-  padding: 0px 60px 40px;
-  width: calc(100% / 3);
+  padding: 0px 30px 30px;
+  width: 100%;
+
+  @include breakpoint(700px) {
+    padding: 0px 60px 40px;
+    width: 50%;
+  }
+  @include breakpoint(1024px) {
+    padding: 0px 60px 40px;
+    width: calc(100% / 3);
+  }
   .publications__author {
     margin-top: 40px;
   }
