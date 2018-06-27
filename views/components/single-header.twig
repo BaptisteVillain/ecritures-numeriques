@@ -4,13 +4,13 @@
     {% if subtitle %}
     <h3 class="single__header__parent">
       {% if subtitle == 'research_field' %}
-        {{__('théorie')}}
+        {{__('theory')}}
       {% elseif subtitle == 'research_topic' %}
-        {{__('objets de recherche')}}
+        {{__('research topics')}}
       {% elseif subtitle == 'key_concept' %}
-        {{__('concepts clés')}}
+        {{__('key-concepts')}}
       {% elseif subtitle == 'axis' %}
-        {{__('axes')}}
+        {{__('axis')}}
       {% else %}
         {{ subtitle }}
       {% endif %}
@@ -20,7 +20,7 @@
   </div>
   {% if link %}
     <a href="#" class="single__header__link">
-      {{__('Accéder au projet')}} <span>></span>
+      {{__('See the project')}} <span>></span>
     </a>
   {% endif %}
 </header>
