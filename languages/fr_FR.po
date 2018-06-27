@@ -1,0 +1,818 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Project-Id-Version: Ecritures Numériques Theme\n"
+"POT-Creation-Date: 2018-06-27 15:41+0200\n"
+"PO-Revision-Date: 2018-06-27 15:57+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: inc/acf-add-options-page.php:17
+msgid "Footer ("
+msgstr ""
+
+#: inc/acf-add-options-page.php:35
+msgid "Header ("
+msgstr ""
+
+#: lib/custom-types.php:14
+msgctxt "Post Type General Name"
+msgid "Publications"
+msgstr ""
+
+#: lib/custom-types.php:15
+msgctxt "Post Type Singular Name"
+msgid "Publication"
+msgstr ""
+
+#: lib/custom-types.php:16 lib/custom-types.php:17
+msgid "Publications"
+msgstr ""
+
+#: lib/custom-types.php:18
+msgid "Publication Archives"
+msgstr ""
+
+#: lib/custom-types.php:19
+msgid "Publication Attributes"
+msgstr ""
+
+#: lib/custom-types.php:20
+msgid "Parent Publication:"
+msgstr ""
+
+#: lib/custom-types.php:21
+msgid "All Publications"
+msgstr "Toutes les publications"
+
+#: lib/custom-types.php:22
+msgid "Add New Publication"
+msgstr ""
+
+#: lib/custom-types.php:23
+msgid "Add Publication"
+msgstr ""
+
+#: lib/custom-types.php:24
+msgid "New Publication"
+msgstr ""
+
+#: lib/custom-types.php:25
+msgid "Edit Publication"
+msgstr ""
+
+#: lib/custom-types.php:26
+msgid "Update Publication"
+msgstr ""
+
+#: lib/custom-types.php:27
+msgid "View Publication"
+msgstr ""
+
+#: lib/custom-types.php:28
+msgid "View Publications"
+msgstr ""
+
+#: lib/custom-types.php:29
+msgid "Search Publication"
+msgstr ""
+
+#: lib/custom-types.php:30 lib/custom-types.php:84 lib/custom-types.php:139
+#: lib/custom-types.php:194
+msgid "Not found"
+msgstr ""
+
+#: lib/custom-types.php:31 lib/custom-types.php:85 lib/custom-types.php:140
+#: lib/custom-types.php:195
+msgid "Not found in Trash"
+msgstr ""
+
+#: lib/custom-types.php:32 lib/custom-types.php:86 lib/custom-types.php:141
+#: lib/custom-types.php:196
+msgid "Featured Image"
+msgstr ""
+
+#: lib/custom-types.php:33 lib/custom-types.php:87 lib/custom-types.php:142
+#: lib/custom-types.php:197
+msgid "Set featured image"
+msgstr ""
+
+#: lib/custom-types.php:34 lib/custom-types.php:88 lib/custom-types.php:143
+#: lib/custom-types.php:198
+msgid "Remove featured image"
+msgstr ""
+
+#: lib/custom-types.php:35 lib/custom-types.php:89 lib/custom-types.php:144
+#: lib/custom-types.php:199
+msgid "Use as featured image"
+msgstr ""
+
+#: lib/custom-types.php:36 lib/custom-types.php:90 lib/custom-types.php:145
+#: lib/custom-types.php:200
+msgid "Insert into item"
+msgstr ""
+
+#: lib/custom-types.php:37 lib/custom-types.php:91 lib/custom-types.php:146
+#: lib/custom-types.php:201
+msgid "Uploaded to this item"
+msgstr ""
+
+#: lib/custom-types.php:38 lib/custom-types.php:92 lib/custom-types.php:147
+#: lib/custom-types.php:202
+msgid "Items list"
+msgstr ""
+
+#: lib/custom-types.php:39 lib/custom-types.php:93 lib/custom-types.php:148
+#: lib/custom-types.php:203
+msgid "Items list navigation"
+msgstr ""
+
+#: lib/custom-types.php:40 lib/custom-types.php:94 lib/custom-types.php:149
+#: lib/custom-types.php:204
+msgid "Filter items list"
+msgstr ""
+
+#: lib/custom-types.php:44 views/search.twig:92
+msgid "publication"
+msgstr ""
+
+#: lib/custom-types.php:45
+msgid "Digital Textualities Publications"
+msgstr ""
+
+#: lib/custom-types.php:68
+msgctxt "Post Type General Name"
+msgid "Events"
+msgstr ""
+
+#: lib/custom-types.php:69
+msgctxt "Post Type Singular Name"
+msgid "Event"
+msgstr ""
+
+#: lib/custom-types.php:70 lib/custom-types.php:71
+msgid "Events"
+msgstr ""
+
+#: lib/custom-types.php:72 lib/custom-types.php:127 lib/custom-types.php:182
+msgid "Item Archives"
+msgstr ""
+
+#: lib/custom-types.php:73 lib/custom-types.php:128 lib/custom-types.php:183
+msgid "Item Attributes"
+msgstr ""
+
+#: lib/custom-types.php:74 lib/custom-types.php:129 lib/custom-types.php:184
+msgid "Parent Item:"
+msgstr ""
+
+#: lib/custom-types.php:75
+msgid "All Events"
+msgstr ""
+
+#: lib/custom-types.php:76
+msgid "Add New Event"
+msgstr ""
+
+#: lib/custom-types.php:77 lib/custom-types.php:132 lib/custom-types.php:187
+msgid "Add New"
+msgstr ""
+
+#: lib/custom-types.php:78
+msgid "New Event"
+msgstr ""
+
+#: lib/custom-types.php:79
+msgid "Edit Event"
+msgstr ""
+
+#: lib/custom-types.php:80
+msgid "Update Event"
+msgstr ""
+
+#: lib/custom-types.php:81
+msgid "View Event"
+msgstr ""
+
+#: lib/custom-types.php:82
+msgid "View Events"
+msgstr ""
+
+#: lib/custom-types.php:83
+msgid "Search Event"
+msgstr ""
+
+#: lib/custom-types.php:98
+msgid "event"
+msgstr ""
+
+#: lib/custom-types.php:99
+msgid "Digital Textualities Events"
+msgstr ""
+
+#: lib/custom-types.php:123
+msgctxt "Post Type General Name"
+msgid "Projects"
+msgstr ""
+
+#: lib/custom-types.php:124
+msgctxt "Post Type Singular Name"
+msgid "Project"
+msgstr ""
+
+#: lib/custom-types.php:125 lib/custom-types.php:126
+msgid "Projects"
+msgstr "Projets"
+
+#: lib/custom-types.php:130
+msgid "All Projects"
+msgstr "Tout les projets"
+
+#: lib/custom-types.php:131
+msgid "Add New Project"
+msgstr ""
+
+#: lib/custom-types.php:133
+msgid "New Project"
+msgstr ""
+
+#: lib/custom-types.php:134
+msgid "Edit Project"
+msgstr ""
+
+#: lib/custom-types.php:135
+msgid "Update Project"
+msgstr ""
+
+#: lib/custom-types.php:136
+msgid "View Project"
+msgstr ""
+
+#: lib/custom-types.php:137
+msgid "View Projects"
+msgstr ""
+
+#: lib/custom-types.php:138
+msgid "Search Project"
+msgstr ""
+
+#: lib/custom-types.php:153
+msgid "project"
+msgstr ""
+
+#: lib/custom-types.php:154
+msgid "Digital Textualities Projects"
+msgstr ""
+
+#: lib/custom-types.php:178
+msgctxt "Post Type General Name"
+msgid "Members"
+msgstr ""
+
+#: lib/custom-types.php:179
+msgctxt "Post Type Singular Name"
+msgid "Member"
+msgstr ""
+
+#: lib/custom-types.php:180
+msgid "Team"
+msgstr ""
+
+#: lib/custom-types.php:181
+msgid "Members"
+msgstr ""
+
+#: lib/custom-types.php:185
+msgid "All Members"
+msgstr ""
+
+#: lib/custom-types.php:186
+msgid "Add New Member"
+msgstr ""
+
+#: lib/custom-types.php:188
+msgid "New Member"
+msgstr ""
+
+#: lib/custom-types.php:189
+msgid "Edit Member"
+msgstr ""
+
+#: lib/custom-types.php:190
+msgid "Update Member"
+msgstr ""
+
+#: lib/custom-types.php:191
+msgid "View Member"
+msgstr ""
+
+#: lib/custom-types.php:192
+msgid "View Members"
+msgstr ""
+
+#: lib/custom-types.php:193
+msgid "Search Member"
+msgstr ""
+
+#: lib/custom-types.php:208
+msgid "member"
+msgstr ""
+
+#: lib/custom-types.php:209
+msgid "Digital Textualities Members"
+msgstr ""
+
+#: lib/menus.php:12
+msgid "Header Menu"
+msgstr ""
+
+#: lib/menus.php:13
+msgid "Language Switch"
+msgstr ""
+
+#: lib/taxonomies.php:15
+msgctxt "taxonomy general name"
+msgid "Research Fields"
+msgstr ""
+
+#: lib/taxonomies.php:16
+msgctxt "taxonomy singular name"
+msgid "Research Field"
+msgstr ""
+
+#: lib/taxonomies.php:17
+msgid "Search Research Fields"
+msgstr ""
+
+#: lib/taxonomies.php:18
+msgid "All Research Fields"
+msgstr ""
+
+#: lib/taxonomies.php:19
+msgid "Parent Research Field"
+msgstr ""
+
+#: lib/taxonomies.php:20
+msgid "Parent Research Field:"
+msgstr ""
+
+#: lib/taxonomies.php:21
+msgid "Edit Research Field"
+msgstr ""
+
+#: lib/taxonomies.php:22
+msgid "Update Research Field"
+msgstr ""
+
+#: lib/taxonomies.php:23
+msgid "Add New Research Field"
+msgstr ""
+
+#: lib/taxonomies.php:24
+msgid "New Research Field Name"
+msgstr ""
+
+#: lib/taxonomies.php:25
+msgid "Research Fields"
+msgstr ""
+
+#: lib/taxonomies.php:43
+msgctxt "taxonomy general name"
+msgid "Research Topics"
+msgstr ""
+
+#: lib/taxonomies.php:44
+msgctxt "taxonomy singular name"
+msgid "Research Topic"
+msgstr ""
+
+#: lib/taxonomies.php:45
+msgid "Search Research Topics"
+msgstr ""
+
+#: lib/taxonomies.php:46
+msgid "All Research Topics"
+msgstr ""
+
+#: lib/taxonomies.php:47
+msgid "Parent Research Topic"
+msgstr ""
+
+#: lib/taxonomies.php:48
+msgid "Parent Research Topic:"
+msgstr ""
+
+#: lib/taxonomies.php:49
+msgid "Edit Research Topic"
+msgstr ""
+
+#: lib/taxonomies.php:50
+msgid "Update Research Topic"
+msgstr ""
+
+#: lib/taxonomies.php:51
+msgid "Add New Research Topic"
+msgstr ""
+
+#: lib/taxonomies.php:52
+msgid "New Research Topic Name"
+msgstr ""
+
+#: lib/taxonomies.php:53
+msgid "Research Topics"
+msgstr ""
+
+#: lib/taxonomies.php:70
+msgctxt "taxonomy general name"
+msgid "Key-concepts"
+msgstr ""
+
+#: lib/taxonomies.php:71
+msgctxt "taxonomy singular name"
+msgid "Key-concept"
+msgstr ""
+
+#: lib/taxonomies.php:72
+msgid "Search Key-concepts"
+msgstr ""
+
+#: lib/taxonomies.php:73
+msgid "All Key-concepts"
+msgstr ""
+
+#: lib/taxonomies.php:74
+msgid "Parent Key-concept"
+msgstr ""
+
+#: lib/taxonomies.php:75
+msgid "Parent Key-concept:"
+msgstr ""
+
+#: lib/taxonomies.php:76
+msgid "Edit Key-concept"
+msgstr ""
+
+#: lib/taxonomies.php:77
+msgid "Update Key-concept"
+msgstr ""
+
+#: lib/taxonomies.php:78
+msgid "Add New Key-concept"
+msgstr ""
+
+#: lib/taxonomies.php:79
+msgid "New Key-concept Name"
+msgstr ""
+
+#: lib/taxonomies.php:80 views/front-page.twig:92
+msgid "Key-concepts"
+msgstr ""
+
+#: lib/taxonomies.php:97
+msgctxt "taxonomy general name"
+msgid "Axes"
+msgstr ""
+
+#: lib/taxonomies.php:98
+msgctxt "taxonomy singular name"
+msgid "Axis"
+msgstr ""
+
+#: lib/taxonomies.php:99
+msgid "Search Axes"
+msgstr ""
+
+#: lib/taxonomies.php:100
+msgid "All Axes"
+msgstr ""
+
+#: lib/taxonomies.php:101
+msgid "Parent Axis"
+msgstr ""
+
+#: lib/taxonomies.php:102
+msgid "Parent Axis:"
+msgstr ""
+
+#: lib/taxonomies.php:103
+msgid "Edit Axis"
+msgstr ""
+
+#: lib/taxonomies.php:104
+msgid "Update Axis"
+msgstr ""
+
+#: lib/taxonomies.php:105
+msgid "Add New Axis"
+msgstr ""
+
+#: lib/taxonomies.php:106
+msgid "New Axis Name"
+msgstr ""
+
+#: lib/taxonomies.php:107
+msgid "Axes"
+msgstr ""
+
+#: lib/taxonomies.php:124
+msgctxt "taxonomy general name"
+msgid "Posts"
+msgstr ""
+
+#: lib/taxonomies.php:125
+msgctxt "taxonomy singular name"
+msgid "Post"
+msgstr ""
+
+#: lib/taxonomies.php:126
+msgid "Search Posts"
+msgstr ""
+
+#: lib/taxonomies.php:127
+msgid "All Posts"
+msgstr ""
+
+#: lib/taxonomies.php:128
+msgid "Parent Post"
+msgstr ""
+
+#: lib/taxonomies.php:129
+msgid "Parent Post:"
+msgstr ""
+
+#: lib/taxonomies.php:130
+msgid "Edit Post"
+msgstr ""
+
+#: lib/taxonomies.php:131
+msgid "Update Post"
+msgstr ""
+
+#: lib/taxonomies.php:132
+msgid "Add New Post"
+msgstr ""
+
+#: lib/taxonomies.php:133
+msgid "New Post Name"
+msgstr ""
+
+#: lib/taxonomies.php:134
+msgid "Posts"
+msgstr ""
+
+#: views/base.twig:16
+msgid "Sorry, no content"
+msgstr "Désolé, aucun contenu trouvé"
+
+#: views/components/single-footer.twig:4
+msgid "previous"
+msgstr "précédent"
+
+#: views/components/single-footer.twig:13
+msgid "next"
+msgstr "suivant"
+
+#: views/components/single-header.twig:3
+msgid "retour"
+msgstr ""
+
+#: views/components/single-header.twig:7 views/rubrics.twig:16
+msgid "theories"
+msgstr "théories"
+
+#: views/components/single-header.twig:9 views/rubrics.twig:20
+#: views/search.twig:50
+msgid "research topics"
+msgstr ""
+
+#: views/components/single-header.twig:11 views/search.twig:52
+msgid "key-concepts"
+msgstr ""
+
+#: views/components/single-header.twig:13 views/rubrics.twig:18
+#: views/search.twig:54
+msgid "axis"
+msgstr ""
+
+#: views/components/single-header.twig:23
+msgid "Accéder au projet"
+msgstr ""
+
+#: views/events.twig:9 views/front-page.twig:9
+msgid "Upcoming events"
+msgstr "Prochains Evènements"
+
+#: views/events.twig:66
+msgid "Past events"
+msgstr "Anciens événements"
+
+#: views/footer.twig:22
+msgid "Contact us"
+msgstr "Nous joindre"
+
+#: views/footer.twig:37
+msgid "Terms of use"
+msgstr "Mentions légales"
+
+#: views/footer.twig:38
+#, php-format
+msgid "© %s – Canada Research Chair on Digital Textualities."
+msgstr ""
+
+#: views/front-page.twig:10
+msgid "See all"
+msgstr "Voir tout"
+
+#: views/front-page.twig:23
+msgid "Voir tout"
+msgstr ""
+
+#: views/front-page.twig:31
+msgid "Latest projects"
+msgstr "Derniers projets"
+
+#: views/front-page.twig:32 views/front-page.twig:39
+msgid "See all projects"
+msgstr "Voir Tous les Projets"
+
+#: views/front-page.twig:47
+msgid "Latest publications"
+msgstr "Dernières publications"
+
+#: views/front-page.twig:48 views/front-page.twig:60
+msgid "See all publications"
+msgstr "Voir toutes les publications"
+
+#: views/front-page.twig:75
+msgid "Sections"
+msgstr "Rubriques"
+
+#: views/front-page.twig:76 views/front-page.twig:111
+msgid "See all sections"
+msgstr "Voir toutes les rubriques"
+
+#: views/front-page.twig:83
+msgid "Theory"
+msgstr "Théorie"
+
+#: views/front-page.twig:86
+msgid "Axis"
+msgstr "Axe"
+
+#: views/front-page.twig:89
+msgid "Research topics"
+msgstr ""
+
+#: views/partials/header-project.twig:4
+msgid "Back"
+msgstr "Retour"
+
+#: views/partials/single-publication-content.twig:20
+msgid "Posted"
+msgstr "Publié"
+
+#: views/partials/single-publication-content.twig:22
+msgid "on"
+msgstr "sur"
+
+#: views/partials/single-publication-content.twig:24
+#: views/partials/single-publication-content.twig:30
+msgid "le"
+msgstr ""
+
+#: views/partials/single-publication-content.twig:28
+msgid "Posted in"
+msgstr "Publié sur"
+
+#: views/partials/single-publication-content.twig:29
+#: views/partials/single-publication-content.twig:35
+msgid "Edition"
+msgstr "Edition"
+
+#: views/partials/single-publication-content.twig:43
+msgid "read on"
+msgstr "lire sur"
+
+#: views/publications.twig:14
+msgid "tout"
+msgstr ""
+
+#: views/publications.twig:31
+msgid "loading..."
+msgstr ""
+
+#: views/rubrics.twig:7 views/search.twig:101
+msgid "sections"
+msgstr ""
+
+#: views/rubrics.twig:22
+msgid "key-concept"
+msgstr ""
+
+#: views/search.twig:13 views/single-member.twig:28 views/single-member.twig:96
+#: views/single-rubric.twig:30
+msgid "publications"
+msgstr ""
+
+#: views/search.twig:19 views/single-member.twig:36
+#: views/single-member.twig:175 views/single-rubric.twig:32
+msgid "projects"
+msgstr ""
+
+#: views/search.twig:25 views/single-member.twig:44
+#: views/single-member.twig:201 views/single-rubric.twig:34
+msgid "events"
+msgstr ""
+
+#: views/search.twig:31
+msgid "members"
+msgstr ""
+
+#: views/search.twig:37
+msgid "filter"
+msgstr ""
+
+#: views/search.twig:48
+msgid "theory"
+msgstr ""
+
+#: views/search.twig:75
+msgid "label"
+msgstr ""
+
+#: views/search.twig:82
+msgid "delete all"
+msgstr ""
+
+#: views/search.twig:89
+msgid "title"
+msgstr ""
+
+#: views/search.twig:95
+msgid "author"
+msgstr ""
+
+#: views/search.twig:98
+msgid "date"
+msgstr ""
+
+#: views/search.twig:110
+msgid "No results"
+msgstr "Aucun résultats"
+
+#: views/search.twig:113
+msgid "Loading..."
+msgstr "Chargement..."
+
+#: views/single-event.twig:9 views/single-member.twig:8
+#: views/single-rubric.twig:45
+msgid "back"
+msgstr "retour"
+
+#: views/single-member.twig:73
+msgid "Highlight"
+msgstr ""
+
+#: views/single-member.twig:99
+msgid "Monographs"
+msgstr ""
+
+#: views/single-member.twig:123
+msgid "Books Section"
+msgstr ""
+
+#: views/single-member.twig:147
+msgid "Articles"
+msgstr ""
+
+#: views/single-publication.twig:10
+msgid "Scroll to discover more..."
+msgstr ""
+
+#: views/single-publication.twig:15
+msgid "No more publications"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Ecritures Numériques Theme"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "a WP Theme"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "HETIC"
+msgstr ""
