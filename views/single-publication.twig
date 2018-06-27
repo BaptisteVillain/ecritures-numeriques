@@ -1,7 +1,19 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="publication__container">
-		{% include "partials/single-publication-content.twig" %}
+	<div class="single-publication">
+		<div class="publication__container">
+			{% include "partials/single-publication-content.twig" %}
+		</div>
+		<div class="publication__scroll__container single__wrapper card__scroll">
+			<div class="publication__scroll single__container single__container--margin">
+				{{__('Scroll to discover more...', 'ecritures-numeriques')}}
+			</div>
+		</div>
+		<div class="publication__scroll__container single__wrapper card__end card--hide">
+			<div class="publication__scroll single__container single__container--margin">
+				{{__('No more publications', 'ecritures-numeriques')}}
+			</div>
+		</div>
 	</div>
 {% endblock %}

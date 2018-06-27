@@ -9,9 +9,11 @@ export default class LoadMore {
     this.page = 1
     this.date = vars.postDate
     this.id = vars.postID
-    this.posts = this.container.querySelectorAll('.publication-wrapper')
 
     this.select = {}
+
+    this.card_scroll = document.querySelector('.card__scroll')
+    this.card_end = document.querySelector('.card__end')
 
     window.addEventListener('scroll', () => {
       const scrollBottom = document.body.scrollHeight - document.documentElement.scrollTop - (window.innerHeight + this.footer.offsetHeight)
@@ -20,8 +22,6 @@ export default class LoadMore {
         this.addPost()
         this.wait = true
       }
-
-      this.getActive()
     })
   }
 
@@ -38,29 +38,17 @@ export default class LoadMore {
         res.data.data.posts.forEach(post => {
           this.container.insertAdjacentHTML('beforeend', post.content)
         })
-        this.posts = this.container.querySelectorAll('.single__wrapper')
         this.page += 1
         this.wait = false
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  }
 
-  getActive() {
-    let select = {}
-    this.posts.forEach(post => {
-      const { top } = post.getBoundingClientRect()
-      if (top < window.innerHeight / 2 && top > 0) {
-        select = {
-          title: post.dataset.title,
-          path: post.dataset.path
+        if (res.data.data.posts.length === 0) {
+          this.card_scroll.classList.add('card--hide')
+          this.card_end.classList.remove('card--hide')
         }
-      }
-    })
-
-    if (this.select.title !== select.title && select.title !== undefined) {
-      this.select = select
-    }
+      })
+      .catch(() => {
+        this.card_scroll.classList.add('card--hide')
+        this.card_end.classList.remove('card--hide')
+      })
   }
 }
