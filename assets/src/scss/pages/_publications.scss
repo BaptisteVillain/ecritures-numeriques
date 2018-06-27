@@ -1,5 +1,6 @@
 .publications {
   min-height: calc(100vh - 80px);
+  padding-bottom: 60px;
 }
 
 .publications__header {
@@ -143,7 +144,7 @@
 
 .top-block__wrapper,
 .publications__mid-down-block {
-  border: 1px solid $border-grey;
+  border: 1px solid $dark-grey;
   display: flex;
   flex-direction: row;
 }
@@ -154,7 +155,7 @@
 }
 
 .top-block__first {
-  border-right: 1px solid $border-grey;
+  border-right: 1px solid $dark-grey;
   padding: 40px 60px;
 }
 
@@ -167,7 +168,7 @@
 }
 
 .top-block__second__top {
-  border-bottom: 1px solid $border-grey;
+  border-bottom: 1px solid $dark-grey;
 }
 
 /* 
@@ -175,19 +176,26 @@
 */
 
 .publications__mid-top-block {
-  border: 1px solid $border-grey;
+  border: 1px solid $dark-grey;
   display: flex;
   flex-direction: row;
 }
 
 .mid-top-block {
-  padding: 40px 60px;
+  padding: 40px 60px 30px 60px;
+  display: flex;
+  flex-direction: column;
+  .publications__terms{
+    margin-top: auto;
+  }
 }
 
 .mid-top-block__second {
-  border-left: 1px solid $border-grey;
-  border-right: 1px solid $border-grey;
+  border-left: 1px solid $dark-grey;
+  border-right: 1px solid $dark-grey;
 }
+
+
 
 /*
 * Third major block
@@ -208,7 +216,7 @@
 }
 
 .mid-down-block:last-child {
-  border-left: 1px solid $border-grey;
+  border-left: 1px solid $dark-grey;
 }
 
 /*
@@ -216,7 +224,8 @@
 */
 
 .publications__last-block {
-  border: 1px solid $border-grey;
+  border: 1px solid $dark-grey;
+  border-bottom: none;
   border-right: none;
   display: flex;
   flex-direction: row;
@@ -228,8 +237,8 @@
 }
 
 .last-block {
-  border-bottom: 1px solid $border-grey;
-  border-right: 1px solid $border-grey;
+  border-bottom: 1px solid $dark-grey;
+  border-right: 1px solid $dark-grey;
   padding: 0px 60px 40px;
   width: calc(100% / 3);
   .publications__author {
