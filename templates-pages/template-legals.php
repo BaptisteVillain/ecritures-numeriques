@@ -6,8 +6,7 @@
 
 $context = Timber::get_context();
 
-$context['page'] = new Timber\Post();
-
+$context['post'] = new Timber\Post();
 
 Timber::render( 'legals.twig', $context );
  

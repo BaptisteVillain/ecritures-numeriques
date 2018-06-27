@@ -3,11 +3,61 @@
 {% block content %}
   <section class="legals">
     <div class="legals__container">
-      <h1 class="legals__title">Mentions légales</h1>
-      <div class="legals__paragraph">
-        <h2 class="legals__subtitles">Nos informations</h2>
-        <p class="legals__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quidem cupiditate eveniet inventore sunt corrupti repellendus tempore recusandae natus enim et repellat eius reprehenderit, explicabo quod quo. In asperiores consectetur praesentium.</p>
+      <h1 class="legals__title">{{__('Mentions légales')}}</h1>
+      <div class="legals__section">
+        <h2 class="legals__subtitles">{{__('Présentation du site')}}</h2>
+        <div class="legals__text">
+          {{post.get_field('legals_introduction')}}
+        </div>
+        <div class="legals__informations">
+          <div class="legals__informations__text">
+            <span class="legals_bold">{{__('Propriétaire')}}
+              :</span>
+            <span class="legals__informations__details">{{post.owner}}
+              -</span>
+            <span class="legals__informations__details">{{post.owner_address}}
+            </span>
+          </div>
+          <div class="legals__informations__text">
+            <span class="legals_bold">{{__('Créateur du site')}}
+              :</span>
+            <span class="legals__informations__details">{{post.creator}}
+              :</span>
+            <div class="legals__informations__details">{{post.get_field('creator_informations')}}
+            </div>
+          </div>
+          <div class="legals__informations__text">
+            <span class="legals_bold">{{__('Responsable de publication')}}
+              :</span>
+            <span class="legals__informations__details">{{post.publication_manager}}
+              -</span>
+            <a href="mailto:{{post.publication_manager_email}}" class="legals__informations__details">{{__('Le contacter')}}</a>
+          </div>
+          <div class="legals__informations__text">
+            <span class="legals_bold">{{__('Webmaster')}}
+              :</span>
+            <span class="legals__informations__details">{{post.webmaster}}
+              -</span>
+            <a href="mailto:{{post.webmaster_email}}" class="legals__informations__details">{{__('Le contacter')}}</a>
+          </div>
+          <div class="legals__informations__text">
+            <span class="legals_bold">{{__('Hébergeur')}}
+              :</span>
+            <span class="legals__informations__details">{{post.website_hosting_name}}
+              -</span>
+            <span class="legals__informations__details">{{post.website_hosting_address}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="legals__section">
+        <h2 class="legals__subtitles">{{__('Liens hypertextes et cookies')}}</h2>
+        <div class="legals__text">
+          {{post.get_field('cookies_informations')}}
+        </div>
       </div>
     </div>
+
   </section>
 {% endblock %}
