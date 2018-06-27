@@ -1,21 +1,23 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Project-Id-Version: Ecritures Numériques Theme\n"
-"POT-Creation-Date: 2018-06-27 15:41+0200\n"
-"PO-Revision-Date: 2018-06-27 17:13+0200\n"
+"POT-Creation-Date: 2018-06-27 23:17+0200\n"
+"PO-Revision-Date: 2018-06-27 23:18+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 2.0.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Last-Translator: \n"
-"Language: fr\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -23,9 +25,13 @@ msgstr ""
 msgid "Footer ("
 msgstr "Pied de page"
 
-#: inc/acf-add-options-page.php:35
+#: inc/acf-add-options-page.php:34
 msgid "Header ("
 msgstr "En-tête"
+
+#: inc/acf-add-options-page.php:51
+msgid "Site Pages ("
+msgstr ""
 
 #: lib/custom-types.php:14
 msgctxt "Post Type General Name"
@@ -584,13 +590,14 @@ msgstr "précédent"
 msgid "next"
 msgstr "suivant"
 
-#: views/components/single-header.twig:3
-msgid "retour"
-msgstr ""
+#: views/components/single-header.twig:3 views/single-event.twig:9
+#: views/single-member.twig:8 views/single-rubric.twig:37
+msgid "back"
+msgstr "retour"
 
-#: views/components/single-header.twig:7 views/rubrics.twig:16
-msgid "theories"
-msgstr "théories"
+#: views/components/single-header.twig:7 views/search.twig:48
+msgid "theory"
+msgstr "théorie"
 
 #: views/components/single-header.twig:9 views/rubrics.twig:20
 #: views/search.twig:50
@@ -607,8 +614,10 @@ msgid "axis"
 msgstr "axes"
 
 #: views/components/single-header.twig:23
-msgid "Accéder au projet"
-msgstr ""
+#, fuzzy
+#| msgid "See all projects"
+msgid "See the project"
+msgstr "Voir Tous les Projets"
 
 #: views/events.twig:9 views/front-page.twig:9
 msgid "Upcoming events"
@@ -622,7 +631,7 @@ msgstr "Anciens événements"
 msgid "Contact us"
 msgstr "Nous joindre"
 
-#: views/footer.twig:37
+#: views/footer.twig:37 views/legals.twig:6
 msgid "Terms of use"
 msgstr "Mentions légales"
 
@@ -631,13 +640,9 @@ msgstr "Mentions légales"
 msgid "© %s – Canada Research Chair on Digital Textualities."
 msgstr "© %s – Chaire de recherche du Canada sur les Écritures Numériques."
 
-#: views/front-page.twig:10
+#: views/front-page.twig:10 views/front-page.twig:23
 msgid "See all"
 msgstr "Voir tout"
-
-#: views/front-page.twig:23
-msgid "Voir tout"
-msgstr ""
 
 #: views/front-page.twig:31
 msgid "Latest projects"
@@ -675,9 +680,56 @@ msgstr "Axe"
 msgid "Research topics"
 msgstr "Objets de recherche"
 
+#: views/front-page.twig:133 views/front-page.twig:145
+msgid "views"
+msgstr ""
+
+#: views/legals.twig:8
+msgid "Website presentation"
+msgstr ""
+
+#: views/legals.twig:14
+msgid "Owner"
+msgstr ""
+
+#: views/legals.twig:22
+msgid "Website maker"
+msgstr ""
+
+#: views/legals.twig:30
+#, fuzzy
+#| msgctxt "Post Type Singular Name"
+#| msgid "Publication"
+msgid "Publication manager"
+msgstr "Publication"
+
+#: views/legals.twig:34 views/legals.twig:41
+#, fuzzy
+#| msgid "Contact us"
+msgid "Contact"
+msgstr "Nous joindre"
+
+#: views/legals.twig:37
+msgid "Webmaster"
+msgstr ""
+
+#: views/legals.twig:44
+msgid "Host"
+msgstr ""
+
+#: views/legals.twig:55
+msgid "Hypertext links and cookies"
+msgstr ""
+
 #: views/partials/header-project.twig:4
 msgid "Back"
 msgstr "Retour"
+
+#: views/partials/header-project.twig:7
+#, fuzzy
+#| msgid "See all sections"
+msgid "See the collection"
+msgstr "Voir toutes les rubriques"
 
 #: views/partials/single-publication-content.twig:20
 msgid "Posted"
@@ -689,7 +741,7 @@ msgstr "sur"
 
 #: views/partials/single-publication-content.twig:24
 #: views/partials/single-publication-content.twig:30
-msgid "le"
+msgid ","
 msgstr ""
 
 #: views/partials/single-publication-content.twig:28
@@ -706,8 +758,10 @@ msgid "read on"
 msgstr "lire sur"
 
 #: views/publications.twig:14
-msgid "tout"
-msgstr ""
+#, fuzzy
+#| msgid "See all"
+msgid "all"
+msgstr "Voir tout"
 
 #: views/publications.twig:31
 msgid "loading..."
@@ -717,22 +771,26 @@ msgstr "chargement..."
 msgid "sections"
 msgstr "rubriques"
 
+#: views/rubrics.twig:16
+msgid "theories"
+msgstr "théories"
+
 #: views/rubrics.twig:22
 msgid "key-concept"
 msgstr "concept-clé"
 
 #: views/search.twig:13 views/single-member.twig:28 views/single-member.twig:96
-#: views/single-rubric.twig:30
+#: views/single-rubric.twig:22
 msgid "publications"
 msgstr "publications"
 
 #: views/search.twig:19 views/single-member.twig:36
-#: views/single-member.twig:175 views/single-rubric.twig:32
+#: views/single-member.twig:175 views/single-rubric.twig:24
 msgid "projects"
 msgstr "projets"
 
 #: views/search.twig:25 views/single-member.twig:44
-#: views/single-member.twig:201 views/single-rubric.twig:34
+#: views/single-member.twig:201 views/single-rubric.twig:26
 msgid "events"
 msgstr "évènements"
 
@@ -743,10 +801,6 @@ msgstr "membres"
 #: views/search.twig:37
 msgid "filter"
 msgstr "filtrer"
-
-#: views/search.twig:48
-msgid "theory"
-msgstr "théorie"
 
 #: views/search.twig:75
 msgid "label"
@@ -775,11 +829,6 @@ msgstr "Aucun résultats"
 #: views/search.twig:113
 msgid "Loading..."
 msgstr "Chargement..."
-
-#: views/single-event.twig:9 views/single-member.twig:8
-#: views/single-rubric.twig:45
-msgid "back"
-msgstr "retour"
 
 #: views/single-member.twig:73
 msgid "Highlight"
