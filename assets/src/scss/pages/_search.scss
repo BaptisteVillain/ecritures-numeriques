@@ -302,4 +302,18 @@
   .card__rubrics {
     width: 25%;
   }
+  &.card--hide{
+    display: none;
+  }
+
+  &.card--no-result{
+    background: $white;
+    border: 1px solid $dark-grey;
+    margin-bottom: 20px;
+    width: 100%;
+    @include font($source, 1.3rem, 500, $dark-grey, uppercase, center);
+  }
+  &.card--loading{
+    @include font($source, 1.5rem, 600, $light-blue, uppercase, center);
+  }
 }

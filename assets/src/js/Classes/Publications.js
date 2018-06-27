@@ -10,8 +10,16 @@ export default class Publications {
     this.header_prev = container.querySelector('.header__nav--prev')
     this.header_next = container.querySelector('.header__nav--next')
     this.header_index = 0
-    this.header_offset = 5
-    this.header_offsetWidth = this.header_list.parentNode.offsetWidth / 5
+
+    this.card_loading = document.querySelector('.publications__loading')
+
+    if (window.innerWidth >= 900) {
+      this.header_offset = 5
+      this.header_offsetWidth = this.header_list.parentNode.offsetWidth / 5
+    } else {
+      this.header_offset = 1
+      this.header_offsetWidth = this.header_list.parentNode.offsetWidth
+    }
 
     this.filter = {}
 
@@ -91,9 +99,12 @@ export default class Publications {
       filter: this.filter
     }
 
+    this.posts_container.innerHTML = ''
+    this.card_loading.classList.remove('card--hide')
+
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
-        this.posts_container.innerHTML = ''
+        this.card_loading.classList.add('card--hide')
         this.posts_container.insertAdjacentHTML('beforeend', response.data.data.posts)
       })
   }

@@ -23,6 +23,9 @@ class Results {
 
     this.containerToFix = container.querySelectorAll('.taxonomy-fix')
 
+    this.cards_loading = container.querySelectorAll('.card--loading')
+    this.cards_no_results = container.querySelectorAll('.card--no-result')
+
     this.selected_tab = 0
     this.selected_filters = []
     this.available_filters = []
@@ -75,11 +78,11 @@ class Results {
     if (!element.classList.contains('filter--active')) {
       this.selected_filters.push(filter)
       this.addFilter(filter)
+      element.classList.add('filter--active')
     } else {
       this.removeFilter(filter)
+      element.classList.remove('filter--active')
     }
-
-    element.classList.toggle('filter--active')
   }
 
   addFilter(filter) {
@@ -161,14 +164,31 @@ class Results {
       filters: this.selected_filters
     }
 
+    this.results_container.forEach(container => {
+      container.innerHTML = ''
+    })
+
+    this.cards_loading.forEach(card => {
+      card.classList.remove('card--hide')
+    })
+    this.cards_no_results.forEach(card => {
+      card.classList.add('card--hide')
+    })
+
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
+        this.cards_loading.forEach(card => {
+          card.classList.add('card--hide')
+        })
         this.results_container.forEach((container, index) => {
-          container.innerHTML = ''
           this.results_count[index].innerHTML = response.data.data.results[index].length
           response.data.data.results[index].forEach(result => {
             container.insertAdjacentHTML('beforeend', result)
           })
+
+          if (response.data.data.results[index].length === 0) {
+            this.cards_no_results[index].classList.remove('card--hide')
+          }
         })
 
         this.available_filters = response.data.data.available_filters

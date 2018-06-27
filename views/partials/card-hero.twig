@@ -179,10 +179,6 @@
         <div class="grid__subcase"></div>
         <div class="grid__subcase">
           <svg width="20px" height="16px" viewbox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 50 (54983) - http://www.bohemiancoding.com/sketch -->
-            <title>right</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
             <g id="Toutes-les-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
               <g id="Desktop---Home" transform="translate(-992.000000, -303.000000)" fill="#FFFFFF" fill-rule="nonzero">
                 <g id="Landing">
@@ -237,10 +233,6 @@
         <div class="grid__subcase"></div>
         <div class="grid__subcase">
           <svg class="grid--hidden" width="24px" height="16px" viewbox="0 0 24 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
-            <title>enter</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
             <g id="Toutes-les-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
               <g id="Desktop---Home---Landing-Copy" transform="translate(-990.000000, -353.000000)" fill="#FFFFFF" fill-rule="nonzero">
                 <g id="Landing">
@@ -273,10 +265,6 @@
       <div class="grid__case grid__case--triple">
         <div class="grid__subcase">
           <svg class="grid--hidden" width="14px" height="22px" viewbox="0 0 14 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
-            <title>MAJ</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
             <g id="Toutes-les-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
               <g id="Desktop---Home---Landing-Copy" transform="translate(-278.000000, -401.000000)">
                 <g id="Landing">
@@ -332,10 +320,6 @@
         <div class="grid__subcase"></div>
         <div class="grid__subcase">
           <svg width="14px" height="17px" viewbox="0 0 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
-            <title>shift</title>
-            <desc>Created with Sketch.</desc>
-            <defs></defs>
             <g id="Toutes-les-pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.13">
               <g id="Desktop---Home---Landing-Copy" transform="translate(-996.000000, -455.000000)" fill="#FFFFFF" fill-rule="nonzero">
                 <g id="Landing">
@@ -393,10 +377,11 @@
     <!-- Row 10 -->
     <div class="grid__row grid__row__tab">
       <div class="grid__case grid--hidden">G</div>
-      <div class="grid__case grid--hidden">U</div>
-      <a href="{{ home_url }}/rubriques/media" class="grid__case grid__case--tab grid__case--tab--left">
+      {% for key, field in research_fields %}
+      <div class="grid__case grid--hidden {{ key > 0 ? 'grid__case--leftAdjacentBorder' : '' }}">{{letters[key]}}</div>
+      <a href="{{function('get_term_link', field)}}" class="grid__case grid__case--tab grid__case--tab--left">
         <div class="grid__subcase">
-          <h2>Média</h2>
+          <h2>{{field.name}}</h2>
         </div>
         <div class="grid__subcase">
           <div class="tab__arrow">
@@ -404,39 +389,7 @@
           </div>
         </div>
       </a>
-      <div class="grid__case grid__case--leftAdjacentBorder grid--hidden">C</div>
-      <a href="{{ home_url }}/rubriques/edition" class="grid__case grid__case--tab grid__case--tab--right">
-        <div class="grid__subcase">
-          <h2>Édition</h2>
-        </div>
-        <div class="grid__subcase">
-          <div class="tab__arrow">
-            >
-          </div>
-        </div>
-      </a>
-      <div class="grid__case grid__case--leftAdjacentBorder grid--hidden">F</div>
-      <a href="{{ home_url }}/rubriques/litterature" class="grid__case grid__case--tab grid__case--tab--left grid__case--tab--bottom">
-        <div class="grid__subcase">
-          <h2>Littérature</h2>
-        </div>
-        <div class="grid__subcase">
-          <div class="tab__arrow">
-            >
-          </div>
-        </div>
-      </a>
-      <div class="grid__case grid__case--leftAdjacentBorder grid--hidden"></div>
-      <a href="{{ home_url }}/rubriques/philosophie" class="grid__case grid__case--tab grid__case--tab--bottom grid__case--tab--right">
-        <div class="grid__subcase">
-          <h2>Philosophie</h2>
-        </div>
-        <div class="grid__subcase">
-          <div class="tab__arrow">
-            >
-          </div>
-        </div>
-      </a>
+      {% endfor %}
       <div class="grid__case grid__case--leftAdjacentBorder grid--hidden"></div>
       <div class="grid__case grid--hidden"></div>
       <div class="grid__case grid--hidden"></div>

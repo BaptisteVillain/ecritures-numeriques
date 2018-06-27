@@ -28,7 +28,7 @@
           </li>
           <li>
             <button class="header__button header__switch" data-index="3">
-              {{__('authors')}}
+              {{__('members')}}
               <span>{{results[3]|length}}</span>
             </button>
           </li>
@@ -106,6 +106,12 @@
             {% include './partials/card-result.twig' %}
           {% endfor %}
         </ul>
+        <div class="card card--no-result {{ result is empty ? '' : 'card--hide' }}">
+          {{__('No results', 'ecritures-numeriques')}}
+        </div>
+        <div class="card card--loading card--hide">
+          {{__('Loading...', 'ecritures-numeriques')}}
+        </div>
       </div>
       {% endfor %}
     </div>

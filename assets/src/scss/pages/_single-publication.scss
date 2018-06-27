@@ -1,5 +1,7 @@
-.publication__container {
+.single-publication{
   min-height: 100vh;
+}
+.publication__container {
   .publication__header {
     display: flex;
     flex-direction: column;
@@ -109,5 +111,18 @@
       top: 0;
       width: calc(100% - 130px);
     }
+  }
+}
+
+.publication__scroll{
+  background: $light-grey;
+  padding: 60px;
+  @include font($source, 1.4rem, 600, $dark-blue, uppercase, center);
+}
+
+.card__scroll, .card__end{
+  padding-bottom: 60px;
+  &.card--hide{
+    display: none;
   }
 }
