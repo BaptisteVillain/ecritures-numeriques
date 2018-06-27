@@ -1,19 +1,65 @@
 <li class="list__card">
-  <a class="card"href="{{post.link}}">
-    <div class="card__title">
-      {{ post.post_title }}
-    </div>
-    <div class="card__domain">
-      Revue française des sciences de l’information et de la communication
-    </div>
-    <div class="card__authors">
-      Peppe Cavallari
-    </div>
-    <div class="card__date">
-      [01-08-17]
-    </div>
-    <div class="card__rubrics">
-      {{ post.terms[0].name }}
-    </div>
-  </a>
+  {% if post.post_type == 'publication' %}
+    <a class="card"href="{{post.link}}">
+      <div class="card__publication-title">
+        {{ post.post_title }}
+      </div>
+      <div class="card__item card__publication-domain">
+        {{ post.domain }}
+      </div>
+      <div class="card__item card__publication-authors">
+        {{ post.authors[0]}}  {% if post.authors|length > 1 %}- [{{post.authors|length}}] {% endif %}
+      </div>
+      <div class="card__item card__publication-date">
+        {{post.post_date|date('[d-m-y]')}}
+      </div>
+      <div class="card__item card__publication-rubrics">
+        {{ post.terms[0].name }} {% if post.terms|length > 1 %}- [{{post.terms|length}}] {% endif %}
+      </div>
+    </a>
+  {% elseif post.post_type == 'project' %}
+    <a class="card" href="{{post.path}}">
+      <div class="card__project-title">
+        {{post.post_title}}
+      </div>
+      <div class="card__item card__project-description">
+        {{post.get_field('content')|excerpt(16)}}
+      </div>
+      <div class="card__item card__project-date">
+        {{post.post_date|date('[d-m-y]')}}
+      </div>
+    <a>
+  {% elseif post.post_type == 'event' %}
+    <a class="card" href="{{post.path}}">
+      <div class="card__event-title">
+        {{post.post_title}}
+      </div>
+      <div class="card__item card__event-date">
+        {{post.date_start|date('d M [H')}}h] - {{post.date_end|date('d M [H')}}h]
+      </div>
+      <div class="card__item card__event-place">
+        {{post.event_venue}}
+      </div>
+      <div class="card__item card__publication-rubrics">
+        {{ post.terms[0].name }} {% if post.terms|length > 1 %}- [{{post.terms|length}}] {% endif %}
+      </div>
+    <a>
+  {% else %}
+    <a class="card" href="{{post.path}}">
+      <div class="card__member-name">
+        <div class="member__photo">
+          <img src="{{TimberImage(post.photo).src}}" alt="{{post.post_title}}">
+        </div>
+        {{post.post_title}}
+      </div>
+      <div class="card__item card__member-title">
+        {{post.posts[0]}}
+      </div>
+      <div class="card__item card__member-works">
+        {% if post.publications|length > 0 %}{{post.publications|length}} {{__('publications', 'ecritures-numeriques')}} - {% endif %}
+        {% if post.projects|length > 0 %}{{post.projects|length}} {{__('projects', 'ecritures-numeriques')}} - {% endif %}
+        {% if post.events|length > 0 %}{{post.events|length}} {{__('events', 'ecritures-numeriques')}}{% endif %}
+      </div>
+    <a>
+  {% endif %}
 </li>

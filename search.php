@@ -56,5 +56,4 @@ foreach ($context['results'] as $key => $result) {
 }
 
 
-
 Timber::render( 'search.twig', $context );

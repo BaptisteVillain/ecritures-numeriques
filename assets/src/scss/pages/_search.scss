@@ -224,21 +224,55 @@
         padding-top: 30px;
 
         @include font($source, 1.2rem, 400, $dark-grey, capitalize, inherit);
-        &.item--title {
+        &.item-publication--title {
           margin-left: 0px;
           width: 35%;
         }
-        &.item--domain {
+        &.item-publication--domain {
           width: 20%;
         }
-        &.item--authors {
+        &.item-publication--authors {
           width: 10%;
         }
-        &.item--date {
+        &.item-publication--date {
           width: 10%;
         }
-        &.item--rubrics {
+        &.item-publication--rubrics {
           width: 25%;
+        }
+        &.item-project--title{
+          width: 40%;
+          margin-left: 0px;
+        }
+        &.item-project--description{
+          width: 40%;
+        }
+        &.item-project--date{
+          width: 20%;
+        }
+        &.item-event--title{
+          margin-left: 0px;
+          width: 35%;
+        }
+        &.item-event--date{
+          width: 20%;
+        }
+        &.item-event--place{
+          width: 20%;
+        }
+        &.item-event--rubrics{
+          width: 25%;
+        }
+        &.item-member--name{
+          width: 50%;
+          margin-left: 0;
+
+        }
+        &.item-member--title{
+          width: 20%;
+        }
+        &.item-member--works{
+          width: 30%;
         }
       }
     }
@@ -270,38 +304,73 @@
   width: 100%;
 
   flex-wrap: nowrap;
-  :not(.card__rubrics) {
+  :not(.card__publication-rubrics) {
     display: flex;
     flex-direction: row;
     height: 100%;
   }
-  .card__title {
+  .card__publication-title, .card__project-title, .card__event-title, .card__member-name{
     line-height: 1.5;
     width: 35%;
 
     @include font($hind, 1.4rem, 500, $black, capitalize, left);
   }
-  .card__domain,
-  .card__authors,
-  .card__date,
-  .card__rubrics {
+  .card__item {
     line-height: 1.7;
     margin-left: 30px;
 
     @include font($hind, 1.2rem, 400, $dark-grey, capitalize, left);
   }
-  .card__domain {
+  .card__publication-domain {
     width: 20%;
   }
-  .card__authors {
+  .card__publication-authors {
     width: 10%;
   }
-  .card__date {
+  .card__publication-date {
     width: 10%;
   }
-  .card__rubrics {
+  .card__publication-rubrics {
     width: 25%;
   }
+  .card__project-title {
+    width: 40%;
+  }
+  .card__project-description {
+    width: 40%;
+  }
+  .card__project-date {
+    width: 20%;
+  }
+  .card__event-date {
+    width: 20%;
+  }
+  .card__event-place {
+    width: 20%;
+  }
+  .card__member-name{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .member__photo{
+      width: 150px;
+      height: 80px;
+      margin-right: 20px;
+      img{
+        object-fit: cover;
+      }
+    }
+  }
+  .card__member-title{
+    width: 20%;
+  }
+  .card__member-works{
+    width: 30%;
+  }
+
+
+
   &.card--hide{
     display: none;
   }
