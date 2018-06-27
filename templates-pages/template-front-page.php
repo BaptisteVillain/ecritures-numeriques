@@ -187,6 +187,12 @@ else{
 }
 
 $context['letters'] = array('U', 'C', 'F', '');
+$context['research_fields_class'] = array(
+  'grid__case--tab--left',
+  'grid__case--tab--right',
+  'grid__case--tab--left grid__case--tab--bottom',
+  'grid__case--tab--bottom grid__case--tab--right');
+
 $context['research_fields'] = Timber::get_terms(array(
   'taxonomy' => array('research_field'),
   'hide_empty' => false,
