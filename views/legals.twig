@@ -3,15 +3,15 @@
 {% block content %}
   <section class="legals">
     <div class="legals__container">
-      <h1 class="legals__title">{{__('Mentions légales')}}</h1>
+      <h1 class="legals__title">{{__('Terms of use', 'ecritures-numeriques')}}</h1>
       <div class="legals__section">
-        <h2 class="legals__subtitles">{{__('Présentation du site')}}</h2>
+        <h2 class="legals__subtitles">{{__('Website presentation', 'ecritures-numeriques')}}</h2>
         <div class="legals__text">
           {{post.get_field('legals_introduction')}}
         </div>
         <div class="legals__informations">
           <div class="legals__informations__text">
-            <span class="legals_bold">{{__('Propriétaire')}}
+            <span class="legals_bold">{{__('Owner', 'ecritures-numeriques')}}
               :</span>
             <span class="legals__informations__details">{{post.owner}}
               -</span>
@@ -19,7 +19,7 @@
             </span>
           </div>
           <div class="legals__informations__text">
-            <span class="legals_bold">{{__('Créateur du site')}}
+            <span class="legals_bold">{{__('Website maker', 'ecritures-numeriques')}}
               :</span>
             <span class="legals__informations__details">{{post.creator}}
               :</span>
@@ -27,21 +27,21 @@
             </div>
           </div>
           <div class="legals__informations__text">
-            <span class="legals_bold">{{__('Responsable de publication')}}
+            <span class="legals_bold">{{__('Publication manager', 'ecritures-numeriques')}}
               :</span>
             <span class="legals__informations__details">{{post.publication_manager}}
               -</span>
-            <a href="mailto:{{post.publication_manager_email}}" class="legals__informations__details">{{__('Le contacter')}}</a>
+            <a href="mailto:{{post.publication_manager_email}}" class="legals__informations__details">{{__('Contact', 'ecritures-numeriques')}}</a>
           </div>
           <div class="legals__informations__text">
-            <span class="legals_bold">{{__('Webmaster')}}
+            <span class="legals_bold">{{__('Webmaster', 'ecritures-numeriques')}}
               :</span>
             <span class="legals__informations__details">{{post.webmaster}}
               -</span>
-            <a href="mailto:{{post.webmaster_email}}" class="legals__informations__details">{{__('Le contacter')}}</a>
+            <a href="mailto:{{post.webmaster_email}}" class="legals__informations__details">{{__('Contact', 'ecritures-numeriques')}}</a>
           </div>
           <div class="legals__informations__text">
-            <span class="legals_bold">{{__('Hébergeur')}}
+            <span class="legals_bold">{{__('Host', 'ecritures-numeriques')}}
               :</span>
             <span class="legals__informations__details">{{post.website_hosting_name}}
               -</span>
@@ -52,7 +52,7 @@
       </div>
 
       <div class="legals__section">
-        <h2 class="legals__subtitles">{{__('Liens hypertextes et cookies')}}</h2>
+        <h2 class="legals__subtitles">{{__('Hypertext links and cookies', 'ecritures-numeriques')}}</h2>
         <div class="legals__text">
           {{post.get_field('cookies_informations')}}
         </div>
