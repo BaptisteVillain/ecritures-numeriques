@@ -68,7 +68,9 @@
         </p>
 
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          <div class="publications__terms">
+            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          </div>
         {% endif %}
       </div>
 
@@ -86,7 +88,9 @@
         </p>
 
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          <div class="publications__terms">
+            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          </div>
         {% endif %}
       </div>
 
@@ -102,9 +106,10 @@
         <p class="publications__content">
           {{post.custom.content|excerpt(20)}}
         </p>
-
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          <div class="publications__terms">
+            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          </div>
         {% endif %}
       </div>
     </div>
