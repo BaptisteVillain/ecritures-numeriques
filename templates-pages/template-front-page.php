@@ -6,7 +6,6 @@
 
 $context = Timber::get_context();
 
-$context['home_url'] = get_home_url();
 
 /**
  * Links
@@ -18,7 +17,7 @@ $context['path_rubrics'] = get_permalink(7460);
 /**
  * Get Page Fields
  */
-$context['page'] = $post;
+$context['page'] = new Timber\Post();
 
  /**
   * Get Hero title traduction
@@ -188,6 +187,12 @@ else{
 }
 
 $context['letters'] = array('U', 'C', 'F', '');
+$context['research_fields_class'] = array(
+  'grid__case--tab--left',
+  'grid__case--tab--right',
+  'grid__case--tab--left grid__case--tab--bottom',
+  'grid__case--tab--bottom grid__case--tab--right');
+
 $context['research_fields'] = Timber::get_terms(array(
   'taxonomy' => array('research_field'),
   'hide_empty' => false,

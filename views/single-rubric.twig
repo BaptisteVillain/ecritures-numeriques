@@ -2,20 +2,12 @@
 
 {% block content %}
   <div class="taxonomy__container">
-    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': '#'} %}
+    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': site_pages.all_sections} %}
     <div class="taxonomy__wrapper">
       <div class="taxonomy__about">
         <p class="taxonomy__content">
           {{term.description}}
         </p>
-        {# <div class="taxonomy__discovers">
-					<h4>{{__('découvrir aussi')}}</h4>
-					<ul>
-						<li>Espace numérique</li>
-						<li>Espace numérique</li>
-						<li>Espace numérique</li>
-					</ul>
-				</div> #}
         {% include "components/single-footer.twig" with {'previous_path': function('term_link', term.previous), 'previous_name': term.previous.name,'next_path': function('term_link', term.next), 'next_name': term.next.name} %}
       </div>
       <div class="taxonomy__related">
