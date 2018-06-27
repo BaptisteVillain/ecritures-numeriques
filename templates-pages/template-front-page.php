@@ -6,7 +6,6 @@
 
 $context = Timber::get_context();
 
-$context['home_url'] = get_home_url();
 
 /**
  * Links
@@ -18,7 +17,7 @@ $context['path_rubrics'] = get_permalink(7460);
 /**
  * Get Page Fields
  */
-$context['page'] = $post;
+$context['page'] = new Timber\Post();
 
  /**
   * Get Hero title traduction

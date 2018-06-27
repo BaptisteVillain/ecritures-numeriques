@@ -38,6 +38,9 @@ class Site extends Timber\Site {
 				$context['footer']['socials'][$key]['svg'] = file_get_contents($social['icon']);
 			}
 		}
+		
+		/* get site pages content */
+		$context['site_pages'] = get_fields(pll_current_language('slug'));
 
 		$context['site'] = $this;
 		return $context;
