@@ -95,7 +95,7 @@
 .publications__posts {
   margin: 0 $padding-main;
   .single-tags {
-    padding: 40px 0 0;
+    padding: 30px 0 0;
   }
 }
 
@@ -106,26 +106,26 @@
 .publications__title {
   padding: 20px 0;
 
-  @include font($hind, 1.8rem, 700, $dark-blue, inherit, left);
+  @include font($hind, 1.8rem, 500, $black, inherit, left);
 }
 
 .publications__credits {
-  @include font($hind, 1.2rem, 400, $dark-grey, inherit, left);
+  @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
   h3,
   span {
     display: inline-block;
 
-    @include font($hind, 1.2rem, 400, $dark-grey, inherit, left);
+    @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
   }
   .publications__credits__domain {
     font-style: italic;
 
-    @include font($cabin, 1.2rem, 400, $dark-grey, inherit, left);
+    @include font($cabin, 1.4rem, 400, $dark-grey, inherit, left);
   }
 }
 
 .publications__content {
-  padding: 40px 0;
+  padding: 30px 0 0 0;
 
   @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
 }
@@ -160,7 +160,7 @@
 }
 
 .top-block__first__title {
-  @include font($hind, 2.6rem, 700, $dark-blue, inherit, left);
+  @include font($hind, 2.6rem, 500, $black, inherit, left);
 } // Right side of the major block
 .top-block__second__top,
 .top-block__second__down {
