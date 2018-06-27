@@ -1,5 +1,158 @@
 {% for post in posts %}
-  <div>
-    {{post.title}}
-  </div>
-{% endfor %}
+  {% if loop.index == 1 %}
+    <!-- First major block -->
+    <div class="publications__top-block">
+      <div class="top-block__wrapper">
+        <div class="top-block__first">
+          <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+          <h1 class="publications__title top-block__first__title">{{post.title}}</h1>
+          <div class="publications__credits">
+            <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+            -
+            <span class="publications__credits__date">[15 Dec 2017]</span>
+          </div>
+          <p class="publications__content">
+            {{post.custom.content}}
+          </p>
+
+          {% if post.terms is not empty %}
+            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          {% endif %}
+        </div>
+
+      {% elseif loop.index == 2 %}
+        <div class="top-block__second">
+          <div class="top-block__second__top">
+            <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+            <h1 class="publications__title">{{post.title}}</h1>
+            <div class="publications__credits">
+              <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+              -
+              <span class="publications__credits__date">[15 Dec 2017]</span>
+            </div>
+            {% if post.terms is not empty %}
+              {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% endif %}
+          </div>
+
+        {% elseif loop.index == 3 %}
+          <div class="top-block__second__down">
+            <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+            <h1 class="publications__title">{{post.title}}</h1>
+            <div class="publications__credits">
+              <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+              -
+              <span class="publications__credits__date">[15 Dec 2017]</span>
+            </div>
+            {% if post.terms is not empty %}
+              {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second major block -->
+  {% elseif loop.index == 4 %}
+    <div class="publications__mid-top-block">
+      <div class="mid-top-block mid-top-block__first">
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+        <p class="publications__content">
+          {{post.custom.content|excerpt(20)}}
+        </p>
+
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+      </div>
+
+    {% elseif loop.index == 5 %}
+      <div class="mid-top-block mid-top-block__second">
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+        <p class="publications__content">
+          {{post.custom.content|excerpt(20)}}
+        </p>
+
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+      </div>
+
+    {% elseif loop.index == 6 %}
+      <div class="mid-top-block mid-top-block__third">
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+        <p class="publications__content">
+          {{post.custom.content|excerpt(20)}}
+        </p>
+
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Third major block -->
+  {% elseif loop.index == 7 %}
+    <div class="publications__mid-down-block">
+      <div class="mid-down-block">
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+      </div>
+    {% elseif loop.index == 8 %}
+      <div class="mid-down-block">
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+      </div>
+    </div>
+    <!-- Last block -->
+    <div class="publications__last-block">
+    {% else %}
+      <div class="last-block">
+        {% if post.terms is not empty %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+        {% endif %}
+        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
+        <h1 class="publications__title">{{post.title}}</h1>
+        <div class="publications__credits">
+          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+          -
+          <span class="publications__credits__date">[15 Dec 2017]</span>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
