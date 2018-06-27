@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Ecritures Numériques Theme\n"
-"POT-Creation-Date: 2018-06-27 15:41+0200\n"
+"POT-Creation-Date: 2018-06-27 23:17+0200\n"
 "PO-Revision-Date: 2018-06-27 15:40+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,8 +25,12 @@ msgstr ""
 msgid "Footer ("
 msgstr ""
 
-#: inc/acf-add-options-page.php:35
+#: inc/acf-add-options-page.php:34
 msgid "Header ("
+msgstr ""
+
+#: inc/acf-add-options-page.php:51
+msgid "Site Pages ("
 msgstr ""
 
 #: lib/custom-types.php:14
@@ -586,12 +590,13 @@ msgstr ""
 msgid "next"
 msgstr ""
 
-#: views/components/single-header.twig:3
-msgid "retour"
+#: views/components/single-header.twig:3 views/single-event.twig:9
+#: views/single-member.twig:8 views/single-rubric.twig:37
+msgid "back"
 msgstr ""
 
-#: views/components/single-header.twig:7 views/rubrics.twig:16
-msgid "theories"
+#: views/components/single-header.twig:7 views/search.twig:48
+msgid "theory"
 msgstr ""
 
 #: views/components/single-header.twig:9 views/rubrics.twig:20
@@ -609,7 +614,7 @@ msgid "axis"
 msgstr ""
 
 #: views/components/single-header.twig:23
-msgid "Accéder au projet"
+msgid "See the project"
 msgstr ""
 
 #: views/events.twig:9 views/front-page.twig:9
@@ -624,7 +629,7 @@ msgstr ""
 msgid "Contact us"
 msgstr ""
 
-#: views/footer.twig:37
+#: views/footer.twig:37 views/legals.twig:6
 msgid "Terms of use"
 msgstr ""
 
@@ -633,12 +638,8 @@ msgstr ""
 msgid "© %s – Canada Research Chair on Digital Textualities."
 msgstr ""
 
-#: views/front-page.twig:10
+#: views/front-page.twig:10 views/front-page.twig:23
 msgid "See all"
-msgstr ""
-
-#: views/front-page.twig:23
-msgid "Voir tout"
 msgstr ""
 
 #: views/front-page.twig:31
@@ -677,8 +678,48 @@ msgstr ""
 msgid "Research topics"
 msgstr ""
 
+#: views/front-page.twig:133 views/front-page.twig:145
+msgid "views"
+msgstr ""
+
+#: views/legals.twig:8
+msgid "Website presentation"
+msgstr ""
+
+#: views/legals.twig:14
+msgid "Owner"
+msgstr ""
+
+#: views/legals.twig:22
+msgid "Website maker"
+msgstr ""
+
+#: views/legals.twig:30
+msgid "Publication manager"
+msgstr ""
+
+#: views/legals.twig:34 views/legals.twig:41
+msgid "Contact"
+msgstr ""
+
+#: views/legals.twig:37
+msgid "Webmaster"
+msgstr ""
+
+#: views/legals.twig:44
+msgid "Host"
+msgstr ""
+
+#: views/legals.twig:55
+msgid "Hypertext links and cookies"
+msgstr ""
+
 #: views/partials/header-project.twig:4
 msgid "Back"
+msgstr ""
+
+#: views/partials/header-project.twig:7
+msgid "See the collection"
 msgstr ""
 
 #: views/partials/single-publication-content.twig:20
@@ -691,7 +732,7 @@ msgstr ""
 
 #: views/partials/single-publication-content.twig:24
 #: views/partials/single-publication-content.twig:30
-msgid "le"
+msgid ","
 msgstr ""
 
 #: views/partials/single-publication-content.twig:28
@@ -708,7 +749,7 @@ msgid "read on"
 msgstr ""
 
 #: views/publications.twig:14
-msgid "tout"
+msgid "all"
 msgstr ""
 
 #: views/publications.twig:31
@@ -719,22 +760,26 @@ msgstr ""
 msgid "sections"
 msgstr ""
 
+#: views/rubrics.twig:16
+msgid "theories"
+msgstr ""
+
 #: views/rubrics.twig:22
 msgid "key-concept"
 msgstr ""
 
 #: views/search.twig:13 views/single-member.twig:28 views/single-member.twig:96
-#: views/single-rubric.twig:30
+#: views/single-rubric.twig:22
 msgid "publications"
 msgstr ""
 
 #: views/search.twig:19 views/single-member.twig:36
-#: views/single-member.twig:175 views/single-rubric.twig:32
+#: views/single-member.twig:175 views/single-rubric.twig:24
 msgid "projects"
 msgstr ""
 
 #: views/search.twig:25 views/single-member.twig:44
-#: views/single-member.twig:201 views/single-rubric.twig:34
+#: views/single-member.twig:201 views/single-rubric.twig:26
 msgid "events"
 msgstr ""
 
@@ -744,10 +789,6 @@ msgstr ""
 
 #: views/search.twig:37
 msgid "filter"
-msgstr ""
-
-#: views/search.twig:48
-msgid "theory"
 msgstr ""
 
 #: views/search.twig:75
@@ -776,11 +817,6 @@ msgstr ""
 
 #: views/search.twig:113
 msgid "Loading..."
-msgstr ""
-
-#: views/single-event.twig:9 views/single-member.twig:8
-#: views/single-rubric.twig:45
-msgid "back"
 msgstr ""
 
 #: views/single-member.twig:73
