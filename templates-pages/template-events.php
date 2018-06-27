@@ -8,11 +8,11 @@ $context = Timber::get_context();
 
 // Request for only upcoming events
 $args = array(
-// Get post type project
+// Get post type event
 'post_type' => 'event',
 // Get all posts
 'posts_per_page' => -1,
-// Order by post date
+// Order by post end date
 'orderby' => array(
     'date_end' => 'DESC'
 ),
@@ -28,7 +28,7 @@ $args = array(
 
 // Request for only past events
 $args_past = array(
-// Get post type project
+// Get post type event
 'post_type' => 'event',
 // Get all posts
 'posts_per_page' => -1,
@@ -48,11 +48,11 @@ $args_past = array(
 
 // Request for only highlighted events
 $args_highlight = array(
-// Get post type project
+// Get post type event
 'post_type' => 'event',
 // Get all posts
 'posts_per_page' => -1,
-// Order by post date
+// Order by highlighted events
 'orderby' => 'highlight_event',
 'meta_query' => array(
         array(
