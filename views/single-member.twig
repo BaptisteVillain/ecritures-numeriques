@@ -22,16 +22,28 @@
         <div class="resume__section">
           <ul class="resume__works">
             {% if member.publications | length > 0 %}
-              <li>{{member.publications|length}}
-                {{__('publications')}}</li>
+              <li>
+                <button class="button__anchor">
+                  {{member.publications|length}}
+                  {{__('publications')}}
+                </button>
+              </li>
             {% endif %}
             {% if member.projects | length > 0 %}
-              <li>{{member.projects|length}}
-                {{__('projects')}}</li>
+              <li>
+                <button class="button__anchor">
+                  {{member.projects|length}}
+                  {{__('projects')}}
+                </button>
+              </li>
             {% endif %}
             {% if member.events | length > 0 %}
-              <li>{{member.events|length}}
-                {{__('events')}}</li>
+              <li>
+                <button class="button__anchor">
+                  {{member.events|length}}
+                  {{__('events')}}
+                </button>
+              </li>
             {% endif %}
           </ul>
         </div>
@@ -108,7 +120,7 @@
                 {% endif %}
               {% endfor %}
               <li class="list__section">
-                {{__('Books Sections')}}
+                {{__('Books Section')}}
               </li>
               {% for post in member.publications %}
                 {% if post.type == 'bookSection' %}

@@ -4,6 +4,7 @@ import TaxonomyTabs from './Classes/TaxonomyTabs'
 import LoadMore from './Classes/LoadMore'
 import Results from './Classes/Results'
 import Publications from './Classes/Publications'
+import Member from './Classes/Member'
 
 
 const header = new Header(document.querySelector('.site-header'))
@@ -30,5 +31,8 @@ if (document.querySelector('.results')) {
 
 if (document.querySelector('.publications')) {
   const publications = new Publications(document.querySelector('.publications'))
-  console.log(publications)
+}
+
+if (document.querySelector('.member')) {
+  const member = new Member(document.querySelector('.member'))
 }
