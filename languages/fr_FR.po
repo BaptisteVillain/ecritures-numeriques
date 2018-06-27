@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ecritures Numériques Theme\n"
 "POT-Creation-Date: 2018-06-27 23:17+0200\n"
-"PO-Revision-Date: 2018-06-27 23:18+0200\n"
+"PO-Revision-Date: 2018-06-27 23:59+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -23,15 +23,15 @@ msgstr ""
 
 #: inc/acf-add-options-page.php:17
 msgid "Footer ("
-msgstr "Pied de page"
+msgstr "Pied de page ("
 
 #: inc/acf-add-options-page.php:34
 msgid "Header ("
-msgstr "En-tête"
+msgstr "En-tête ("
 
 #: inc/acf-add-options-page.php:51
 msgid "Site Pages ("
-msgstr ""
+msgstr "Pages du site ("
 
 #: lib/custom-types.php:14
 msgctxt "Post Type General Name"
@@ -682,19 +682,19 @@ msgstr "Objets de recherche"
 
 #: views/front-page.twig:133 views/front-page.twig:145
 msgid "views"
-msgstr ""
+msgstr "vues"
 
 #: views/legals.twig:8
 msgid "Website presentation"
-msgstr ""
+msgstr "Présentation du site"
 
 #: views/legals.twig:14
 msgid "Owner"
-msgstr ""
+msgstr "Propriétaire"
 
 #: views/legals.twig:22
 msgid "Website maker"
-msgstr ""
+msgstr "Créateur du site"
 
 #: views/legals.twig:30
 #, fuzzy
@@ -711,15 +711,15 @@ msgstr "Nous joindre"
 
 #: views/legals.twig:37
 msgid "Webmaster"
-msgstr ""
+msgstr "Webmaster"
 
 #: views/legals.twig:44
 msgid "Host"
-msgstr ""
+msgstr "Hébergeur"
 
 #: views/legals.twig:55
 msgid "Hypertext links and cookies"
-msgstr ""
+msgstr "Liens hypertextes et cookies"
 
 #: views/partials/header-project.twig:4
 msgid "Back"
@@ -742,7 +742,7 @@ msgstr "sur"
 #: views/partials/single-publication-content.twig:24
 #: views/partials/single-publication-content.twig:30
 msgid ","
-msgstr ""
+msgstr ","
 
 #: views/partials/single-publication-content.twig:28
 msgid "Posted in"
@@ -758,10 +758,8 @@ msgid "read on"
 msgstr "lire sur"
 
 #: views/publications.twig:14
-#, fuzzy
-#| msgid "See all"
 msgid "all"
-msgstr "Voir tout"
+msgstr "voir tout"
 
 #: views/publications.twig:31
 msgid "loading..."
