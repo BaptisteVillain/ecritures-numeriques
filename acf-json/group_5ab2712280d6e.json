@@ -25,29 +25,10 @@
             "ui": 1
         },
         {
-            "key": "field_5b2778eb5de51",
-            "label": "highlighted_project",
-            "name": "highlighted_project",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5b27bec6d0e3a",
-            "label": "Number",
-            "name": "id_number",
-            "type": "number",
+            "key": "field_5b310ee5ce6d4",
+            "label": "Link",
+            "name": "project_link",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -57,12 +38,7 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "placeholder": ""
         },
         {
             "key": "field_5b1d3a7065dbe",
@@ -107,6 +83,46 @@
             "max_size": "",
             "mime_types": "",
             "default_value": 8365
+        },
+        {
+            "key": "field_5b2778eb5de51",
+            "label": "Highlighted",
+            "name": "highlighted_project",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5b27bec6d0e3a",
+            "label": "Position",
+            "name": "id_number",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         },
         {
             "key": "field_5ab27122845d9",
@@ -204,5 +220,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529501143
+    "modified": 1529944967
 }
