@@ -4,7 +4,7 @@
 
 > This theme works with the Zotsync custom made Wordpress plugin.
 
-![Image of Écritures numériques](https://github.com/BaptisteVillain/ecritures-numeriques/images/home.png)
+![Image of Écritures numériques](https://github.com/BaptisteVillain/ecritures-numeriques/blob/master/images/home.png)
 
 ## Table of contents
 
