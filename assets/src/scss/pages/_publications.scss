@@ -76,3 +76,15 @@
     }
   }
 }
+
+.publications__loading{
+  width: 100%;
+  max-width: 500px;
+  padding: 60px;
+  margin: 30px auto;
+  background: $light-grey;
+  @include font($source, 1.5rem, 600, $light-blue, uppercase, center);
+  &.card--hide{
+    display: none;
+  }
+}
