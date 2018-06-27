@@ -1,34 +1,75 @@
-# Timber Starter Theme (Tackle Box version)
+# Wordpress Écritures numériques
 
-With comments!
+> Theme Wordpress for the Research chair of Canada of Digital textualities (Chaire de recherche du Canada sur les Écritures numériques).
 
-## What's here?
+> This theme works with the Zotsync custom made Wordpress plugin.
 
-`assets/` contains static front-end files and images. In other words, your Sass files, JS files, SVGs, or any PNGs would live here.
+![Image of Écritures numériques](https://github.com/BaptisteVillain/ecritures-numeriques/images/home.png)
 
-`acf-json/` contains JSON files for tracking Advanced Custom Fields. This is incredibly useful for version control. After cloning this repository, you can go into Custom Fields from the Dashboard and select "Sync" to import these custom fields into your theme.
+## Table of contents
 
-`lib/` contains files for custom post type arguments and taxonomies. These are added to WordPress inside functions.php and could be included there, but are separated into other files to keep functions.php a bit cleaner.
+- [Getting started](https://github.com/BaptisteVillain/ecritures-numeriques#getting-started)
+  - Prerequisites
+  - Installing
+- [Usage](https://github.com/BaptisteVillain/ecritures-numeriques#usage)
+- [Built with](https://github.com/BaptisteVillain/ecritures-numeriques#build-with)
+- [Features](https://github.com/BaptisteVillain/ecritures-numeriques#features)
+- [Authors](https://github.com/BaptisteVillain/ecritures-numeriques#authors)
 
-`views/` contains all of your Twig templates. These correspond 1 to 1 with the PHP files that make the data available to the Twig templates.
+## Getting started
 
-`front-page.php` and `views/front-page.twig` are templates for a static home page should you choose to use one. This template will automatically be applied to that page whatever its name may be.
+What you need to do for installing our Wordpress theme.
 
-## Installing
+### Prerequisites
 
-1. Make sure you have installed the plugins for the Timber Library and Advanced Custom Fields. You can find these by searching for them in Plugins > Add New.
-2. Download the zip for this theme (or clone it) and move it to `wp-content/themes` in your WordPress installation. 
-3. Rename the folder to something that makes sense for you website. It should be a short name with no spaces - underscores and hyphens are okay - and all lowercase.
-4. Activate the theme in Appearance >  Themes.
-5. You should see a notice that Timber needs to be activated; go to Plugins > All and activate both Timber and Advanced Custom Fields (ACF for short.)
-6. Set a static home page in Settings > Reading and choosing "A Static Page". This will automatically act as your home page and will reference the `views/front-page.twig` template.
+- PHP 7.1
+- Yarn 1.6.0
+- Gulp 4.0
 
-## Working in the Theme
+### Installing
 
-There is an example of a custom post type called "Cocktails". You can create your own at [generatewp.com](http://generatewp.com) and add that array to `lib/custom-types.php`.
+Before installing the project, make sure to match all the requirements listed above.
 
-Custom Fields can be customized from the Custom Fields section in the Dashboard menu. 
+```sh
+# Clone the repository
+git clone https://github.com/BaptisteVillain/ecritures-numeriques
 
-Read the notes in `views/page-content.twig` and `views/front-page.twig` for notes on using ACF in your templates, and general Twig info.
+# Go to project folder
+cd ecritures-numeriques
 
-## More soon!
+# Install packages
+yarn
+```
+
+## Usage
+
+In order to work on the project, we use Gulp.
+
+```sh
+yarn run dev
+```
+
+## Built with
+
+- [Timber](https://timber.github.io/docs/)
+
+## Features
+
+## Authors
+
+- [Hélène Ta](https://github.com/thaelene) - Project manager & web developer
+- Bérénice David - UI/UX Designer
+- [Baptiste Villain](https://github.com/BaptisteVillain) - Lead web developer
+- Rayan Ait Tayeb - Editorial strategist
+- Alison Heredia - Marketing
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+Sincere thanks to our friends and classmates who helped us through this amazing project :
+
+- [Thibaut Renard](https://github.com/Thibobbs)
+- [Grégoire Mielle](https://github.com/greeeg)
