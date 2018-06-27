@@ -2,7 +2,7 @@
 
 {% block content %}
   <div class="taxonomy__container">
-    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': '#'} %}
+    {% include "components/single-header.twig" with {'title': term.name,'subtitle': term.taxonomy,'link': false, 'previous': site_pages.all_sections} %}
     <div class="taxonomy__wrapper">
       <div class="taxonomy__about">
         <p class="taxonomy__content">
