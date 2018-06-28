@@ -31,12 +31,63 @@ class Project extends Timber\Post
 
       $this->_related = new Timber\PostQuery(array(
         'post_type' => 'project',
-        'posts_per_page' => -1,
+        'posts_per_page' => 3,
         'post__in' => $this->relation_project_project
       ));
 
     }
 
     return $this->_related;
+  }
+
+
+  private function setIndex()
+  {
+
+    $this->projects = new Timber\PostQuery(array(
+      'post_type' => 'project',
+      'posts_per_page' => -1,
+    ));
+
+    $this->index = 0;
+
+    foreach ($this->projects as $key => $project) {
+      if($project->slug == $this->slug){
+        $this->index = $key;
+      }
+    }
+  }
+
+
+  var $_next_post;
+  public function next_post()
+  {
+
+    $this->setIndex();
+
+    if ($this->index < count($this->projects) - 1) {
+      $this->_next_post = $this->projects[$this->index + 1];
+    }
+    else{
+      $this->_next_post = $this->projects[0];
+    }
+
+    return $this->_next_post;
+  }
+
+  var $_previous_post;
+  public function previous_post()
+  {
+
+    $this->setIndex();
+
+    if ($this->index > 0) {
+      $this->_previous_post = $this->projects[$this->index - 1];
+    }
+    else{
+      $this->_previous_post = $this->projects[count($this->projects) - 1];
+    }
+
+    return $this->_previous_post;
   }
 }
