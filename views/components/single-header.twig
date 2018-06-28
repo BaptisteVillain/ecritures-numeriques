@@ -1,16 +1,16 @@
 <header class="single__header">
   <div class="single__header__wrapper">
-    <a href="{{previous}}" class="single__header__previous">< {{__('back')}}</a>
+    <a href="{{previous}}" class="single__header__previous">< {{__('back', 'ecritures-numeriques')}}</a>
     {% if subtitle %}
     <h3 class="single__header__parent">
       {% if subtitle == 'research_field' %}
-        {{__('theory')}}
+        {{__('theories', 'ecritures-numeriques')}}
       {% elseif subtitle == 'research_topic' %}
-        {{__('research topics')}}
+        {{__('research topics', 'ecritures-numeriques')}}
       {% elseif subtitle == 'key_concept' %}
-        {{__('key-concepts')}}
+        {{__('key-concepts', 'ecritures-numeriques')}}
       {% elseif subtitle == 'axis' %}
-        {{__('axis')}}
+        {{__('axis', 'ecritures-numeriques')}}
       {% else %}
         {{ subtitle }}
       {% endif %}
@@ -19,8 +19,8 @@
     <h2 class="single__header__title">{{title}}</h2>
   </div>
   {% if link %}
-    <a href="#" class="single__header__link">
-      {{__('See the project')}} <span>></span>
+    <a href="{{link}}" class="single__header__link">
+      {{__('See the project', 'ecritures-numeriques')}} <span>></span>
     </a>
   {% endif %}
 </header>

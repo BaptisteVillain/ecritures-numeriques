@@ -11,15 +11,16 @@
     </div>
     <ul class="rubrics__wrapper">
     {% for key,rubric in rubrics %}
+
       <li class="rubrics__item">
         {% if key == 0 %}
-          <button class="item__button">{{__('theories')}}<span>></span></button>
+          <button class="item__button">{{__('theories', 'ecritures-numeriques')}}<span>></span></button>
         {% elseif key == 1 %}
-          <button class="item__button">{{__('axis')}}<span>></span></button>
+          <button class="item__button">{{__('axis', 'ecritures-numeriques')}}<span>></span></button>
         {% elseif key == 2 %}
-          <button class="item__button">{{__('research topics')}}<span>></span></button>
+          <button class="item__button">{{__('research topics', 'ecritures-numeriques')}}<span>></span></button>
         {% elseif key == 3 %}
-          <button class="item__button">{{__('key-concepts')}}<span>></span></button>
+          <button class="item__button">{{__('key-concepts', 'ecritures-numeriques')}}<span>></span></button>
         {% endif %}
         <ul class="item__wrapper">
           {% for term in rubric[0:19] %}
