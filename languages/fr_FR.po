@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ecritures Numériques Theme\n"
-"POT-Creation-Date: 2018-06-27 23:17+0200\n"
-"PO-Revision-Date: 2018-06-27 23:59+0200\n"
+"POT-Creation-Date: 2018-06-28 03:53+0200\n"
+"PO-Revision-Date: 2018-06-28 03:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -23,15 +23,15 @@ msgstr ""
 
 #: inc/acf-add-options-page.php:17
 msgid "Footer ("
-msgstr "Pied de page ("
+msgstr "Pied de page"
 
 #: inc/acf-add-options-page.php:34
 msgid "Header ("
-msgstr "En-tête ("
+msgstr "En-tête"
 
 #: inc/acf-add-options-page.php:51
 msgid "Site Pages ("
-msgstr "Pages du site ("
+msgstr ""
 
 #: lib/custom-types.php:14
 msgctxt "Post Type General Name"
@@ -150,9 +150,9 @@ msgstr ""
 msgid "Filter items list"
 msgstr "Filtrer la liste des éléments"
 
-#: lib/custom-types.php:44 views/search.twig:92
+#: lib/custom-types.php:44 views/search.twig:99
 msgid "publication"
-msgstr ""
+msgstr "publication"
 
 #: lib/custom-types.php:45
 msgid "Digital Textualities Publications"
@@ -530,7 +530,7 @@ msgstr "Nouveau nom d’axe"
 
 #: lib/taxonomies.php:107
 msgid "Axes"
-msgstr ""
+msgstr "Axes"
 
 #: lib/taxonomies.php:124
 msgctxt "taxonomy general name"
@@ -595,29 +595,29 @@ msgstr "suivant"
 msgid "back"
 msgstr "retour"
 
-#: views/components/single-header.twig:7 views/search.twig:48
-msgid "theory"
-msgstr "théorie"
+#: views/components/single-header.twig:7 views/rubrics.twig:17
+#: views/search.twig:51
+msgid "theories"
+msgstr "théories"
 
-#: views/components/single-header.twig:9 views/rubrics.twig:20
-#: views/search.twig:50
+#: views/components/single-header.twig:9 views/rubrics.twig:21
+#: views/search.twig:53
 msgid "research topics"
 msgstr "objets de recherche"
 
-#: views/components/single-header.twig:11 views/search.twig:52
+#: views/components/single-header.twig:11 views/rubrics.twig:23
+#: views/search.twig:55
 msgid "key-concepts"
-msgstr "concept-clé"
+msgstr "concept-clés"
 
-#: views/components/single-header.twig:13 views/rubrics.twig:18
-#: views/search.twig:54
+#: views/components/single-header.twig:13 views/rubrics.twig:19
+#: views/search.twig:57
 msgid "axis"
 msgstr "axes"
 
 #: views/components/single-header.twig:23
-#, fuzzy
-#| msgid "See all projects"
 msgid "See the project"
-msgstr "Voir Tous les Projets"
+msgstr "Voir le projet"
 
 #: views/events.twig:9 views/front-page.twig:9
 msgid "Upcoming events"
@@ -682,19 +682,19 @@ msgstr "Objets de recherche"
 
 #: views/front-page.twig:133 views/front-page.twig:145
 msgid "views"
-msgstr "vues"
+msgstr ""
 
 #: views/legals.twig:8
 msgid "Website presentation"
-msgstr "Présentation du site"
+msgstr ""
 
 #: views/legals.twig:14
 msgid "Owner"
-msgstr "Propriétaire"
+msgstr ""
 
 #: views/legals.twig:22
 msgid "Website maker"
-msgstr "Créateur du site"
+msgstr ""
 
 #: views/legals.twig:30
 #, fuzzy
@@ -711,15 +711,33 @@ msgstr "Nous joindre"
 
 #: views/legals.twig:37
 msgid "Webmaster"
-msgstr "Webmaster"
+msgstr ""
 
 #: views/legals.twig:44
 msgid "Host"
-msgstr "Hébergeur"
+msgstr ""
 
 #: views/legals.twig:55
 msgid "Hypertext links and cookies"
-msgstr "Liens hypertextes et cookies"
+msgstr ""
+
+#: views/partials/card-result.twig:59 views/search.twig:16 views/search.twig:92
+#: views/single-member.twig:28 views/single-member.twig:96
+#: views/single-rubric.twig:22
+msgid "publications"
+msgstr "publications"
+
+#: views/partials/card-result.twig:60 views/search.twig:22
+#: views/search.twig:113 views/single-member.twig:36
+#: views/single-member.twig:175 views/single-rubric.twig:24
+msgid "projects"
+msgstr "projets"
+
+#: views/partials/card-result.twig:61 views/search.twig:28
+#: views/search.twig:128 views/single-member.twig:44
+#: views/single-member.twig:201 views/single-rubric.twig:26
+msgid "events"
+msgstr "évènements"
 
 #: views/partials/header-project.twig:4
 msgid "Back"
@@ -742,7 +760,7 @@ msgstr "sur"
 #: views/partials/single-publication-content.twig:24
 #: views/partials/single-publication-content.twig:30
 msgid ","
-msgstr ","
+msgstr ""
 
 #: views/partials/single-publication-content.twig:28
 msgid "Posted in"
@@ -758,73 +776,77 @@ msgid "read on"
 msgstr "lire sur"
 
 #: views/publications.twig:14
+#, fuzzy
+#| msgid "See all"
 msgid "all"
-msgstr "voir tout"
+msgstr "Voir tout"
 
 #: views/publications.twig:31
 msgid "loading..."
 msgstr "chargement..."
 
-#: views/rubrics.twig:7 views/search.twig:101
+#: views/rubrics.twig:7 views/search.twig:108 views/search.twig:141
 msgid "sections"
 msgstr "rubriques"
 
-#: views/rubrics.twig:16
-msgid "theories"
-msgstr "théories"
+#: views/search.twig:11
+#, fuzzy
+#| msgid "No results"
+msgid "results"
+msgstr "Aucun résultats"
 
-#: views/rubrics.twig:22
-msgid "key-concept"
-msgstr "concept-clé"
-
-#: views/search.twig:13 views/single-member.twig:28 views/single-member.twig:96
-#: views/single-rubric.twig:22
-msgid "publications"
-msgstr "publications"
-
-#: views/search.twig:19 views/single-member.twig:36
-#: views/single-member.twig:175 views/single-rubric.twig:24
-msgid "projects"
-msgstr "projets"
-
-#: views/search.twig:25 views/single-member.twig:44
-#: views/single-member.twig:201 views/single-rubric.twig:26
-msgid "events"
-msgstr "évènements"
-
-#: views/search.twig:31
+#: views/search.twig:34 views/search.twig:146
 msgid "members"
 msgstr "membres"
 
-#: views/search.twig:37
+#: views/search.twig:40
 msgid "filter"
 msgstr "filtrer"
 
-#: views/search.twig:75
+#: views/search.twig:78
 msgid "label"
 msgstr "tag"
 
-#: views/search.twig:82
+#: views/search.twig:85
 msgid "delete all"
 msgstr "tout supprimer"
 
-#: views/search.twig:89
+#: views/search.twig:96 views/search.twig:117 views/search.twig:132
+#: views/search.twig:153
 msgid "title"
 msgstr "titre"
 
-#: views/search.twig:95
+#: views/search.twig:102
 msgid "author"
 msgstr "auteur"
 
-#: views/search.twig:98
+#: views/search.twig:105 views/search.twig:123 views/search.twig:135
 msgid "date"
 msgstr "date"
 
-#: views/search.twig:110
+#: views/search.twig:120
+#, fuzzy
+#| msgid "Edition"
+msgid "description"
+msgstr "Edition"
+
+#: views/search.twig:138
+msgid "place"
+msgstr ""
+
+#: views/search.twig:150
+msgid "name"
+msgstr ""
+
+#: views/search.twig:156
+msgid "works"
+msgstr ""
+
+#: views/search.twig:166
 msgid "No results"
 msgstr "Aucun résultats"
 
-#: views/search.twig:113
+#: views/search.twig:169
 msgid "Loading..."
 msgstr "Chargement..."
 
@@ -863,3 +885,9 @@ msgstr "un thème Wordpress"
 #. Author of the plugin/theme
 msgid "HETIC"
 msgstr "HETIC"
+
+#~ msgid "theory"
+#~ msgstr "théorie"
+
+#~ msgid "key-concept"
+#~ msgstr "concept-clé"
