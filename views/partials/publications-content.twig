@@ -4,48 +4,66 @@
     <div class="publications__top-block">
       <div class="top-block__wrapper">
         <div class="top-block top-block__first">
-          <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-          <h1 class="publications__title top-block__first__title">{{post.title}}</h1>
-          <div class="publications__credits">
-            <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-            -
-            <span class="publications__credits__date">[15 Dec 2017]</span>
-          </div>
-          <p class="publications__content">
-            {{post.custom.content}}
-          </p>
+          <h4 class="publications__author">
+            {% for index, author in post.authors %}
+              <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+            {% endfor %}
+          </h4>
+          <a href="{{post.path}}" title="{{post.post_title}}">
+            <h1 class="publications__title top-block__first__title">{{post.title}}</h1>
+            <div class="publications__credits">
+              <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
+              <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            </div>
+            <div class="publications__content">
+              {{post.get_field('content')|excerpt(70)}}
+            </div>
+          </a>
 
           {% if post.terms is not empty %}
-            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
           {% endif %}
         </div>
 
       {% elseif loop.index == 2 %}
         <div class="top-block__second">
           <div class="top-block top-block__second__top">
-            <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-            <h1 class="publications__title">{{post.title}}</h1>
-            <div class="publications__credits">
-              <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-              -
-              <span class="publications__credits__date">[15 Dec 2017]</span>
+            <div class="publications__author">
+              {% for index, author in post.authors %}
+                <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+              {% endfor %}
             </div>
+            <a href="{{post.path}}" title="{{post.post_title}}">
+              <h2 class="publications__title">{{post.title}}</h2>
+              <div class="publications__credits">
+                <div class="publications__credits__domain">{{post.domain}}</div>
+                <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+              </div>
+            </a>
             {% if post.terms is not empty %}
-              {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+              {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
             {% endif %}
           </div>
 
         {% elseif loop.index == 3 %}
           <div class="top-block top-block__second__down">
-            <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-            <h1 class="publications__title">{{post.title}}</h1>
-            <div class="publications__credits">
-              <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-              -
-              <span class="publications__credits__date">[15 Dec 2017]</span>
+            <div class="publications__author">
+              {% for index, author in post.authors %}
+                <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+              {% endfor %}
             </div>
+            <a href="{{post.path}}" title="{{post.post_title}}">
+              <h3 class="publications__title">{{post.title}}</h3>
+              <div class="publications__credits">
+                <div class="publications__credits__domain">{{post.domain}}</div>
+                <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+              </div>
+            </a>
             {% if post.terms is not empty %}
-              {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+              {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
             {% endif %}
           </div>
         </div>
@@ -56,59 +74,75 @@
   {% elseif loop.index == 4 %}
     <div class="publications__mid-top-block">
       <div class="mid-top-block mid-top-block__first">
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
-        <p class="publications__content">
-          {{post.custom.content|excerpt(20)}}
-        </p>
-
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <h5 class="publications__title">{{post.title}}</h5>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+          <div class="publications__content">
+            {{post.get_field('content')|excerpt(20)}}
+          </div>
+        </a>
         {% if post.terms is not empty %}
           <div class="publications__terms">
-            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
           </div>
         {% endif %}
       </div>
 
     {% elseif loop.index == 5 %}
       <div class="mid-top-block mid-top-block__second">
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
-        <p class="publications__content">
-          {{post.custom.content|excerpt(20)}}
-        </p>
-
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <h5 class="publications__title">{{post.title}}</h5>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+          <div class="publications__content">
+            {{post.get_field('content')|excerpt(20)}}
+          </div>
+        </a>
         {% if post.terms is not empty %}
           <div class="publications__terms">
-            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
           </div>
         {% endif %}
       </div>
 
     {% elseif loop.index == 6 %}
       <div class="mid-top-block mid-top-block__third">
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
-        <p class="publications__content">
-          {{post.custom.content|excerpt(20)}}
-        </p>
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <h5 class="publications__title">{{post.title}}</h5>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+          <div class="publications__content">
+            {{post.get_field('content')|excerpt(20)}}
+          </div>
+        </a>
         {% if post.terms is not empty %}
           <div class="publications__terms">
-            {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+            {% include 'components/single-tags.twig' with {'tags': post.terms[0:3]} %}
           </div>
         {% endif %}
       </div>
@@ -119,28 +153,40 @@
     <div class="publications__mid-down-block">
       <div class="mid-down-block">
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms[0:2]} %}
         {% endif %}
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <h6 class="publications__title">{{post.title}}</h6>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+        </a>
       </div>
     {% elseif loop.index == 8 %}
       <div class="mid-down-block">
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms[0:2]} %}
         {% endif %}
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <h6 class="publications__title">{{post.title}}</h6>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+        </a>
       </div>
     </div>
     <!-- Last block -->
@@ -148,15 +194,21 @@
     {% else %}
       <div class="last-block">
         {% if post.terms is not empty %}
-          {% include 'components/single-tags.twig' with {'tags': post.terms} %}
+          {% include 'components/single-tags.twig' with {'tags': post.terms[0:2]} %}
         {% endif %}
-        <h2 class="publications__author">Marcello Vitali-Rosati</h2>
-        <h1 class="publications__title">{{post.title}}</h1>
-        <div class="publications__credits">
-          <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
-          -
-          <span class="publications__credits__date">[15 Dec 2017]</span>
+        <div class="publications__author">
+          {% for index, author in post.authors %}
+            <a href="{{author.path}}" title="{{author.post_title}}">{{author.post_title}}</a>{{ index < post.authors|length - 1 ? ', ' : ''}}
+          {% endfor %}
         </div>
+        <a href="{{post.path}}" title="{{post.post_title}}">
+          <p class="publications__title">{{post.title}}</p>
+          <div class="publications__credits">
+            <div class="publications__credits__domain">{{post.domain}}</div>
+            <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
+            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+          </div>
+        </a>
       </div>
     {% endif %}
   {% endfor %}
