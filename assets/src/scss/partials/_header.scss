@@ -232,9 +232,10 @@
             background: $pink;
             color: $dark-blue;
           }
+
         }
         &:active {
-          background: darken($dark-blue, 3%);
+          background: darken($pink, 5%);
         }
       }
     }
