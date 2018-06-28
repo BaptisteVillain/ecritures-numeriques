@@ -40,10 +40,12 @@ class Results {
       this.filters_container.classList.toggle('results__filters--active')
     })
 
-    this.containerToFix.forEach(cont => {
-      const { width } = cont.querySelector('li').getBoundingClientRect()
-      cont.style.width = `${width * 2}px`
-    })
+    if (window.innerHeight >= 700) {
+      this.containerToFix.forEach(cont => {
+        const { width } = cont.querySelector('li').getBoundingClientRect()
+        cont.style.width = `${width * 2}px`
+      })
+    }
 
     this.filters.forEach(filter => {
       filter.addEventListener('click', e => {

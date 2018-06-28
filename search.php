@@ -16,13 +16,20 @@ $context['results'] = array();
 
 $types = array('publication', 'project', 'event', 'member');
 
-foreach ($types as $type) {
-  $context['results'][] = new Timber\PostQuery(array(
-    'post_type' => $type,
-    's' => get_search_query(),
-		'posts_per_page' => -1,
-  ));
+if(get_search_query() !== '' && !empty(get_search_query())){
+  foreach ($types as $type) {
+    $context['results'][] = new Timber\PostQuery(array(
+      'post_type' => $type,
+      's' => get_search_query(),
+      'posts_per_page' => -1,
+    ));
+  }
+} else {
+  foreach ($types as $type) {
+    $context['results'][] = array();
+  }
 }
+
 
 
 
@@ -53,6 +60,11 @@ foreach ($context['results'] as $key => $result) {
       }
     }
   }
+}
+
+$context['count'] = 0;
+foreach ($context['results'] as $result) {
+  $context['count'] += count($result);
 }
 
 

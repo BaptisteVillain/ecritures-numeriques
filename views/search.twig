@@ -7,6 +7,9 @@
   <div class="results">
     <header class="results__header">
       <nav>
+        <div class="header__query">
+          {{count}} {{__('results', 'ecritures-numeriques')}}
+        </div>
         <ul>
           <li>
             <button class="header__button header__switch header__button--active" data-index="0">
@@ -85,6 +88,9 @@
     {% for index,result in  results %}
       <div class="list__container {% if index == 0 %}list__container--active{% endif %}">
         {% if index == 0 %}
+          <div class="list__mobile">
+            {{__('publications', 'ecritures-numeriques')}}
+          </div>
           <ul class="list__header">
             <li class="header__item item-publication--title">
               {{__('title', 'ecritures-numeriques')}}
@@ -103,6 +109,9 @@
             </li>
           </ul>
         {% elseif index == 1 %}
+          <div class="list__mobile">
+            {{__('projects', 'ecritures-numeriques')}}
+          </div>
           <ul class="list__header">
             <li class="header__item item-project--title">
               {{__('title', 'ecritures-numeriques')}}
@@ -115,6 +124,9 @@
             </li>
           </ul>
         {% elseif index == 2 %}
+          <div class="list__mobile">
+            {{__('events', 'ecritures-numeriques')}}
+          </div>
           <ul class="list__header">
             <li class="header__item item-event--title">
               {{__('title', 'ecritures-numeriques')}}
@@ -130,6 +142,9 @@
             </li>
           </ul>
         {% else %}
+          <div class="list__mobile">
+            {{__('members', 'ecritures-numeriques')}}
+          </div>
           <ul class="list__header">
             <li class="header__item item-member--name">
               {{__('name', 'ecritures-numeriques')}}
