@@ -379,7 +379,7 @@
       <div class="grid__case grid--hidden">G</div>
       {% for key, field in research_fields %}
       <div class="grid__case grid--hidden {{ key > 0 ? 'grid__case--leftAdjacentBorder' : '' }}">{{letters[key]}}</div>
-      <a href="{{function('get_term_link', field)}}" class="grid__case grid__case--tab {{research_fields_class[key]}}">
+      <a href="{{function('get_term_link', field)}}" class="grid__case grid__case--tab {{research_fields_class[key]}} field__link">
         <div class="grid__subcase">
           <h2>{{field.name}}</h2>
         </div>

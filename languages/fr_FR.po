@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ecritures Numériques Theme\n"
-"POT-Creation-Date: 2018-06-28 03:53+0200\n"
-"PO-Revision-Date: 2018-06-28 03:55+0200\n"
+"POT-Creation-Date: 2018-06-28 04:24+0200\n"
+"PO-Revision-Date: 2018-06-28 04:27+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -748,6 +748,10 @@ msgstr "Retour"
 #| msgid "See all sections"
 msgid "See the collection"
 msgstr "Voir toutes les rubriques"
+
+#: views/partials/header.twig:29
+msgid "Search"
+msgstr "Rechercher"
 
 #: views/partials/single-publication-content.twig:20
 msgid "Posted"

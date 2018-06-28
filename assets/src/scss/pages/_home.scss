@@ -533,6 +533,9 @@ section.home-section.rubrics {
         &.desktop-active {
           color: $dark-blue;
         }
+        &:hover{
+          color: $dark-blue;
+        }
       }
       span {
         transform: rotate(90deg);

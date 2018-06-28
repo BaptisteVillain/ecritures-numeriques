@@ -10,6 +10,17 @@
     height: calc(100vh - 60px - 80px);
     max-height: 810px;
   }
+
+  .field__link{
+    background: $dark-blue;
+    color: $white;
+    &:hover{
+      background: $pink;
+      h2, .tab__arrow{
+        color: $dark-blue;
+      }
+    }
+  }
 }
 
 .hero__container {
