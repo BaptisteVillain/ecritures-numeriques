@@ -12,6 +12,7 @@ export default class Publications {
     this.header_index = 0
 
     this.card_loading = document.querySelector('.publications__loading')
+    this.wait = false
 
     if (window.innerWidth >= 900) {
       this.header_offset = 5
@@ -31,6 +32,10 @@ export default class Publications {
       }
 
       item.addEventListener('click', e => {
+        if (this.wait) {
+          return false
+        }
+
         const updated = this.header_index !== e.currentTarget.dataset.index ? true : false
         this.updateHeader(parseInt(e.currentTarget.dataset.index, 10))
 
@@ -43,6 +48,10 @@ export default class Publications {
     })
 
     this.header_next.addEventListener('click', () => {
+      if (this.wait) {
+        return false
+      }
+
       if (this.header_index < this.header_items.length - 1) {
         this.updateHeader(this.header_index + 1)
       }
@@ -53,6 +62,10 @@ export default class Publications {
     })
 
     this.header_prev.addEventListener('click', () => {
+      if (this.wait) {
+        return false
+      }
+
       if (this.header_index >= 1) {
         this.updateHeader(this.header_index - 1)
       }
@@ -101,11 +114,13 @@ export default class Publications {
 
     this.posts_container.innerHTML = ''
     this.card_loading.classList.remove('card--hide')
+    this.wait = true
 
     axios.post(ajaxurl, qs.stringify(data))
       .then(response => {
         this.card_loading.classList.add('card--hide')
         this.posts_container.insertAdjacentHTML('beforeend', response.data.data.posts)
+        this.wait = false
       })
   }
 }
