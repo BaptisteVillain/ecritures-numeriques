@@ -9,8 +9,7 @@
  */
 
 $context = Timber::get_context();
-$context['post'] = new Timber\Post();
+$context['post'] = new Project();
 
-$context['tags'] = array();
 
 Timber::render( 'single-project.twig', $context );

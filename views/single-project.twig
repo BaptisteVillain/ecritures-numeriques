@@ -2,22 +2,21 @@
 
 {% block content %}
 
-  {% include "components/single-header.twig" with {'title': post.title, 'subtitle': false, 'link': '#', 'previous': '#'} %}
+  {% include "components/single-header.twig" with {'title': post.title, 'subtitle': false, 'link': post.project_link, 'previous': site_pages.all_projects} %}
   <!-- Project content -->
   <div class="single__wrapper project__wrapper">
-
-    {% if discover is not empty %}
-      {% include "components/single-discover.twig" %}
+    {% if post.related is not empty %}
+      {% include 'components/single-discover.twig' with {'related': post.related} %}
     {% endif %}
 
-    <article class="single__container project {% if discovers is empty %} single__container--margin {% endif %}">
+    <article class="single__container project {% if post.related is empty %} single__container--margin {% endif %}">
       <div class="single__content project__content">
         {{ post.get_field('content') }}
       </div>
-      {% if tags is not empty %}
-        {% include 'components/single-tags.twig' with {'tags': tags} %}
+      {% if post.terms is not empty %}
+        {% include 'components/single-tags.twig' with {'tags': post.terms} %}
       {% endif %}
-      {% if tags is not empty %}      
+      {% if post.terms is not empty %}      
         <div>
           {% include "components/single-footer.twig" with {'previous_path': previous.path, 'previous_name': 'previous','next_path': next.path, 'next_name': 'next'} %}
         </div>

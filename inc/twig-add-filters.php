@@ -14,7 +14,7 @@
   {
     $result = '';
 
-    if(!empty($authors)){
+    if(is_array($authors) && !empty($authors)){
       foreach ($authors as $key => $author) {
         $result .=  $key > 0 ? ', '.$author->post_title : $author->post_title;
       }
@@ -26,7 +26,7 @@
   function join_terms($terms) : string
   {
     $result = '';
-    if(!empty($terms)){
+    if(is_array($terms) && !empty($terms)){
       foreach ($terms as $key => $term) {
         $result .=  $key > 0 ? ' - '.$term->name : $term->name;
       }

@@ -26,7 +26,7 @@
       
       @include font($source, 1.2rem, 600, $light-blue, uppercase, left);
     }
-    .item__infos {
+    .item__infos, .item__content {
       line-height: 1.5;
 
       @include font($source, 1.2rem, 400, $dark-grey, inherit, left);
@@ -36,6 +36,9 @@
       .infos--uppercase{
         text-transform: uppercase;
       }
+    }
+    .item__content{
+      margin-bottom: 10px;
     }
   }
 }

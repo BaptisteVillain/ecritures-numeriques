@@ -6,8 +6,11 @@
     <a href="{{post.link}}" class="discover__item">
       <p class="item__authors">{{post.authors|join_authors}}</p>
       <h5 class="item__title">{{post.post_title}}</h5>
+      {% if post.post_type == 'project' %}
+        <div class="item__content">{{post.get_field('content')|excerpt(16)}}</div>
+      {% endif %}
       <p class="item__infos">
-        <i class="infos--italic">{{post.domain}}</i> - <span class="infos--uppercase">[{{post.post_date | date('d M Y')}}]</span>
+        <i class="infos--italic">{{post.domain}}</i> {{post.domain is not empty ? '-' : ''}} <span class="infos--uppercase">[{{post.post_date | date('d M Y')}}]</span>
       </p>
     </a>
   {% endfor %}
