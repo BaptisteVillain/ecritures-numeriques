@@ -14,7 +14,7 @@ class Term extends Timber\Term
     $types = array('publication', 'project', 'event');
     foreach ($types as $key => $type) {
 
-      $result = new Timber\PostQuery(array(
+      $result = Timber::get_posts(array(
       'posts_per_page' => -1,
       'post_type' => $type,
       'tax_query' => array(
