@@ -125,6 +125,12 @@
 
 .members__contact__maps {
   margin-top: 35px;
+  iframe{
+    height: calc(100vw - 40px);
+    @include breakpoint(700px) {
+     height: calc(25vw); 
+    }    
+  }
 
   @include breakpoint(700px) {
     margin-top: 0;
