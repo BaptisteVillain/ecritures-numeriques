@@ -28,36 +28,18 @@ foreach ($context['selected'] as $key => $term) {
   $context['selected'][$key] = new Timber\Term($term);
 }
 
-function get_selected($slug, $array){
-  foreach ($array as $key => $term) {
-    if($term->slug === $slug){
-      return $term;
-    }
-  }
 
-  return false;
-}
-
-$context['term'] = get_selected($params['term'], $context['selected']);
-
-if(!$context['term']){
-  $args = array(
-    'post_type' => 'publication',
-    'posts_per_page' => -1
-  );
-} else {
-  $args = array(
-    'post_type' => 'publication',
-    'posts_per_page' => -1,
-    'tax_query' => array(
-      array(
-        'taxonomy' => $context['term']->taxonomy,
-        'field' =>  'slug',
-        'terms' =>  $context['term']->slug
-      )
+$args = array(
+  'post_type' => 'publication',
+  'posts_per_page' => -1,
+  'meta_query' => array(
+    array(
+      'key' => 'private',
+      'value' => '1',
+      'compare' => '!='
     )
-  );
-}
+  )
+);
 
 $context['posts'] = new Timber\PostQuery($args);
 

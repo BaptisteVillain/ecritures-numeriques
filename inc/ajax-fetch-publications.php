@@ -27,6 +27,13 @@ function fetch_publications() {
       'post_type' => 'publication',
       'post_status' => 'publish',
       'posts_per_page' => -1,
+      'meta_query' => array(
+        array(
+          'key' => 'private',
+          'value' => '1',
+          'compare' => '!='
+        )
+      )
     ));
   }
 
