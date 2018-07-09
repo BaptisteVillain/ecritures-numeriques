@@ -37,7 +37,7 @@
 
   @include breakpoint(950px) {
     margin: 0;
-    width: 250px;
+    width: 270px;
   }
 }
 
@@ -245,7 +245,6 @@
 }
 
 .site-header__search-wrapper {
-  // display: none;
   order: 1;
   margin-left: -40px;
   width: calc(100% + 80px);
@@ -259,7 +258,9 @@
   @include breakpoint(950px) {
     background: $dark-blue;
     padding: 0 30px;
+    margin: 0;
     order: 2;
+    width: auto;
   }
   input {
     background: none;
