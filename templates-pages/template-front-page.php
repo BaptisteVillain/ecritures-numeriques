@@ -51,21 +51,28 @@ foreach ($letters_down as $key => $letter) {
 /**
  * Get last publications
  */
-$context['publications'] = Timber::get_posts(array(
+$context['publications'] = new Timber\PostQuery(array(
   'post_type' => 'publication',
-  'posts_per_page' => 3
-));
+  'posts_per_page' => 3,
+  'meta_query' => array(
+    array(
+      'key' => 'private',
+      'value' => '1',
+      'compare' => '!='
+    )
+  )
+), Publication);
 
 /**
  * Get last projects
  */
-$sens_public = Timber::get_posts(array(
+$sens_public = new Timber\PostQuery(array(
   'name' => 'sens_public',
   'post_type' => 'project',
   'posts_per_page' => 1,
 ));
 
-$projects = Timber::get_posts(array(
+$projects = new Timber\PostQuery(array(
   'post_type' => 'project',
   'posts_per_page' => empty($sens_public) ? 3 : 2,
   'meta_query' => array(
@@ -74,13 +81,13 @@ $projects = Timber::get_posts(array(
     'compare' => '!='
   )
 ));
-$context['projects'] = array_merge($sens_public, $projects);
+$context['projects'] = array_merge((array)$sens_public, (array)$projects);
 
 
 /**
  * Get highlighted event
  */
-$context['highlighted_event'] = Timber::get_posts(array(
+$context['highlighted_event'] = new Timber\PostQuery(array(
   'post_type' => 'event',
   'posts_per_page' => 1,
   'meta_query' => array(
@@ -114,23 +121,15 @@ if(count($context['highlighted_event']) < 1){
 /**
  * Get last events
  */
-$context['events'] = Timber::get_posts($args);
+$context['events'] = new Timber\PostQuery($args);
 
 if(count($context['highlighted_event']) < 1){
   $context['highlighted_event'] = array();
   if(!empty($context['events'][0])){
     $context['highlighted_event'][] = $context['events'][0];
   }
+  $context['events'] = (array)$context['events'];
   array_shift($context['events']);
-}
-
-if(!empty($context['events'][0])){
-  $context['highlighted_event'][0]->cover = get_field('cover_image', $context['highlighted_event'][0]->ID);
-  $context['highlighted_event'][0]->tags = wp_get_post_terms($context['highlighted_event'][0]->ID, array('research_field','axis','research_topic','key_concept'));
-}
-
-foreach ($context['events'] as $key => $event) {
-  $context['events'][$key]->cover = get_field('cover_image', $event->ID);
 }
 
 /**

@@ -12,10 +12,7 @@
       {{ event.title }}
     </h3>
     <div class="card__subtitle">
-      {% for key, tag in event.tags %}
-        {% if key > 0 %},
-        {% endif %}{{ tag.name }}
-      {% endfor %}
+        {{event.terms|join_terms}}
     </div>
     {% if event.date_start | date('G\\hi') == event.date_end | date('G\\hi') %}
       <div class="card__footer">
