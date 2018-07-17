@@ -35,7 +35,7 @@ function search_filters() {
   $results = [];
   foreach ($types as $type) {
     $args['post_type'] = $type;
-    $results[] = new Timber\PostQuery($args, Publication);
+    $results[] = new Timber\PostQuery($args);
   }
 
   $response = array();

@@ -61,7 +61,7 @@ $context['publications'] = new Timber\PostQuery(array(
       'compare' => '!='
     )
   )
-), Publication);
+));
 
 /**
  * Get last projects

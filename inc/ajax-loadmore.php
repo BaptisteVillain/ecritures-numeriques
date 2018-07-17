@@ -23,7 +23,7 @@ function publication_load_more() {
 		'posts_per_page' => 8,
 		'paged' => $_POST['page'],
 		'post__not_in' => array($_POST['post_id'])
-	), Publication);
+	));
 	
 	if($posts){
 		foreach($posts as $post){
