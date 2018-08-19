@@ -172,7 +172,7 @@
         {% endif %}
         {% if member.projects is not empty %}
           <section class="section__post">
-            <div class="post__header">{{__('projects')}}</div>
+            <div class="post__header">{{__('projects', 'ecritures-numeriques')}}</div>
             <ul class="post__list">
               {% for post in member.projects %}
                 <li>
@@ -198,7 +198,7 @@
         {% endif %}
         {% if member.events is not empty %}
           <section class="section__post">
-            <div class="post__header">{{__('events')}}</div>
+            <div class="post__header">{{__('events', 'ecritures-numeriques')}}</div>
             <ul class="post__list">
               {% for post in member.events %}
                 <li>

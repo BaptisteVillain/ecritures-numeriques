@@ -37,9 +37,6 @@ if($post->custom['relation_publication_publication']){
 	
 		$research_field = wp_get_post_terms($publication->ID, 'research_field');
 		$discovers[$key]->research_field = $research_field[0];
-	
-		$parse = parse_url($publication->url);
-		$discovers[$key]->domain = $parse['host'];
 	}
 	
 	$context['discovers'] = $discovers;

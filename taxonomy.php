@@ -9,18 +9,12 @@
 
 global $params;
 
-$term = new Term($params['term']);
+$term = new Term();
 
 $taxonomies = get_taxonomies(array(
   'public' => true,
   '_builtin' => false
 ));
-
-if(!$params['term'] || empty($term->name) || !in_array($term->taxonomy, $taxonomies))
-{
-  Timber::render( '404.twig', $context );
-  exit;
-}
 
 $context = Timber::get_context();
 $context['term'] = $term;

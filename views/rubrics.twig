@@ -25,7 +25,7 @@
         <ul class="item__wrapper">
           {% for term in rubric[0:19] %}
           <li class="rubrics__subItem">
-            <a href="{{function('term_link', term)}}">{{term.name}}</a>
+            <a href="{{function('get_term_link', term.slug)}}">{{term.name}}</a>
           </li>
           {% endfor %}
         </ul>

@@ -27,7 +27,7 @@
     </section>
     <div class="members__container">
       {% for key, category in members %}
-        <section class="members__list {{ categories[key].slug == 'team' ? 'list--top' : '' }}">
+        <section class="members__list {{ categories[key].slug == 'team' ? 'list--top' : '' }} {{ categories[key].slug == 'equipe' ? 'list--top' : '' }}">
           <h2 class="list__title">{{categories[key].name}}</h2>
           <div class="list__container">
             {% for member in category %}

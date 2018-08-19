@@ -195,10 +195,10 @@
 
     @include font($source, 1.6rem, 600, $blue-grey, uppercase, left);
     @include breakpoint(700px) {
-      @include font($source, 1.2rem, 600, $blue-grey, uppercase, left);
+      font-size: 1.2rem;
     }
     @include breakpoint(1023px) {
-      @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+      @include font($source, 1.4rem, 600, $black, uppercase, left);
     }
   }
 }

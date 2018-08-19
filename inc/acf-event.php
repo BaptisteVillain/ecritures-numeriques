@@ -8,7 +8,7 @@ function check_save_event($post_id){
 		if(isset($_POST['acf'])){
 		
 		$fields = $_POST['acf'];
-		$highlighted = $fields[field_5ab8ba4dd78d9];
+		$highlighted = $fields['field_5ab8ba4dd78d9'];
 
 
 		if($highlighted){

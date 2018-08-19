@@ -8,7 +8,7 @@
         <p class="taxonomy__content">
           {{term.description}}
         </p>
-        {% include "components/single-footer.twig" with {'previous_path': function('term_link', term.previous), 'previous_name': term.previous.name,'next_path': function('term_link', term.next), 'next_name': term.next.name} %}
+        {% include "components/single-footer.twig" with {'previous_path': function('get_term_link', term.previous), 'previous_name': term.previous.name,'next_path': function('get_term_link', term.next), 'next_name': term.next.name} %}
       </div>
       <div class="taxonomy__related">
         <div class="related__container">

@@ -1,7 +1,5 @@
 <?php
 
-include_once __DIR__.'/routes/routes.php';
-
 foreach (glob(__DIR__.'/inc/*.php') as $filename)
 {
 	include $filename;
