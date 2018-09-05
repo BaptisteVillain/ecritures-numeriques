@@ -2,6 +2,10 @@
   @include breakpoint(700px) {
     min-height: calc(100vh - (80px + 175px));
   }
+  .project__authors {
+    margin-bottom: 25px;
+    @include font($source, 1.4rem, 600, $light-blue, uppercase, left);
+  }
   .project {
     display: flex;
     flex-direction: column;

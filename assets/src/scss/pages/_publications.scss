@@ -116,14 +116,14 @@
 .publications__credits {
   display: flex;
   flex-direction: row;
-  @include font($hind, 1.4rem, 400, $dark-grey, inherit, left);
+  @include font($hind, 1.4rem, 400, $black, inherit, left);
   .separator{
     margin: 0 5px;
   }
   .publications__credits__domain {
     font-style: italic;
 
-    @include font($cabin, 1.4rem, 400, $dark-grey, inherit, left);
+    @include font($cabin, 1.4rem, 400, $black, inherit, left);
   }
 }
 

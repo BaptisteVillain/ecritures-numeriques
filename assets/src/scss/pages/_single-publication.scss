@@ -53,7 +53,10 @@
   .publication__date {
     margin-top: 10px;
 
-    @include font($source, 1.4rem, 400, $dark-grey, inherit, left);
+    @include font($source, 1.4rem, 400, $black, inherit, left);
+    span{ 
+      color: $black;
+    }
     a {
       color: darken($dark-grey, 20%);
     }

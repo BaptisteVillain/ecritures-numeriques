@@ -10,6 +10,11 @@
     {% endif %}
 
     <article class="single__container project {% if post.related is empty %} single__container--margin {% endif %}">
+      <p class="project__authors">
+        {% for key, author in post.authors %}
+          <a href="{{author.path}}">{{author.title}}</a>{{ key + 1 < post.authors|length ? ', ' : '' }}
+        {% endfor %}
+      </p>
       <div class="single__content project__content">
         {{ post.get_field('content') }}
       </div>
