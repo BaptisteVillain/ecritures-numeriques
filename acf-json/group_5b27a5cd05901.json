@@ -27,7 +27,7 @@
             "name": "title",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -46,7 +46,7 @@
             "name": "description",
             "type": "textarea",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -66,11 +66,11 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": null,
             "wrapper": {
                 "width": "",
-                "class": "",
-                "id": ""
+                "class": "+33623663940",
+                "id": "crc.ecrituresnumeriques@gmail.com"
             },
             "default_value": "",
             "placeholder": "",
@@ -180,6 +180,13 @@
                 "operator": "==",
                 "value": "templates-pages\/template-members.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates-pages\/template-contact.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -203,5 +210,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1529689280
+    "modified": 1536146735
 }

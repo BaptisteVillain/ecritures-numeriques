@@ -10,21 +10,7 @@
         {{page.description}}
       </p>
     </section>
-    <section class="members__contact">
-      <h3 class="presentation__subtitle members__subtitle">{{page.contact_title}}</h3>
-      <div class="members__wrapper">
-        <div class="members__contact__address">
-          <span>{{page.telephone_number}}</span>
-          <a href="mailto:{{page.address_mail}}">{{page.address_mail}}</a>
-          <span>{{page.place_name}}</span>
-          <span>{{page.place_address}}</span>
-          <span>{{page.place_postal_address}}a</span>
-        </div>
-        <div class="members__contact__maps">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.544204585596!2d-73.6202167847724!3d45.4991225391341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc919f231faae4d%3A0xc5babf62d503bfb6!2s3150+Rue+Jean-Brillant%2C+Montr%C3%A9al%2C+QC+H3T+1N8%2C+Canada!5e0!3m2!1sfr!2sfr!4v1529688054038" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="allowfullscreen"></iframe>
-        </div>
-      </div>
-    </section>
+    
     <div class="members__container">
       {% for key, category in members %}
         <section class="members__list {{ categories[key].slug == 'team' ? 'list--top' : '' }} {{ categories[key].slug == 'equipe' ? 'list--top' : '' }}">
