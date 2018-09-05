@@ -21,19 +21,19 @@
             {% if post.domain %}
               {{__('on', 'ecritures-numeriques')}} <span class="card__italic">{{post.domain}}</span>
             {% endif %}
-            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>
+            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('M Y')}}]</span>
           </p>
         {% elseif post.type == 'bookSection' %}
           <p class="publication__date">
             {{__('Posted in', 'ecritures-numeriques')}} <span class="card__italic">{{post.book_name}}</span>,
             {{__('Edition', 'ecritures-numeriques')}} {{post.edition}},
-            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
+            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('Y')}}]</span>,
             p. {{post.pages_selection}}.
           </p>
         {% elseif post.type == 'book' %}
           <p class="publication__date">
             {{__('Edition', 'ecritures-numeriques')}} {{post.edition}},
-            <span class="date__uppercase">[{{post.post_date | date('d M Y')}}]</span>,
+            <span class="date__uppercase">[{{post.post_date | date('Y')}}]</span>,
             {{post.number_of_pages}} p.
           </p>
         {% endif %}

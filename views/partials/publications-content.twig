@@ -14,7 +14,13 @@
             <div class="publications__credits">
               <h3 class="publications__credits__domain">{{post.custom.domain}}</h3>
               <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+              {% if post.type == 'journalArticle' %}
+                <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+              {% elseif post.type == 'bookSection' %}
+                <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+              {% elseif post.type == 'book' %}
+                <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+              {% endif %}
             </div>
             <div class="publications__content">
               {{post.get_field('content')|excerpt(70)}}
@@ -39,7 +45,13 @@
               <div class="publications__credits">
                 <div class="publications__credits__domain">{{post.domain}}</div>
                 <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+                {% if post.type == 'journalArticle' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+                {% elseif post.type == 'bookSection' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+                {% elseif post.type == 'book' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+                {% endif %}
               </div>
             </a>
             {% if post.terms is not empty %}
@@ -59,7 +71,13 @@
               <div class="publications__credits">
                 <div class="publications__credits__domain">{{post.domain}}</div>
                 <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-              <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+                {% if post.type == 'journalArticle' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+                {% elseif post.type == 'bookSection' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+                {% elseif post.type == 'book' %}
+                  <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+                {% endif %}
               </div>
             </a>
             {% if post.terms is not empty %}
@@ -84,7 +102,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
           <div class="publications__content">
             {{post.get_field('content')|excerpt(20)}}
@@ -109,7 +133,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
           <div class="publications__content">
             {{post.get_field('content')|excerpt(20)}}
@@ -134,7 +164,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
           <div class="publications__content">
             {{post.get_field('content')|excerpt(20)}}
@@ -165,7 +201,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
         </a>
       </div>
@@ -184,7 +226,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
         </a>
       </div>
@@ -206,7 +254,13 @@
           <div class="publications__credits">
             <div class="publications__credits__domain">{{post.domain}}</div>
             <span class="separator">{{post.domain is not empty ? ' - ' : ''}}</span>
-            <span class="publications__credits__date">{{post.post_date|date('[d M Y]')}}</span>
+            {% if post.type == 'journalArticle' %}
+              <span class="publications__credits__date">{{post.post_date|date('[M Y]')}}</span>
+            {% elseif post.type == 'bookSection' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% elseif post.type == 'book' %}
+              <span class="publications__credits__date">{{post.post_date|date('[Y]')}}</span>
+            {% endif %}
           </div>
         </a>
       </div>
