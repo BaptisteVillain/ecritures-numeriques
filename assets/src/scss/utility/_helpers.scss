@@ -20,6 +20,14 @@
 	@include font($cabin, 1.4rem, 400, $dark-grey, capitalize, left);
 }
 
+.card__bold {
+	font-weight: 600;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
 // I also like to have some spacer classes. Again, scoff at their non-semantic-ness if you feel like it, but I find them immensely useful, particularly when working within a CMS.
 // Note that I use the $size-base unit from the sizing scale set in _variables.scss.
 .spacer-top {

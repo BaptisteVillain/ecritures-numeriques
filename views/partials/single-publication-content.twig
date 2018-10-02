@@ -18,23 +18,23 @@
         <h2 class="publication__title {{post.type == 'book' ? 'title--italic' : ''}} {{first_post ? 'title--first' : ''}}" >{{post.title}}</h2>
         {% if post.type == 'journalArticle' %}
           <p class="publication__date">{{__('Posted', 'ecritures-numeriques')}}
-            {% if post.domain %}
-              {{__('on', 'ecritures-numeriques')}} <span class="card__italic">{{post.domain}}</span>
+            {% if post.edition %}
+              {{__('on', 'ecritures-numeriques')}} <span class="card__italic lowercase">{{post.edition}}</span>,
             {% endif %}
-            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('M Y')}}]</span>
+              <span class="date__uppercase">[{{post.post_date | date('M Y')}}]</span>
           </p>
         {% elseif post.type == 'bookSection' %}
           <p class="publication__date">
             {{__('Posted in', 'ecritures-numeriques')}} <span class="card__italic">{{post.book_name}}</span>,
-            {{__('Edition', 'ecritures-numeriques')}} {{post.edition}},
-            {{__(',', 'ecritures-numeriques')}} <span class="date__uppercase">[{{post.post_date | date('Y')}}]</span>,
+            {{__('Edition', 'ecritures-numeriques')}} <span class="card__bold">{{post.edition}}</span>,
+            <span class="date__uppercase">[{{post.post_date | date('Y')}}]</span>,
             p. {{post.pages_selection}}.
           </p>
         {% elseif post.type == 'book' %}
           <p class="publication__date">
-            {{__('Edition', 'ecritures-numeriques')}} {{post.edition}},
+            {{__('Edition', 'ecritures-numeriques')}} <span class="card__bold">{{post.edition}}</span>,
             <span class="date__uppercase">[{{post.post_date | date('Y')}}]</span>,
-            {{post.number_of_pages}} p.
+            {{post.number_of_pages}} pages
           </p>
         {% endif %}
       </div>
