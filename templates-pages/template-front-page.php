@@ -67,7 +67,7 @@ $context['publications'] = new Timber\PostQuery(array(
  * Get last projects
  */
 $sens_public = new Timber\PostQuery(array(
-  'name' => 'sens_public',
+  's' => 'Sens Public',
   'post_type' => 'project',
   'posts_per_page' => 1,
 ));
